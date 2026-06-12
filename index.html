@@ -40,7 +40,7 @@
       padding: 14px 32px;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .nav-logo { height: 52px; filter: brightness(0) invert(1); }
+    .nav-logo { height: 56px; border-radius: 6px; }
     .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
     .nav-links a {
       color: var(--muted); font-size: 11px; font-weight: 700;
@@ -48,6 +48,26 @@
       text-decoration: none; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--gold); }
+
+    /* Mobile top cart button */
+    .mobile-top-cart {
+      display: none;
+      align-items: center; gap: 6px;
+      background: var(--gold); color: #1a0e02;
+      border: none; border-radius: 4px;
+      padding: 9px 14px; cursor: pointer;
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      position: relative;
+    }
+    .mobile-top-cart .cart-badge-mob {
+      position: absolute; top: -7px; right: -7px;
+      background: #1a0e02; color: var(--gold);
+      border-radius: 50%; width: 18px; height: 18px;
+      font-size: 10px; font-weight: 700;
+      display: none; align-items: center; justify-content: center;
+    }
 
     /* Mobile second nav row */
     .nav-mobile-links {
@@ -276,7 +296,7 @@
       background: var(--bg2); border-top: 1px solid var(--border);
       padding: 48px 32px; text-align: center;
     }
-    .footer-logo { height: 70px; margin-bottom: 18px; filter: brightness(0) invert(1); opacity: 0.85; }
+    .footer-logo { height: 80px; margin-bottom: 18px; border-radius: 8px; opacity: 0.9; }
     .footer-tagline { font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 15px; margin-bottom: 20px; }
     .footer-contact { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
     .footer-contact a { color: var(--gold); text-decoration: none; }
@@ -473,10 +493,11 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      nav { padding: 10px 20px; justify-content: center; }
+      nav { padding: 10px 20px; justify-content: space-between; }
       .nav-logo { height: 52px; }
       .nav-links { display: none; }
       .nav-mobile-links { display: block; }
+      .mobile-top-cart { display: flex !important; }
       .hero { grid-template-columns: 1fr; padding: 40px 20px 48px; text-align: center; gap: 28px; }
       .hero-photo { order: -1; }
       .hero-photo-wrap { max-width: 220px; }
@@ -557,7 +578,7 @@
 
 <!-- ── NAV ── -->
 <nav>
-  <img src="logo.png" alt="The Hustle Hub SA" class="nav-logo" />
+  <img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="nav-logo" />
   <ul class="nav-links">
     <li><a href="#jewellery">Jewellery</a></li>
     <li><a href="#fragrances">Fragrances</a></li>
@@ -570,6 +591,10 @@
       </button>
     </li>
   </ul>
+  <button class="mobile-top-cart" onclick="openCart()">
+    🛒 Order
+    <span class="cart-badge-mob" id="cartBadgeMob"></span>
+  </button>
 </nav>
 <div class="gold-line"></div>
 
@@ -918,7 +943,7 @@
 
 <!-- ── FOOTER ── -->
 <footer>
-  <img src="logo.png" alt="The Hustle Hub SA" class="footer-logo" />
+  <img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="footer-logo" />
   <p class="footer-tagline">"Quality you can feel. Service you can trust."</p>
   <p class="footer-contact">
     WhatsApp: <a href="https://wa.me/27798908527" target="_blank">+27 79 890 8527</a> &nbsp;·&nbsp;
@@ -1153,9 +1178,10 @@
 
   function updateCartBadge() {
     const count = cart.reduce((sum, i) => sum + i.qty, 0);
-    const badge = document.getElementById('cartBadge');
-    badge.textContent = count;
-    badge.style.display = count > 0 ? 'flex' : 'none';
+    ['cartBadge', 'cartBadgeMob'].forEach(id => {
+      const b = document.getElementById(id);
+      if (b) { b.textContent = count; b.style.display = count > 0 ? 'flex' : 'none'; }
+    });
   }
 
   function openCart() {
