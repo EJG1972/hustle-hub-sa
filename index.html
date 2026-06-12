@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Hustle Hub SA — Premium Lifestyle Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #120E07;
+      --bg2:       #1E1508;
+      --bg3:       #261A09;
+      --gold:      #C9922A;
+      --gold-lt:   #E8C27A;
+      --cream:     #F0E4C8;
+      --muted:     #A89068;
+      --border:    #3A2808;
+      --white:     #FDF8EF;
+      --wa:        #25D366;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: var(--bg);
+      color: var(--cream);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(18,14,7,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo { height: 52px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: var(--muted); font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── GOLD LINE ── */
+    .gold-line { height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 48px;
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px 32px;
+    }
+    .hero-text { }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700; line-height: 1.15;
+      color: var(--white); margin-bottom: 20px;
+    }
+    .hero-title span { color: var(--gold); }
+    .hero-desc {
+      font-size: 15px; color: var(--muted); line-height: 1.8;
+      margin-bottom: 32px; max-width: 420px;
+    }
+    .hero-photo {
+      position: relative; display: flex; justify-content: center;
+    }
+    .hero-photo img {
+      width: 100%; max-width: 420px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    }
+    .hero-photo::before {
+      content: '';
+      position: absolute; top: -12px; right: -12px;
+      width: 100%; max-width: 420px; height: 100%;
+      border: 1px solid var(--gold);
+      border-radius: 4px; opacity: 0.3;
+      pointer-events: none;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 28px; border-radius: 3px;
+      cursor: pointer; border: none; transition: all 0.2s;
+    }
+    .btn-gold { background: var(--gold); color: #1a0e02; }
+    .btn-gold:hover { background: var(--gold-lt); }
+    .btn-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); }
+    .btn-outline:hover { background: var(--gold); color: #1a0e02; }
+    .btn-wa { background: var(--wa); color: #fff; }
+    .btn-wa:hover { background: #1da851; }
+
+    /* ── SECTION ── */
+    section { padding: 72px 32px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700; color: var(--white);
+      margin-bottom: 12px;
+    }
+    .section-desc { color: var(--muted); max-width: 600px; margin-bottom: 40px; font-size: 14px; }
+
+    /* ── CATEGORIES ── */
+    .categories-bg { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .cat-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 24px 20px;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: block;
+    }
+    .cat-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .cat-icon { font-size: 28px; margin-bottom: 10px; }
+    .cat-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; font-weight: 600;
+      color: var(--white); margin-bottom: 4px;
+    }
+    .cat-sub { font-size: 11px; color: var(--muted); }
+
+    /* ── PRODUCT CARDS ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: block;
+    }
+    .product-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(201,146,42,0.15); }
+    .product-card img { width: 100%; display: block; }
+    .product-info { padding: 18px 20px; }
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px; font-weight: 600;
+      color: var(--white); margin-bottom: 4px;
+    }
+    .product-sub { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+    .product-footer { display: flex; justify-content: space-between; align-items: center; }
+    .product-price { font-size: 18px; font-weight: 800; color: var(--gold); }
+    .product-btn {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gold);
+      background: transparent; border: 1px solid var(--gold);
+      padding: 6px 14px; border-radius: 3px; cursor: pointer;
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
+    }
+    .badge-gold { background: rgba(201,146,42,0.15); color: var(--gold); border: 1px solid var(--gold); }
+    .badge-soon { background: rgba(168,144,104,0.15); color: var(--muted); border: 1px solid var(--border); }
+
+    /* ── COMING SOON CARDS ── */
+    .coming-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .coming-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 28px 24px;
+      transition: all 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .coming-card:hover { border-color: var(--gold); }
+    .coming-icon { font-size: 32px; margin-bottom: 14px; }
+    .coming-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px; font-weight: 600;
+      color: var(--white); margin-bottom: 6px;
+    }
+    .coming-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ── HIGHLIGHT STRIP ── */
+    .highlight-strip {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 32px;
+    }
+    .highlight-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;
+    }
+    .highlight-item { text-align: center; }
+    .highlight-icon { font-size: 22px; margin-bottom: 6px; }
+    .highlight-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+    .highlight-value { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 56px; align-items: center;
+    }
+    .about-photo img {
+      width: 100%; border-radius: 4px;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+    }
+    .about-text .section-title { margin-bottom: 20px; }
+    .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 16px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .footer-logo { height: 64px; margin-bottom: 20px; opacity: 0.85; }
+    .footer-tagline { font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 15px; margin-bottom: 24px; }
+    .footer-contact { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+    .footer-contact a { color: var(--gold); text-decoration: none; }
+    .footer-copy { font-size: 11px; color: var(--border); margin-top: 24px; letter-spacing: 0.06em; }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: var(--wa);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 12px 32px rgba(37,211,102,0.6); }
+    .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 10px; }
+      .hero { grid-template-columns: 1fr; padding: 48px 20px; text-align: center; }
+      .hero-photo { order: -1; }
+      .hero-photo::before { display: none; }
+      .hero-desc { margin: 0 auto 28px; }
+      section { padding: 48px 20px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo { max-width: 300px; margin: 0 auto; }
+      .product-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .wa-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+    }
+    @media (max-width: 480px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <img src="logo.png" alt="The Hustle Hub SA" class="nav-logo" />
+  <ul class="nav-links">
+    <li><a href="#fragrances">Fragrances</a></li>
+    <li><a href="#jewellery">Jewellery</a></li>
+    <li><a href="#lifestyle">More</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="https://wa.me/27798908527?text=Hi Riette! I'd like to place an order from The Hustle Hub SA." target="_blank">Order Now</a></li>
+  </ul>
+</nav>
+<div class="gold-line"></div>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Welcome to</div>
+    <h1 class="hero-title">The Hustle<br/><span>Hub SA</span></h1>
+    <p class="hero-desc">Premium fragrances, timeless jewellery, handcrafted treats and more — all curated with love and delivered straight to your door.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="#fragrances" class="btn btn-gold">Shop Now</a>
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to place an order from The Hustle Hub SA." target="_blank" class="btn btn-outline">WhatsApp to Order</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="riette-photo.jpeg" alt="Riette — The Hustle Hub SA" />
+  </div>
+</div>
+
+<!-- ── HIGHLIGHT STRIP ── -->
+<div class="highlight-strip">
+  <div class="highlight-inner">
+    <div class="highlight-item">
+      <div class="highlight-icon">✅</div>
+      <div class="highlight-label">Authentic</div>
+      <div class="highlight-value">Original unopened packaging</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon">🚚</div>
+      <div class="highlight-label">Nationwide Delivery</div>
+      <div class="highlight-value">Fast & secure courier</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon">💬</div>
+      <div class="highlight-label">WhatsApp Orders</div>
+      <div class="highlight-value">Quick & personal service</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon">⭐</div>
+      <div class="highlight-label">Premium Quality</div>
+      <div class="highlight-value">Carefully sourced products</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CATEGORIES ── -->
+<section class="categories-bg">
+  <div class="section-inner">
+    <div class="section-eyebrow">Browse</div>
+    <h2 class="section-title">What We Offer</h2>
+    <p class="section-desc">Nine curated ranges — something for everyone.</p>
+    <div class="cat-grid">
+      <a href="#fragrances" class="cat-card">
+        <div class="cat-icon">🥃</div>
+        <div class="cat-name">Designer Fragrances</div>
+        <div class="cat-sub">Creed, Versace, Viktor & Rolf & more</div>
+      </a>
+      <a href="#fragrances" class="cat-card">
+        <div class="cat-icon">🌴</div>
+        <div class="cat-name">Dubai Replica Perfumes</div>
+        <div class="cat-sub">Inspired-by luxury scents</div>
+      </a>
+      <a href="#fragrances" class="cat-card">
+        <div class="cat-icon">🎁</div>
+        <div class="cat-name">Miniature Gift Sets</div>
+        <div class="cat-sub">Perfect for any occasion</div>
+      </a>
+      <a href="#fragrances" class="cat-card">
+        <div class="cat-icon">🌸</div>
+        <div class="cat-name">Scented Serenity by Riette</div>
+        <div class="cat-sub">Oil-based personal perfumes</div>
+      </a>
+      <a href="#fragrances" class="cat-card">
+        <div class="cat-icon">✨</div>
+        <div class="cat-name">Only You Perfumes</div>
+        <div class="cat-sub">Branded signature range</div>
+      </a>
+      <a href="#jewellery" class="cat-card">
+        <div class="cat-icon">💎</div>
+        <div class="cat-name">BellaTia Jewellery</div>
+        <div class="cat-sub">Tarnish-free, waterproof pieces</div>
+      </a>
+      <a href="#lifestyle" class="cat-card">
+        <div class="cat-icon">🌿</div>
+        <div class="cat-name">Bosbaard & Bokkies</div>
+        <div class="cat-sub">SA spices & seasonings</div>
+      </a>
+      <a href="#lifestyle" class="cat-card">
+        <div class="cat-icon">🕯️</div>
+        <div class="cat-name">Scentifique</div>
+        <div class="cat-sub">Handmade diffusers & fragrance oils</div>
+      </a>
+      <a href="#lifestyle" class="cat-card">
+        <div class="cat-icon">🍬</div>
+        <div class="cat-name">Vrek Lekker Fudge</div>
+        <div class="cat-sub">Handmade fudge jars</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FRAGRANCES ── -->
+<section id="fragrances">
+  <div class="section-inner">
+    <div class="section-eyebrow">Genuine Parallel Imports · Original Unopened Packaging</div>
+    <h2 class="section-title">Designer Fragrances</h2>
+    <p class="section-desc">AAA Grade designer perfumes — authentic, carefully sourced and delivered nationwide. <strong style="color:var(--gold)">R450 each.</strong></p>
+    <div class="product-grid">
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to order the Spicebomb by Viktor %26 Rolf (90ml) — R450. Please assist." target="_blank" class="product-card">
+        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb by Viktor & Rolf" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Spicebomb</div>
+          <div class="product-sub">Viktor & Rolf · Eau de Toilette · 90ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <span class="product-btn">Order</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to order Creed Aventus (120ml) — R450. Please assist." target="_blank" class="product-card">
+        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Creed Aventus</div>
+          <div class="product-sub">Creed · Eau de Parfum · 120ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <span class="product-btn">Order</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to order Versace Eros Blue (100ml) — R450. Please assist." target="_blank" class="product-card">
+        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Versace Eros Blue</div>
+          <div class="product-sub">Versace · Eau de Toilette · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <span class="product-btn">Order</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to order Paco Rabanne 1 Million (100ml) — R450. Please assist." target="_blank" class="product-card">
+        <img src="fragrance-paco-rabanne.jpeg" alt="Paco Rabanne 1 Million" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">1 Million Man</div>
+          <div class="product-sub">Paco Rabanne · Eau de Toilette · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <span class="product-btn">Order</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to order Louis Vuitton Imagination (100ml) — R450. Please assist." target="_blank" class="product-card">
+        <img src="fragrance-lv-imagination.jpeg" alt="Louis Vuitton Imagination" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">LV Imagination</div>
+          <div class="product-sub">Louis Vuitton · Eau de Parfum · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <span class="product-btn">Order</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── JEWELLERY ── -->
+<section id="jewellery" style="background:var(--bg2);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Tarnish-Free · Waterproof · Hypoallergenic</div>
+    <h2 class="section-title">BellaTia Jewellery</h2>
+    <p class="section-desc">Stainless steel jewellery that lasts — wearable every day, in every season. More pieces added regularly.</p>
+    <div class="product-grid">
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to order the Gold Bracelet with Pearls & Bead Detail — R150. Please assist." target="_blank" class="product-card">
+        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet with Pearls" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Gold Bracelet</div>
+          <div class="product-sub">With pearls & bead detail · Stainless steel</div>
+          <div class="product-footer">
+            <span class="product-price">R150</span>
+            <span class="product-btn">Order</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to order the Gold Sleepers with Pearls — R180. Please assist." target="_blank" class="product-card">
+        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers with Pearls" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Gold Sleepers</div>
+          <div class="product-sub">With pearls · Stainless steel</div>
+          <div class="product-footer">
+            <span class="product-price">R180</span>
+            <span class="product-btn">Order</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── LIFESTYLE & MORE ── -->
+<section id="lifestyle">
+  <div class="section-inner">
+    <div class="section-eyebrow">And Much More</div>
+    <h2 class="section-title">More From The Hustle Hub</h2>
+    <p class="section-desc">WhatsApp Riette directly to find out what's in stock, get pricing, or place an order on any of these ranges.</p>
+    <div class="coming-grid">
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about your Dubai Replica Perfumes. Please assist." target="_blank" class="coming-card">
+        <div class="coming-icon">🌴</div>
+        <div class="badge badge-soon">Available</div>
+        <div class="coming-name">Dubai Replica Perfumes</div>
+        <div class="coming-desc">Inspired-by luxury scents — bold, long-lasting and affordable.</div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about your Miniature Perfume Gift Sets. Please assist." target="_blank" class="coming-card">
+        <div class="coming-icon">🎁</div>
+        <div class="badge badge-soon">Available</div>
+        <div class="coming-name">Miniature Gift Sets</div>
+        <div class="coming-desc">Beautiful curated gift sets — perfect for birthdays, Father's Day, and special occasions.</div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about Scented Serenity — your own oil-based perfumes. Please assist." target="_blank" class="coming-card">
+        <div class="coming-icon">🌸</div>
+        <div class="badge badge-soon">Available</div>
+        <div class="coming-name">Scented Serenity by Riette</div>
+        <div class="coming-desc">Riette's own oil-based perfumes — personal, warm and made with intention.</div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about your Only You Branded Perfumes. Please assist." target="_blank" class="coming-card">
+        <div class="coming-icon">✨</div>
+        <div class="badge badge-soon">Available</div>
+        <div class="coming-name">Only You Perfumes</div>
+        <div class="coming-desc">Branded signature range — elegant, distinctive and made to be remembered.</div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about Bosbaard & Bokkies SA Spices. Please assist." target="_blank" class="coming-card">
+        <div class="coming-icon">🌿</div>
+        <div class="badge badge-soon">Available</div>
+        <div class="coming-name">Bosbaard & Bokkies</div>
+        <div class="coming-desc">SA-made spices and seasonings — braai rubs, blends and bold SA flavours.</div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about Scentifique Diffusers & Fragrance Oils. Please assist." target="_blank" class="coming-card">
+        <div class="coming-icon">🕯️</div>
+        <div class="badge badge-soon">Available</div>
+        <div class="coming-name">Scentifique</div>
+        <div class="coming-desc">Handmade diffusers and fragrance oils — fill your home with beautiful, lasting scent.</div>
+      </a>
+
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about Vrek Lekker Fudge Jars. Please assist." target="_blank" class="coming-card">
+        <div class="coming-icon">🍬</div>
+        <div class="badge badge-soon">Available</div>
+        <div class="coming-name">Vrek Lekker Fudge</div>
+        <div class="coming-desc">Handmade fudge jars — rich, indulgent and seriously hard to stop eating.</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── ABOUT ── -->
+<section id="about" style="background:var(--bg2);">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="riette-photo.jpeg" alt="Riette" />
+      </div>
+      <div class="about-text">
+        <div class="section-eyebrow">Meet the woman behind the hustle</div>
+        <h2 class="section-title">Hi, I'm Riette</h2>
+        <p>The Hustle Hub SA was born from a passion for beautiful things and a drive to bring quality products to people who appreciate the finer side of life — without the fuss.</p>
+        <p>From premium designer fragrances and handmade jewellery to SA spices and sweet treats, I hand-pick every single product in my range because I believe what you buy should make you feel something.</p>
+        <p>Whether you're treating yourself or gifting someone special — I'm here to help you find exactly what you're looking for. Just send me a message.</p>
+        <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to find out more about The Hustle Hub SA." target="_blank" class="btn btn-wa" style="margin-top:16px;">
+          <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat with Riette
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <img src="logo.png" alt="The Hustle Hub SA" class="footer-logo" />
+  <p class="footer-tagline">"Quality you can feel. Service you can trust."</p>
+  <p class="footer-contact">
+    WhatsApp: <a href="https://wa.me/27798908527" target="_blank">+27 79 890 8527</a>
+  </p>
+  <div class="gold-line" style="max-width:200px;margin:0 auto 20px;"></div>
+  <p class="footer-copy">© 2026 THE HUSTLE HUB SA · ALL RIGHTS RESERVED</p>
+</footer>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a href="https://wa.me/27798908527?text=Hi Riette! I'd like to place an order from The Hustle Hub SA." target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
