@@ -476,8 +476,8 @@
 <nav>
   <img src="logo.png" alt="The Hustle Hub SA" class="nav-logo" />
   <ul class="nav-links">
-    <li><a href="#fragrances">Fragrances</a></li>
     <li><a href="#jewellery">Jewellery</a></li>
+    <li><a href="#fragrances">Fragrances</a></li>
     <li><a href="#lifestyle">More</a></li>
     <li><a href="#about">About</a></li>
     <li>
@@ -541,12 +541,12 @@
     <h2 class="section-title">What We Offer</h2>
     <p class="section-desc">Nine curated ranges — something for everyone.</p>
     <div class="cat-grid">
+      <a href="#jewellery" class="cat-card"><div class="cat-icon">💎</div><div class="cat-name">BellaTia Jewellery</div><div class="cat-sub">Tarnish-free, waterproof</div></a>
       <a href="#fragrances" class="cat-card"><div class="cat-icon">🥃</div><div class="cat-name">Designer Fragrances</div><div class="cat-sub">Creed, Versace, Viktor & Rolf & more</div></a>
       <a href="#fragrances" class="cat-card"><div class="cat-icon">🌴</div><div class="cat-name">Dubai Replica Perfumes</div><div class="cat-sub">Inspired-by luxury scents</div></a>
       <a href="#fragrances" class="cat-card"><div class="cat-icon">🎁</div><div class="cat-name">Miniature Gift Sets</div><div class="cat-sub">Perfect for any occasion</div></a>
       <a href="#fragrances" class="cat-card"><div class="cat-icon">🌸</div><div class="cat-name">Scented Serenity by Riette</div><div class="cat-sub">Oil-based personal perfumes</div></a>
       <a href="#fragrances" class="cat-card"><div class="cat-icon">✨</div><div class="cat-name">Only You Perfumes</div><div class="cat-sub">Branded signature range</div></a>
-      <a href="#jewellery" class="cat-card"><div class="cat-icon">💎</div><div class="cat-name">BellaTia Jewellery</div><div class="cat-sub">Tarnish-free, waterproof</div></a>
       <a href="#lifestyle" class="cat-card"><div class="cat-icon">🌿</div><div class="cat-name">Bosbaard & Bokkies</div><div class="cat-sub">SA spices & seasonings</div></a>
       <a href="#lifestyle" class="cat-card"><div class="cat-icon">🕯️</div><div class="cat-name">Scentifique</div><div class="cat-sub">Diffusers & fragrance oils</div></a>
       <a href="#lifestyle" class="cat-card"><div class="cat-icon">🍬</div><div class="cat-name">Vrek Lekker Fudge</div><div class="cat-sub">Handmade fudge jars</div></a>
@@ -554,11 +554,51 @@
   </div>
 </section>
 
+<!-- ── JEWELLERY ── -->
+<section id="jewellery">
+  <div class="section-inner">
+    <div class="section-eyebrow">Tarnish-Free · Waterproof · Hypoallergenic</div>
+    <h2 class="section-title">BellaTia Jewellery</h2>
+    <p class="section-desc">Stainless steel pieces that last — wearable every day, in every season. More pieces added regularly.</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet with Pearls" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Gold Bracelet</div>
+          <div class="product-sub">With pearls & bead detail · Stainless steel</div>
+          <div class="product-footer">
+            <span class="product-price">R150</span>
+            <button class="add-btn" onclick="addToCart('Gold Bracelet','R150','jewellery-gold-bracelet.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers with Pearls" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Gold Sleepers</div>
+          <div class="product-sub">With pearls · Stainless steel</div>
+          <div class="product-footer">
+            <span class="product-price">R180</span>
+            <button class="add-btn" onclick="addToCart('Gold Sleepers','R180','jewellery-gold-sleepers.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
 <!-- ── FRAGRANCES ── -->
-<section id="fragrances">
+<section id="fragrances" style="background:var(--bg2);">
   <div class="section-inner">
     <div class="section-eyebrow">Genuine Parallel Imports · Original Unopened Packaging</div>
-    <h2 class="section-title">Designer Fragrances</h2>
+    <h2 class="section-title">Men's Designer Fragrances</h2>
     <p class="section-desc">AAA Grade designer perfumes — authentic, carefully sourced and delivered nationwide. <strong style="color:var(--gold)">R450 each.</strong> Add to your order list, then send via WhatsApp or email.</p>
     <div class="product-grid">
 
@@ -623,46 +663,6 @@
           <div class="product-footer">
             <span class="product-price">R450</span>
             <button class="add-btn" onclick="addToCart('LV Imagination','R450','fragrance-lv-imagination.jpeg')">+ Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<hr class="divider" />
-
-<!-- ── JEWELLERY ── -->
-<section id="jewellery" style="background:var(--bg2);">
-  <div class="section-inner">
-    <div class="section-eyebrow">Tarnish-Free · Waterproof · Hypoallergenic</div>
-    <h2 class="section-title">BellaTia Jewellery</h2>
-    <p class="section-desc">Stainless steel pieces that last — wearable every day, in every season. More pieces added regularly.</p>
-    <div class="product-grid">
-
-      <div class="product-card">
-        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet with Pearls" />
-        <div class="product-info">
-          <div class="badge badge-gold">Available</div>
-          <div class="product-name">Gold Bracelet</div>
-          <div class="product-sub">With pearls & bead detail · Stainless steel</div>
-          <div class="product-footer">
-            <span class="product-price">R150</span>
-            <button class="add-btn" onclick="addToCart('Gold Bracelet','R150','jewellery-gold-bracelet.jpeg')">+ Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers with Pearls" />
-        <div class="product-info">
-          <div class="badge badge-gold">Available</div>
-          <div class="product-name">Gold Sleepers</div>
-          <div class="product-sub">With pearls · Stainless steel</div>
-          <div class="product-footer">
-            <span class="product-price">R180</span>
-            <button class="add-btn" onclick="addToCart('Gold Sleepers','R180','jewellery-gold-sleepers.jpeg')">+ Add to Order</button>
           </div>
         </div>
       </div>
