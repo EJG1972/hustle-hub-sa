@@ -52,11 +52,13 @@
     /* ── HAMBURGER ── */
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; padding: 4px; background: none; border: none;
+      cursor: pointer; padding: 10px 12px;
+      background: var(--bg3); border: 1.5px solid var(--border);
+      border-radius: 4px;
     }
     .hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--cream); border-radius: 2px;
+      display: block; width: 22px; height: 2px;
+      background: var(--gold); border-radius: 2px;
       transition: all 0.3s;
     }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -513,6 +515,47 @@
       .product-grid { grid-template-columns: 1fr; }
       .product-card img { max-height: 280px; object-fit: cover; }
     }
+
+    /* ── SHOWCASE SLIDER ── */
+    .showcase {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0;
+      overflow: hidden;
+    }
+    .showcase-header {
+      text-align: center; margin-bottom: 32px; padding: 0 32px;
+    }
+    .showcase-track-wrap { overflow: hidden; position: relative; }
+    .showcase-track-wrap::before,
+    .showcase-track-wrap::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2;
+      pointer-events: none;
+    }
+    .showcase-track-wrap::before { left: 0; background: linear-gradient(to right, var(--bg2), transparent); }
+    .showcase-track-wrap::after  { right: 0; background: linear-gradient(to left,  var(--bg2), transparent); }
+    .showcase-track {
+      display: flex; gap: 20px;
+      width: max-content;
+      animation: slideLoop 28s linear infinite;
+    }
+    .showcase-track:hover { animation-play-state: paused; }
+    @keyframes slideLoop {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .showcase-slide {
+      width: 200px; flex-shrink: 0;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 4px; overflow: hidden;
+      cursor: pointer; transition: border-color 0.2s, transform 0.2s;
+    }
+    .showcase-slide:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .showcase-slide img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .showcase-slide-info { padding: 12px 14px; }
+    .showcase-slide-name { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--white); margin-bottom: 2px; }
+    .showcase-slide-price { font-size: 12px; font-weight: 700; color: var(--gold); }
   </style>
 </head>
 <body>
@@ -561,6 +604,76 @@
   <div class="hero-photo">
     <div class="hero-photo-wrap">
       <img src="riette-photo.jpeg" alt="Riette — The Hustle Hub SA" />
+    </div>
+  </div>
+</div>
+
+<!-- ── SHOWCASE SLIDER ── -->
+<div class="showcase">
+  <div class="showcase-header">
+    <div class="section-eyebrow">Featured Products</div>
+    <h2 class="section-title" style="font-size:clamp(22px,3vw,32px);">Shop Our Latest Range</h2>
+  </div>
+  <div class="showcase-track-wrap">
+    <div class="showcase-track" id="showcaseTrack">
+      <!-- Original slides -->
+      <div class="showcase-slide" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})">
+        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet</div><div class="showcase-slide-price">R150</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})">
+        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Sleepers</div><div class="showcase-slide-price">R180</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
+        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-price">R450</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
+        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-price">R450</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
+        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-price">R450</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
+        <img src="fragrance-paco-rabanne.jpeg" alt="1 Million Man" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">1 Million Man</div><div class="showcase-slide-price">R450</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
+        <img src="fragrance-lv-imagination.jpeg" alt="LV Imagination" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">LV Imagination</div><div class="showcase-slide-price">R450</div></div>
+      </div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="showcase-slide" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})">
+        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet</div><div class="showcase-slide-price">R150</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})">
+        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Sleepers</div><div class="showcase-slide-price">R180</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
+        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-price">R450</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
+        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-price">R450</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
+        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-price">R450</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
+        <img src="fragrance-paco-rabanne.jpeg" alt="1 Million Man" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">1 Million Man</div><div class="showcase-slide-price">R450</div></div>
+      </div>
+      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
+        <img src="fragrance-lv-imagination.jpeg" alt="LV Imagination" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">LV Imagination</div><div class="showcase-slide-price">R450</div></div>
+      </div>
     </div>
   </div>
 </div>
