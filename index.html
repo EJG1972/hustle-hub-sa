@@ -150,15 +150,23 @@
     .hero-photo-wrap {
       position: relative; display: inline-block;
       max-width: 300px; width: 100%;
+      padding: 14px;
+      background: #F5EFE0;
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.55);
     }
     .hero-photo-wrap img {
-      width: 100%; display: block;
-      border-radius: 6px;
-      -webkit-mask-image: radial-gradient(ellipse 88% 92% at 50% 48%, black 45%, transparent 100%);
-      mask-image: radial-gradient(ellipse 88% 92% at 50% 48%, black 45%, transparent 100%);
+      width: 100%; display: block; border-radius: 2px;
+    }
+    /* inner gold line — the mat detail */
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute; inset: 6px;
+      border: 1px solid rgba(201,146,42,0.45);
+      border-radius: 2px; pointer-events: none;
     }
     .hero-photo-wrap::after { display: none; }
-    .hero-photo-wrap::before { display: none; }
 
     /* ── BUTTONS ── */
     .btn {
@@ -281,11 +289,20 @@
     .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: center; }
     .about-photo-wrap {
       position: relative; display: inline-block; max-width: 260px; width: 100%;
+      padding: 14px;
+      background: #F5EFE0;
+      border: 2px solid var(--gold);
+      border-radius: 4px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.55);
     }
     .about-photo-wrap img {
-      width: 100%; display: block; border-radius: 6px;
-      -webkit-mask-image: radial-gradient(ellipse 88% 92% at 50% 48%, black 45%, transparent 100%);
-      mask-image: radial-gradient(ellipse 88% 92% at 50% 48%, black 45%, transparent 100%);
+      width: 100%; display: block; border-radius: 2px;
+    }
+    .about-photo-wrap::before {
+      content: '';
+      position: absolute; inset: 6px;
+      border: 1px solid rgba(201,146,42,0.45);
+      border-radius: 2px; pointer-events: none;
     }
     .about-photo-wrap::after { display: none; }
     .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 16px; }
@@ -499,7 +516,8 @@
       .mobile-top-cart { display: flex !important; }
       .hero { grid-template-columns: 1fr; padding: 40px 20px 48px; text-align: center; gap: 28px; }
       .hero-photo { order: -1; }
-      .hero-photo-wrap { max-width: 220px; }
+      .hero-photo-wrap { max-width: 220px; padding: 10px; }
+      .about-photo-wrap { padding: 10px; }
       .hero-desc { margin: 0 auto 24px; max-width: 100%; }
       .hero .btn-group { justify-content: center; }
       section { padding: 48px 20px; }
