@@ -416,11 +416,8 @@
     .cart-drawer.order-step #cartEmailBtn { display: flex !important; }
     .cart-drawer.order-step .cart-note { display: block; }
 
-    .cart-back-link {
-      display: none; font-size: 12px; color: var(--gold);
-      text-decoration: none; font-weight: 700; margin-bottom: 14px; cursor: pointer;
-    }
-    .cart-drawer.order-step .cart-back-link { display: block; }
+    .cart-back-links { display: none; margin-bottom: 14px; }
+    .cart-drawer.order-step .cart-back-links { display: block; }
 
     .cart-form { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
     .cart-form-label {
@@ -537,13 +534,23 @@
       width: 200px; flex-shrink: 0;
       background: var(--bg3); border: 1px solid var(--border);
       border-radius: 4px; overflow: hidden;
-      cursor: pointer; transition: border-color 0.2s, transform 0.2s;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
     }
     .showcase-slide:hover { border-color: var(--gold); transform: translateY(-4px); }
-    .showcase-slide img { width: 100%; height: 200px; object-fit: cover; display: block; }
-    .showcase-slide-info { padding: 12px 14px; }
+    .showcase-slide img { width: 100%; height: 200px; object-fit: cover; display: block; cursor: pointer; }
+    .showcase-slide-info { padding: 12px 14px; display: flex; flex-direction: column; flex: 1; }
     .showcase-slide-name { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--white); margin-bottom: 2px; }
-    .showcase-slide-price { font-size: 12px; font-weight: 700; color: var(--gold); }
+    .showcase-slide-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+    .showcase-slide-price { font-size: 13px; font-weight: 800; color: var(--gold); }
+    .showcase-add-btn {
+      background: var(--gold); color: #1a0e02; border: none;
+      border-radius: 3px; width: 30px; height: 30px;
+      font-size: 18px; font-weight: 700; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s; flex-shrink: 0; line-height: 1;
+    }
+    .showcase-add-btn:hover { background: var(--gold-lt); }
   </style>
 </head>
 <body>
@@ -603,63 +610,63 @@
   </div>
   <div class="showcase-track-wrap">
     <div class="showcase-track" id="showcaseTrack">
-      <!-- Original slides -->
-      <div class="showcase-slide" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})">
-        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet</div><div class="showcase-slide-price">R150</div></div>
+      <!-- Original set -->
+      <div class="showcase-slide">
+        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet','R150','jewellery-gold-bracelet.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})">
-        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Sleepers</div><div class="showcase-slide-price">R180</div></div>
+      <div class="showcase-slide">
+        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Sleepers</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Sleepers','R180','jewellery-gold-sleepers.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
-        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-price">R450</div></div>
+      <div class="showcase-slide">
+        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Spicebomb','R450','fragrance-spicebomb.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
-        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-price">R450</div></div>
+      <div class="showcase-slide">
+        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Creed Aventus','R450','fragrance-creed-aventus.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
-        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-price">R450</div></div>
+      <div class="showcase-slide">
+        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Versace Eros Blue','R450','fragrance-versace-eros.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
-        <img src="fragrance-paco-rabanne.jpeg" alt="1 Million Man" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">1 Million Man</div><div class="showcase-slide-price">R450</div></div>
+      <div class="showcase-slide">
+        <img src="fragrance-paco-rabanne.jpeg" alt="1 Million Man" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">1 Million Man</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('1 Million Man','R450','fragrance-paco-rabanne.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
-        <img src="fragrance-lv-imagination.jpeg" alt="LV Imagination" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">LV Imagination</div><div class="showcase-slide-price">R450</div></div>
+      <div class="showcase-slide">
+        <img src="fragrance-lv-imagination.jpeg" alt="LV Imagination" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">LV Imagination</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('LV Imagination','R450','fragrance-lv-imagination.jpeg')">+</button></div></div>
       </div>
       <!-- Duplicate set for seamless loop -->
-      <div class="showcase-slide" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})">
-        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet</div><div class="showcase-slide-price">R150</div></div>
+      <div class="showcase-slide">
+        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet','R150','jewellery-gold-bracelet.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})">
-        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Sleepers</div><div class="showcase-slide-price">R180</div></div>
+      <div class="showcase-slide">
+        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Sleepers</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Sleepers','R180','jewellery-gold-sleepers.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
-        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-price">R450</div></div>
+      <div class="showcase-slide">
+        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Spicebomb','R450','fragrance-spicebomb.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
-        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-price">R450</div></div>
+      <div class="showcase-slide">
+        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Creed Aventus','R450','fragrance-creed-aventus.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
-        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-price">R450</div></div>
+      <div class="showcase-slide">
+        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Versace Eros Blue','R450','fragrance-versace-eros.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
-        <img src="fragrance-paco-rabanne.jpeg" alt="1 Million Man" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">1 Million Man</div><div class="showcase-slide-price">R450</div></div>
+      <div class="showcase-slide">
+        <img src="fragrance-paco-rabanne.jpeg" alt="1 Million Man" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">1 Million Man</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('1 Million Man','R450','fragrance-paco-rabanne.jpeg')">+</button></div></div>
       </div>
-      <div class="showcase-slide" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})">
-        <img src="fragrance-lv-imagination.jpeg" alt="LV Imagination" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">LV Imagination</div><div class="showcase-slide-price">R450</div></div>
+      <div class="showcase-slide">
+        <img src="fragrance-lv-imagination.jpeg" alt="LV Imagination" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">LV Imagination</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('LV Imagination','R450','fragrance-lv-imagination.jpeg')">+</button></div></div>
       </div>
     </div>
   </div>
@@ -945,7 +952,10 @@
   </div>
 
   <div class="cart-footer">
-    <a href="#" class="cart-back-link" onclick="hideOrderForm(event)">← Back to order list</a>
+    <div style="display:none;" class="cart-back-links" id="cartBackLinks">
+      <a href="#" onclick="hideOrderForm(event)" style="font-size:12px;color:var(--gold);text-decoration:none;font-weight:700;margin-right:16px;">← Back to list</a>
+      <a href="#" onclick="closeCart(); return false;" style="font-size:12px;color:var(--muted);text-decoration:none;font-weight:700;">+ Add More Products</a>
+    </div>
 
     <div class="cart-step-1">
       <div class="cart-step-1-total">
@@ -953,7 +963,7 @@
         <span class="cart-step-1-total-amt" id="cartTotalStep1">R0</span>
       </div>
       <button class="cart-place-order-btn" onclick="showOrderForm()">Proceed to Send Order →</button>
-      <a href="#" class="btn-continue-shopping" onclick="closeCart(); return false;">Continue Shopping</a>
+      <a href="#" class="btn-continue-shopping" onclick="closeCart(); return false;">← Add More Products</a>
     </div>
 
     <div id="cartTotalRow" class="cart-total-row">
