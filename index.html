@@ -49,6 +49,51 @@
     }
     .nav-links a:hover { color: var(--gold); }
 
+    /* ── HAMBURGER ── */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--cream); border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu dropdown */
+    .mobile-menu {
+      display: none; position: fixed;
+      top: 65px; left: 0; right: 0;
+      background: rgba(18,14,7,0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 99; padding: 16px 20px 20px;
+      flex-direction: column; gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--cream); font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      text-decoration: none; padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--gold); }
+    .mobile-menu .mobile-cart-btn {
+      margin-top: 8px;
+      background: var(--gold); color: #1a0e02;
+      border: none; border-radius: 3px;
+      padding: 14px; text-align: center;
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; width: 100%;
+    }
+
     .cart-nav-btn {
       background: none; border: 1.5px solid var(--border);
       border-radius: 4px; padding: 7px 14px;
@@ -443,8 +488,8 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 12px 20px; }
-      .nav-links { gap: 12px; }
-      .nav-links li:not(:last-child):not(:nth-last-child(2)) { display: none; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
       .hero { grid-template-columns: 1fr; padding: 40px 20px 48px; text-align: center; gap: 28px; }
       .hero-photo { order: -1; }
       .hero-photo-wrap { max-width: 220px; }
@@ -487,8 +532,20 @@
       </button>
     </li>
   </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 <div class="gold-line"></div>
+
+<!-- ── MOBILE MENU ── -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#jewellery" onclick="closeMenu()">💎 Jewellery</a>
+  <a href="#fragrances" onclick="closeMenu()">🥃 Fragrances</a>
+  <a href="#lifestyle" onclick="closeMenu()">✨ More Products</a>
+  <a href="#about" onclick="closeMenu()">👋 About Riette</a>
+  <button class="mobile-cart-btn" onclick="closeMenu(); openCart();">🛒 Order List</button>
+</div>
 
 <!-- ── HERO ── -->
 <div class="hero">
@@ -1013,8 +1070,20 @@
   }
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeCart();
+    if (e.key === 'Escape') { closeCart(); closeMenu(); }
   });
+
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+  }
 </script>
 
 </body>
