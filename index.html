@@ -34,16 +34,15 @@
     /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(18,14,7,0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 32px;
+      background: #F5EFE0;
+      border-bottom: 2px solid var(--gold);
+      padding: 10px 32px;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .nav-logo { height: 56px; border-radius: 6px; }
+    .nav-logo { height: 60px; border-radius: 0; }
     .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
     .nav-links a {
-      color: var(--muted); font-size: 11px; font-weight: 700;
+      color: #4a3010; font-size: 11px; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.12em;
       text-decoration: none; transition: color 0.2s;
     }
@@ -72,8 +71,8 @@
     /* Mobile second nav row */
     .nav-mobile-links {
       display: none;
-      background: rgba(18,14,7,0.97);
-      border-bottom: 1px solid var(--border);
+      background: #F5EFE0;
+      border-bottom: 2px solid var(--gold);
       padding: 0 16px;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
@@ -88,7 +87,7 @@
     }
     .nav-mobile-links a {
       display: block; padding: 13px 14px;
-      color: var(--muted); font-size: 11px; font-weight: 700;
+      color: #4a3010; font-size: 11px; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.1em;
       text-decoration: none; transition: color 0.2s;
       border-bottom: 2px solid transparent;
@@ -104,16 +103,16 @@
     }
 
     .cart-nav-btn {
-      background: none; border: 1.5px solid var(--border);
-      border-radius: 4px; padding: 7px 14px;
+      background: var(--gold); border: none;
+      border-radius: 4px; padding: 9px 16px;
       cursor: pointer; position: relative;
       display: flex; align-items: center; gap: 6px;
       font-family: 'Raleway', sans-serif;
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--muted); transition: all 0.2s;
+      color: #1a0e02; transition: all 0.2s;
     }
-    .cart-nav-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .cart-nav-btn:hover { background: #b07e20; }
     .cart-badge {
       position: absolute; top: -8px; right: -8px;
       background: var(--gold); color: #1a0e02;
@@ -596,7 +595,6 @@
     <span class="cart-badge-mob" id="cartBadgeMob"></span>
   </button>
 </nav>
-<div class="gold-line"></div>
 
 <!-- ── MOBILE NAV LINKS (second row, phones only) ── -->
 <div class="nav-mobile-links">
