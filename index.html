@@ -606,8 +606,8 @@
     .fd-track-wrap::after {
       content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
     }
-    .fd-track-wrap::before { left: 0; background: linear-gradient(to right, #EAF0FA, transparent); }
-    .fd-track-wrap::after  { right: 0; background: linear-gradient(to left,  #EAF0FA, transparent); }
+    .fd-track-wrap::before { left: 0; background: linear-gradient(to right, var(--bg2), transparent); }
+    .fd-track-wrap::after  { right: 0; background: linear-gradient(to left,  var(--bg2), transparent); }
     .fd-track {
       display: flex; gap: 20px; width: max-content;
       animation: slideLoop 32s linear infinite;
@@ -615,28 +615,28 @@
     .fd-track:hover { animation-play-state: paused; }
     .fd-slide {
       width: 200px; flex-shrink: 0;
-      background: #fff; border: 1px solid #a0b4d6;
+      background: var(--bg3); border: 1px solid var(--border);
       border-radius: 4px; overflow: hidden;
       transition: border-color 0.2s, transform 0.2s;
       display: flex; flex-direction: column;
     }
-    .fd-slide:hover { border-color: #1a3a6e; transform: translateY(-4px); }
+    .fd-slide:hover { border-color: var(--gold); transform: translateY(-4px); }
     .fd-slide img { width: 100%; height: 200px; object-fit: cover; display: block; }
     .fd-slide-info { padding: 12px 14px; display: flex; flex-direction: column; flex: 1; }
-    .fd-slide-name { font-family: 'Playfair Display', serif; font-size: 13px; color: #1a3a6e; font-weight: 600; margin-bottom: 2px; }
+    .fd-slide-name { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--white); font-weight: 600; margin-bottom: 2px; }
     .fd-slide-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
-    .fd-slide-price { font-size: 13px; font-weight: 800; color: #1a3a6e; }
+    .fd-slide-price { font-size: 13px; font-weight: 800; color: var(--gold); }
     .fd-add-btn {
-      background: #1a3a6e; color: #fff; border: none;
+      background: var(--gold); color: #1a0e02; border: none;
       border-radius: 3px; width: 30px; height: 30px;
       font-size: 18px; font-weight: 700; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
       transition: background 0.2s; flex-shrink: 0; line-height: 1;
     }
-    .fd-add-btn:hover { background: #2a5aae; }
+    .fd-add-btn:hover { background: var(--gold-lt); }
     .fd-dupes { display: contents; }
     @media (max-width: 768px) {
-      .fd-track-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding: 0 0 12px; }
+      .fd-track-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding: 0 0 12px; background: var(--bg2); }
       .fd-track-wrap::before, .fd-track-wrap::after { display: none; }
       .fd-track { animation: none; padding: 0 16px; gap: 12px; }
       .fd-slide { scroll-snap-align: start; width: 160px; }
@@ -650,7 +650,7 @@
 <nav>
   <img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="nav-logo" />
   <ul class="nav-links">
-    <li><a href="#fathers-day" style="color:#1a3a6e;font-weight:800;">🎁 Father's Day</a></li>
+    <li><a href="#fathers-day" style="color:var(--gold);font-weight:800;">🎁 Father's Day</a></li>
     <li><a href="#fragrances">Men's Fragrances</a></li>
     <li><a href="#gift-sets">Miniature Gift Sets</a></li>
     <li><a href="#jewellery">Jewellery</a></li>
@@ -672,7 +672,7 @@
 <!-- ── MOBILE NAV LINKS (second row, phones only) ── -->
 <div class="nav-mobile-links">
   <ul>
-    <li><a href="#fathers-day" style="color:#1a3a6e;font-weight:800;">🎁 Father's Day</a></li>
+    <li><a href="#fathers-day" style="color:var(--gold);font-weight:800;">🎁 Father's Day</a></li>
     <li><a href="#fragrances">🥃 Men's Fragrances</a></li>
     <li><a href="#gift-sets">🎁 Miniature Gift Sets</a></li>
     <li><a href="#jewellery">💎 Jewellery</a></li>
@@ -701,11 +701,11 @@
 </div>
 
 <!-- ── FATHER'S DAY SPECIAL ── -->
-<section id="fathers-day" style="background:#EAF0FA; border-top:3px solid #1a3a6e; border-bottom:3px solid #1a3a6e; padding:48px 0;">
+<section id="fathers-day" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:48px 0;">
   <div class="showcase-header">
-    <div class="section-eyebrow" style="color:#1a3a6e;">BellaTia Jewellery · Limited Time</div>
-    <h2 class="section-title" style="color:#1a3a6e;">🎁 Father's Day Special</h2>
-    <p class="section-desc" style="color:#2a4a7e;">Strong. Timeless. Just like Dad. — Order before 21 June · Courier Nationwide</p>
+    <div class="section-eyebrow">BellaTia Jewellery · Limited Time</div>
+    <h2 class="section-title">🎁 Father's Day Special</h2>
+    <p class="section-desc">Strong. Timeless. Just like Dad. — Order before 21 June · Courier Nationwide</p>
   </div>
   <div class="fd-track-wrap">
     <div class="fd-track">
