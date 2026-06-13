@@ -599,6 +599,41 @@
       transition: background 0.2s; flex-shrink: 0; line-height: 1;
     }
     .showcase-add-btn:hover { background: var(--gold-lt); }
+
+    /* ── FATHER'S DAY SLIDER ── */
+    .fd-track-wrap { overflow: hidden; position: relative; }
+    .fd-track-wrap::before,
+    .fd-track-wrap::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+    }
+    .fd-track-wrap::before { left: 0; background: linear-gradient(to right, #EAF0FA, transparent); }
+    .fd-track-wrap::after  { right: 0; background: linear-gradient(to left,  #EAF0FA, transparent); }
+    .fd-track {
+      display: flex; gap: 20px; width: max-content;
+      animation: slideLoop 32s linear infinite;
+    }
+    .fd-track:hover { animation-play-state: paused; }
+    .fd-slide {
+      width: 200px; flex-shrink: 0;
+      background: #fff; border: 1px solid #a0b4d6;
+      border-radius: 4px; overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .fd-slide:hover { border-color: #1a3a6e; transform: translateY(-4px); }
+    .fd-slide img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .fd-slide-info { padding: 12px 14px; display: flex; flex-direction: column; flex: 1; }
+    .fd-slide-name { font-family: 'Playfair Display', serif; font-size: 13px; color: #1a3a6e; font-weight: 600; margin-bottom: 2px; }
+    .fd-slide-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+    .fd-slide-price { font-size: 13px; font-weight: 800; color: #1a3a6e; }
+    .fd-add-btn {
+      background: #1a3a6e; color: #fff; border: none;
+      border-radius: 3px; width: 30px; height: 30px;
+      font-size: 18px; font-weight: 700; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s; flex-shrink: 0; line-height: 1;
+    }
+    .fd-add-btn:hover { background: #2a5aae; }
   </style>
 </head>
 <body>
@@ -658,104 +693,29 @@
 </div>
 
 <!-- ── FATHER'S DAY SPECIAL ── -->
-<section id="fathers-day" style="background:#EAF0FA; border-top:3px solid #1a3a6e; border-bottom:3px solid #1a3a6e;">
-  <div class="section-inner">
+<section id="fathers-day" style="background:#EAF0FA; border-top:3px solid #1a3a6e; border-bottom:3px solid #1a3a6e; padding:48px 0;">
+  <div class="showcase-header">
     <div class="section-eyebrow" style="color:#1a3a6e;">BellaTia Jewellery · Limited Time</div>
     <h2 class="section-title" style="color:#1a3a6e;">🎁 Father's Day Special</h2>
     <p class="section-desc" style="color:#2a4a7e;">Strong. Timeless. Just like Dad. — Order before 21 June · Courier Nationwide</p>
-    <div class="product-grid">
-
-      <div class="product-card">
-        <img src="fathers-day-figaro-bracelet-6mm.jpeg" alt="Figaro Bracelet 6mm" />
-        <div class="product-info">
-          <div class="badge" style="background:#1a3a6e;color:#fff;">Father's Day Special</div>
-          <div class="product-name">Figaro Bracelet 6mm</div>
-          <div class="product-sub">Durable Stainless Steel · Tarnish Free & Waterproof</div>
-          <div class="product-footer">
-            <span class="product-price">R200</span>
-            <button class="add-btn" onclick="addToCart('Figaro Bracelet 6mm — Father\'s Day Special','R200','fathers-day-figaro-bracelet-6mm.jpeg')">+ Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="fathers-day-figaro-chain-10mm.jpeg" alt="10mm Figaro Chain" />
-        <div class="product-info">
-          <div class="badge" style="background:#1a3a6e;color:#fff;">Father's Day Special</div>
-          <div class="product-name">10mm Figaro Chain</div>
-          <div class="product-sub">Durable Stainless Steel · Tarnish Free & Waterproof</div>
-          <div class="product-footer">
-            <span class="product-price">R250</span>
-            <button class="add-btn" onclick="addToCart('10mm Figaro Chain — Father\'s Day Special','R250','fathers-day-figaro-chain-10mm.jpeg')">+ Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="fathers-day-cuban-bracelet-10mm.jpeg" alt="Cuban Bracelet 10mm" />
-        <div class="product-info">
-          <div class="badge" style="background:#1a3a6e;color:#fff;">Father's Day Special</div>
-          <div class="product-name">Cuban Bracelet 10mm</div>
-          <div class="product-sub">Durable Stainless Steel · Tarnish Free & Waterproof</div>
-          <div class="product-footer">
-            <span class="product-price">R200</span>
-            <button class="add-btn" onclick="addToCart('Cuban Bracelet 10mm — Father\'s Day Special','R200','fathers-day-cuban-bracelet-10mm.jpeg')">+ Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="fathers-day-byzantine-bracelet.jpeg" alt="Black & Silver Byzantine Bracelet" />
-        <div class="product-info">
-          <div class="badge" style="background:#1a3a6e;color:#fff;">Father's Day Special</div>
-          <div class="product-name">Black & Silver Byzantine Bracelet</div>
-          <div class="product-sub">Durable Stainless Steel · Tarnish Free & Waterproof</div>
-          <div class="product-footer">
-            <span class="product-price">R250</span>
-            <button class="add-btn" onclick="addToCart('Black & Silver Byzantine Bracelet — Father\'s Day Special','R250','fathers-day-byzantine-bracelet.jpeg')">+ Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="fathers-day-chain-fidget-ring.jpeg" alt="Chain Fidget Ring" />
-        <div class="product-info">
-          <div class="badge" style="background:#1a3a6e;color:#fff;">Father's Day Special</div>
-          <div class="product-name">Chain Fidget Ring</div>
-          <div class="product-sub">Stainless Steel · Smooth & Comfortable Fit</div>
-          <div class="product-footer">
-            <span class="product-price">R150</span>
-            <button class="add-btn" onclick="addToCart('Chain Fidget Ring — Father\'s Day Special','R150','fathers-day-chain-fidget-ring.jpeg')">+ Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="fathers-day-prayer-ring.jpeg" alt="Our Fathers Prayer Ring" />
-        <div class="product-info">
-          <div class="badge" style="background:#1a3a6e;color:#fff;">Father's Day Special</div>
-          <div class="product-name">Our Fathers Prayer Ring</div>
-          <div class="product-sub">Stainless Steel · Engraved Prayer · Meaningful Gift</div>
-          <div class="product-footer">
-            <span class="product-price">R150</span>
-            <button class="add-btn" onclick="addToCart('Our Fathers Prayer Ring — Father\'s Day Special','R150','fathers-day-prayer-ring.jpeg')">+ Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card">
-        <img src="fathers-day-silver-black-ring.jpeg" alt="Silver and Black Ring" />
-        <div class="product-info">
-          <div class="badge" style="background:#1a3a6e;color:#fff;">Father's Day Special</div>
-          <div class="product-name">Silver & Black Ring</div>
-          <div class="product-sub">Stainless Steel · Sleek & Modern Design</div>
-          <div class="product-footer">
-            <span class="product-price">R120</span>
-            <button class="add-btn" onclick="addToCart('Silver & Black Ring — Father\'s Day Special','R120','fathers-day-silver-black-ring.jpeg')">+ Add to Order</button>
-          </div>
-        </div>
-      </div>
-
+  </div>
+  <div class="fd-track-wrap">
+    <div class="fd-track">
+      <div class="fd-slide"><img src="fathers-day-figaro-bracelet-6mm.jpeg" alt="Figaro Bracelet 6mm" /><div class="fd-slide-info"><div class="fd-slide-name">Figaro Bracelet 6mm</div><div class="fd-slide-footer"><span class="fd-slide-price">R200</span><button class="fd-add-btn" onclick="addToCart('Figaro Bracelet 6mm — Father\'s Day Special','R200','fathers-day-figaro-bracelet-6mm.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-figaro-chain-10mm.jpeg" alt="10mm Figaro Chain" /><div class="fd-slide-info"><div class="fd-slide-name">10mm Figaro Chain</div><div class="fd-slide-footer"><span class="fd-slide-price">R250</span><button class="fd-add-btn" onclick="addToCart('10mm Figaro Chain — Father\'s Day Special','R250','fathers-day-figaro-chain-10mm.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-cuban-bracelet-10mm.jpeg" alt="Cuban Bracelet 10mm" /><div class="fd-slide-info"><div class="fd-slide-name">Cuban Bracelet 10mm</div><div class="fd-slide-footer"><span class="fd-slide-price">R200</span><button class="fd-add-btn" onclick="addToCart('Cuban Bracelet 10mm — Father\'s Day Special','R200','fathers-day-cuban-bracelet-10mm.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-byzantine-bracelet.jpeg" alt="Black & Silver Byzantine Bracelet" /><div class="fd-slide-info"><div class="fd-slide-name">Black & Silver Byzantine Bracelet</div><div class="fd-slide-footer"><span class="fd-slide-price">R250</span><button class="fd-add-btn" onclick="addToCart('Black & Silver Byzantine Bracelet — Father\'s Day Special','R250','fathers-day-byzantine-bracelet.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-chain-fidget-ring.jpeg" alt="Chain Fidget Ring" /><div class="fd-slide-info"><div class="fd-slide-name">Chain Fidget Ring</div><div class="fd-slide-footer"><span class="fd-slide-price">R150</span><button class="fd-add-btn" onclick="addToCart('Chain Fidget Ring — Father\'s Day Special','R150','fathers-day-chain-fidget-ring.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-prayer-ring.jpeg" alt="Our Fathers Prayer Ring" /><div class="fd-slide-info"><div class="fd-slide-name">Our Fathers Prayer Ring</div><div class="fd-slide-footer"><span class="fd-slide-price">R150</span><button class="fd-add-btn" onclick="addToCart('Our Fathers Prayer Ring — Father\'s Day Special','R150','fathers-day-prayer-ring.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-silver-black-ring.jpeg" alt="Silver & Black Ring" /><div class="fd-slide-info"><div class="fd-slide-name">Silver & Black Ring</div><div class="fd-slide-footer"><span class="fd-slide-price">R120</span><button class="fd-add-btn" onclick="addToCart('Silver & Black Ring — Father\'s Day Special','R120','fathers-day-silver-black-ring.jpeg')">+</button></div></div></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="fd-slide"><img src="fathers-day-figaro-bracelet-6mm.jpeg" alt="Figaro Bracelet 6mm" /><div class="fd-slide-info"><div class="fd-slide-name">Figaro Bracelet 6mm</div><div class="fd-slide-footer"><span class="fd-slide-price">R200</span><button class="fd-add-btn" onclick="addToCart('Figaro Bracelet 6mm — Father\'s Day Special','R200','fathers-day-figaro-bracelet-6mm.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-figaro-chain-10mm.jpeg" alt="10mm Figaro Chain" /><div class="fd-slide-info"><div class="fd-slide-name">10mm Figaro Chain</div><div class="fd-slide-footer"><span class="fd-slide-price">R250</span><button class="fd-add-btn" onclick="addToCart('10mm Figaro Chain — Father\'s Day Special','R250','fathers-day-figaro-chain-10mm.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-cuban-bracelet-10mm.jpeg" alt="Cuban Bracelet 10mm" /><div class="fd-slide-info"><div class="fd-slide-name">Cuban Bracelet 10mm</div><div class="fd-slide-footer"><span class="fd-slide-price">R200</span><button class="fd-add-btn" onclick="addToCart('Cuban Bracelet 10mm — Father\'s Day Special','R200','fathers-day-cuban-bracelet-10mm.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-byzantine-bracelet.jpeg" alt="Black & Silver Byzantine Bracelet" /><div class="fd-slide-info"><div class="fd-slide-name">Black & Silver Byzantine Bracelet</div><div class="fd-slide-footer"><span class="fd-slide-price">R250</span><button class="fd-add-btn" onclick="addToCart('Black & Silver Byzantine Bracelet — Father\'s Day Special','R250','fathers-day-byzantine-bracelet.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-chain-fidget-ring.jpeg" alt="Chain Fidget Ring" /><div class="fd-slide-info"><div class="fd-slide-name">Chain Fidget Ring</div><div class="fd-slide-footer"><span class="fd-slide-price">R150</span><button class="fd-add-btn" onclick="addToCart('Chain Fidget Ring — Father\'s Day Special','R150','fathers-day-chain-fidget-ring.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-prayer-ring.jpeg" alt="Our Fathers Prayer Ring" /><div class="fd-slide-info"><div class="fd-slide-name">Our Fathers Prayer Ring</div><div class="fd-slide-footer"><span class="fd-slide-price">R150</span><button class="fd-add-btn" onclick="addToCart('Our Fathers Prayer Ring — Father\'s Day Special','R150','fathers-day-prayer-ring.jpeg')">+</button></div></div></div>
+      <div class="fd-slide"><img src="fathers-day-silver-black-ring.jpeg" alt="Silver & Black Ring" /><div class="fd-slide-info"><div class="fd-slide-name">Silver & Black Ring</div><div class="fd-slide-footer"><span class="fd-slide-price">R120</span><button class="fd-add-btn" onclick="addToCart('Silver & Black Ring — Father\'s Day Special','R120','fathers-day-silver-black-ring.jpeg')">+</button></div></div></div>
     </div>
   </div>
 </section>
