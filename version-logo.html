@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Hustle Hub SA — Premium Lifestyle Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #FBF6ED;
+      --bg2:       #F5EFE0;
+      --bg3:       #EDE6D3;
+      --gold:      #C9922A;
+      --gold-lt:   #E8C27A;
+      --cream:     #F0E4C8;
+      --muted:     #8B6848;
+      --border:    #D9CCAF;
+      --white:     #2A1808;
+      --wa:        #25D366;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: var(--bg);
+      color: #3a2010;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: #F5EFE0;
+      border-bottom: 2px solid var(--gold);
+      padding: 10px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo { height: 60px; border-radius: 0; }
+    .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+    .nav-links a {
+      color: #4a3010; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* Mobile top cart button */
+    .mobile-top-cart {
+      display: none;
+      align-items: center; gap: 6px;
+      background: var(--gold); color: #1a0e02;
+      border: none; border-radius: 4px;
+      padding: 9px 14px; cursor: pointer;
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      position: relative;
+    }
+    .mobile-top-cart .cart-badge-mob {
+      position: absolute; top: -7px; right: -7px;
+      background: #1a0e02; color: var(--gold);
+      border-radius: 50%; width: 18px; height: 18px;
+      font-size: 10px; font-weight: 700;
+      display: none; align-items: center; justify-content: center;
+    }
+
+    /* Mobile second nav row */
+    .nav-mobile-links {
+      display: none;
+      background: #F5EFE0;
+      border-bottom: 2px solid var(--gold);
+      padding: 0 16px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      position: sticky; top: 62px; z-index: 99;
+    }
+    .nav-mobile-links::-webkit-scrollbar { display: none; }
+    .nav-mobile-links ul {
+      display: flex; list-style: none; gap: 0;
+      white-space: nowrap; align-items: center;
+      min-width: max-content;
+    }
+    .nav-mobile-links a {
+      display: block; padding: 13px 14px;
+      color: #4a3010; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      text-decoration: none; transition: color 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-mobile-links a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+    .nav-mobile-links .mobile-cart-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-left: 6px; padding: 8px 14px;
+      background: var(--gold); color: #1a0e02;
+      border-radius: 3px; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      text-decoration: none; border-bottom: none; white-space: nowrap;
+    }
+
+    .cart-nav-btn {
+      background: var(--gold); border: none;
+      border-radius: 4px; padding: 9px 16px;
+      cursor: pointer; position: relative;
+      display: flex; align-items: center; gap: 6px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #1a0e02; transition: all 0.2s;
+    }
+    .cart-nav-btn:hover { background: #b07e20; }
+    .cart-badge {
+      position: absolute; top: -8px; right: -8px;
+      background: var(--gold); color: #1a0e02;
+      border-radius: 50%; width: 20px; height: 20px;
+      font-size: 10px; font-weight: 700;
+      display: none; align-items: center; justify-content: center;
+    }
+
+    /* ── GOLD LINE ── */
+    .gold-line { height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      align-items: center; gap: 60px;
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px 32px;
+    }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 4.5vw, 52px);
+      font-weight: 700; line-height: 1.15;
+      color: var(--white); margin-bottom: 20px;
+    }
+    .hero-title span { color: var(--gold); }
+    .hero-desc {
+      font-size: 15px; color: var(--muted); line-height: 1.8;
+      margin-bottom: 32px; max-width: 420px;
+    }
+    .hero-photo { display: flex; justify-content: center; align-items: center; }
+    .hero-photo-wrap {
+      position: relative; display: inline-block;
+      max-width: 300px; width: 100%;
+    }
+    .hero-photo-wrap img {
+      width: 100%; display: block;
+      border-radius: 14px;
+      box-shadow:
+        0 0 0 2px #C9922A,
+        0 0 14px 2px rgba(201,146,42,0.45),
+        0 0 35px 4px rgba(201,146,42,0.18),
+        0 10px 28px rgba(0,0,0,0.18);
+    }
+    .hero-photo-wrap::before { display: none; }
+    .hero-photo-wrap::after { display: none; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none;
+      padding: 13px 26px; border-radius: 3px;
+      cursor: pointer; border: none; transition: all 0.2s;
+    }
+    .btn-gold { background: var(--gold); color: #1a0e02; }
+    .btn-gold:hover { background: var(--gold-lt); }
+    .btn-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); }
+    .btn-outline:hover { background: var(--gold); color: #1a0e02; }
+    .btn-wa { background: var(--wa); color: #fff; }
+    .btn-wa:hover { background: #1da851; }
+
+    /* ── SECTION ── */
+    section { padding: 72px 32px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700; color: var(--white);
+      margin-bottom: 12px;
+    }
+    .section-desc { color: var(--muted); max-width: 600px; margin-bottom: 40px; font-size: 14px; }
+
+    /* ── CATEGORIES ── */
+    .categories-bg { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 14px;
+    }
+    .cat-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 4px; padding: 22px 18px;
+      text-decoration: none; transition: all 0.2s; display: block;
+    }
+    .cat-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .cat-icon { font-size: 26px; margin-bottom: 10px; }
+    .cat-name { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .cat-sub { font-size: 11px; color: var(--muted); }
+
+    /* ── PRODUCT CARDS ── */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 4px; overflow: hidden;
+      transition: all 0.25s; display: flex; flex-direction: column;
+    }
+    .product-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(201,146,42,0.12); }
+    .product-card img { width: 100%; display: block; flex-shrink: 0; }
+    .product-info { padding: 18px 20px; display: flex; flex-direction: column; flex: 1; }
+    .product-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+    .product-sub { font-size: 12px; color: var(--muted); margin-bottom: 14px; flex: 1; }
+    .product-footer { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .product-price { font-size: 18px; font-weight: 800; color: var(--gold); flex-shrink: 0; }
+    .add-btn {
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #1a0e02;
+      background: var(--gold); border: none;
+      padding: 8px 16px; border-radius: 3px; cursor: pointer;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .add-btn:hover { background: var(--gold-lt); }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
+    }
+    .badge-gold { background: rgba(201,146,42,0.15); color: var(--gold); border: 1px solid var(--gold); }
+
+    /* ── COMING SOON CARDS ── */
+    .coming-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+    .coming-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 4px; padding: 26px 22px;
+      transition: all 0.2s; display: block; text-decoration: none;
+    }
+    .coming-card:hover { border-color: var(--gold); }
+    .coming-icon { font-size: 28px; margin-bottom: 12px; }
+    .coming-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+    .coming-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+    .enquire-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gold);
+      background: transparent; border: 1px solid var(--border);
+      padding: 7px 14px; border-radius: 3px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .enquire-btn:hover { border-color: var(--gold); background: rgba(201,146,42,0.08); }
+
+    /* ── HIGHLIGHT STRIP ── */
+    .highlight-strip {
+      background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 28px 32px;
+    }
+    .highlight-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; }
+    .highlight-item { text-align: center; }
+    .highlight-icon { font-size: 20px; margin-bottom: 5px; }
+    .highlight-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .highlight-value { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: center; }
+    .about-photo-wrap {
+      position: relative; display: inline-block; max-width: 260px; width: 100%;
+    }
+    .about-photo-wrap img {
+      width: 100%; display: block;
+      border-radius: 14px;
+      box-shadow:
+        0 0 0 2px #C9922A,
+        0 0 14px 2px rgba(201,146,42,0.45),
+        0 0 35px 4px rgba(201,146,42,0.18),
+        0 10px 28px rgba(0,0,0,0.18);
+    }
+    .about-photo-wrap::before { display: none; }
+    .about-photo-wrap::after { display: none; }
+    .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 16px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      padding: 48px 32px; text-align: center;
+    }
+    .footer-logo { height: 80px; margin-bottom: 18px; border-radius: 8px; opacity: 0.9; }
+    .footer-tagline { font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 15px; margin-bottom: 20px; }
+    .footer-contact { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .footer-contact a { color: var(--gold); text-decoration: none; }
+    .footer-copy { font-size: 11px; color: var(--muted); margin-top: 20px; letter-spacing: 0.06em; }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 99;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--wa); display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.4); transition: all 0.2s; text-decoration: none;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+    .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+    /* ── CART DRAWER ── */
+    .cart-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(42,24,8,0.5); z-index: 200;
+    }
+    .cart-overlay.open { display: block; }
+
+    .cart-drawer {
+      position: fixed; top: 0; right: -520px;
+      width: 480px; max-width: 100vw;
+      height: 100vh; height: 100dvh;
+      background: var(--bg2); z-index: 300;
+      display: flex; flex-direction: column;
+      border-left: 1px solid var(--border);
+      box-shadow: -8px 0 48px rgba(0,0,0,0.5);
+      transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    .cart-drawer.open { right: 0; }
+
+    .cart-header {
+      padding: 20px 22px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cart-header h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); }
+    .cart-header-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .cart-close {
+      background: var(--bg3); border: 1px solid var(--border);
+      width: 34px; height: 34px; border-radius: 50%;
+      font-size: 16px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); transition: all 0.2s;
+    }
+    .cart-close:hover { border-color: var(--gold); color: var(--gold); }
+
+    .cart-items { flex: 1; overflow-y: auto; padding: 8px 22px; }
+
+    .cart-empty { text-align: center; padding: 48px 16px; }
+    .cart-empty-icon { font-size: 40px; margin-bottom: 12px; opacity: 0.3; }
+    .cart-empty p { font-size: 14px; color: var(--muted); line-height: 1.8; }
+
+    .cart-item {
+      display: flex; gap: 14px;
+      padding: 16px 0; border-bottom: 1px solid var(--border); align-items: flex-start;
+    }
+    .cart-item-img {
+      width: 64px; height: 64px; border-radius: 4px;
+      background: var(--bg3); overflow: hidden; flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+    .cart-item-img img { width: 100%; height: 100%; object-fit: cover; }
+    .cart-item-info { flex: 1; min-width: 0; }
+    .cart-item-name { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--white); margin-bottom: 2px; }
+    .cart-item-price { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .cart-item-row { display: flex; align-items: center; gap: 8px; }
+    .qty-btn {
+      background: var(--bg3); border: 1px solid var(--border);
+      width: 26px; height: 26px; border-radius: 50%;
+      font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      color: var(--cream); font-weight: 700; transition: all 0.2s; line-height: 1;
+    }
+    .qty-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .qty-num { font-size: 13px; font-weight: 600; color: var(--cream); min-width: 16px; text-align: center; }
+    .cart-item-remove {
+      background: none; border: none; color: var(--muted);
+      font-size: 11px; cursor: pointer; margin-left: auto;
+      opacity: 0.6; transition: opacity 0.2s; font-family: 'Raleway', sans-serif;
+    }
+    .cart-item-remove:hover { opacity: 1; color: #e57373; }
+
+    .cart-footer {
+      padding: 16px 22px 24px;
+      border-top: 1px solid var(--border);
+      background: var(--bg); flex-shrink: 0;
+    }
+    .cart-total-row {
+      display: none; justify-content: space-between; align-items: baseline; margin-bottom: 14px;
+    }
+    .cart-total-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+    .cart-total-amount { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--gold); font-weight: 600; }
+
+    .cart-step-1 { }
+    .cart-step-1-total { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+    .cart-step-1-total-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+    .cart-step-1-total-amt { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); }
+
+    .cart-place-order-btn {
+      display: block; width: 100%;
+      background: var(--gold); color: #1a0e02;
+      border: none; padding: 14px;
+      border-radius: 3px; font-family: 'Raleway', sans-serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; margin-bottom: 10px; transition: background 0.2s;
+    }
+    .cart-place-order-btn:hover { background: var(--gold-lt); }
+
+    .btn-continue-shopping {
+      display: block; text-align: center;
+      font-size: 11px; font-weight: 700; color: var(--muted);
+      letter-spacing: 0.06em; text-decoration: none;
+      padding: 10px; border: 1px solid var(--border);
+      border-radius: 3px; transition: all 0.2s;
+    }
+    .btn-continue-shopping:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Two-step — hide/show */
+    .cart-drawer .cart-step-1 { display: block; }
+    .cart-drawer.order-step .cart-step-1 { display: none; }
+
+    #cartForm { display: none; }
+    #cartTotalRow { display: none; }
+    #cartSendBtn { display: none !important; }
+    #cartEmailBtn { display: none !important; }
+    .cart-note { display: none; font-size: 11px; color: var(--muted); text-align: center; margin-top: 10px; font-style: italic; }
+
+    .cart-drawer.order-step #cartForm { display: block; }
+    .cart-drawer.order-step #cartTotalRow { display: flex; }
+    .cart-drawer.order-step #cartSendBtn { display: flex !important; }
+    .cart-drawer.order-step #cartEmailBtn { display: flex !important; }
+    .cart-drawer.order-step .cart-note { display: block; }
+
+    .cart-back-links { display: none; margin-bottom: 14px; }
+    .cart-drawer.order-step .cart-back-links { display: block; }
+
+    .cart-form { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .cart-form-label {
+      font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 6px; margin-top: 10px; display: block;
+    }
+    .cart-input {
+      width: 100%; border: 1.5px solid var(--border);
+      border-radius: 3px; padding: 10px 12px;
+      font-family: 'Raleway', sans-serif; font-size: 13px;
+      color: var(--cream); background: var(--bg3);
+      margin-bottom: 8px; outline: none; transition: border-color 0.2s;
+    }
+    .cart-input:focus { border-color: var(--gold); }
+    .cart-input::placeholder { color: var(--muted); opacity: 0.7; }
+
+    .cart-radio-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+    .cart-radio { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--cream); cursor: pointer; }
+    .cart-radio input[type="radio"] { accent-color: var(--gold); width: 15px; height: 15px; }
+
+    .cart-delivery-info {
+      font-size: 12px; color: var(--muted);
+      background: rgba(201,146,42,0.08); border: 1px solid rgba(201,146,42,0.2);
+      border-radius: 3px; padding: 8px 12px; margin-top: 6px; line-height: 1.6;
+    }
+
+    .cart-send-btn {
+      width: 100%; justify-content: center;
+      padding: 14px; font-size: 12px; margin-bottom: 8px;
+    }
+    .btn-email-cart {
+      display: none; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 13px;
+      background: var(--bg3); color: var(--cream);
+      border: 1.5px solid var(--border);
+      border-radius: 3px; font-family: 'Raleway', sans-serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s; cursor: pointer;
+    }
+    .btn-email-cart:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── BACK TO TOP ── */
+    .back-to-top {
+      position: fixed; bottom: 28px; left: 28px; z-index: 9999;
+      width: 46px; height: 46px; border-radius: 50%;
+      background: var(--gold); border: none;
+      color: #1a0e02; font-size: 20px; font-weight: bold;
+      display: none; align-items: center; justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+      text-decoration: none; line-height: 1;
+    }
+    .back-to-top.visible { display: flex; }
+    .back-to-top:hover { background: #b8860b; color: #fff; }
+    @media (max-width: 768px) {
+      .back-to-top { bottom: 20px; left: 16px; width: 44px; height: 44px; font-size: 20px; }
+    }
+
+    /* Toast */
+    .added-notif {
+      position: fixed; bottom: 90px; left: 50%;
+      transform: translateX(-50%) translateY(16px);
+      background: var(--gold); color: #1a0e02;
+      padding: 9px 20px; border-radius: 3px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+      z-index: 600; opacity: 0; transition: all 0.3s ease;
+      pointer-events: none; white-space: nowrap;
+    }
+    .added-notif.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 10px 20px; justify-content: space-between; }
+      .nav-logo { height: 52px; }
+      .nav-links { display: none; }
+      .nav-mobile-links { display: block; }
+      .mobile-top-cart { display: flex !important; }
+      .hero { grid-template-columns: 1fr; padding: 40px 20px 48px; text-align: center; gap: 28px; }
+      .hero-photo { order: -1; }
+      .hero-photo-wrap { max-width: 220px; }
+      .about-photo-wrap { max-width: 220px; }
+      .hero-desc { margin: 0 auto 24px; max-width: 100%; }
+      .hero .btn-group { justify-content: center; }
+      section { padding: 48px 20px; }
+      .section-desc { margin-bottom: 28px; }
+      .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .about-photo-wrap { max-width: 220px; margin: 0 auto; }
+      .about-text { text-align: center; }
+      .about-text .btn { display: inline-flex; margin: 16px auto 0; }
+      .wa-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+      .cart-drawer { width: 100vw; right: -100vw; }
+      .product-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .product-name { font-size: 14px; }
+      .product-price { font-size: 15px; }
+      .add-btn { font-size: 10px; padding: 7px 10px; }
+      .coming-grid { grid-template-columns: 1fr; gap: 12px; }
+      .highlight-inner { gap: 20px; }
+      .cat-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    }
+    @media (max-width: 480px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .product-card img { max-height: 280px; object-fit: cover; }
+    }
+
+    /* ── SHOWCASE SLIDER ── */
+    .showcase {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 0;
+      overflow: hidden;
+    }
+    .showcase-header {
+      text-align: center; margin-bottom: 32px; padding: 0 32px;
+    }
+    .showcase-track-wrap { overflow: hidden; position: relative; }
+    .showcase-track-wrap::before,
+    .showcase-track-wrap::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2;
+      pointer-events: none;
+    }
+    .showcase-track-wrap::before { left: 0; background: linear-gradient(to right, var(--bg2), transparent); }
+    .showcase-track-wrap::after  { right: 0; background: linear-gradient(to left,  var(--bg2), transparent); }
+    .showcase-track {
+      display: flex; gap: 20px;
+      width: max-content;
+      animation: slideLoop 28s linear infinite;
+    }
+    .showcase-track:hover { animation-play-state: paused; }
+    @keyframes slideLoop {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .showcase-slide {
+      width: 200px; flex-shrink: 0;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 4px; overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .showcase-slide:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .showcase-slide img { width: 100%; height: 200px; object-fit: cover; display: block; cursor: pointer; }
+    .showcase-slide-info { padding: 12px 14px; display: flex; flex-direction: column; flex: 1; }
+    .showcase-slide-name { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--white); margin-bottom: 2px; }
+    .showcase-slide-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+    .showcase-slide-price { font-size: 13px; font-weight: 800; color: var(--gold); }
+    .showcase-add-btn {
+      background: var(--gold); color: #1a0e02; border: none;
+      border-radius: 3px; width: 30px; height: 30px;
+      font-size: 18px; font-weight: 700; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s; flex-shrink: 0; line-height: 1;
+    }
+    .showcase-add-btn:hover { background: var(--gold-lt); }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="nav-logo" />
+  <ul class="nav-links">
+    <li><a href="#jewellery">Jewellery</a></li>
+    <li><a href="#fragrances">Fragrances</a></li>
+    <li><a href="#lifestyle">More</a></li>
+    <li><a href="#about">About</a></li>
+    <li>
+      <button class="cart-nav-btn" onclick="openCart()">
+        🛒 Order List
+        <span class="cart-badge" id="cartBadge"></span>
+      </button>
+    </li>
+  </ul>
+  <button class="mobile-top-cart" onclick="openCart()">
+    🛒 Order
+    <span class="cart-badge-mob" id="cartBadgeMob"></span>
+  </button>
+</nav>
+
+<!-- ── MOBILE NAV LINKS (second row, phones only) ── -->
+<div class="nav-mobile-links">
+  <ul>
+    <li><a href="#jewellery">💎 Jewellery</a></li>
+    <li><a href="#fragrances">🥃 Fragrances</a></li>
+    <li><a href="#lifestyle">✨ More</a></li>
+    <li><a href="#about">👋 About</a></li>
+    <li><a href="#" class="mobile-cart-link" onclick="openCart(); return false;">🛒 Order List</a></li>
+  </ul>
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Welcome to</div>
+    <h1 class="hero-title">The Hustle<br/><span>Hub SA</span></h1>
+    <p class="hero-desc">Premium fragrances, timeless jewellery, handcrafted treats and more — all curated with love and delivered straight to your door.</p>
+    <div class="btn-group" style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="#fragrances" class="btn btn-gold">Shop Now</a>
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to place an order from The Hustle Hub SA." target="_blank" class="btn btn-outline">WhatsApp Riette</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <div class="hero-photo-wrap">
+      <img src="logo-bg.jpeg" alt="The Hustle Hub SA" />
+    </div>
+  </div>
+</div>
+
+<!-- ── SHOWCASE SLIDER ── -->
+<div class="showcase">
+  <div class="showcase-header">
+    <div class="section-eyebrow">Featured Products</div>
+    <h2 class="section-title" style="font-size:clamp(22px,3vw,32px);">Shop Our Latest Range</h2>
+  </div>
+  <div class="showcase-track-wrap">
+    <div class="showcase-track" id="showcaseTrack">
+      <!-- Original set -->
+      <div class="showcase-slide">
+        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet','R150','jewellery-gold-bracelet.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Sleepers</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Sleepers','R180','jewellery-gold-sleepers.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Spicebomb','R450','fragrance-spicebomb.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Creed Aventus','R450','fragrance-creed-aventus.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Versace Eros Blue','R450','fragrance-versace-eros.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="fragrance-paco-rabanne.jpeg" alt="1 Million Man" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">1 Million Man</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('1 Million Man','R450','fragrance-paco-rabanne.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="fragrance-lv-imagination.jpeg" alt="LV Imagination" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">LV Imagination</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('LV Imagination','R450','fragrance-lv-imagination.jpeg')">+</button></div></div>
+      </div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="showcase-slide">
+        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet','R150','jewellery-gold-bracelet.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Sleepers</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Sleepers','R180','jewellery-gold-sleepers.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Spicebomb','R450','fragrance-spicebomb.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Creed Aventus','R450','fragrance-creed-aventus.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Versace Eros Blue','R450','fragrance-versace-eros.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="fragrance-paco-rabanne.jpeg" alt="1 Million Man" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">1 Million Man</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('1 Million Man','R450','fragrance-paco-rabanne.jpeg')">+</button></div></div>
+      </div>
+      <div class="showcase-slide">
+        <img src="fragrance-lv-imagination.jpeg" alt="LV Imagination" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
+        <div class="showcase-slide-info"><div class="showcase-slide-name">LV Imagination</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('LV Imagination','R450','fragrance-lv-imagination.jpeg')">+</button></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HIGHLIGHT STRIP ── -->
+<div class="highlight-strip">
+  <div class="highlight-inner">
+    <div class="highlight-item">
+      <div class="highlight-icon">✅</div>
+      <div class="highlight-label">Authentic</div>
+      <div class="highlight-value">Original unopened packaging</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon">🚚</div>
+      <div class="highlight-label">Nationwide</div>
+      <div class="highlight-value">Fast & secure delivery</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon">💬</div>
+      <div class="highlight-label">Easy Orders</div>
+      <div class="highlight-value">WhatsApp or email</div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon">⭐</div>
+      <div class="highlight-label">Premium Quality</div>
+      <div class="highlight-value">Carefully curated</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CATEGORIES ── -->
+<section class="categories-bg">
+  <div class="section-inner">
+    <div class="section-eyebrow">Browse</div>
+    <h2 class="section-title">What We Offer</h2>
+    <p class="section-desc">Nine curated ranges — something for everyone.</p>
+    <div class="cat-grid">
+      <a href="#jewellery" class="cat-card"><div class="cat-icon">💎</div><div class="cat-name">BellaTia Jewellery</div><div class="cat-sub">Tarnish-free, waterproof</div></a>
+      <a href="#fragrances" class="cat-card"><div class="cat-icon">🥃</div><div class="cat-name">Designer Fragrances</div><div class="cat-sub">Creed, Versace, Viktor & Rolf & more</div></a>
+      <a href="#fragrances" class="cat-card"><div class="cat-icon">🌴</div><div class="cat-name">Dubai Replica Perfumes</div><div class="cat-sub">Inspired-by luxury scents</div></a>
+      <a href="#fragrances" class="cat-card"><div class="cat-icon">🎁</div><div class="cat-name">Miniature Gift Sets</div><div class="cat-sub">Perfect for any occasion</div></a>
+      <a href="#fragrances" class="cat-card"><div class="cat-icon">🌸</div><div class="cat-name">Scented Serenity by Riette</div><div class="cat-sub">Oil-based personal perfumes</div></a>
+      <a href="#fragrances" class="cat-card"><div class="cat-icon">✨</div><div class="cat-name">Only You Perfumes</div><div class="cat-sub">Branded signature range</div></a>
+      <a href="#lifestyle" class="cat-card"><div class="cat-icon">🌿</div><div class="cat-name">Bosbaard & Bokkies</div><div class="cat-sub">SA spices & seasonings</div></a>
+      <a href="#lifestyle" class="cat-card"><div class="cat-icon">🕯️</div><div class="cat-name">Scentifique</div><div class="cat-sub">Diffusers & fragrance oils</div></a>
+      <a href="#lifestyle" class="cat-card"><div class="cat-icon">🍬</div><div class="cat-name">Vrek Lekker Fudge</div><div class="cat-sub">Handmade fudge jars</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── JEWELLERY ── -->
+<section id="jewellery">
+  <div class="section-inner">
+    <div class="section-eyebrow">Tarnish-Free · Waterproof · Hypoallergenic</div>
+    <h2 class="section-title">BellaTia Jewellery</h2>
+    <p class="section-desc">Stainless steel pieces that last — wearable every day, in every season. More pieces added regularly.</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet with Pearls" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Gold Bracelet</div>
+          <div class="product-sub">With pearls & bead detail · Stainless steel</div>
+          <div class="product-footer">
+            <span class="product-price">R150</span>
+            <button class="add-btn" onclick="addToCart('Gold Bracelet','R150','jewellery-gold-bracelet.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers with Pearls" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Gold Sleepers</div>
+          <div class="product-sub">With pearls · Stainless steel</div>
+          <div class="product-footer">
+            <span class="product-price">R180</span>
+            <button class="add-btn" onclick="addToCart('Gold Sleepers','R180','jewellery-gold-sleepers.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── FRAGRANCES ── -->
+<section id="fragrances" style="background:var(--bg2);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Genuine Parallel Imports · Original Unopened Packaging</div>
+    <h2 class="section-title">Men's Designer Fragrances</h2>
+    <p class="section-desc">AAA Grade designer perfumes — authentic, carefully sourced and delivered nationwide. <strong style="color:var(--gold)">R450 each.</strong> Add to your order list, then send via WhatsApp or email.</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb by Viktor & Rolf" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Spicebomb</div>
+          <div class="product-sub">Viktor & Rolf · Eau de Toilette · 90ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Spicebomb','R450','fragrance-spicebomb.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Creed Aventus</div>
+          <div class="product-sub">Creed · Eau de Parfum · 120ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Creed Aventus','R450','fragrance-creed-aventus.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Versace Eros Blue</div>
+          <div class="product-sub">Versace · Eau de Toilette · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Versace Eros Blue','R450','fragrance-versace-eros.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="fragrance-paco-rabanne.jpeg" alt="Paco Rabanne 1 Million" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">1 Million Man</div>
+          <div class="product-sub">Paco Rabanne · Eau de Toilette · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('1 Million Man','R450','fragrance-paco-rabanne.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="fragrance-lv-imagination.jpeg" alt="Louis Vuitton Imagination" />
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">LV Imagination</div>
+          <div class="product-sub">Louis Vuitton · Eau de Parfum · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('LV Imagination','R450','fragrance-lv-imagination.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── LIFESTYLE & MORE ── -->
+<section id="lifestyle">
+  <div class="section-inner">
+    <div class="section-eyebrow">And Much More</div>
+    <h2 class="section-title">More From The Hustle Hub</h2>
+    <p class="section-desc">WhatsApp Riette to find out what's in stock, get pricing, or place an order on any of these ranges.</p>
+    <div class="coming-grid">
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about your Dubai Replica Perfumes." target="_blank" class="coming-card">
+        <div class="coming-icon">🌴</div>
+        <div class="coming-name">Dubai Replica Perfumes</div>
+        <div class="coming-desc">Inspired-by luxury scents — bold, long-lasting and affordable.</div>
+        <span class="enquire-btn">Enquire →</span>
+      </a>
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about your Miniature Perfume Gift Sets." target="_blank" class="coming-card">
+        <div class="coming-icon">🎁</div>
+        <div class="coming-name">Miniature Gift Sets</div>
+        <div class="coming-desc">Beautiful gift sets — perfect for birthdays and special occasions.</div>
+        <span class="enquire-btn">Enquire →</span>
+      </a>
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about Scented Serenity — your oil-based perfumes." target="_blank" class="coming-card">
+        <div class="coming-icon">🌸</div>
+        <div class="coming-name">Scented Serenity by Riette</div>
+        <div class="coming-desc">Riette's own oil-based perfumes — personal, warm and made with intention.</div>
+        <span class="enquire-btn">Enquire →</span>
+      </a>
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about your Only You Branded Perfumes." target="_blank" class="coming-card">
+        <div class="coming-icon">✨</div>
+        <div class="coming-name">Only You Perfumes</div>
+        <div class="coming-desc">Branded signature range — elegant, distinctive and made to be remembered.</div>
+        <span class="enquire-btn">Enquire →</span>
+      </a>
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about Bosbaard %26 Bokkies SA Spices." target="_blank" class="coming-card">
+        <div class="coming-icon">🌿</div>
+        <div class="coming-name">Bosbaard & Bokkies</div>
+        <div class="coming-desc">SA-made spices and seasonings — braai rubs, blends and bold flavours.</div>
+        <span class="enquire-btn">Enquire →</span>
+      </a>
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about Scentifique Diffusers %26 Fragrance Oils." target="_blank" class="coming-card">
+        <div class="coming-icon">🕯️</div>
+        <div class="coming-name">Scentifique</div>
+        <div class="coming-desc">Handmade diffusers and fragrance oils — beautiful, lasting home scent.</div>
+        <span class="enquire-btn">Enquire →</span>
+      </a>
+      <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to know more about Vrek Lekker Fudge Jars." target="_blank" class="coming-card">
+        <div class="coming-icon">🍬</div>
+        <div class="coming-name">Vrek Lekker Fudge</div>
+        <div class="coming-desc">Handmade fudge jars — rich, indulgent and seriously hard to stop eating.</div>
+        <span class="enquire-btn">Enquire →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── ABOUT ── -->
+<section id="about" style="background:var(--bg2);">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div style="display:flex;justify-content:center;">
+        <div class="about-photo-wrap">
+          <img src="riette-photo.jpeg" alt="Riette" />
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-eyebrow">Meet the woman behind the hustle</div>
+        <h2 class="section-title">Hi, I'm Riette</h2>
+        <p>The Hustle Hub SA was born from a passion for beautiful things and a drive to bring quality products to people who appreciate the finer side of life — without the fuss.</p>
+        <p>From premium designer fragrances and handmade jewellery to SA spices and sweet treats, I hand-pick every product in my range because I believe what you buy should make you feel something.</p>
+        <p>Whether you're treating yourself or gifting someone special — I'm here to help you find exactly what you're looking for. Just send me a message.</p>
+        <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to find out more about The Hustle Hub SA." target="_blank" class="btn btn-wa" style="margin-top:16px;">
+          <svg viewBox="0 0 24 24" style="width:17px;height:17px;fill:white;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat with Riette
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="footer-logo" />
+  <p class="footer-tagline">"Quality you can feel. Service you can trust."</p>
+  <p class="footer-contact">
+    WhatsApp: <a href="https://wa.me/27798908527" target="_blank">+27 79 890 8527</a> &nbsp;·&nbsp;
+    Email: <a href="mailto:thehustlehubsa@outlook.com">thehustlehubsa@outlook.com</a>
+  </p>
+  <div class="gold-line" style="max-width:180px;margin:0 auto 18px;"></div>
+  <p class="footer-copy">© 2026 THE HUSTLE HUB SA · ALL RIGHTS RESERVED</p>
+</footer>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a href="https://wa.me/27798908527?text=Hi Riette! I'd like to place an order from The Hustle Hub SA." target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ── CART DRAWER ── -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <div>
+      <h3>🛒 Your Order List</h3>
+      <div class="cart-header-sub">Review, then send via WhatsApp or email</div>
+    </div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🛍️</div>
+      <p>Your order list is empty.<br/>Browse the products and click<br/><strong>+ Add to Order</strong> on any item.</p>
+    </div>
+  </div>
+
+  <div class="cart-footer">
+    <div style="display:none;" class="cart-back-links" id="cartBackLinks">
+      <a href="#" onclick="hideOrderForm(event)" style="font-size:12px;color:var(--gold);text-decoration:none;font-weight:700;margin-right:16px;">← Back to list</a>
+      <a href="#" onclick="closeCart(); return false;" style="font-size:12px;color:var(--muted);text-decoration:none;font-weight:700;">+ Add More Products</a>
+    </div>
+
+    <div class="cart-step-1">
+      <div class="cart-step-1-total">
+        <span class="cart-step-1-total-label">Estimated Total</span>
+        <span class="cart-step-1-total-amt" id="cartTotalStep1">R0</span>
+      </div>
+      <button class="cart-place-order-btn" onclick="showOrderForm()">Proceed to Send Order →</button>
+      <a href="#" class="btn-continue-shopping" onclick="closeCart(); return false;">← Add More Products</a>
+    </div>
+
+    <div id="cartTotalRow" class="cart-total-row">
+      <span class="cart-total-label">Estimated Total</span>
+      <span class="cart-total-amount" id="cartTotal">R0</span>
+    </div>
+
+    <div id="cartForm" class="cart-form">
+      <label class="cart-form-label">Your Name *</label>
+      <input type="text" id="custName" placeholder="Full name" class="cart-input" />
+
+      <label class="cart-form-label">Your WhatsApp / Phone *</label>
+      <input type="tel" id="custPhone" placeholder="e.g. 082 123 4567" class="cart-input" />
+
+      <label class="cart-form-label">Delivery</label>
+      <div class="cart-radio-group">
+        <label class="cart-radio">
+          <input type="radio" name="delivery" value="collect" checked onchange="toggleDelivery()" /> I will collect from Riette
+        </label>
+        <label class="cart-radio">
+          <input type="radio" name="delivery" value="delivery" onchange="toggleDelivery()" /> Please deliver to me
+        </label>
+      </div>
+      <div id="deliverySection" style="display:none;">
+        <input type="text" id="custAddress" placeholder="Your delivery address" class="cart-input" />
+        <div class="cart-delivery-info">Delivery fee will be confirmed by Riette based on your location.</div>
+      </div>
+    </div>
+
+    <a id="cartSendBtn" href="#" onclick="sendViaWhatsApp(event)" class="btn btn-wa cart-send-btn">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Send Order via WhatsApp
+    </a>
+    <a id="cartEmailBtn" href="#" onclick="sendViaEmail(event)" class="btn-email-cart">
+      ✉️ Send Order via Email
+    </a>
+    <p class="cart-note">Riette will confirm your order and arrange payment.</p>
+  </div>
+</div>
+
+<!-- Back to top -->
+<a href="#" class="back-to-top" id="backToTop" title="Back to top">&#9650;</a>
+
+<!-- Toast -->
+<div class="added-notif" id="addedNotif"></div>
+
+<script>
+  let cart = [];
+
+  function addToCart(name, price, img) {
+    const existing = cart.find(i => i.name === name);
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({ name, price, img: img || '', qty: 1 });
+    }
+    renderCart();
+    updateCartBadge();
+    showAddedNotif(name);
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    renderCart();
+    updateCartBadge();
+  }
+
+  function changeQty(index, delta) {
+    cart[index].qty += delta;
+    if (cart[index].qty <= 0) cart.splice(index, 1);
+    renderCart();
+    updateCartBadge();
+  }
+
+  function parsePrice(str) {
+    const m = str.match(/R(\d+)/);
+    return m ? parseInt(m[1]) : 0;
+  }
+
+  function calcTotal() {
+    return cart.reduce((sum, i) => sum + parsePrice(i.price) * i.qty, 0);
+  }
+
+  function renderCart() {
+    const container = document.getElementById('cartItems');
+    const totalEl = document.getElementById('cartTotal');
+    const step1Total = document.getElementById('cartTotalStep1');
+    const total = calcTotal();
+
+    if (cart.length === 0) {
+      container.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🛍️</div><p>Your order list is empty.<br/>Browse the products and click<br/><strong>+ Add to Order</strong> on any item.</p></div>`;
+      document.getElementById('cartDrawer').classList.remove('order-step');
+      totalEl.textContent = 'R0';
+      if (step1Total) step1Total.textContent = 'R0';
+      return;
+    }
+
+    let html = '';
+    cart.forEach((item, i) => {
+      html += `
+        <div class="cart-item">
+          <div class="cart-item-img">
+            ${item.img ? `<img src="${item.img}" alt="${item.name}"/>` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:1.4rem;">🛍️</div>'}
+          </div>
+          <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">${item.price} each</div>
+            <div class="cart-item-row">
+              <button class="qty-btn" onclick="changeQty(${i},-1)">−</button>
+              <span class="qty-num">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty(${i},1)">+</button>
+              <button class="cart-item-remove" onclick="removeFromCart(${i})">Remove</button>
+            </div>
+          </div>
+        </div>`;
+    });
+
+    container.innerHTML = html;
+    totalEl.textContent = `R${total}`;
+    if (step1Total) step1Total.textContent = `R${total}`;
+  }
+
+  function showOrderForm() {
+    if (cart.length === 0) return;
+    document.getElementById('cartDrawer').classList.add('order-step');
+  }
+
+  function hideOrderForm(e) {
+    e.preventDefault();
+    document.getElementById('cartDrawer').classList.remove('order-step');
+  }
+
+  function buildOrderMessage() {
+    const name = document.getElementById('custName').value.trim();
+    const phone = document.getElementById('custPhone').value.trim();
+    const deliveryType = document.querySelector('input[name="delivery"]:checked').value;
+    const address = document.getElementById('custAddress').value.trim();
+
+    if (!name || !phone) {
+      alert('Please fill in your name and phone number before sending your order.');
+      return null;
+    }
+    if (deliveryType === 'delivery' && !address) {
+      alert('Please fill in your delivery address.');
+      return null;
+    }
+
+    const total = calcTotal();
+    let msg = `Hi Riette!\n\nI'd like to place the following order from The Hustle Hub SA:\n\n`;
+    msg += `MY DETAILS\n`;
+    msg += `Name: ${name}\n`;
+    msg += `Phone: ${phone}\n`;
+    if (deliveryType === 'delivery') {
+      msg += `Delivery address: ${address}\n`;
+      msg += `Delivery: Yes please — please confirm delivery fee\n`;
+    } else {
+      msg += `Delivery: I will collect from you\n`;
+    }
+    msg += `\nMY ORDER\n`;
+    cart.forEach(item => {
+      msg += `• ${item.qty}x ${item.name} — ${item.price} each`;
+      if (item.qty > 1) msg += ` (subtotal: R${parsePrice(item.price) * item.qty})`;
+      msg += `\n`;
+    });
+    msg += `\nEstimated Total: R${total}`;
+    if (deliveryType === 'delivery') msg += ` (+ delivery to be confirmed)`;
+    msg += `\n\nThank you!`;
+    return msg;
+  }
+
+  function sendViaWhatsApp(e) {
+    e.preventDefault();
+    const msg = buildOrderMessage();
+    if (!msg) return;
+    window.open(`https://wa.me/27798908527?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  function sendViaEmail(e) {
+    e.preventDefault();
+    const msg = buildOrderMessage();
+    if (!msg) return;
+    const subject = encodeURIComponent('New Order — The Hustle Hub SA');
+    window.location.href = `mailto:thehustlehubsa@outlook.com?subject=${subject}&body=${encodeURIComponent(msg)}`;
+  }
+
+  function toggleDelivery() {
+    const type = document.querySelector('input[name="delivery"]:checked').value;
+    document.getElementById('deliverySection').style.display = type === 'delivery' ? 'block' : 'none';
+  }
+
+  function updateCartBadge() {
+    const count = cart.reduce((sum, i) => sum + i.qty, 0);
+    ['cartBadge', 'cartBadgeMob'].forEach(id => {
+      const b = document.getElementById(id);
+      if (b) { b.textContent = count; b.style.display = count > 0 ? 'flex' : 'none'; }
+    });
+  }
+
+  function openCart() {
+    document.getElementById('cartOverlay').classList.add('open');
+    document.getElementById('cartDrawer').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCart() {
+    document.getElementById('cartOverlay').classList.remove('open');
+    const drawer = document.getElementById('cartDrawer');
+    drawer.classList.remove('open');
+    drawer.classList.remove('order-step');
+    document.body.style.overflow = '';
+  }
+
+  function showAddedNotif(name) {
+    const notif = document.getElementById('addedNotif');
+    notif.textContent = `✓  ${name} added to order`;
+    notif.classList.add('show');
+    setTimeout(() => notif.classList.remove('show'), 2500);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeCart();
+  });
+
+  const backToTop = document.getElementById('backToTop');
+  function checkScroll() {
+    const scrolled = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    if (scrolled > 300) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  document.addEventListener('scroll', checkScroll, { passive: true });
+  backToTop.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>
