@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BellaTia Jewellery — The Hustle Hub SA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#FBF6ED;--bg2:#F5EFE0;--bg3:#EDE6D3;--gold:#C9922A;--gold-lt:#E8C27A;--muted:#8B6848;--border:#D9CCAF;--white:#2A1808;--wa:#25D366}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',sans-serif;background:var(--bg);color:#3a2010;font-size:15px;line-height:1.7}
+nav{position:sticky;top:0;z-index:100;background:#F5EFE0;border-bottom:2px solid var(--gold);padding:10px 32px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{height:60px}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center}
+.nav-links a{color:#4a3010;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.cart-nav-btn{background:var(--gold);border:none;border-radius:4px;padding:9px 16px;cursor:pointer;position:relative;display:flex;align-items:center;gap:6px;font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1a0e02}
+.cart-badge{position:absolute;top:-8px;right:-8px;background:var(--gold);color:#1a0e02;border-radius:50%;width:20px;height:20px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center}
+.nav-mobile-links{display:none;background:#F5EFE0;border-bottom:2px solid var(--gold);padding:0 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:62px;z-index:99}
+.nav-mobile-links::-webkit-scrollbar{display:none}
+.nav-mobile-links ul{display:flex;list-style:none;white-space:nowrap;align-items:center}
+.nav-mobile-links a{display:block;padding:13px 14px;color:#4a3010;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-decoration:none}
+.nav-mobile-links a:hover{color:var(--gold)}
+.mobile-cart-link{display:inline-flex;align-items:center;gap:6px;margin-left:6px;padding:8px 14px;background:var(--gold);color:#1a0e02;border-radius:3px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;text-decoration:none}
+.mobile-top-cart{display:none;align-items:center;gap:6px;background:var(--gold);color:#1a0e02;border:none;border-radius:4px;padding:9px 14px;cursor:pointer;font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;position:relative}
+.cart-badge-mob{position:absolute;top:-7px;right:-7px;background:#1a0e02;color:var(--gold);border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center}
+.hero-band{background:var(--bg2);border-bottom:1px solid var(--border);padding:48px 32px;text-align:center}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,46px);font-weight:700;color:var(--white);margin-bottom:12px}
+.hero-title span{color:var(--gold)}
+.hero-desc{color:var(--muted);font-size:14px;max-width:560px;margin:0 auto 20px}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1.5px solid var(--gold);border-radius:3px;padding:9px 18px;transition:all .2s}
+.back-link:hover{background:var(--gold);color:#1a0e02}
+.cat-jump{background:var(--bg3);border-bottom:1px solid var(--border);padding:12px 32px;position:sticky;top:82px;z-index:90}
+.cat-jump-inner{max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.cat-jump a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4a3010;text-decoration:none;padding:6px 14px;border:1px solid var(--border);border-radius:20px;transition:all .2s}
+.cat-jump a:hover{border-color:var(--gold);color:var(--gold)}
+section{padding:64px 32px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,36px);font-weight:700;color:var(--white);margin-bottom:8px}
+.section-count{font-size:13px;color:var(--muted);margin-bottom:36px}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.product-card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column}
+.product-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 16px 48px rgba(201,146,42,.12)}
+.product-card img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+.product-info{padding:14px 16px;display:flex;flex-direction:column;flex:1}
+.badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:7px;background:rgba(201,146,42,.15);color:var(--gold);border:1px solid var(--gold)}
+.product-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:600;color:var(--white);margin-bottom:10px;flex:1;line-height:1.4}
+.product-footer{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.product-price{font-size:17px;font-weight:800;color:var(--gold);flex-shrink:0}
+.add-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a0e02;background:var(--gold);border:none;padding:7px 12px;border-radius:3px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.add-btn:hover{background:var(--gold-lt)}
+.divider{border:none;border-top:1px solid var(--border)}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32px;text-align:center}
+.footer-logo{height:70px;margin-bottom:16px;border-radius:8px;opacity:.9}
+.footer-tagline{font-family:'Playfair Display',serif;font-style:italic;color:var(--muted);font-size:14px;margin-bottom:14px}
+.footer-contact{font-size:13px;color:var(--muted);margin-bottom:16px}
+.footer-contact a{color:var(--gold);text-decoration:none}
+.footer-copy{font-size:11px;color:var(--muted);letter-spacing:.06em}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:99;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4);transition:all .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+.back-to-top{position:fixed;bottom:28px;left:28px;z-index:9999;width:46px;height:46px;border-radius:50%;background:var(--gold);border:none;color:#1a0e02;font-size:20px;font-weight:bold;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.4);text-decoration:none;line-height:1}
+.back-to-top.visible{display:flex}
+.added-notif{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--gold);color:#1a0e02;padding:9px 20px;border-radius:3px;font-size:12px;font-weight:700;letter-spacing:.06em;z-index:600;opacity:0;transition:all .3s ease;pointer-events:none;white-space:nowrap}
+.added-notif.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.cart-overlay{display:none;position:fixed;inset:0;background:rgba(42,24,8,.5);z-index:200}
+.cart-overlay.open{display:block}
+.cart-drawer{position:fixed;top:0;right:-520px;width:480px;max-width:100vw;height:100vh;height:100dvh;background:var(--bg2);z-index:300;display:flex;flex-direction:column;border-left:1px solid var(--border);box-shadow:-8px 0 48px rgba(0,0,0,.5);transition:right .35s cubic-bezier(.4,0,.2,1)}
+.cart-drawer.open{right:0}
+.cart-header{padding:20px 22px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.cart-header h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--white)}
+.cart-header-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.cart-close{background:var(--bg3);border:1px solid var(--border);width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s}
+.cart-close:hover{border-color:var(--gold);color:var(--gold)}
+.cart-items{flex:1;overflow-y:auto;padding:8px 22px}
+.cart-empty{text-align:center;padding:48px 16px}
+.cart-empty-icon{font-size:40px;margin-bottom:12px;opacity:.3}
+.cart-empty p{font-size:14px;color:var(--muted);line-height:1.8}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.cart-item-img{width:64px;height:64px;border-radius:4px;background:var(--bg3);overflow:hidden;flex-shrink:0;border:1px solid var(--border)}
+.cart-item-img img{width:100%;height:100%;object-fit:cover}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-name{font-family:'Playfair Display',serif;font-size:14px;color:var(--white);margin-bottom:2px}
+.cart-item-price{font-size:13px;color:var(--muted);margin-bottom:8px}
+.cart-item-row{display:flex;align-items:center;gap:8px}
+.qty-btn{background:var(--bg3);border:1px solid var(--border);width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#8B6848;font-weight:700;transition:all .2s;line-height:1}
+.qty-btn:hover{border-color:var(--gold);color:var(--gold)}
+.qty-num{font-size:13px;font-weight:600;color:#8B6848;min-width:16px;text-align:center}
+.cart-item-remove{background:none;border:none;color:var(--muted);font-size:11px;cursor:pointer;margin-left:auto;opacity:.6;transition:opacity .2s;font-family:'Raleway',sans-serif}
+.cart-item-remove:hover{opacity:1;color:#e57373}
+.cart-footer{padding:16px 22px 24px;border-top:1px solid var(--border);background:var(--bg);flex-shrink:0}
+.cart-step-1{}
+.cart-step-1-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.cart-step-1-total-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.cart-step-1-total-amt{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold)}
+.cart-place-order-btn{display:block;width:100%;background:var(--gold);color:#1a0e02;border:none;padding:14px;border-radius:3px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-bottom:10px;transition:background .2s}
+.cart-place-order-btn:hover{background:var(--gold-lt)}
+.btn-continue-shopping{display:block;text-align:center;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-decoration:none;padding:10px;border:1px solid var(--border);border-radius:3px;transition:all .2s}
+.btn-continue-shopping:hover{border-color:var(--gold);color:var(--gold)}
+.cart-drawer .cart-step-1{display:block}
+.cart-drawer.order-step .cart-step-1{display:none}
+#cartForm{display:none}
+#cartTotalRow{display:none}
+#cartSendBtn{display:none!important}
+#cartEmailBtn{display:none!important}
+.cart-note{display:none;font-size:11px;color:var(--muted);text-align:center;margin-top:10px;font-style:italic}
+.cart-drawer.order-step #cartForm{display:block}
+.cart-drawer.order-step #cartTotalRow{display:flex}
+.cart-drawer.order-step #cartSendBtn{display:flex!important}
+.cart-drawer.order-step #cartEmailBtn{display:flex!important}
+.cart-drawer.order-step .cart-note{display:block}
+.cart-back-links{display:none;margin-bottom:14px}
+.cart-drawer.order-step .cart-back-links{display:block}
+.cart-total-row{display:none;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.cart-total-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.cart-total-amount{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);font-weight:600}
+.cart-form{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.cart-form-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px;margin-top:10px;display:block}
+.cart-input{width:100%;border:1.5px solid var(--border);border-radius:3px;padding:10px 12px;font-family:'Raleway',sans-serif;font-size:13px;color:#3a2010;background:var(--bg3);margin-bottom:8px;outline:none;transition:border-color .2s}
+.cart-input:focus{border-color:var(--gold)}
+.cart-radio-group{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.cart-radio{display:flex;align-items:center;gap:8px;font-size:13px;color:#3a2010;cursor:pointer}
+.cart-radio input[type="radio"]{accent-color:var(--gold);width:15px;height:15px}
+.cart-delivery-info{font-size:12px;color:var(--muted);background:rgba(201,146,42,.08);border:1px solid rgba(201,146,42,.2);border-radius:3px;padding:8px 12px;margin-top:6px;line-height:1.6}
+.cart-send-btn{width:100%;justify-content:center;padding:14px;font-size:12px;margin-bottom:8px;display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;border:none;border-radius:3px;font-family:'Raleway',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.btn-email-cart{display:none;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;background:var(--bg3);color:#3a2010;border:1.5px solid var(--border);border-radius:3px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s;cursor:pointer}
+.btn-email-cart:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:768px){
+  nav{padding:10px 20px}
+  .nav-logo{height:52px}
+  .nav-links{display:none}
+  .nav-mobile-links{display:block}
+  .mobile-top-cart{display:flex!important}
+  .cat-jump{top:62px;padding:10px 16px}
+  section{padding:44px 20px}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .product-name{font-size:13px}
+  .product-price{font-size:15px}
+  .add-btn{font-size:9px;padding:6px 9px}
+  .cart-drawer{width:100vw;right:-100vw}
+  .hero-band{padding:36px 20px}
+  .wa-float{bottom:20px;right:20px;width:50px;height:50px}
+  .back-to-top{bottom:20px;left:16px}
+}
+@media(max-width:480px){
+  .product-grid{grid-template-columns:1fr 1fr;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html"><img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="nav-logo"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html">← Back to Shop</a></li>
+    <li><a href="#bracelets">Bracelets</a></li>
+    <li><a href="#necklaces">Necklaces</a></li>
+    <li><a href="#earrings">Earrings</a></li>
+    <li><a href="#rings">Rings</a></li>
+    <li><button class="cart-nav-btn" onclick="openCart()">🛒 Order List<span class="cart-badge" id="cartBadge"></span></button></li>
+  </ul>
+  <button class="mobile-top-cart" onclick="openCart()">🛒 Order<span class="cart-badge-mob" id="cartBadgeMob"></span></button>
+</nav>
+
+<div class="nav-mobile-links">
+  <ul>
+    <li><a href="index.html">← Shop</a></li>
+    <li><a href="#bracelets">💍 Bracelets</a></li>
+    <li><a href="#necklaces">📿 Necklaces</a></li>
+    <li><a href="#earrings">✨ Earrings</a></li>
+    <li><a href="#rings">💫 Rings</a></li>
+    <li><a href="#" class="mobile-cart-link" onclick="openCart();return false;">🛒 Order</a></li>
+  </ul>
+</div>
+
+<div class="hero-band">
+  <div class="hero-eyebrow">BellaTia · Tarnish-Free · Waterproof · Hypoallergenic</div>
+  <h1 class="hero-title">The Full <span>Jewellery Range</span></h1>
+  <p class="hero-desc">Over 100 pieces — stainless steel jewellery made to last. Add to your order list and send via WhatsApp.</p>
+  <a href="index.html" class="back-link">← Back to Main Shop</a>
+</div>
+
+<div class="cat-jump">
+  <div class="cat-jump-inner">
+    <span style="font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;">Jump to:</span>
+    <a href="#bracelets">💍 Bracelets & Bangles</a>
+    <a href="#necklaces">📿 Necklaces & Chains</a>
+    <a href="#earrings">✨ Earrings</a>
+    <a href="#rings">💫 Rings</a>
+    <a href="#accessories">🎁 Accessories</a>
+  </div>
+</div>
+
+<!-- ── BRACELETS ── -->
+<section id="bracelets">
+<div class="section-inner">
+<div class="section-eyebrow">Bracelets & Bangles</div>
+<h2 class="section-title">Bracelets & Bangles</h2>
+<p class="section-count">46 pieces · Tarnish-free, waterproof stainless steel</p>
+<div class="product-grid">
+
+<div class="product-card"><img src="jewellery-gold-bracelet.jpeg" alt="Gold Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Bracelet</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Gold Bracelet','R150','jewellery-gold-bracelet.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-3-strand-gold-bead-bracelet.jpeg" alt="3 Strand Gold Bead Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">3 Strand Gold Bead Bracelet</div><div class="product-footer"><span class="product-price">R200</span><button class="add-btn" onclick="addToCart('3 Strand Gold Bead Bracelet','R200','jewellery-3-strand-gold-bead-bracelet.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-4mm-silver-snake-bracelet.jpeg" alt="4mm Silver Snake Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">4mm Silver Snake Bracelet</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('4mm Silver Snake Bracelet','R150','jewellery-4mm-silver-snake-bracelet.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-clip-on-bangle-bag038.jpeg" alt="Gold Clip On Bangle (Panther)" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Clip On Bangle — Panther</div><div class="product-footer"><span class="product-price">R350</span><button class="add-btn" onclick="addToCart('Gold Clip On Bangle — Panther','R350','jewellery-gold-clip-on-bangle-bag038.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-rope-bracelet.jpeg" alt="Silver Rope Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Rope Bracelet</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Silver Rope Bracelet','R150','jewellery-silver-rope-bracelet.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-bw-gold-daisy-bracelet.jpeg" alt="Black & White Gold Daisy Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Black & White Gold Daisy Bracelet</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Black & White Gold Daisy Bracelet','R150','jewellery-bw-gold-daisy-bracelet.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-cross-cz-bracelet.jpeg" alt="Cross & CZ Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Cross & CZ Bracelet</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Cross & CZ Bracelet','R150','jewellery-cross-cz-bracelet.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-elegance-in-bloom-peach.jpeg" alt="Elegance in Bloom — Peach" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Elegance in Bloom — Peach</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Elegance in Bloom — Peach','R150','jewellery-elegance-in-bloom-peach.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-tennis-bracelet-blue.jpeg" alt="Silver Tennis Bracelet Blue" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Tennis Bracelet — Blue</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Silver Tennis Bracelet — Blue','R180','jewellery-silver-tennis-bracelet-blue.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-bracelet-extender-coloured.jpeg" alt="Gold Bracelet Extender Coloured Stones" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Bracelet Extender — Coloured Stones</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Gold Bracelet Extender — Coloured Stones','R150','jewellery-gold-bracelet-extender-coloured.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-bracelet-extender-tree-of-life.jpeg" alt="Gold Bracelet Extender Tree of Life" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Bracelet Extender — Tree of Life</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Gold Bracelet Extender — Tree of Life','R180','jewellery-gold-bracelet-extender-tree-of-life.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-bracelet-extender-knot.jpeg" alt="Silver Bracelet Extender Knot" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Bracelet Extender — Knot</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Silver Bracelet Extender — Knot','R150','jewellery-silver-bracelet-extender-knot.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-tennis-bracelet-green.jpeg" alt="Silver Tennis Bracelet Green" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Tennis Bracelet — Green</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Silver Tennis Bracelet — Green','R180','jewellery-silver-tennis-bracelet-green.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-tennis-bracelet-pink.jpeg" alt="Gold Tennis Bracelet Pink" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Tennis Bracelet — Pink</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Gold Tennis Bracelet — Pink','R180','jewellery-gold-tennis-bracelet-pink.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-bracelet-brg011.jpeg" alt="Gold Bracelet BRG011 Dior Charm" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Bracelet BRG011 — Dior Charm</div><div class="product-footer"><span class="product-price">R220</span><button class="add-btn" onclick="addToCart('Gold Bracelet BRG011 — Dior Charm','R220','jewellery-gold-bracelet-brg011.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-cuff-on-bangle-sisca.jpeg" alt="Cuff on Bangle Sisca" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Cuff on Bangle — Sisca</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Cuff on Bangle — Sisca','R150','jewellery-cuff-on-bangle-sisca.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-oval-clip-on-bangle.jpeg" alt="Silver Oval Clip On Bangle" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Oval Clip On Bangle</div><div class="product-footer"><span class="product-price">R200</span><button class="add-btn" onclick="addToCart('Silver Oval Clip On Bangle','R200','jewellery-silver-oval-clip-on-bangle.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-pearl-flower-bracelet.jpeg" alt="Pearl & Flower Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Pearl & Flower Bracelet</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Pearl & Flower Bracelet','R150','jewellery-pearl-flower-bracelet.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-bracelet-extender-brg008.jpeg" alt="Gold Bracelet BRG008 CC Charm" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Bracelet BRG008 — CC Charm</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Gold Bracelet BRG008 — CC Charm','R180','jewellery-gold-bracelet-extender-brg008.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-bracelet-extender-lv.jpeg" alt="Gold Bracelet Extender LV Charm" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Bracelet Extender — LV Charm</div><div class="product-footer"><span class="product-price">R220</span><button class="add-btn" onclick="addToCart('Gold Bracelet Extender — LV Charm','R220','jewellery-gold-bracelet-extender-lv.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-tiffany-dupe-silver-cuff.jpeg" alt="Tiffany Dupe Silver Cuff Bangle" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Tiffany Dupe Silver Cuff Bangle</div><div class="product-footer"><span class="product-price">R280</span><button class="add-btn" onclick="addToCart('Tiffany Dupe Silver Cuff Bangle','R280','jewellery-tiffany-dupe-silver-cuff.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-daisy-bracelet.jpeg" alt="Silver Daisy Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Daisy Bracelet</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Silver Daisy Bracelet','R150','jewellery-silver-daisy-bracelet.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-cz-tennis-bracelet-clear.jpeg" alt="CZ Tennis Bracelet Clear Stones" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">CZ Tennis Bracelet — Clear Stones</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('CZ Tennis Bracelet — Clear Stones','R180','jewellery-cz-tennis-bracelet-clear.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-cuff-on-bangle-anette.jpeg" alt="Cuff on Bangle Anette" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Cuff on Bangle — Anette</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Cuff on Bangle — Anette','R150','jewellery-cuff-on-bangle-anette.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-bracelet-combo-2.jpeg" alt="Silver Bracelet Combo 3 Piece" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Bracelet Combo — 3 Piece Set</div><div class="product-footer"><span class="product-price">R500</span><button class="add-btn" onclick="addToCart('Silver Bracelet Combo — 3 Piece Set','R500','jewellery-silver-bracelet-combo-2.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-bracelet-combo-1.jpeg" alt="Gold Bracelet Combo 3 Piece" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Bracelet Combo — 3 Piece Set</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Gold Bracelet Combo — 3 Piece Set','R450','jewellery-gold-bracelet-combo-1.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-cuff-on-bangle-tanya.jpeg" alt="Cuff on Bangle Tanya" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Cuff on Bangle — Tanya</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Cuff on Bangle — Tanya','R150','jewellery-cuff-on-bangle-tanya.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-oval-snake-chain.jpeg" alt="Gold Oval & Snake Chain Combo" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Oval & Snake Chain Combo</div><div class="product-footer"><span class="product-price">R280</span><button class="add-btn" onclick="addToCart('Gold Oval & Snake Chain Combo','R280','jewellery-gold-oval-snake-chain.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-clip-on-bangle-daisy.jpeg" alt="Gold Clip on Bangle Daisy CZ" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Clip on Bangle — Daisy & CZ</div><div class="product-footer"><span class="product-price">R250</span><button class="add-btn" onclick="addToCart('Gold Clip on Bangle — Daisy & CZ','R250','jewellery-gold-clip-on-bangle-daisy.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-black-silver-byzantine-male.jpeg" alt="Black & Silver Byzantine Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Black & Silver Byzantine Bracelet</div><div class="product-footer"><span class="product-price">R250</span><button class="add-btn" onclick="addToCart('Black & Silver Byzantine Bracelet','R250','jewellery-black-silver-byzantine-male.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-chanel-bracelet.jpeg" alt="Silver Chanel Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Chanel Bracelet</div><div class="product-footer"><span class="product-price">R280</span><button class="add-btn" onclick="addToCart('Silver Chanel Bracelet','R280','jewellery-silver-chanel-bracelet.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-pink-gold-bracelet-evil-eye.jpeg" alt="Pink & Gold Evil Eye Bracelet" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Pink & Gold Evil Eye Bracelet</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Pink & Gold Evil Eye Bracelet','R180','jewellery-pink-gold-bracelet-evil-eye.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-bracelet-extender-infinity.jpeg" alt="Gold Bracelet Extender CZ Infinity" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Bracelet Extender — CZ Infinity</div><div class="product-footer"><span class="product-price">R220</span><button class="add-btn" onclick="addToCart('Gold Bracelet Extender — CZ Infinity','R220','jewellery-gold-bracelet-extender-infinity.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-elegance-in-bloom-crystal.jpeg" alt="Elegance in Bloom Crystal Flowers" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Elegance in Bloom — Crystal Flowers</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Elegance in Bloom — Crystal Flowers','R150','jewellery-elegance-in-bloom-crystal.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-elegance-in-bloom-green.jpeg" alt="Elegance in Bloom Green" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Elegance in Bloom — Green & White Daisy</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Elegance in Bloom — Green & White Daisy','R150','jewellery-elegance-in-bloom-green.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-elegance-in-bloom-purple.jpeg" alt="Elegance in Bloom Purple" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Elegance in Bloom — Purple</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Elegance in Bloom — Purple','R150','jewellery-elegance-in-bloom-purple.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-elegance-in-bloom-gold-crystal.jpeg" alt="Elegance in Bloom Gold Crystal" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Elegance in Bloom — Gold Crystal Petals</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Elegance in Bloom — Gold Crystal Petals','R150','jewellery-elegance-in-bloom-gold-crystal.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-flower-on-bangle.jpeg" alt="Gold Flower on Bangle" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Flower on Bangle</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Gold Flower on Bangle','R150','jewellery-gold-flower-on-bangle.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-elegance-in-bloom-orange.jpeg" alt="Elegance in Bloom Orange" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Elegance in Bloom — Orange</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Elegance in Bloom — Orange','R150','jewellery-elegance-in-bloom-orange.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-cuff-on-bangle.jpeg" alt="Gold Cuff on Bangle" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Cuff on Bangle</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Gold Cuff on Bangle','R150','jewellery-gold-cuff-on-bangle.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-elegance-in-bloom-pink.jpeg" alt="Elegance in Bloom Pink" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Elegance in Bloom — Pink</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Elegance in Bloom — Pink','R150','jewellery-elegance-in-bloom-pink.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-elegance-in-bloom-red.jpeg" alt="Elegance in Bloom Red" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Elegance in Bloom — Red</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Elegance in Bloom — Red','R150','jewellery-elegance-in-bloom-red.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-bracelet-pearls-bead.jpeg" alt="Gold Bracelet Pearls & Bead Detail" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Bracelet — Pearls & Bead Detail</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Gold Bracelet — Pearls & Bead Detail','R150','jewellery-gold-bracelet-pearls-bead.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-baby-pink-gold-vcleef-set.jpeg" alt="Baby Pink Gold V Cleef Set" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Baby Pink V Cleef Set — Necklace & Bracelet</div><div class="product-footer"><span class="product-price">R380</span><button class="add-btn" onclick="addToCart('Baby Pink V Cleef Set — Necklace & Bracelet','R380','jewellery-baby-pink-gold-vcleef-set.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-8mm-roly-set-cz-cross.jpeg" alt="8mm Roly Set CZ Cross" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">8mm Roly Set — CZ Cross (Necklace & Bracelet)</div><div class="product-footer"><span class="product-price">R500</span><button class="add-btn" onclick="addToCart('8mm Roly Set — CZ Cross (Necklace & Bracelet)','R500','jewellery-8mm-roly-set-cz-cross.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-5mm-roly-set-pink-leaf.jpeg" alt="5mm Roly Set Pink Leaf" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">5mm Roly Set — Pink Leaf (Necklace & Bracelet)</div><div class="product-footer"><span class="product-price">R390</span><button class="add-btn" onclick="addToCart('5mm Roly Set — Pink Leaf (Necklace & Bracelet)','R390','jewellery-5mm-roly-set-pink-leaf.jpeg')">+ Add</button></div></div></div>
+
+</div></div></section>
+<hr class="divider"/>
+
+<!-- ── NECKLACES ── -->
+<section id="necklaces" style="background:var(--bg2)">
+<div class="section-inner">
+<div class="section-eyebrow">Necklaces & Chains</div>
+<h2 class="section-title">Necklaces & Chains</h2>
+<p class="section-count">20 pieces · Tarnish-free, waterproof stainless steel</p>
+<div class="product-grid">
+
+<div class="product-card"><img src="jewellery-2mm-gold-figaro-necklace.jpeg" alt="2mm Gold Figaro Necklace" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">2mm Gold Figaro Necklace</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('2mm Gold Figaro Necklace','R180','jewellery-2mm-gold-figaro-necklace.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-herringbone-chain-3mm.jpeg" alt="Herringbone Chain 3mm" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Herringbone Chain 3mm</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Herringbone Chain 3mm','R150','jewellery-herringbone-chain-3mm.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-lv-aaa-dupe-necklace.jpeg" alt="Gold LV AAA Dupe Necklace" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold LV AAA Dupe Necklace</div><div class="product-footer"><span class="product-price">R280</span><button class="add-btn" onclick="addToCart('Gold LV AAA Dupe Necklace','R280','jewellery-lv-aaa-dupe-necklace.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-snake-boho-disk-combo.jpeg" alt="Gold Snake Chain & Boho Disk Combo" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Snake Chain & Boho Disk Combo</div><div class="product-footer"><span class="product-price">R350</span><button class="add-btn" onclick="addToCart('Gold Snake Chain & Boho Disk Combo','R350','jewellery-gold-snake-boho-disk-combo.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-paperclip-combo-gold.jpeg" alt="Paperclip Chain Set Gold" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Paperclip Chain Set — Gold (Necklace & Bracelet)</div><div class="product-footer"><span class="product-price">R280</span><button class="add-btn" onclick="addToCart('Paperclip Chain Set — Gold (Necklace & Bracelet)','R280','jewellery-paperclip-combo-gold.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-cuban-with-disks-silver.jpeg" alt="Cuban with Disks Silver" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Cuban with Disks Silver (Necklace & Bracelet)</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Cuban with Disks Silver (Necklace & Bracelet)','R450','jewellery-cuban-with-disks-silver.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-5mm-cuban-set-ball-pendants.jpeg" alt="5mm Cuban Set Ball Pendants" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">5mm Cuban Set — Ball Pendants</div><div class="product-footer"><span class="product-price">R470</span><button class="add-btn" onclick="addToCart('5mm Cuban Set — Ball Pendants','R470','jewellery-5mm-cuban-set-ball-pendants.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-8mm-cuban-set-cz-cross-disk.jpeg" alt="8mm Cuban Set CZ Cross & Disk" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">8mm Cuban Set — CZ Cross & Disk</div><div class="product-footer"><span class="product-price">R520</span><button class="add-btn" onclick="addToCart('8mm Cuban Set — CZ Cross & Disk','R520','jewellery-8mm-cuban-set-cz-cross-disk.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-amazing-grace-necklace.jpeg" alt="Silver Amazing Grace Necklace" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Amazing Grace Necklace</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Silver Amazing Grace Necklace','R180','jewellery-silver-amazing-grace-necklace.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-oval-ball-chain-combo-silver.jpeg" alt="Oval & Ball Chain Combo Silver" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Oval & Ball Chain Combo — 2 Silver Chains</div><div class="product-footer"><span class="product-price">R300</span><button class="add-btn" onclick="addToCart('Oval & Ball Chain Combo — 2 Silver Chains','R300','jewellery-oval-ball-chain-combo-silver.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-flat-heart-chain-silver.jpeg" alt="Flat Heart Chain Silver" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Flat Heart Chain — Silver</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Flat Heart Chain — Silver','R150','jewellery-flat-heart-chain-silver.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-vcleef-necklace.jpeg" alt="Silver V Cleef Necklace" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver V Cleef Necklace</div><div class="product-footer"><span class="product-price">R280</span><button class="add-btn" onclick="addToCart('Silver V Cleef Necklace','R280','jewellery-silver-vcleef-necklace.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-eternal-hug-silver-necklace.jpeg" alt="Eternal Hug Silver Necklace" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Eternal Hug Silver Necklace</div><div class="product-footer"><span class="product-price">R240</span><button class="add-btn" onclick="addToCart('Eternal Hug Silver Necklace','R240','jewellery-eternal-hug-silver-necklace.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-cz-heart-cross-necklace.jpeg" alt="CZ Heart Cross Silver Necklace" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">CZ Heart Cross Silver Necklace</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('CZ Heart Cross Silver Necklace','R180','jewellery-cz-heart-cross-necklace.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-popcorn-chain-with-balls.jpeg" alt="Popcorn Chain with Balls" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Popcorn Chain with Balls</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Popcorn Chain with Balls','R150','jewellery-popcorn-chain-with-balls.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-turquoise-cross-necklace.jpeg" alt="Silver Turquoise Cross Necklace" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Turquoise Cross Necklace</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Silver Turquoise Cross Necklace','R180','jewellery-silver-turquoise-cross-necklace.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-all-round-cross-necklace.jpeg" alt="All Round Cross Necklace Silver" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">All Round Cross Necklace — Silver</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('All Round Cross Necklace — Silver','R180','jewellery-all-round-cross-necklace.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-sunflower-necklace.jpeg" alt="Gold Sunflower Necklace" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Sunflower Necklace</div><div class="product-footer"><span class="product-price">R160</span><button class="add-btn" onclick="addToCart('Gold Sunflower Necklace','R160','jewellery-gold-sunflower-necklace.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-boho-cross-necklace.jpeg" alt="Gold Boho Cross Necklace" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Boho Cross Necklace</div><div class="product-footer"><span class="product-price">R220</span><button class="add-btn" onclick="addToCart('Gold Boho Cross Necklace','R220','jewellery-gold-boho-cross-necklace.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-double-layer-necklace.jpeg" alt="Silver Double Layer Necklace" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Double Layer Necklace</div><div class="product-footer"><span class="product-price">R220</span><button class="add-btn" onclick="addToCart('Silver Double Layer Necklace','R220','jewellery-silver-double-layer-necklace.jpeg')">+ Add</button></div></div></div>
+
+</div></div></section>
+<hr class="divider"/>
+
+<!-- ── EARRINGS ── -->
+<section id="earrings">
+<div class="section-inner">
+<div class="section-eyebrow">Earrings</div>
+<h2 class="section-title">Earrings</h2>
+<p class="section-count">30 pieces · Tarnish-free, waterproof stainless steel</p>
+<div class="product-grid">
+
+<div class="product-card"><img src="jewellery-gold-sleepers.jpeg" alt="Gold Sleepers with Pearls" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Sleepers with Pearls</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Gold Sleepers with Pearls','R180','jewellery-gold-sleepers.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-spiral-earrings.jpeg" alt="Silver Spiral Earrings" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Spiral Earrings</div><div class="product-footer"><span class="product-price">R200</span><button class="add-btn" onclick="addToCart('Silver Spiral Earrings','R200','jewellery-silver-spiral-earrings.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-hearted-studs-puffed.jpeg" alt="Silver Hearted Studs Puffed Hearts" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Hearted Studs — Puffed Hearts</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Silver Hearted Studs — Puffed Hearts','R150','jewellery-silver-hearted-studs-puffed.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-double-half-hoop-stud.jpeg" alt="Silver Double Half Hoop Studs" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Double Half Hoop Studs</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Silver Double Half Hoop Studs','R150','jewellery-silver-double-half-hoop-stud.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-knotted-studs.jpeg" alt="Silver Knotted Studs" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Knotted Studs</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Silver Knotted Studs','R150','jewellery-silver-knotted-studs.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-emma-gold-studs.jpeg" alt="Emma Gold Studs" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Emma Gold Studs</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Emma Gold Studs','R150','jewellery-emma-gold-studs.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-sleeper-with-flowers.jpeg" alt="Gold Sleeper with Flowers" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Sleeper with Flowers</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Gold Sleeper with Flowers','R150','jewellery-gold-sleeper-with-flowers.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-eternal-hoops.jpeg" alt="Silver Eternal Hoops" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Eternal Hoops</div><div class="product-footer"><span class="product-price">R160</span><button class="add-btn" onclick="addToCart('Silver Eternal Hoops','R160','jewellery-silver-eternal-hoops.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-ella-silver-earrings.jpeg" alt="Ella Silver Earrings" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Ella Silver Earrings</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Ella Silver Earrings','R180','jewellery-ella-silver-earrings.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-chunky-3-hoops-silver.jpeg" alt="Chunky 3 Hoops Silver" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Chunky 3 Hoops Silver — 25mm</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Chunky 3 Hoops Silver — 25mm','R150','jewellery-chunky-3-hoops-silver.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-hearted-studs-pointed.jpeg" alt="Silver Hearted Studs Pointed" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Hearted Studs — Pointed Hearts</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Silver Hearted Studs — Pointed Hearts','R150','jewellery-silver-hearted-studs-pointed.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-wire-hoops.jpeg" alt="Silver Wire Hoops" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Wire Hoops</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Silver Wire Hoops','R150','jewellery-silver-wire-hoops.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-rope-stud-earrings.jpeg" alt="Gold Rope Stud Earrings" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Rope Stud Earrings</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Gold Rope Stud Earrings','R180','jewellery-gold-rope-stud-earrings.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-x-small-sleepers-lerg127.jpeg" alt="Gold X Small Sleepers 13mm" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold X Small Sleepers 13mm</div><div class="product-footer"><span class="product-price">R80</span><button class="add-btn" onclick="addToCart('Gold X Small Sleepers 13mm','R80','jewellery-gold-x-small-sleepers-lerg127.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-talia-gold-half-hoop-lerg112.jpeg" alt="Talia Gold Half Hoop Studs" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Talia Gold Half Hoop Studs</div><div class="product-footer"><span class="product-price">R200</span><button class="add-btn" onclick="addToCart('Talia Gold Half Hoop Studs','R200','jewellery-talia-gold-half-hoop-lerg112.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-eternal-stud-earrings.jpeg" alt="Gold Eternal Stud Earrings" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Eternal Stud Earrings</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Gold Eternal Stud Earrings','R150','jewellery-gold-eternal-stud-earrings.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-tear-drop-studs-lerg116.jpeg" alt="Gold Tear Drop Studs" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Tear Drop Studs</div><div class="product-footer"><span class="product-price">R160</span><button class="add-btn" onclick="addToCart('Gold Tear Drop Studs','R160','jewellery-gold-tear-drop-studs-lerg116.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-talia-gold-half-hoop-textured-lerg113.jpeg" alt="Talia Gold Half Hoop Textured" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Talia Gold Half Hoop Textured</div><div class="product-footer"><span class="product-price">R130</span><button class="add-btn" onclick="addToCart('Talia Gold Half Hoop Textured','R130','jewellery-talia-gold-half-hoop-textured-lerg113.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-wire-hoops-lerg121.jpeg" alt="Gold Wire Hoops" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Wire Hoops</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Gold Wire Hoops','R150','jewellery-gold-wire-hoops-lerg121.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-cz-huggies-small-lerg130.jpeg" alt="Gold CZ Huggies Small" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold CZ Huggies Small</div><div class="product-footer"><span class="product-price">R120</span><button class="add-btn" onclick="addToCart('Gold CZ Huggies Small','R120','jewellery-gold-cz-huggies-small-lerg130.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-dome-ball-studs.jpeg" alt="Gold Dome Ball Studs" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Dome Ball Studs</div><div class="product-footer"><span class="product-price">R160</span><button class="add-btn" onclick="addToCart('Gold Dome Ball Studs','R160','jewellery-gold-dome-ball-studs.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-eternal-full-hoops-lerg123.jpeg" alt="Gold Eternal Full Hoops 25mm" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Eternal Full Hoops 25mm</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Gold Eternal Full Hoops 25mm','R180','jewellery-gold-eternal-full-hoops-lerg123.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-mesh-hoops-lers138.jpeg" alt="Silver Mesh Hoops" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Mesh Hoops</div><div class="product-footer"><span class="product-price">R160</span><button class="add-btn" onclick="addToCart('Silver Mesh Hoops','R160','jewellery-silver-mesh-hoops-lers138.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-chunky-sleepers-lers099.jpeg" alt="Silver Chunky Sleepers X Small" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Chunky Sleepers X Small</div><div class="product-footer"><span class="product-price">R100</span><button class="add-btn" onclick="addToCart('Silver Chunky Sleepers X Small','R100','jewellery-silver-chunky-sleepers-lers099.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-eternal-half-hoop-studs-lers145.jpeg" alt="Silver Eternal Half Hoop Studs" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Eternal Half Hoop Studs</div><div class="product-footer"><span class="product-price">R160</span><button class="add-btn" onclick="addToCart('Silver Eternal Half Hoop Studs','R160','jewellery-silver-eternal-half-hoop-studs-lers145.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-sleeper-with-pearl-lers148.jpeg" alt="Silver Sleeper with Pearl" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Sleeper with Pearl</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Silver Sleeper with Pearl','R180','jewellery-silver-sleeper-with-pearl-lers148.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-tia-earrings-lers144.jpeg" alt="Silver Tia Earrings" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Tia Earrings</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Silver Tia Earrings','R180','jewellery-silver-tia-earrings-lers144.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-feather-open-back-stud-hoops.jpeg" alt="Feather Open Back Stud Hoops Gold 25mm" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Feather Open Back Stud Hoops — Gold 25mm</div><div class="product-footer"><span class="product-price">R180</span><button class="add-btn" onclick="addToCart('Feather Open Back Stud Hoops — Gold 25mm','R180','jewellery-feather-open-back-stud-hoops.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-mesh-hoops-20mm.jpeg" alt="Gold Mesh Hoops 20mm" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Mesh Hoops 20mm</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Gold Mesh Hoops 20mm','R150','jewellery-gold-mesh-hoops-20mm.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-cherry-earrings-enamel.jpeg" alt="Cherry Enamel Earrings" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Cherry Enamel Earrings</div><div class="product-footer"><span class="product-price">R120</span><button class="add-btn" onclick="addToCart('Cherry Enamel Earrings','R120','jewellery-cherry-earrings-enamel.jpeg')">+ Add</button></div></div></div>
+
+</div></div></section>
+<hr class="divider"/>
+
+<!-- ── RINGS ── -->
+<section id="rings" style="background:var(--bg2)">
+<div class="section-inner">
+<div class="section-eyebrow">Rings</div>
+<h2 class="section-title">Rings</h2>
+<p class="section-count">7 pieces · Tarnish-free, waterproof stainless steel</p>
+<div class="product-grid">
+
+<div class="product-card"><img src="jewellery-signet-ring-silver.jpeg" alt="Silver Signet Ring" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Signet Ring</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Silver Signet Ring','R150','jewellery-signet-ring-silver.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-love-heart-ring-silver.jpeg" alt="Love Heart Ring Silver" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Love Heart Ring — Silver</div><div class="product-footer"><span class="product-price">R120</span><button class="add-btn" onclick="addToCart('Love Heart Ring — Silver','R120','jewellery-love-heart-ring-silver.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-square-cz-ring-stack.jpeg" alt="Gold Square CZ Ring Stack" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Square CZ Ring Stack</div><div class="product-footer"><span class="product-price">R350</span><button class="add-btn" onclick="addToCart('Gold Square CZ Ring Stack','R350','jewellery-gold-square-cz-ring-stack.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-stack-rings.jpeg" alt="Silver Stack Rings" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Stack Rings</div><div class="product-footer"><span class="product-price">R420</span><button class="add-btn" onclick="addToCart('Silver Stack Rings','R420','jewellery-silver-stack-rings.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-gold-geo-ring.jpeg" alt="Gold Geo Ring" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Gold Geo Ring</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('Gold Geo Ring','R150','jewellery-gold-geo-ring.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-silver-cz-ring-stack.jpeg" alt="Silver CZ Ring Stack" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver CZ Ring Stack</div><div class="product-footer"><span class="product-price">R300</span><button class="add-btn" onclick="addToCart('Silver CZ Ring Stack','R300','jewellery-silver-cz-ring-stack.jpeg')">+ Add</button></div></div></div>
+
+<div class="product-card"><img src="jewellery-v-gold-ring.jpeg" alt="V Gold Ring" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">V Gold Ring</div><div class="product-footer"><span class="product-price">R150</span><button class="add-btn" onclick="addToCart('V Gold Ring','R150','jewellery-v-gold-ring.jpeg')">+ Add</button></div></div></div>
+
+</div></div></section>
+<hr class="divider"/>
+
+<!-- ── ACCESSORIES ── -->
+<section id="accessories">
+<div class="section-inner">
+<div class="section-eyebrow">Accessories</div>
+<h2 class="section-title">Accessories</h2>
+<p class="section-count">1 piece</p>
+<div class="product-grid" style="max-width:260px">
+
+<div class="product-card"><img src="jewellery-silver-keepsake-cylinder.jpeg" alt="Silver Keepsake Cylinder" loading="lazy"/><div class="product-info"><div class="badge">Limited Stock Available</div><div class="product-name">Silver Keepsake Cylinder</div><div class="product-footer"><span class="product-price">R200</span><button class="add-btn" onclick="addToCart('Silver Keepsake Cylinder','R200','jewellery-silver-keepsake-cylinder.jpeg')">+ Add</button></div></div></div>
+
+</div></div></section>
+
+<!-- ── FOOTER ── -->
+<footer>
+<img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="footer-logo"/>
+<p class="footer-tagline">"Quality you can feel. Service you can trust."</p>
+<p class="footer-contact">WhatsApp: <a href="https://wa.me/27798908527" target="_blank">+27 79 890 8527</a> &nbsp;·&nbsp; Email: <a href="mailto:thehustlehubsa@outlook.com">thehustlehubsa@outlook.com</a></p>
+<p class="footer-copy">© 2026 THE HUSTLE HUB SA · ALL RIGHTS RESERVED</p>
+</footer>
+
+<a href="https://wa.me/27798908527?text=Hi Riette! I'd like to place an order for some BellaTia jewellery." target="_blank" class="wa-float">
+<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+<div class="cart-header"><div><h3>🛒 Your Order List</h3><div class="cart-header-sub">Review, then send via WhatsApp or email</div></div><button class="cart-close" onclick="closeCart()">✕</button></div>
+<div class="cart-items" id="cartItems"><div class="cart-empty"><div class="cart-empty-icon">🛍️</div><p>Your order list is empty.<br/>Click <strong>+ Add</strong> on any item.</p></div></div>
+<div class="cart-footer">
+<div style="display:none" class="cart-back-links"><a href="#" onclick="hideOrderForm(event)" style="font-size:12px;color:var(--gold);text-decoration:none;font-weight:700;margin-right:16px;">← Back to list</a><a href="#" onclick="closeCart();return false;" style="font-size:12px;color:var(--muted);text-decoration:none;font-weight:700;">+ Add More</a></div>
+<div class="cart-step-1"><div class="cart-step-1-total"><span class="cart-step-1-total-label">Estimated Total</span><span class="cart-step-1-total-amt" id="cartTotalStep1">R0</span></div><button class="cart-place-order-btn" onclick="showOrderForm()">Proceed to Send Order →</button><a href="#" class="btn-continue-shopping" onclick="closeCart();return false;">← Add More Products</a></div>
+<div id="cartTotalRow" class="cart-total-row"><span class="cart-total-label">Estimated Total</span><span class="cart-total-amount" id="cartTotal">R0</span></div>
+<div id="cartForm" class="cart-form">
+<label class="cart-form-label">Your Name *</label><input type="text" id="custName" placeholder="Full name" class="cart-input"/>
+<label class="cart-form-label">Your WhatsApp / Phone *</label><input type="tel" id="custPhone" placeholder="e.g. 082 123 4567" class="cart-input"/>
+<label class="cart-form-label">Delivery</label>
+<div class="cart-radio-group"><label class="cart-radio"><input type="radio" name="delivery" value="collect" checked onchange="toggleDelivery()"/> I will collect from Riette</label><label class="cart-radio"><input type="radio" name="delivery" value="delivery" onchange="toggleDelivery()"/> Please deliver to me</label></div>
+<div id="deliverySection" style="display:none"><input type="text" id="custAddress" placeholder="Your delivery address" class="cart-input"/><div class="cart-delivery-info">Delivery fee will be confirmed by Riette based on your location.</div></div>
+</div>
+<a id="cartSendBtn" href="#" onclick="sendViaWhatsApp(event)" class="cart-send-btn"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Send Order via WhatsApp</a>
+<a id="cartEmailBtn" href="#" onclick="sendViaEmail(event)" class="btn-email-cart">✉️ Send Order via Email</a>
+<p class="cart-note">Riette will confirm your order and arrange payment.</p>
+</div>
+</div>
+
+<a href="#" class="back-to-top" id="backToTop">&#9650;</a>
+<div class="added-notif" id="addedNotif"></div>
+
+<script>
+let cart=[];
+function addToCart(name,price,img){const e=cart.find(i=>i.name===name);if(e){e.qty++}else{cart.push({name,price,img:img||'',qty:1})}renderCart();updateCartBadge();showAddedNotif(name);openCart()}
+function removeFromCart(i){cart.splice(i,1);renderCart();updateCartBadge()}
+function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);renderCart();updateCartBadge()}
+function parsePrice(s){const m=s.match(/R(\d+)/);return m?parseInt(m[1]):0}
+function calcTotal(){return cart.reduce((s,i)=>s+parsePrice(i.price)*i.qty,0)}
+function renderCart(){
+  const c=document.getElementById('cartItems');
+  const t=document.getElementById('cartTotal');
+  const s=document.getElementById('cartTotalStep1');
+  const total=calcTotal();
+  if(cart.length===0){c.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">🛍️</div><p>Your order list is empty.<br/>Click <strong>+ Add</strong> on any item.</p></div>';document.getElementById('cartDrawer').classList.remove('order-step');if(t)t.textContent='R0';if(s)s.textContent='R0';return}
+  let h='';
+  cart.forEach((item,i)=>{h+=`<div class="cart-item"><div class="cart-item-img">${item.img?`<img src="${item.img}" alt="${item.name}"/>`:'<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:1.4rem;">🛍️</div>'}</div><div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">${item.price} each</div><div class="cart-item-row"><button class="qty-btn" onclick="changeQty(${i},-1)">−</button><span class="qty-num">${item.qty}</span><button class="qty-btn" onclick="changeQty(${i},1)">+</button><button class="cart-item-remove" onclick="removeFromCart(${i})">Remove</button></div></div></div>`});
+  c.innerHTML=h;
+  if(t)t.textContent=`R${total}`;
+  if(s)s.textContent=`R${total}`;
+}
+function showOrderForm(){if(cart.length===0)return;document.getElementById('cartDrawer').classList.add('order-step')}
+function hideOrderForm(e){e.preventDefault();document.getElementById('cartDrawer').classList.remove('order-step')}
+function buildOrderMessage(){
+  const name=document.getElementById('custName').value.trim();
+  const phone=document.getElementById('custPhone').value.trim();
+  const dtype=document.querySelector('input[name="delivery"]:checked').value;
+  const addr=document.getElementById('custAddress').value.trim();
+  if(!name||!phone){alert('Please fill in your name and phone number.');return null}
+  if(dtype==='delivery'&&!addr){alert('Please fill in your delivery address.');return null}
+  const total=calcTotal();
+  let msg=`Hi Riette!\n\nI'd like to order the following BellaTia jewellery:\n\nMY DETAILS\nName: ${name}\nPhone: ${phone}\n`;
+  if(dtype==='delivery'){msg+=`Delivery address: ${addr}\nDelivery: Yes please\n`}else{msg+=`Delivery: I will collect\n`}
+  msg+=`\nMY ORDER\n`;
+  cart.forEach(item=>{msg+=`• ${item.qty}x ${item.name} — ${item.price} each`;if(item.qty>1)msg+=` (subtotal: R${parsePrice(item.price)*item.qty})`;msg+=`\n`});
+  msg+=`\nEstimated Total: R${total}`;
+  if(dtype==='delivery')msg+=` (+ delivery to be confirmed)`;
+  msg+=`\n\nThank you!`;
+  return msg;
+}
+function sendViaWhatsApp(e){e.preventDefault();const msg=buildOrderMessage();if(!msg)return;window.open(`https://wa.me/27798908527?text=${encodeURIComponent(msg)}`,'_blank')}
+function sendViaEmail(e){e.preventDefault();const msg=buildOrderMessage();if(!msg)return;window.location.href=`mailto:thehustlehubsa@outlook.com?subject=${encodeURIComponent('Jewellery Order — The Hustle Hub SA')}&body=${encodeURIComponent(msg)}`}
+function toggleDelivery(){const t=document.querySelector('input[name="delivery"]:checked').value;document.getElementById('deliverySection').style.display=t==='delivery'?'block':'none'}
+function updateCartBadge(){const count=cart.reduce((s,i)=>s+i.qty,0);['cartBadge','cartBadgeMob'].forEach(id=>{const b=document.getElementById(id);if(b){b.textContent=count;b.style.display=count>0?'flex':'none'}})}
+function openCart(){document.getElementById('cartOverlay').classList.add('open');document.getElementById('cartDrawer').classList.add('open');document.body.style.overflow='hidden'}
+function closeCart(){document.getElementById('cartOverlay').classList.remove('open');const d=document.getElementById('cartDrawer');d.classList.remove('open');d.classList.remove('order-step');document.body.style.overflow=''}
+function showAddedNotif(name){const n=document.getElementById('addedNotif');n.textContent=`✓  ${name} added`;n.classList.add('show');setTimeout(()=>n.classList.remove('show'),2500)}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart()});
+const btt=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{btt.classList.toggle('visible',window.scrollY>300)},{passive:true});
+btt.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
+</script>
+</body>
+</html>
