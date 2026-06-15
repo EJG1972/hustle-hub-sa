@@ -575,13 +575,18 @@
     .showcase-track {
       display: flex; gap: 20px;
       width: max-content;
-      animation: slideLoop 28s linear infinite;
     }
-    .showcase-track:hover { animation-play-state: paused; }
-    @keyframes slideLoop {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .showcase-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: var(--bg); border: 2px solid var(--gold); border-radius: 50%;
+      width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 10; color: var(--gold); font-size: 20px; line-height: 1;
+      box-shadow: 0 4px 16px rgba(201,146,42,0.2);
+      transition: background 0.2s, color 0.2s; flex-shrink: 0;
     }
+    .showcase-btn:hover { background: var(--gold); color: #1a0e02; }
+    .showcase-btn-prev { left: 10px; }
+    .showcase-btn-next { right: 10px; }
     .showcase-slide {
       width: 200px; flex-shrink: 0;
       background: var(--bg3); border: 1px solid var(--border);
@@ -796,6 +801,7 @@
     <h2 class="section-title" style="font-size:clamp(22px,3vw,32px);">Shop Our Latest Range</h2>
   </div>
   <div class="showcase-track-wrap">
+    <button class="showcase-btn showcase-btn-prev" id="showcasePrev" aria-label="Previous">&#8592;</button>
     <div class="showcase-track" id="showcaseTrack">
       <!-- Original set -->
       <div class="showcase-slide">
@@ -904,6 +910,7 @@
         <div class="showcase-slide-info"><div class="showcase-slide-name">Silver Necklace — Green Pendant</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R250</span><button class="showcase-add-btn" onclick="addToCart('Silver Necklace — Green Pendant','R250','promo-silver-necklace-green-pendant.jpeg')">+</button></div></div>
       </div>
     </div>
+    <button class="showcase-btn showcase-btn-next" id="showcaseNext" aria-label="Next">&#8594;</button>
   </div>
 </div>
 
@@ -1610,6 +1617,45 @@
     addToCart(_mp.name, _mp.price, _mp.img);
     closeModal();
   }
+  // Showcase slider — auto-scroll + prev/next arrows
+  (function() {
+    var track = document.getElementById('showcaseTrack');
+    if (!track) return;
+    var CARD_W = 220; // 200px card + 20px gap
+    var SET_SIZE = 13;
+    var SET_W = CARD_W * SET_SIZE;
+    var pos = 0;
+    var speed = 0.55;
+    var frozen = false;
+    var resumeTimer;
+    function step() {
+      if (!frozen) {
+        pos += speed;
+        if (pos >= SET_W) pos -= SET_W;
+        track.style.transform = 'translateX(-' + pos.toFixed(2) + 'px)';
+      }
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+    track.addEventListener('mouseenter', function() { frozen = true; });
+    track.addEventListener('mouseleave', function() { frozen = false; });
+    function jump(dir) {
+      frozen = true;
+      clearTimeout(resumeTimer);
+      pos = pos + dir * CARD_W;
+      if (pos < 0) pos += SET_W;
+      if (pos >= SET_W) pos -= SET_W;
+      track.style.transition = 'transform 0.35s ease';
+      track.style.transform = 'translateX(-' + pos.toFixed(2) + 'px)';
+      setTimeout(function() { track.style.transition = ''; }, 400);
+      resumeTimer = setTimeout(function() { frozen = false; }, 3500);
+    }
+    var prev = document.getElementById('showcasePrev');
+    var next = document.getElementById('showcaseNext');
+    if (prev) prev.addEventListener('click', function() { jump(-1); });
+    if (next) next.addEventListener('click', function() { jump(1); });
+  })();
+
   document.querySelectorAll('.product-card').forEach(function(card) {
     var img = card.querySelector('img');
     if (!img) return;
