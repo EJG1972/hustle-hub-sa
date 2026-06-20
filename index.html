@@ -575,6 +575,9 @@
     .showcase-track {
       display: flex; gap: 20px;
       width: max-content;
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
     }
     .showcase-btn {
       position: absolute; top: 50%; transform: translateY(-50%);
@@ -651,6 +654,17 @@
       .fd-slide { scroll-snap-align: start; width: 160px; }
       .fd-dupes { display: none; }
     }
+    @media (max-width: 768px) {
+      .showcase-slide { width: 160px; }
+      .showcase-slide img { height: 160px; }
+      .showcase-btn { width: 34px; height: 34px; font-size: 15px; }
+      .showcase-slide-name { font-size: 11px; }
+      .showcase-slide-info { padding: 8px 10px; }
+    }
+    @media (max-width: 480px) {
+      .showcase-slide { width: 140px; }
+      .showcase-slide img { height: 140px; }
+    }
   </style>
 </head>
 <body>
@@ -661,6 +675,7 @@
   <ul class="nav-links">
     <li><a href="#fathers-day" style="color:var(--gold);font-weight:800;">🎁 Father's Day</a></li>
     <li><a href="fragrances.html">Men's Fragrances</a></li>
+    <li><a href="scentifique.html">🌸 Scentifique</a></li>
     <li><a href="#gift-sets">Miniature Gift Sets</a></li>
     <li><a href="#jewellery">Jewellery</a></li>
     <li><a href="#categories">Explore All</a></li>
@@ -683,6 +698,7 @@
   <ul>
     <li><a href="#fathers-day" style="color:var(--gold);font-weight:800;">🎁 Father's Day</a></li>
     <li><a href="fragrances.html">🥃 Men's Fragrances</a></li>
+    <li><a href="scentifique.html">🌸 Scentifique</a></li>
     <li><a href="#gift-sets">🎁 Miniature Gift Sets</a></li>
     <li><a href="#jewellery">💎 Jewellery</a></li>
     <li><a href="#categories">🔍 Explore All</a></li>
@@ -803,144 +819,43 @@
   <div class="showcase-track-wrap">
     <button class="showcase-btn showcase-btn-prev" id="showcasePrev" aria-label="Previous">&#8592;</button>
     <div class="showcase-track" id="showcaseTrack">
-      <!-- Original set -->
-      <div class="showcase-slide">
-        <img src="promo-gold-bracelet-pearls.jpeg" alt="Gold Bracelet with Pearls" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet with Pearls</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet with Pearls','R150','jewellery-gold-bracelet.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Spicebomb','R450','fragrance-spicebomb.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-silver-clip-on-bangle-green.jpeg" alt="Silver Clip On Bangle — Green" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Silver Clip On Bangle — Green</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R200</span><button class="showcase-add-btn" onclick="addToCart('Silver Clip On Bangle — Green','R200','promo-silver-clip-on-bangle-green.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Creed Aventus','R450','fragrance-creed-aventus.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-gold-sleepers-pearls.jpeg" alt="Gold Sleepers with Pearls" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Sleepers with Pearls</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Sleepers with Pearls','R180','jewellery-gold-sleepers.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Versace Eros Blue','R450','fragrance-versace-eros.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-silver-chanel-bracelet.jpeg" alt="Silver Chanel Bracelet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Silver Chanel Bracelet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R280</span><button class="showcase-add-btn" onclick="addToCart('Silver Chanel Bracelet','R280','promo-silver-chanel-bracelet.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-acqua-gio-elixir.jpeg" alt="Acqua di Gio Elixir" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Acqua di Gio Elixir</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Acqua di Gio Elixir','R450','fragrance-acqua-gio-elixir.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-ysl-la-nuit.jpeg" alt="YSL La Nuit" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">YSL La Nuit</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('YSL La Nuit','R450','fragrance-ysl-la-nuit.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-gold-prayer-cross-necklace.jpeg" alt="Gold Prayer Cross Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Prayer Cross Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Prayer Cross Necklace','R180','promo-gold-prayer-cross-necklace.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-paco-rabanne.jpeg" alt="1 Million Man" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">1 Million Man</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('1 Million Man','R450','fragrance-paco-rabanne.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-silver-necklace-green-pendant.jpeg" alt="Silver Necklace — Green Pendant" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Silver Necklace — Green Pendant</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R250</span><button class="showcase-add-btn" onclick="addToCart('Silver Necklace — Green Pendant','R250','promo-silver-necklace-green-pendant.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-silver-heart-bracelet-cz.jpeg" alt="Silver Heart Bracelet with CZ" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Silver Heart Bracelet with CZ</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Silver Heart Bracelet with CZ','R150','promo-silver-heart-bracelet-cz.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-gold-bracelet-daisy-extender.jpeg" alt="Gold Bracelet with Daisy Extender" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet with Daisy Extender</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet with Daisy Extender','R150','promo-gold-bracelet-daisy-extender.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-goodluck-daisy-bracelet.jpeg" alt="Goodluck Daisy Gold Bracelet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Goodluck Daisy Gold Bracelet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Goodluck Daisy Gold Bracelet','R150','promo-goodluck-daisy-bracelet.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-gold-mom-necklace.jpeg" alt="Gold Mom Heart Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Mom Heart Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Mom Heart Necklace','R180','promo-gold-mom-necklace.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-golf-smiley-necklace.jpeg" alt="Golf Smiley Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Golf Smiley Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R80</span><button class="showcase-add-btn" onclick="addToCart('Golf Smiley Necklace','R80','promo-golf-smiley-necklace.jpeg')">+</button></div></div>
-      </div>
+      <!-- Original set — 17 slides -->
+      <div class="showcase-slide"><img src="promo-gold-bracelet-pearls.jpeg" alt="Gold Bracelet with Pearls" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet with Pearls</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet with Pearls','R150','jewellery-gold-bracelet.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-gold-band-6mm.jpeg" alt="6MM Gold Band" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">6MM Gold Band</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R100</span><button class="showcase-add-btn" onclick="addToCart('6MM Gold Band (specify size 16–22mm)','R100','jewellery-gold-band-6mm.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="fragrance-spicebomb.jpeg" alt="Spicebomb" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Spicebomb','R450','fragrance-spicebomb.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-silver-vcleef-necklace-drop.jpeg" alt="Silver V Cleef Drop Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Silver V Cleef Drop Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R280</span><button class="showcase-add-btn" onclick="addToCart('Silver V Cleef Drop Necklace','R280','jewellery-silver-vcleef-necklace-drop.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Creed Aventus','R450','fragrance-creed-aventus.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-cross-combo-silver.jpeg" alt="All Round Cross Combo" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">All Round Cross Combo</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R350</span><button class="showcase-add-btn" onclick="addToCart('All Round Cross Combo — Silver Necklace & Bracelet','R350','jewellery-cross-combo-silver.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Versace Eros Blue','R450','fragrance-versace-eros.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-gold-bracelet-brg008-promo.jpeg" alt="Gold Bracelet BRG008" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet BRG008</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet BRG008 (with Extender)','R180','jewellery-gold-bracelet-brg008-promo.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="promo-silver-chanel-bracelet.jpeg" alt="Silver Chanel Bracelet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Silver Chanel Bracelet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R280</span><button class="showcase-add-btn" onclick="addToCart('Silver Chanel Bracelet','R280','promo-silver-chanel-bracelet.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-paperclip-combo-gold-promo.jpeg" alt="Paperclip Combo Gold" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Paperclip Combo Gold</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R280</span><button class="showcase-add-btn" onclick="addToCart('Paperclip Combo Gold — Necklace 50cm & Bracelet 18cm','R280','jewellery-paperclip-combo-gold-promo.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="fragrance-acqua-gio-elixir.jpeg" alt="Acqua di Gio Elixir" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Acqua di Gio Elixir</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Acqua di Gio Elixir','R450','fragrance-acqua-gio-elixir.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="scentifique-centrepiece-peony.jpeg" alt="Centre Piece Peony Diffuser" onclick="document.getElementById('scentifique').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Centre Piece Peony Diffuser</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R199.99</span><button class="showcase-add-btn" onclick="addToCart('Centre Piece Peony Diffuser (specify base & flower colour)','R199.99','scentifique-centrepiece-peony.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="promo-gold-prayer-cross-necklace.jpeg" alt="Gold Prayer Cross Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Gold Prayer Cross Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Prayer Cross Necklace','R180','promo-gold-prayer-cross-necklace.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-black-gold-wallet.jpeg" alt="Black & Gold Wallet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Black &amp; Gold Wallet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R160</span><button class="showcase-add-btn" onclick="addToCart('Classic Black & Gold Detailed Wallet','R160','jewellery-black-gold-wallet.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="promo-gold-mom-necklace.jpeg" alt="Gold Mom Heart Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Gold Mom Heart Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Mom Heart Necklace','R180','promo-gold-mom-necklace.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="scentifique-prayer-combo.jpeg" alt="Prayer Combo Gift Set" onclick="document.getElementById('scentifique').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Prayer Combo Gift Set</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R399.99</span><button class="showcase-add-btn" onclick="addToCart('Prayer Combo Gift Set','R399.99','scentifique-prayer-combo.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="promo-golf-smiley-necklace.jpeg" alt="Golf Smiley Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Golf Smiley Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R80</span><button class="showcase-add-btn" onclick="addToCart('Golf Smiley Necklace','R80','promo-golf-smiley-necklace.jpeg')">+</button></div></div></div>
       <!-- Duplicate set for seamless loop -->
-      <div class="showcase-slide">
-        <img src="promo-gold-bracelet-pearls.jpeg" alt="Gold Bracelet with Pearls" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet with Pearls</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet with Pearls','R150','jewellery-gold-bracelet.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-spicebomb.jpeg" alt="Spicebomb" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Spicebomb','R450','fragrance-spicebomb.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-silver-clip-on-bangle-green.jpeg" alt="Silver Clip On Bangle — Green" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Silver Clip On Bangle — Green</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R200</span><button class="showcase-add-btn" onclick="addToCart('Silver Clip On Bangle — Green','R200','promo-silver-clip-on-bangle-green.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Creed Aventus','R450','fragrance-creed-aventus.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-gold-sleepers-pearls.jpeg" alt="Gold Sleepers with Pearls" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Sleepers with Pearls</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Sleepers with Pearls','R180','jewellery-gold-sleepers.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Versace Eros Blue','R450','fragrance-versace-eros.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-silver-chanel-bracelet.jpeg" alt="Silver Chanel Bracelet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Silver Chanel Bracelet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R280</span><button class="showcase-add-btn" onclick="addToCart('Silver Chanel Bracelet','R280','promo-silver-chanel-bracelet.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-acqua-gio-elixir.jpeg" alt="Acqua di Gio Elixir" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Acqua di Gio Elixir</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Acqua di Gio Elixir','R450','fragrance-acqua-gio-elixir.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-ysl-la-nuit.jpeg" alt="YSL La Nuit" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">YSL La Nuit</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('YSL La Nuit','R450','fragrance-ysl-la-nuit.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-gold-prayer-cross-necklace.jpeg" alt="Gold Prayer Cross Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Prayer Cross Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Prayer Cross Necklace','R180','promo-gold-prayer-cross-necklace.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="fragrance-paco-rabanne.jpeg" alt="1 Million Man" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">1 Million Man</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('1 Million Man','R450','fragrance-paco-rabanne.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-silver-necklace-green-pendant.jpeg" alt="Silver Necklace — Green Pendant" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Silver Necklace — Green Pendant</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R250</span><button class="showcase-add-btn" onclick="addToCart('Silver Necklace — Green Pendant','R250','promo-silver-necklace-green-pendant.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-silver-heart-bracelet-cz.jpeg" alt="Silver Heart Bracelet with CZ" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Silver Heart Bracelet with CZ</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Silver Heart Bracelet with CZ','R150','promo-silver-heart-bracelet-cz.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-gold-bracelet-daisy-extender.jpeg" alt="Gold Bracelet with Daisy Extender" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet with Daisy Extender</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet with Daisy Extender','R150','promo-gold-bracelet-daisy-extender.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-goodluck-daisy-bracelet.jpeg" alt="Goodluck Daisy Gold Bracelet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Goodluck Daisy Gold Bracelet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Goodluck Daisy Gold Bracelet','R150','promo-goodluck-daisy-bracelet.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-gold-mom-necklace.jpeg" alt="Gold Mom Heart Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Gold Mom Heart Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Mom Heart Necklace','R180','promo-gold-mom-necklace.jpeg')">+</button></div></div>
-      </div>
-      <div class="showcase-slide">
-        <img src="promo-golf-smiley-necklace.jpeg" alt="Golf Smiley Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})" />
-        <div class="showcase-slide-info"><div class="showcase-slide-name">Golf Smiley Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R80</span><button class="showcase-add-btn" onclick="addToCart('Golf Smiley Necklace','R80','promo-golf-smiley-necklace.jpeg')">+</button></div></div>
-      </div>
+      <div class="showcase-slide"><img src="promo-gold-bracelet-pearls.jpeg" alt="Gold Bracelet with Pearls" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet with Pearls</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R150</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet with Pearls','R150','jewellery-gold-bracelet.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-gold-band-6mm.jpeg" alt="6MM Gold Band" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">6MM Gold Band</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R100</span><button class="showcase-add-btn" onclick="addToCart('6MM Gold Band (specify size 16–22mm)','R100','jewellery-gold-band-6mm.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="fragrance-spicebomb.jpeg" alt="Spicebomb" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Spicebomb</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Spicebomb','R450','fragrance-spicebomb.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-silver-vcleef-necklace-drop.jpeg" alt="Silver V Cleef Drop Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Silver V Cleef Drop Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R280</span><button class="showcase-add-btn" onclick="addToCart('Silver V Cleef Drop Necklace','R280','jewellery-silver-vcleef-necklace-drop.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Creed Aventus</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Creed Aventus','R450','fragrance-creed-aventus.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-cross-combo-silver.jpeg" alt="All Round Cross Combo" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">All Round Cross Combo</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R350</span><button class="showcase-add-btn" onclick="addToCart('All Round Cross Combo — Silver Necklace & Bracelet','R350','jewellery-cross-combo-silver.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="fragrance-versace-eros.jpeg" alt="Versace Eros Blue" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Versace Eros Blue</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Versace Eros Blue','R450','fragrance-versace-eros.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-gold-bracelet-brg008-promo.jpeg" alt="Gold Bracelet BRG008" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Gold Bracelet BRG008</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Bracelet BRG008 (with Extender)','R180','jewellery-gold-bracelet-brg008-promo.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="promo-silver-chanel-bracelet.jpeg" alt="Silver Chanel Bracelet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Silver Chanel Bracelet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R280</span><button class="showcase-add-btn" onclick="addToCart('Silver Chanel Bracelet','R280','promo-silver-chanel-bracelet.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-paperclip-combo-gold-promo.jpeg" alt="Paperclip Combo Gold" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Paperclip Combo Gold</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R280</span><button class="showcase-add-btn" onclick="addToCart('Paperclip Combo Gold — Necklace 50cm & Bracelet 18cm','R280','jewellery-paperclip-combo-gold-promo.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="fragrance-acqua-gio-elixir.jpeg" alt="Acqua di Gio Elixir" onclick="document.getElementById('fragrances').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Acqua di Gio Elixir</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R450</span><button class="showcase-add-btn" onclick="addToCart('Acqua di Gio Elixir','R450','fragrance-acqua-gio-elixir.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="scentifique-centrepiece-peony.jpeg" alt="Centre Piece Peony Diffuser" onclick="document.getElementById('scentifique').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Centre Piece Peony Diffuser</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R199.99</span><button class="showcase-add-btn" onclick="addToCart('Centre Piece Peony Diffuser (specify base & flower colour)','R199.99','scentifique-centrepiece-peony.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="promo-gold-prayer-cross-necklace.jpeg" alt="Gold Prayer Cross Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Gold Prayer Cross Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Prayer Cross Necklace','R180','promo-gold-prayer-cross-necklace.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="jewellery-black-gold-wallet.jpeg" alt="Black & Gold Wallet" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Black &amp; Gold Wallet</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R160</span><button class="showcase-add-btn" onclick="addToCart('Classic Black & Gold Detailed Wallet','R160','jewellery-black-gold-wallet.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="promo-gold-mom-necklace.jpeg" alt="Gold Mom Heart Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Gold Mom Heart Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R180</span><button class="showcase-add-btn" onclick="addToCart('Gold Mom Heart Necklace','R180','promo-gold-mom-necklace.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="scentifique-prayer-combo.jpeg" alt="Prayer Combo Gift Set" onclick="document.getElementById('scentifique').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Prayer Combo Gift Set</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R399.99</span><button class="showcase-add-btn" onclick="addToCart('Prayer Combo Gift Set','R399.99','scentifique-prayer-combo.jpeg')">+</button></div></div></div>
+      <div class="showcase-slide"><img src="promo-golf-smiley-necklace.jpeg" alt="Golf Smiley Necklace" onclick="document.getElementById('jewellery').scrollIntoView({behavior:'smooth'})"/><div class="showcase-slide-info"><div class="showcase-slide-name">Golf Smiley Necklace</div><div class="showcase-slide-footer"><span class="showcase-slide-price">R80</span><button class="showcase-add-btn" onclick="addToCart('Golf Smiley Necklace','R80','promo-golf-smiley-necklace.jpeg')">+</button></div></div></div>
+      <!-- end duplicate -->
     </div>
     <button class="showcase-btn showcase-btn-next" id="showcaseNext" aria-label="Next">&#8594;</button>
   </div>
@@ -1137,6 +1052,62 @@
     </div>
     <div style="text-align:center;margin-top:32px;">
       <a href="fragrances.html" style="display:inline-block;background:var(--gold);color:#1a0e02;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:3px;transition:background .2s;">View Full Men's Fragrances Range →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ── SCENTIFIQUE ── -->
+<section id="scentifique" style="background:var(--bg);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Sacred Scents, Crafted by Hand · New Arrival</div>
+    <h2 class="section-title">Scentifique — Handcrafted Scents &amp; Decor</h2>
+    <p class="section-desc">Beautiful fragrance diffusers, oil burners, scripture trays and gift combos — all lovingly handcrafted. Fill your home with sacred scents and elegant decor.</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="scentifique-centrepiece-peony.jpeg" alt="Centre Piece Peony Flower Diffuser" />
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Centre Piece Peony Diffuser</div>
+          <div class="product-sub">Stunning pedestal diffuser for your entrance or lounge. Choose your base and flower colour.</div>
+          <div class="product-footer">
+            <span class="product-price">R199.99</span>
+            <button class="add-btn" onclick="addToCart('Centre Piece Peony Diffuser (specify base &amp; flower colour)','R199.99','scentifique-centrepiece-peony.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="scentifique-scripture-tray.jpeg" alt="Scripture Tray with Flower Diffuser" />
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Scripture Tray with Flower Diffuser</div>
+          <div class="product-sub">Carry words of hope and faith into your home. Choose your scripture verse and flower colour.</div>
+          <div class="product-footer">
+            <span class="product-price">R199.99</span>
+            <button class="add-btn" onclick="addToCart('Scripture Tray with Flower Diffuser (specify scripture &amp; flower colour)','R199.99','scentifique-scripture-tray.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="scentifique-prayer-combo.jpeg" alt="Prayer Combo Gift Set" />
+        <div class="product-info">
+          <div class="badge badge-gold">Gift Set</div>
+          <div class="product-name">Prayer Combo</div>
+          <div class="product-sub">Oil burner, scripture tray, heart diffuser, fragrance oil, prayer notepad &amp; pencil — all in one beautiful set.</div>
+          <div class="product-footer">
+            <span class="product-price">R399.99</span>
+            <button class="add-btn" onclick="addToCart('Prayer Combo Gift Set','R399.99','scentifique-prayer-combo.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="scentifique.html" style="display:inline-block;background:var(--gold);color:#1a0e02;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:3px;transition:background .2s;">View Full Scentifique Range →</a>
     </div>
   </div>
 </section>
@@ -1578,8 +1549,9 @@
   (function() {
     var track = document.getElementById('showcaseTrack');
     if (!track) return;
-    var CARD_W = 220; // 200px card + 20px gap
-    var SET_SIZE = 13;
+    var firstSlide = track.querySelector('.showcase-slide');
+    var CARD_W = firstSlide ? (firstSlide.offsetWidth + 20) : 220;
+    var SET_SIZE = 17;
     var SET_W = CARD_W * SET_SIZE;
     var pos = 0;
     var speed = 0.55;
@@ -1611,6 +1583,13 @@
     var next = document.getElementById('showcaseNext');
     if (prev) prev.addEventListener('click', function() { jump(-1); });
     if (next) next.addEventListener('click', function() { jump(1); });
+    var touchStartX = 0;
+    track.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; frozen = true; }, { passive: true });
+    track.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 30) jump(dx < 0 ? 1 : -1);
+      resumeTimer = setTimeout(function() { frozen = false; }, 2500);
+    }, { passive: true });
   })();
 
   document.querySelectorAll('.product-card').forEach(function(card) {

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Scentifique — Sacred Scents, Crafted by Hand · The Hustle Hub SA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#FBF6ED;--bg2:#F5EFE0;--bg3:#EDE6D3;--gold:#C9922A;--gold-lt:#E8C27A;--muted:#8B6848;--border:#D9CCAF;--white:#2A1808;--wa:#25D366}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',sans-serif;background:var(--bg);color:#3a2010;font-size:15px;line-height:1.7}
+nav{position:sticky;top:0;z-index:100;background:#F5EFE0;border-bottom:2px solid var(--gold);padding:10px 32px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{height:60px}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center}
+.nav-links a{color:#4a3010;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.cart-nav-btn{background:var(--gold);border:none;border-radius:4px;padding:9px 16px;cursor:pointer;position:relative;display:flex;align-items:center;gap:6px;font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1a0e02}
+.cart-badge{position:absolute;top:-8px;right:-8px;background:var(--gold);color:#1a0e02;border-radius:50%;width:20px;height:20px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center}
+.nav-mobile-links{display:none;background:#F5EFE0;border-bottom:2px solid var(--gold);padding:0 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:62px;z-index:99}
+.nav-mobile-links::-webkit-scrollbar{display:none}
+.nav-mobile-links ul{display:flex;list-style:none;white-space:nowrap;align-items:center}
+.nav-mobile-links a{display:block;padding:13px 14px;color:#4a3010;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-decoration:none}
+.nav-mobile-links a:hover{color:var(--gold)}
+.mobile-cart-link{display:inline-flex;align-items:center;gap:6px;margin-left:6px;padding:8px 14px;background:var(--gold);color:#1a0e02;border-radius:3px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;text-decoration:none}
+.mobile-top-cart{display:none;align-items:center;gap:6px;background:var(--gold);color:#1a0e02;border:none;border-radius:4px;padding:9px 14px;cursor:pointer;font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;position:relative}
+.cart-badge-mob{position:absolute;top:-7px;right:-7px;background:#1a0e02;color:var(--gold);border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center}
+
+/* ── HERO ── */
+.hero-band{background:var(--bg2);border-bottom:1px solid var(--border);padding:56px 32px;text-align:center}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,54px);font-weight:700;color:var(--white);margin-bottom:6px}
+.hero-title span{color:var(--gold)}
+.hero-tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(14px,2vw,18px);color:var(--muted);margin-bottom:14px}
+.hero-desc{color:var(--muted);font-size:14px;max-width:580px;margin:0 auto 24px}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1.5px solid var(--gold);border-radius:3px;padding:9px 18px;transition:all .2s}
+.back-link:hover{background:var(--gold);color:#1a0e02}
+
+/* ── CATEGORY JUMP ── */
+.cat-jump{background:var(--bg3);border-bottom:1px solid var(--border);padding:12px 32px;position:sticky;top:82px;z-index:90}
+.cat-jump-inner{max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.cat-jump a{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#4a3010;text-decoration:none;padding:6px 14px;border:1px solid var(--border);border-radius:20px;transition:all .2s}
+.cat-jump a:hover,.cat-jump a.active{border-color:var(--gold);color:var(--gold)}
+
+/* ── SECTIONS ── */
+section{padding:64px 32px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,34px);font-weight:700;color:var(--white);margin-bottom:8px}
+.section-desc{font-size:14px;color:var(--muted);margin-bottom:36px;max-width:680px;line-height:1.8}
+
+/* ── PRODUCT GRID ── */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.product-card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column}
+.product-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 16px 48px rgba(201,146,42,.12)}
+.product-card img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+.product-info{padding:16px;display:flex;flex-direction:column;flex:1}
+.badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:8px}
+.badge-gold{background:rgba(201,146,42,.15);color:var(--gold);border:1px solid var(--gold)}
+.badge-new{background:rgba(180,80,60,.12);color:#a04030;border:1px solid rgba(180,80,60,.3)}
+.badge-gift{background:rgba(80,100,160,.1);color:#405090;border:1px solid rgba(80,100,160,.25)}
+.product-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;line-height:1.35}
+.product-sub{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.5;flex:1}
+.scent-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.scent-tag{font-size:9px;font-weight:600;letter-spacing:.04em;padding:2px 7px;border-radius:20px;background:var(--bg3);color:var(--muted);border:1px solid var(--border)}
+.colour-note{font-size:10px;color:var(--muted);font-style:italic;margin-bottom:10px;line-height:1.5}
+.product-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto}
+.product-price{font-size:18px;font-weight:800;color:var(--gold);flex-shrink:0}
+.add-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a0e02;background:var(--gold);border:none;padding:7px 12px;border-radius:3px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.add-btn:hover{background:var(--gold-lt)}
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+
+/* ── SCENT LIST CALLOUT ── */
+.scent-callout{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:24px 28px;margin-bottom:36px}
+.scent-callout-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--white);margin-bottom:14px}
+.scent-list{display:flex;flex-wrap:wrap;gap:6px}
+.scent-pill{font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;background:var(--bg3);color:var(--muted);border:1px solid var(--border)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32px;text-align:center}
+.footer-logo{height:70px;margin-bottom:16px;border-radius:8px;opacity:.9}
+.footer-tagline{font-family:'Playfair Display',serif;font-style:italic;color:var(--muted);font-size:14px;margin-bottom:14px}
+.footer-contact{font-size:13px;color:var(--muted);margin-bottom:16px}
+.footer-contact a{color:var(--gold);text-decoration:none}
+.footer-copy{font-size:11px;color:var(--muted);letter-spacing:.06em}
+
+/* ── FLOATING BUTTONS ── */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:99;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4);transition:all .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+.back-to-top{position:fixed;bottom:28px;left:28px;z-index:9999;width:46px;height:46px;border-radius:50%;background:var(--gold);border:none;color:#1a0e02;font-size:20px;font-weight:bold;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.4);line-height:1}
+.back-to-top.visible{display:flex}
+.added-notif{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--gold);color:#1a0e02;padding:9px 20px;border-radius:3px;font-size:12px;font-weight:700;letter-spacing:.06em;z-index:600;opacity:0;transition:all .3s ease;pointer-events:none;white-space:nowrap}
+.added-notif.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── CART ── */
+.cart-overlay{display:none;position:fixed;inset:0;background:rgba(42,24,8,.5);z-index:200}
+.cart-overlay.open{display:block}
+.cart-drawer{position:fixed;top:0;right:-520px;width:480px;max-width:100vw;height:100vh;height:100dvh;background:var(--bg2);z-index:300;display:flex;flex-direction:column;border-left:1px solid var(--border);box-shadow:-8px 0 48px rgba(0,0,0,.5);transition:right .35s cubic-bezier(.4,0,.2,1)}
+.cart-drawer.open{right:0}
+.cart-header{padding:20px 22px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.cart-header h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--white)}
+.cart-header-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.cart-close{background:var(--bg3);border:1px solid var(--border);width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s}
+.cart-close:hover{border-color:var(--gold);color:var(--gold)}
+.cart-items{flex:1;overflow-y:auto;padding:8px 22px}
+.cart-empty{text-align:center;padding:48px 16px}
+.cart-empty-icon{font-size:40px;margin-bottom:12px;opacity:.3}
+.cart-empty p{font-size:14px;color:var(--muted);line-height:1.8}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.cart-item-img{width:64px;height:64px;border-radius:4px;background:var(--bg3);overflow:hidden;flex-shrink:0;border:1px solid var(--border)}
+.cart-item-img img{width:100%;height:100%;object-fit:cover}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-name{font-family:'Playfair Display',serif;font-size:14px;color:var(--white);margin-bottom:2px}
+.cart-item-price{font-size:13px;color:var(--muted);margin-bottom:8px}
+.cart-item-row{display:flex;align-items:center;gap:8px}
+.qty-btn{background:var(--bg3);border:1px solid var(--border);width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#8B6848;font-weight:700;transition:all .2s;line-height:1}
+.qty-btn:hover{border-color:var(--gold);color:var(--gold)}
+.qty-num{font-size:13px;font-weight:600;color:#8B6848;min-width:16px;text-align:center}
+.cart-item-remove{background:none;border:none;color:var(--muted);font-size:11px;cursor:pointer;margin-left:auto;opacity:.6;transition:opacity .2s;font-family:'Raleway',sans-serif}
+.cart-item-remove:hover{opacity:1;color:#e57373}
+.cart-footer{padding:16px 22px 24px;border-top:1px solid var(--border);background:var(--bg);flex-shrink:0}
+.cart-step-1-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.cart-step-1-total-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.cart-step-1-total-amt{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold)}
+.cart-place-order-btn{display:block;width:100%;background:var(--gold);color:#1a0e02;border:none;padding:14px;border-radius:3px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-bottom:10px;transition:background .2s}
+.cart-place-order-btn:hover{background:var(--gold-lt)}
+.btn-continue-shopping{display:block;text-align:center;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-decoration:none;padding:10px;border:1px solid var(--border);border-radius:3px;transition:all .2s}
+.btn-continue-shopping:hover{border-color:var(--gold);color:var(--gold)}
+.cart-drawer .cart-step-1{display:block}
+.cart-drawer.order-step .cart-step-1{display:none}
+#cartForm{display:none}
+#cartTotalRow{display:none}
+#cartSendBtn{display:none!important}
+#cartEmailBtn{display:none!important}
+.cart-note{display:none;font-size:11px;color:var(--muted);text-align:center;margin-top:10px;font-style:italic}
+.cart-drawer.order-step #cartForm{display:block}
+.cart-drawer.order-step #cartTotalRow{display:flex}
+.cart-drawer.order-step #cartSendBtn{display:flex!important}
+.cart-drawer.order-step #cartEmailBtn{display:flex!important}
+.cart-drawer.order-step .cart-note{display:block}
+.cart-back-links{display:none;margin-bottom:14px}
+.cart-drawer.order-step .cart-back-links{display:block}
+.cart-total-row{display:none;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.cart-total-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.cart-total-amount{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);font-weight:600}
+.cart-form{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.cart-form-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px;margin-top:10px;display:block}
+.cart-input{width:100%;border:1.5px solid var(--border);border-radius:3px;padding:10px 12px;font-family:'Raleway',sans-serif;font-size:13px;color:#3a2010;background:var(--bg3);margin-bottom:8px;outline:none;transition:border-color .2s}
+.cart-input:focus{border-color:var(--gold)}
+.cart-radio-group{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.cart-radio{display:flex;align-items:center;gap:8px;font-size:13px;color:#3a2010;cursor:pointer}
+.cart-radio input[type="radio"]{accent-color:var(--gold);width:15px;height:15px}
+.cart-delivery-info{font-size:12px;color:var(--muted);background:rgba(201,146,42,.08);border:1px solid rgba(201,146,42,.2);border-radius:3px;padding:8px 12px;margin-top:6px;line-height:1.6}
+.cart-send-btn{width:100%;justify-content:center;padding:14px;font-size:12px;margin-bottom:8px;display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;border:none;border-radius:3px;font-family:'Raleway',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.btn-email-cart{display:none;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;background:var(--bg3);color:#3a2010;border:1.5px solid var(--border);border-radius:3px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s;cursor:pointer}
+.btn-email-cart:hover{border-color:var(--gold);color:var(--gold)}
+
+@media(max-width:768px){
+  nav{padding:10px 20px}
+  .nav-logo{height:52px}
+  .nav-links{display:none}
+  .nav-mobile-links{display:block}
+  .mobile-top-cart{display:flex!important}
+  .cat-jump{top:62px;padding:10px 16px}
+  section{padding:44px 20px}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .product-name{font-size:13px}
+  .product-price{font-size:15px}
+  .add-btn{font-size:9px;padding:6px 9px}
+  .cart-drawer{width:100vw;right:-100vw}
+  .hero-band{padding:40px 20px}
+  .wa-float{bottom:20px;right:20px;width:50px;height:50px}
+  .back-to-top{bottom:20px;left:16px}
+  .scent-callout{padding:18px}
+}
+@media(max-width:480px){
+  .product-grid{grid-template-columns:1fr 1fr;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html"><img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="nav-logo"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html">← Back to Shop</a></li>
+    <li><a href="jewellery.html">Jewellery</a></li>
+    <li><a href="fragrances.html">Fragrances</a></li>
+    <li><button class="cart-nav-btn" onclick="openCart()">🛒 Order List<span class="cart-badge" id="cartBadge"></span></button></li>
+  </ul>
+  <button class="mobile-top-cart" onclick="openCart()">🛒 Order<span class="cart-badge-mob" id="cartBadgeMob"></span></button>
+</nav>
+
+<div class="nav-mobile-links">
+  <ul>
+    <li><a href="index.html">← Shop</a></li>
+    <li><a href="jewellery.html">💍 Jewellery</a></li>
+    <li><a href="fragrances.html">🌿 Fragrances</a></li>
+    <li><a href="#" class="mobile-cart-link" onclick="openCart();return false;">🛒 Order</a></li>
+  </ul>
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero-band">
+  <div class="hero-eyebrow">Handcrafted · Natural Scents · Sacred &amp; Beautiful</div>
+  <h1 class="hero-title"><span>Scentifique</span></h1>
+  <p class="hero-tagline">Sacred Scents, Crafted by Hand</p>
+  <p class="hero-desc">From fragrance oils and flower diffusers to scripture trays and gift combos — every Scentifique piece is made with love and intention, for your home and your heart.</p>
+  <a href="index.html" class="back-link">← Back to Main Shop</a>
+</div>
+
+<!-- ── CATEGORY JUMP ── -->
+<div class="cat-jump">
+  <div class="cat-jump-inner">
+    <a href="#oils">🌿 Oils &amp; Burners</a>
+    <a href="#diffusers">🌸 Flower Diffusers</a>
+    <a href="#trays">🏡 Trays &amp; Decor</a>
+    <a href="#gifts">🎁 Gift Sets</a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SECTION 1 · FRAGRANCE OILS & BURNERS -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="oils">
+<div class="section-inner">
+  <div class="section-eyebrow">Natural · Premium Quality · 10ml Bottles</div>
+  <h2 class="section-title">Fragrance Oils &amp; Oil Burners</h2>
+  <p class="section-desc">Transform your space with our handcrafted fragrance oils and oil burners. Made from the finest natural ingredients, each scent is designed to calm, uplift, and create a warm, inviting atmosphere in any room.</p>
+
+  <div class="scent-callout">
+    <div class="scent-callout-title">Available Scents — Fragrance Oils &amp; Diffusers</div>
+    <div class="scent-list">
+      <span class="scent-pill">Lotus &amp; Dragonfruit</span>
+      <span class="scent-pill">Frankincense</span>
+      <span class="scent-pill">Lavender</span>
+      <span class="scent-pill">Champagne Rose</span>
+      <span class="scent-pill">Rose</span>
+      <span class="scent-pill">Rose Amber Musk</span>
+      <span class="scent-pill">White Diamonds</span>
+      <span class="scent-pill">Sandalwood</span>
+      <span class="scent-pill">White Musk</span>
+      <span class="scent-pill">Peony Suede Musk</span>
+      <span class="scent-pill">Cashmere Musk</span>
+      <span class="scent-pill">Wild Orchid</span>
+      <span class="scent-pill">Vanilla</span>
+      <span class="scent-pill">Black Raspberry &amp; Vanilla</span>
+    </div>
+  </div>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="scentifique-castle-oil-burner.jpeg" alt="Castle Oil Burner" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gold">New Arrival</div>
+        <div class="product-name">Castle Oil Burner</div>
+        <div class="product-sub">Bring calm to your space with this castle-inspired ceramic oil burner. Add a few drops of your favourite fragrance oil, light the tealight, and enjoy a gentle, long-lasting aroma. Includes candle.</div>
+        <div class="product-footer"><span class="product-price">R149.99</span><button class="add-btn" onclick="addToCart('Castle Oil Burner (with candle)','R149.99','scentifique-castle-oil-burner.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-fragrance-oil.jpeg" alt="Essential Fragrance Oil 10ml" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gold">14 Scents Available</div>
+        <div class="product-name">Essential Fragrance Oil</div>
+        <div class="product-sub">Premium 10ml fragrance oil, sourced from the finest natural ingredients. Add to your oil burner or diffuser. Please specify your preferred scent when ordering.</div>
+        <div class="colour-note">Scents: Lotus &amp; Dragonfruit · Lavender · Rose · Vanilla · Rose Amber Musk · Sandalwood · White Musk · White Diamonds · Peony Suede Musk · Frankincense · Champagne Rose · Cashmere Musk · Wild Orchid · Black Raspberry &amp; Vanilla</div>
+        <div class="product-footer"><span class="product-price">R70.99</span><button class="add-btn" onclick="addToCart('Essential Fragrance Oil 10ml (specify scent)','R70.99','scentifique-fragrance-oil.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SECTION 2 · FLOWER DIFFUSERS -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="diffusers">
+<div class="section-inner">
+  <div class="section-eyebrow">Handcrafted · Beautifully Scented · Home Decor</div>
+  <h2 class="section-title">Flower Diffusers</h2>
+  <p class="section-desc">Simply add a few drops of your favourite fragrance oil and let the flower absorb and gently release the scent throughout your space. Beautiful, functional, and uniquely handcrafted.</p>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="scentifique-centrepiece-peony.jpeg" alt="Centre Piece Peony Flower Diffuser" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-new">Statement Piece</div>
+        <div class="product-name">Centre Piece Peony Flower Diffuser</div>
+        <div class="product-sub">A stunning centrepiece for your entrance, lounge, dining room or bedroom. Elegant pedestal base with a large peony flower diffuser on top. Let the aroma of fragrance oil be a reminder there's no place like home.</div>
+        <div class="colour-note">Base colours: White · Cream · Marble Effect White/Cream<br/>Flower colours: Red · Soft Lilac · Romantic Pink · White · Mint Green · Yellow</div>
+        <div class="product-footer"><span class="product-price">R199.99</span><button class="add-btn" onclick="addToCart('Centre Piece Peony Diffuser (specify base &amp; flower colour)','R199.99','scentifique-centrepiece-peony.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-peony-diffuser.jpeg" alt="Peony Flower Diffuser on Wooden Base" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gold">8 Colours</div>
+        <div class="product-name">Peony Flower Diffuser</div>
+        <div class="product-sub">A beautiful peony flower diffuser on a natural wooden ball base. Designed with elegance in mind — it complements any decor style while gently releasing your favourite scent throughout the room.</div>
+        <div class="colour-note">Flower colours: Black · Red · Soft Lilac · Romantic Pink · Mint Green · Yellow · Powder Blue · White<br/>White diffuser: R149.99 · Coloured: R179.99</div>
+        <div class="product-footer"><span class="product-price">From R149.99</span><button class="add-btn" onclick="addToCart('Peony Diffuser on Wooden Base (specify colour)','R149.99','scentifique-peony-diffuser.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-rose-diffuser.jpeg" alt="Rose Flower Diffuser on Wooden Base" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gold">Available</div>
+        <div class="product-name">Rose Flower Diffuser</div>
+        <div class="product-sub">A delicate white rose diffuser on a natural wooden base. Add your favourite fragrance oil and let the rose soak up the scent, releasing a gentle aroma that fills your home with warmth and calm. Available in two rose styles.</div>
+        <div class="product-footer"><span class="product-price">R149.99</span><button class="add-btn" onclick="addToCart('Rose Diffuser on Wooden Base','R149.99','scentifique-rose-diffuser.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-lotus-diffuser.jpeg" alt="Lotus Flower Diffuser on Wooden Base" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gold">Available</div>
+        <div class="product-name">Lotus Flower Diffuser</div>
+        <div class="product-sub">A beautifully detailed white lotus flower on a natural wooden base. Serene and sophisticated — perfect for any room that needs a touch of peace and a beautiful scent. Add your favourite fragrance oil to enjoy.</div>
+        <div class="product-footer"><span class="product-price">R149.99</span><button class="add-btn" onclick="addToCart('Lotus Diffuser on Wooden Base','R149.99','scentifique-lotus-diffuser.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-sunflower-diffuser.jpeg" alt="Sunflower Diffuser on Coaster" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gold">Available</div>
+        <div class="product-name">Sunflower Diffuser on Coaster</div>
+        <div class="product-sub">Bring a touch of nature and sunshine into your home! This vibrant yellow sunflower diffuser sits on a matching coaster and captures the essence of bright, sunny days. Pairs beautifully with any citrus or floral fragrance oil.</div>
+        <div class="product-footer"><span class="product-price">R149.99</span><button class="add-btn" onclick="addToCart('Sunflower Diffuser on Coaster','R149.99','scentifique-sunflower-diffuser.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-car-diffuser.jpeg" alt="Car and Wardrobe Rose Diffuser" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gold">6 Colours</div>
+        <div class="product-name">Car / Wardrobe Diffuser</div>
+        <div class="product-sub">A small rose-shaped flower diffuser, perfect for your car or wardrobe. Drip your favourite fragrance oil onto the flower and let the aroma fill the space with sophistication and elegance. Hangs on a satin ribbon.</div>
+        <div class="colour-note">Colours: White · Red · Romantic Pink · Soft Lilac · Mint Green · Yellow</div>
+        <div class="product-footer"><span class="product-price">R49.99</span><button class="add-btn" onclick="addToCart('Car/Wardrobe Rose Diffuser (specify colour)','R49.99','scentifique-car-diffuser.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SECTION 3 · TRAYS & DECOR -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="trays">
+<div class="section-inner">
+  <div class="section-eyebrow">Elegant · Minimalistic · Handcrafted</div>
+  <h2 class="section-title">Trays &amp; Home Decor</h2>
+  <p class="section-desc">Beautiful decorative pieces that double as fragrance diffusers. Perfect for your jewellery, as a coffee table centrepiece, or as a thoughtful gift. It's not just decor — it's an elegant lifestyle.</p>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="scentifique-vintage-tray.jpeg" alt="Cream Vintage Tray with White Peony Diffuser" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-new">Statement Piece</div>
+        <div class="product-name">Cream Vintage Tray with Peony Diffuser</div>
+        <div class="product-sub">A beautifully crafted vintage-inspired cream tray with a white peony flower diffuser. Combines elegance and practicality — display your favourite items on the tray while the peony gently scents the space. A charming touch of nostalgia.</div>
+        <div class="product-footer"><span class="product-price">R199.99</span><button class="add-btn" onclick="addToCart('Cream Vintage Tray with Peony Diffuser','R199.99','scentifique-vintage-tray.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-oval-tray-figurine.jpeg" alt="White Oval Tray with Figurine and Lotus Holder" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gold">Available</div>
+        <div class="product-name">White Oval Tray with Figurine &amp; Lotus Holder</div>
+        <div class="product-sub">Bring elegance, style and sophistication into your space with this stunning decor combo. A white oval tray with a sculptural figurine and a lotus-shaped oil holder. Perfect for jewellery display or as a minimalistic decor piece.</div>
+        <div class="product-footer"><span class="product-price">R199.99</span><button class="add-btn" onclick="addToCart('White Oval Tray with Figurine &amp; Lotus Holder','R199.99','scentifique-oval-tray-figurine.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-heart-tray.jpeg" alt="White Oval Tray with Heart Diffusers" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gold">Available</div>
+        <div class="product-name">White Oval Tray with Heart Diffusers</div>
+        <div class="product-sub">Add your favourite fragrance oil and experience the aroma of style and sophistication — or use it as a beautiful centrepiece on display. Two textured heart diffusers on an elegant white oval tray. Makes a unique and thoughtful gift.</div>
+        <div class="product-footer"><span class="product-price">R129.99</span><button class="add-btn" onclick="addToCart('White Oval Tray with Heart Diffusers','R129.99','scentifique-heart-tray.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-abstract-face-tray.jpeg" alt="Abstract Face Tray" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gold">Available</div>
+        <div class="product-name">Abstract Face Tray</div>
+        <div class="product-sub">Bring elegance, style and sophistication into your space with this unique abstract face decorative piece. A beautiful statement piece for any room — perfect for holding jewellery or as a minimalistic wall or shelf display.</div>
+        <div class="product-footer"><span class="product-price">R129.99</span><button class="add-btn" onclick="addToCart('Abstract Face Tray','R129.99','scentifique-abstract-face-tray.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-modern-decor-set.jpeg" alt="Modern Decor Tray Set" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-new">Set</div>
+        <div class="product-name">Modern Decor Tray Set</div>
+        <div class="product-sub">Modern, stylish and minimalistic decor for coffee tables, entryway tables, office desks and bedroom vanities. Set includes a 21cm tray with matching vase and sculptural figurines. It's not just decor — it's an elegant lifestyle!</div>
+        <div class="colour-note">Available in: All White · White &amp; Black</div>
+        <div class="product-footer"><span class="product-price">R449.99</span><button class="add-btn" onclick="addToCart('Modern Decor Tray Set (specify colour: White or White &amp; Black)','R449.99','scentifique-modern-decor-set.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SECTION 4 · GIFT SETS -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="gifts">
+<div class="section-inner">
+  <div class="section-eyebrow">Meaningful · Handcrafted · Perfect for Gifting</div>
+  <h2 class="section-title">Gift Sets &amp; Scripture Trays</h2>
+  <p class="section-desc">More than just beautiful objects — these pieces carry words of hope, love and encouragement. Perfect for gifting to someone special, or as a daily blessing in your own home or office.</p>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="scentifique-scripture-tray.jpeg" alt="Scripture Tray with Small Flower Diffuser" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gift">Scripture &amp; Faith</div>
+        <div class="product-name">Scripture Tray with Flower Diffuser</div>
+        <div class="product-sub">Add a touch of inspiration and bring faith and beauty to your everyday moments. Each tray features a hand-painted scripture verse with a mini flower diffuser. This tray carries words of hope, love and encouragement — a gentle reminder of God's promises.</div>
+        <div class="colour-note">Scripture options: Philippians 4:6 · Psalm 139:14 · Ecclesiastes 3:1 · Psalm 46:5<br/>Flower colours: White · Red · Soft Lilac · Romantic Pink · Mint Green · Yellow · Powder Blue</div>
+        <div class="product-footer"><span class="product-price">R199.99</span><button class="add-btn" onclick="addToCart('Scripture Tray with Flower Diffuser (specify scripture &amp; flower colour)','R199.99','scentifique-scripture-tray.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="scentifique-prayer-combo.jpeg" alt="Prayer Combo Gift Set" loading="lazy"/>
+      <div class="product-info">
+        <div class="badge badge-gift">Gift Set</div>
+        <div class="product-name">Prayer Combo</div>
+        <div class="product-sub">Create a peaceful atmosphere as you spend time in the Word and in prayer. This beautiful combo includes: a castle oil burner, a scripture tray (Philippians 4:6), a heart diffuser, a fragrance oil, a prayer notepad and a decorated pencil. Let the gentle aroma fill your space with calm and comfort.</div>
+        <div class="product-footer"><span class="product-price">R399.99</span><button class="add-btn" onclick="addToCart('Prayer Combo Gift Set','R399.99','scentifique-prayer-combo.jpeg')">+ Add to Order</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="footer-logo"/>
+  <p class="footer-tagline">Premium Lifestyle · Jewellery · Fragrances · Sacred Scents</p>
+  <p class="footer-contact">Orders via WhatsApp · <a href="index.html">← Back to Main Shop</a></p>
+  <p class="footer-copy">© 2026 The Hustle Hub SA · All Rights Reserved</p>
+</footer>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a class="wa-float" href="https://wa.me/27000000000" target="_blank" aria-label="WhatsApp us">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="added-notif" id="addedNotif">Added to order list!</div>
+
+<!-- ── CART OVERLAY & DRAWER ── -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <div>
+      <h3>Your Order List</h3>
+      <div class="cart-header-sub">Items will be sent via WhatsApp</div>
+    </div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Your order list is empty.<br/>Add items from the shop above.</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-step-1">
+      <div class="cart-step-1-total">
+        <span class="cart-step-1-total-label">Order Total</span>
+        <span class="cart-step-1-total-amt" id="cartTotalStep1">R0</span>
+      </div>
+      <button class="cart-place-order-btn" onclick="proceedToOrder()">Place Order →</button>
+      <a href="index.html" class="btn-continue-shopping">← Continue Shopping</a>
+    </div>
+    <div class="cart-back-links">
+      <a href="#" class="btn-continue-shopping" onclick="backToList();return false;">← Back to Order List</a>
+    </div>
+    <div id="cartTotalRow" class="cart-total-row">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-amount" id="cartTotal">R0</span>
+    </div>
+    <div id="cartForm" class="cart-form">
+      <label class="cart-form-label">Your Name *</label>
+      <input class="cart-input" id="custName" type="text" placeholder="e.g. Sarah van der Merwe"/>
+      <label class="cart-form-label">Your WhatsApp Number *</label>
+      <input class="cart-input" id="custPhone" type="tel" placeholder="e.g. 082 123 4567"/>
+      <label class="cart-form-label">Delivery</label>
+      <div class="cart-radio-group">
+        <label class="cart-radio"><input type="radio" name="delivery" value="Collect" checked/> Collect (George area)</label>
+        <label class="cart-radio"><input type="radio" name="delivery" value="Delivery"/> Delivery (fee applies)</label>
+      </div>
+      <div class="cart-delivery-info">We will confirm delivery cost and arrange a convenient time via WhatsApp.</div>
+    </div>
+    <a id="cartSendBtn" class="cart-send-btn" href="#" onclick="sendWhatsApp();return false;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Send Order via WhatsApp
+    </a>
+    <a id="cartEmailBtn" class="btn-email-cart" href="#" onclick="sendEmail();return false;">📧 Send via Email instead</a>
+    <p class="cart-note">We'll confirm your order and arrange payment &amp; delivery via WhatsApp.</p>
+  </div>
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem('hhsa_cart') || '[]');
+
+function saveCart(){localStorage.setItem('hhsa_cart',JSON.stringify(cart));}
+
+function updateBadge(){
+  const n = cart.reduce((s,i)=>s+i.qty,0);
+  const b = document.getElementById('cartBadge');
+  const bm = document.getElementById('cartBadgeMob');
+  if(b){b.textContent=n;b.style.display=n>0?'flex':'none';}
+  if(bm){bm.textContent=n;bm.style.display=n>0?'flex':'none';}
+}
+
+function parsePrice(p){return parseFloat(p.replace('R','').replace(',',''));}
+
+function addToCart(name,price,img){
+  const ex = cart.find(i=>i.name===name);
+  if(ex){ex.qty++;}else{cart.push({name,price,img,qty:1});}
+  saveCart();updateBadge();renderCart();
+  const n=document.getElementById('addedNotif');
+  n.classList.add('show');setTimeout(()=>n.classList.remove('show'),2000);
+}
+
+function renderCart(){
+  const el=document.getElementById('cartItems');
+  if(!cart.length){
+    el.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Your order list is empty.<br/>Add items from the shop above.</p></div>';
+    document.getElementById('cartTotalStep1').textContent='R0';
+    return;
+  }
+  let total=0;
+  el.innerHTML=cart.map((item,i)=>{
+    const v=parsePrice(item.price)*item.qty;total+=v;
+    return `<div class="cart-item">
+      <div class="cart-item-img"><img src="${item.img}" alt="${item.name}"/></div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">${item.price} each</div>
+        <div class="cart-item-row">
+          <button class="qty-btn" onclick="changeQty(${i},-1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${i},1)">+</button>
+          <button class="cart-item-remove" onclick="removeItem(${i})">Remove</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('cartTotalStep1').textContent='R'+total.toFixed(2);
+  document.getElementById('cartTotal').textContent='R'+total.toFixed(2);
+}
+
+function changeQty(i,d){
+  cart[i].qty+=d;
+  if(cart[i].qty<1)cart.splice(i,1);
+  saveCart();updateBadge();renderCart();
+}
+
+function removeItem(i){cart.splice(i,1);saveCart();updateBadge();renderCart();}
+
+function openCart(){
+  document.getElementById('cartDrawer').classList.remove('order-step');
+  document.getElementById('cartDrawer').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+  renderCart();
+}
+
+function closeCart(){
+  document.getElementById('cartDrawer').classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+}
+
+function proceedToOrder(){
+  if(!cart.length){alert('Please add items to your order first.');return;}
+  document.getElementById('cartDrawer').classList.add('order-step');
+}
+
+function backToList(){document.getElementById('cartDrawer').classList.remove('order-step');}
+
+function sendWhatsApp(){
+  const name=document.getElementById('custName').value.trim();
+  const phone=document.getElementById('custPhone').value.trim();
+  const delivery=document.querySelector('input[name="delivery"]:checked').value;
+  if(!name||!phone){alert('Please enter your name and WhatsApp number.');return;}
+  let msg=`*New Order — Scentifique via The Hustle Hub SA*\n\n*Customer:* ${name}\n*Phone:* ${phone}\n*Delivery:* ${delivery}\n\n*Items Ordered:*\n`;
+  let total=0;
+  cart.forEach(i=>{const v=parsePrice(i.price)*i.qty;total+=v;msg+=`• ${i.name} × ${i.qty} = R${v.toFixed(2)}\n`;});
+  msg+=`\n*Total: R${total.toFixed(2)}*`;
+  window.open('https://wa.me/27000000000?text='+encodeURIComponent(msg),'_blank');
+}
+
+function sendEmail(){
+  const name=document.getElementById('custName').value.trim()||'Customer';
+  const delivery=document.querySelector('input[name="delivery"]:checked').value;
+  let body=`New Order — Scentifique via The Hustle Hub SA\n\nCustomer: ${name}\nDelivery: ${delivery}\n\nItems:\n`;
+  let total=0;
+  cart.forEach(i=>{const v=parsePrice(i.price)*i.qty;total+=v;body+=`- ${i.name} x${i.qty} = R${v.toFixed(2)}\n`;});
+  body+=`\nTotal: R${total.toFixed(2)}`;
+  window.location.href='mailto:orders@hustlehubsa.co.za?subject=New Order — Scentifique&body='+encodeURIComponent(body);
+}
+
+window.addEventListener('scroll',()=>{
+  const btn=document.getElementById('backToTop');
+  if(btn)btn.classList.toggle('visible',window.scrollY>400);
+});
+
+updateBadge();renderCart();
+</script>
+</body>
+</html>
