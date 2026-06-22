@@ -648,9 +648,27 @@
       .fd-slide { scroll-snap-align: start; width: 160px; }
       .fd-dupes { display: none; }
     }
-    .swipe-hint { text-align:center;font-size:12px;color:var(--muted);margin:14px 16px 0;letter-spacing:.08em; }
+    .coll-slider-wrap { position: relative; max-width: 1100px; margin: 0 auto; }
+    .coll-arrow {
+      display: none;
+      position: absolute; top: 50%; transform: translateY(-50%);
+      z-index: 10; background: rgba(0,0,0,0.55); color: #fff;
+      border: 1px solid rgba(255,255,255,0.15); border-radius: 50%;
+      width: 40px; height: 40px; font-size: 18px; cursor: pointer;
+      align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .coll-arrow:hover { background: rgba(201,146,42,0.8); }
+    .coll-prev { left: 6px; }
+    .coll-next { right: 6px; }
+    .coll-dots { display: none; justify-content: center; gap: 8px; margin-top: 16px; }
+    .coll-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: background 0.25s, transform 0.25s; cursor: pointer; }
+    .coll-dot.active { background: var(--gold); transform: scale(1.3); }
+    @media (max-width: 699px) {
+      .coll-arrow { display: flex; }
+      .coll-dots { display: flex; }
+    }
     @media (min-width: 700px) {
-      .swipe-hint { display: none; }
       .collections-scroll {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -733,54 +751,63 @@
     <div class="section-eyebrow">Browse by Category</div>
     <h2 class="section-title">What are you looking for?</h2>
   </div>
-  <div class="collections-scroll">
+  <div class="coll-slider-wrap">
+    <button class="coll-arrow coll-prev" id="collPrev">&#8592;</button>
+    <div class="collections-scroll" id="collScroll">
 
-    <a class="coll-card" href="jewellery.html">
-      <img src="jewellery-elegance-in-bloom-gold-crystal.jpeg" alt="Jewellery Collection" loading="lazy" style="object-position:top center;"/>
-      <div class="coll-card-overlay"></div>
-      <div class="coll-card-body">
-        <div class="coll-card-eyebrow">BellaTia · Gold &amp; Silver</div>
-        <div class="coll-card-title">Jewellery</div>
-        <div class="coll-card-sub">Necklaces, bracelets, rings &amp; accessories. Tarnish free &amp; waterproof.</div>
-        <span class="coll-card-btn">Shop Jewellery →</span>
-      </div>
-    </a>
+      <a class="coll-card" href="jewellery.html">
+        <img src="jewellery-elegance-in-bloom-gold-crystal.jpeg" alt="Jewellery Collection" loading="lazy" style="object-position:top center;"/>
+        <div class="coll-card-overlay"></div>
+        <div class="coll-card-body">
+          <div class="coll-card-eyebrow">BellaTia · Gold &amp; Silver</div>
+          <div class="coll-card-title">Jewellery</div>
+          <div class="coll-card-sub">Necklaces, bracelets, rings &amp; accessories. Tarnish free &amp; waterproof.</div>
+          <span class="coll-card-btn">Shop Jewellery →</span>
+        </div>
+      </a>
 
-    <a class="coll-card" href="fragrances.html">
-      <img src="fragrance-tom-ford-noir.jpeg" alt="Men's Fragrances" loading="lazy"/>
-      <div class="coll-card-overlay"></div>
-      <div class="coll-card-body">
-        <div class="coll-card-eyebrow">AAA Grade · Designer Replicas</div>
-        <div class="coll-card-title">Men's Fragrances</div>
-        <div class="coll-card-sub">Premium designer-inspired scents. Bold, lasting &amp; luxurious.</div>
-        <span class="coll-card-btn">Shop Fragrances →</span>
-      </div>
-    </a>
+      <a class="coll-card" href="fragrances.html">
+        <img src="fragrance-tom-ford-noir.jpeg" alt="Men's Fragrances" loading="lazy"/>
+        <div class="coll-card-overlay"></div>
+        <div class="coll-card-body">
+          <div class="coll-card-eyebrow">AAA Grade · Designer Replicas</div>
+          <div class="coll-card-title">Men's Fragrances</div>
+          <div class="coll-card-sub">Premium designer-inspired scents. Bold, lasting &amp; luxurious.</div>
+          <span class="coll-card-btn">Shop Fragrances →</span>
+        </div>
+      </a>
 
-    <a class="coll-card" href="scentifique.html">
-      <img src="scentifique-rose-diffuser.jpeg" alt="Scentifique Collection" loading="lazy"/>
-      <div class="coll-card-overlay"></div>
-      <div class="coll-card-body">
-        <div class="coll-card-eyebrow">Sacred Scents · Crafted by Hand</div>
-        <div class="coll-card-title">Scentifique</div>
-        <div class="coll-card-sub">Diffusers, fragrance oils, scripture trays &amp; gift combos.</div>
-        <span class="coll-card-btn">Shop Scentifique →</span>
-      </div>
-    </a>
+      <a class="coll-card" href="scentifique.html">
+        <img src="scentifique-rose-diffuser.jpeg" alt="Scentifique Collection" loading="lazy"/>
+        <div class="coll-card-overlay"></div>
+        <div class="coll-card-body">
+          <div class="coll-card-eyebrow">Sacred Scents · Crafted by Hand</div>
+          <div class="coll-card-title">Scentifique</div>
+          <div class="coll-card-sub">Diffusers, fragrance oils, scripture trays &amp; gift combos.</div>
+          <span class="coll-card-btn">Shop Scentifique →</span>
+        </div>
+      </a>
 
-    <a class="coll-card" href="ladies-fragrances.html">
-      <img src="fragrance-kayali-fleur-majesty.jpeg" alt="Ladies' Fragrances — Kayali Range" loading="lazy"/>
-      <div class="coll-card-overlay"></div>
-      <div class="coll-card-body">
-        <div class="coll-card-eyebrow">Kayali · Eau de Parfum · New Arrival</div>
-        <div class="coll-card-title">Ladies' Fragrances</div>
-        <div class="coll-card-sub">Gorgeous Kayali EDP range — feminine, bold &amp; beautifully crafted. R480 each.</div>
-        <span class="coll-card-btn">Shop Ladies' →</span>
-      </div>
-    </a>
+      <a class="coll-card" href="ladies-fragrances.html">
+        <img src="fragrance-kayali-fleur-majesty.jpeg" alt="Ladies' Fragrances — Kayali Range" loading="lazy"/>
+        <div class="coll-card-overlay"></div>
+        <div class="coll-card-body">
+          <div class="coll-card-eyebrow">Kayali · Eau de Parfum · New Arrival</div>
+          <div class="coll-card-title">Ladies' Fragrances</div>
+          <div class="coll-card-sub">Gorgeous Kayali EDP range — feminine, bold &amp; beautifully crafted. R480 each.</div>
+          <span class="coll-card-btn">Shop Ladies' →</span>
+        </div>
+      </a>
 
+    </div>
+    <button class="coll-arrow coll-next" id="collNext">&#8594;</button>
   </div>
-  <p class="swipe-hint">← swipe to browse →</p>
+  <div class="coll-dots" id="collDots">
+    <span class="coll-dot active"></span>
+    <span class="coll-dot"></span>
+    <span class="coll-dot"></span>
+    <span class="coll-dot"></span>
+  </div>
 </section>
 
 
@@ -1484,6 +1511,27 @@
   backToTop.addEventListener('click', e => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ── CATEGORY SLIDER ARROWS & DOTS ──
+  const collScroll = document.getElementById('collScroll');
+  const collDots = document.querySelectorAll('.coll-dot');
+  function collScrollTo(dir) {
+    const cardW = collScroll.querySelector('.coll-card').offsetWidth + 14;
+    collScroll.scrollBy({ left: dir * cardW, behavior: 'smooth' });
+  }
+  document.getElementById('collPrev').addEventListener('click', () => collScrollTo(-1));
+  document.getElementById('collNext').addEventListener('click', () => collScrollTo(1));
+  collScroll.addEventListener('scroll', () => {
+    const cardW = collScroll.querySelector('.coll-card').offsetWidth + 14;
+    const idx = Math.min(3, Math.round(collScroll.scrollLeft / cardW));
+    collDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }, { passive: true });
+  collDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      const cardW = collScroll.querySelector('.coll-card').offsetWidth + 14;
+      collScroll.scrollTo({ left: i * cardW, behavior: 'smooth' });
+    });
   });
 </script>
 
