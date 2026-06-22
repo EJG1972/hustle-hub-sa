@@ -559,7 +559,7 @@
     .collections-header { text-align: center; margin-bottom: 36px; }
     .collections-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       max-width: 1100px;
       margin: 0 auto;
@@ -642,7 +642,7 @@
     }
     @media (max-width: 768px) {
       .collections { padding: 40px 16px; }
-      .collections-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .collections-grid { grid-template-columns: 1fr; gap: 14px; }
       .coll-card { aspect-ratio: 16/9; }
       .coll-card-title { font-size: 20px; }
       .coll-card-body { padding: 18px 16px; }
@@ -737,24 +737,13 @@
     </div>
 
     <div class="coll-card" onclick="window.location='scentifique.html'">
-      <img src="scentifique-rose-diffuser.jpeg" alt="Scentifique Collection" loading="lazy"/>
+      <img src="scentifique-castle-oil-burner.jpeg" alt="Castle Oil Burner — Scentifique" loading="lazy"/>
       <div class="coll-card-overlay"></div>
       <div class="coll-card-body">
         <div class="coll-card-eyebrow">Sacred Scents · Crafted by Hand</div>
         <div class="coll-card-title">Scentifique</div>
         <div class="coll-card-sub">Diffusers, fragrance oils, scripture trays &amp; gift combos.</div>
         <a href="scentifique.html" class="coll-card-btn" onclick="event.stopPropagation()">Shop Scentifique →</a>
-      </div>
-    </div>
-
-    <div class="coll-card" onclick="window.location='scentifique.html#oils'">
-      <img src="scentifique-castle-oil-burner.jpeg" alt="Castle Oil Burner" loading="lazy"/>
-      <div class="coll-card-overlay"></div>
-      <div class="coll-card-body">
-        <div class="coll-card-eyebrow">Scentifique · New Arrival</div>
-        <div class="coll-card-title">Castle Oil Burner</div>
-        <div class="coll-card-sub">Add fragrance oil, light the tealight &amp; fill your home with warmth.</div>
-        <a href="scentifique.html#oils" class="coll-card-btn" onclick="event.stopPropagation()">Shop Oil Burners →</a>
       </div>
     </div>
 
