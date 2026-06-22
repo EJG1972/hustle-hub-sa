@@ -559,9 +559,9 @@
     .collections-header { text-align: center; margin-bottom: 36px; }
     .collections-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 900px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1100px;
       margin: 0 auto;
     }
     .coll-card {
@@ -642,7 +642,7 @@
     }
     @media (max-width: 768px) {
       .collections { padding: 40px 16px; }
-      .collections-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .collections-grid { grid-template-columns: 1fr; gap: 14px; }
       .coll-card { aspect-ratio: 16/9; }
       .coll-card-title { font-size: 20px; }
       .coll-card-body { padding: 18px 16px; }
@@ -717,7 +717,7 @@
   <div class="collections-grid">
 
     <div class="coll-card" onclick="window.location='jewellery.html'">
-      <img src="jewellery-elegance-in-bloom-gold-crystal.jpeg" alt="Jewellery Collection" loading="lazy"/>
+      <img src="jewellery-elegance-in-bloom-gold-crystal.jpeg" alt="Jewellery Collection" loading="lazy" style="object-position:top center;"/>
       <div class="coll-card-overlay"></div>
       <div class="coll-card-body">
         <div class="coll-card-eyebrow">BellaTia · Gold &amp; Silver</div>
@@ -749,16 +749,6 @@
       </div>
     </div>
 
-    <div class="coll-card" onclick="window.location='ladies-fragrances.html'">
-      <img src="fragrance-kayali-fleur-majesty.jpeg" alt="Ladies' Fragrances — Kayali Range" loading="lazy"/>
-      <div class="coll-card-overlay"></div>
-      <div class="coll-card-body">
-        <div class="coll-card-eyebrow">Kayali · Eau de Parfum · New</div>
-        <div class="coll-card-title">Ladies' Fragrances</div>
-        <div class="coll-card-sub">Gorgeous Kayali EDP range — feminine, bold &amp; beautifully crafted.</div>
-        <a href="ladies-fragrances.html" class="coll-card-btn" onclick="event.stopPropagation()">Shop Ladies' →</a>
-      </div>
-    </div>
 
   </div>
 </section>
