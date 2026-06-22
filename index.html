@@ -247,6 +247,7 @@
       padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
     }
     .badge-gold { background: rgba(201,146,42,0.15); color: var(--gold); border: 1px solid var(--gold); }
+    .badge-new { background: rgba(180,80,120,0.12); color: #b04878; border: 1px solid rgba(180,80,120,0.5); }
 
     /* ── COMING SOON CARDS ── */
     .coming-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
@@ -951,6 +952,62 @@
 
 <hr class="divider" />
 
+<!-- ── LADIES' FRAGRANCES ── -->
+<section id="ladies-fragrances">
+  <div class="section-inner">
+    <div class="section-eyebrow">Kayali · Eau de Parfum · New Arrival</div>
+    <h2 class="section-title">Ladies' Fragrances</h2>
+    <p class="section-desc">Brand new Kayali ladies' range — gorgeous Eau de Parfum scents, feminine and long-lasting. <strong style="color:var(--gold)">R480 each.</strong></p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="fragrance-kayali-vanilla-candy.jpeg" alt="Kayali Vanilla Candy Rock Sugar 42" />
+        <div class="product-info">
+          <div class="badge badge-new">New Arrival</div>
+          <div class="product-name">Vanilla Candy Rock Sugar | 42</div>
+          <div class="product-sub">Kayali · Eau de Parfum · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R480</span>
+            <button class="add-btn" onclick="addToCart('Kayali Vanilla Candy Rock Sugar | 42','R480','fragrance-kayali-vanilla-candy.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="fragrance-kayali-fleur-majesty.jpeg" alt="Kayali Fleur Majesty Rose Royale 31" />
+        <div class="product-info">
+          <div class="badge badge-new">New Arrival</div>
+          <div class="product-name">Fleur Majesty Rose Royale | 31</div>
+          <div class="product-sub">Kayali · Eau de Parfum · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R480</span>
+            <button class="add-btn" onclick="addToCart('Kayali Fleur Majesty Rose Royale | 31','R480','fragrance-kayali-fleur-majesty.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="fragrance-kayali-eden-lychee.jpeg" alt="Kayali Eden Sparkling Lychee 39" />
+        <div class="product-info">
+          <div class="badge badge-new">New Arrival</div>
+          <div class="product-name">Eden Sparkling Lychee | 39</div>
+          <div class="product-sub">Kayali · Eau de Parfum · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R480</span>
+            <button class="add-btn" onclick="addToCart('Kayali Eden Sparkling Lychee | 39','R480','fragrance-kayali-eden-lychee.jpeg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="ladies-fragrances.html" style="display:inline-block;background:var(--gold);color:#1a0e02;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:3px;transition:background .2s;">View Full Ladies' Fragrances Range →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
 <!-- ── SCENTIFIQUE ── -->
 <section id="scentifique" style="background:var(--bg);">
   <div class="section-inner">
@@ -1013,7 +1070,7 @@
     <div class="section-eyebrow">Perfect for Birthdays & Special Occasions</div>
     <h2 class="section-title">Miniature Perfume Gift Sets</h2>
     <p class="section-desc">Beautiful gift-ready sets — luxurious mini fragrances packaged to impress. Special prices valid while stocks last.</p>
-    <div class="product-grid">
+    <div class="product-grid" style="grid-template-columns:repeat(2,1fr);">
 
       <div class="product-card">
         <img src="miniature-kayali.jpeg" alt="Kayali Mini Perfume Set" />
