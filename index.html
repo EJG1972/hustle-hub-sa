@@ -642,9 +642,17 @@
       .coll-card-body { padding: 20px 18px; }
       .coll-card-sub { display: none; }
     }
+    .announce-strip{background:#1a0e02;overflow:hidden;height:34px;display:flex;align-items:center}
+    .announce-track{display:flex;white-space:nowrap;animation:ticker 42s linear infinite}
+    .announce-track:hover{animation-play-state:paused}
+    .announce-item{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#E8C27A;padding:0 28px}
+    .announce-sep{color:#C9922A;font-size:11px;flex-shrink:0}
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   </style>
 </head>
 <body>
+
+<div class="announce-strip" aria-hidden="true"><div class="announce-track"><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">New Stock Added Weekly</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Men's Fragrances — R450</span><span class="announce-sep">✦</span><span class="announce-item">Kayali Ladies Range — R480</span><span class="announce-sep">✦</span><span class="announce-item">BellaTia Jewellery from R150</span><span class="announce-sep">✦</span><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">New Stock Added Weekly</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Men's Fragrances — R450</span><span class="announce-sep">✦</span><span class="announce-item">Kayali Ladies Range — R480</span><span class="announce-sep">✦</span><span class="announce-item">BellaTia Jewellery from R150</span><span class="announce-sep">✦</span></div></div>
 
 <!-- ── NAV ── -->
 <nav>
@@ -703,7 +711,7 @@
 </div>
 
 <!-- ── COLLECTION CARDS ── -->
-<section class="collections">
+<section class="collections" style="background:var(--bg2)">
   <div class="collections-header">
     <div class="section-eyebrow">Browse by Category</div>
     <h2 class="section-title">What are you looking for?</h2>
@@ -796,7 +804,7 @@
 
 
 <!-- ── JEWELLERY ── -->
-<section id="jewellery">
+<section id="jewellery" style="background:var(--bg3)">
   <div class="section-inner">
     <div class="section-eyebrow">Tarnish-Free · Waterproof · Hypoallergenic</div>
     <h2 class="section-title">BellaTia Jewellery</h2>
@@ -947,7 +955,7 @@
 <hr class="divider" />
 
 <!-- ── LADIES' FRAGRANCES ── -->
-<section id="ladies-fragrances">
+<section id="ladies-fragrances" style="background:var(--bg3)">
   <div class="section-inner">
     <div class="section-eyebrow">Kayali · Eau de Parfum · New Arrival</div>
     <h2 class="section-title">Kayali Ladies' Fragrances</h2>
@@ -1003,7 +1011,7 @@
 <hr class="divider" />
 
 <!-- ── SCENTIFIQUE ── -->
-<section id="scentifique" style="background:var(--bg);">
+<section id="scentifique" style="background:var(--bg2);">
   <div class="section-inner">
     <div class="section-eyebrow">Sacred Scents, Crafted by Hand · New Arrival</div>
     <h2 class="section-title">Scentifique — Handcrafted Scents &amp; Decor</h2>
@@ -1059,7 +1067,7 @@
 <hr class="divider" />
 
 <!-- ── MINIATURE GIFT SETS ── -->
-<section id="gift-sets">
+<section id="gift-sets" style="background:var(--bg3)">
   <div class="section-inner">
     <div class="section-eyebrow">Perfect for Birthdays & Special Occasions</div>
     <h2 class="section-title">Miniature Perfume Gift Sets</h2>

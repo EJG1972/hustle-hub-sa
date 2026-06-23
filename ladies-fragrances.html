@@ -38,7 +38,7 @@ section{padding:64px 32px}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(24px,3.5vw,36px);font-weight:700;color:var(--white);margin-bottom:8px}
 .section-count{font-size:13px;color:var(--muted);margin-bottom:36px}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
-.product-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.product-card{background:var(--bg2);border:1.5px solid rgba(201,146,42,.4);border-radius:10px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
 .product-card:hover{border-color:var(--gold);transform:translateY(-6px);box-shadow:0 24px 64px rgba(201,146,42,.22)}
 .product-card img{width:100%;display:block;aspect-ratio:3/4;object-fit:contain;background:#1a0e02}
 .product-info{padding:18px 20px;display:flex;flex-direction:column;flex:1}
@@ -156,9 +156,16 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 .lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:4px;cursor:default;display:block}
 .lightbox-close{position:absolute;top:14px;right:18px;color:#fff;font-size:36px;font-weight:300;cursor:pointer;line-height:1;background:none;border:none;opacity:.8}
 .lightbox-close:hover{opacity:1}
+.announce-strip{background:#1a0e02;overflow:hidden;height:34px;display:flex;align-items:center}
+.announce-track{display:flex;white-space:nowrap;animation:ticker 42s linear infinite}
+.announce-track:hover{animation-play-state:paused}
+.announce-item{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#E8C27A;padding:0 28px}
+.announce-sep{color:#C9922A;font-size:11px;flex-shrink:0}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 </style>
 </head>
 <body>
+<div class="announce-strip" aria-hidden="true"><div class="announce-track"><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">New Stock Added Weekly</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Men's Fragrances — R450</span><span class="announce-sep">✦</span><span class="announce-item">Kayali Ladies Range — R480</span><span class="announce-sep">✦</span><span class="announce-item">BellaTia Jewellery from R150</span><span class="announce-sep">✦</span><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">New Stock Added Weekly</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Men's Fragrances — R450</span><span class="announce-sep">✦</span><span class="announce-item">Kayali Ladies Range — R480</span><span class="announce-sep">✦</span><span class="announce-item">BellaTia Jewellery from R150</span><span class="announce-sep">✦</span></div></div>
 
 <nav>
   <a href="index.html"><img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="nav-logo"/></a>
