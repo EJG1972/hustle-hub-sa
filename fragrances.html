@@ -55,6 +55,10 @@ section{padding:64px 32px}
 .product-price{font-size:17px;font-weight:800;color:var(--gold);flex-shrink:0}
 .add-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a0e02;background:var(--gold);border:none;padding:7px 12px;border-radius:3px;cursor:pointer;transition:all .2s;white-space:nowrap}
 .add-btn:hover{background:var(--gold-lt)}
+.badge-sold{background:rgba(155,60,60,.1);color:#9b3a3a;border:1px solid rgba(155,60,60,.35)}
+.product-card.sold-out{opacity:.65}
+.product-card.sold-out:hover{transform:none;box-shadow:none;border-color:var(--border)}
+.sold-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9B7050;background:var(--bg3);border:1px solid var(--border);padding:7px 12px;border-radius:3px;cursor:default;white-space:nowrap}
 .divider{border:none;border-top:1px solid var(--border)}
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32px;text-align:center}
 .footer-logo{height:70px;margin-bottom:16px;border-radius:8px;opacity:.9}
@@ -231,7 +235,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
 <div class="product-card"><img src="fragrance-azzaro-wanted-tonic.jpeg" alt="Azzaro Wanted Tonic" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Wanted Tonic</div><div class="product-sub">Azzaro · Eau de Toilette · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Wanted Tonic — Azzaro','R450','fragrance-azzaro-wanted-tonic.jpeg')">+ Add to Order</button></div></div></div>
 
-<div class="product-card"><img src="fragrance-gucci-pour-homme.jpeg" alt="Gucci by Gucci Pour Homme" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Gucci by Gucci Pour Homme</div><div class="product-sub">Gucci · Eau de Toilette · 90ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Gucci by Gucci Pour Homme','R450','fragrance-gucci-pour-homme.jpeg')">+ Add to Order</button></div></div></div>
+<div class="product-card sold-out"><img src="fragrance-gucci-pour-homme.jpeg" alt="Gucci by Gucci Pour Homme" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Sold Out</div><div class="product-name">Gucci by Gucci Pour Homme</div><div class="product-sub">Gucci · Eau de Toilette · 90ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Sold Out</button></div></div></div>
 
 <div class="product-card"><img src="fragrance-versace-eau-fraiche.jpeg" alt="Versace Man Eau Fraîche" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Man Eau Fraîche</div><div class="product-sub">Versace · Eau de Toilette · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Man Eau Fraîche — Versace','R450','fragrance-versace-eau-fraiche.jpeg')">+ Add to Order</button></div></div></div>
 
