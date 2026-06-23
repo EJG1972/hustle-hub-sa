@@ -11,7 +11,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Raleway',sans-serif;background:var(--bg);color:#E8D4B8;font-size:15px;line-height:1.7}
 nav{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:2px solid var(--gold);padding:10px 32px;display:flex;justify-content:space-between;align-items:center}
-.nav-brand{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold-lt);text-decoration:none;letter-spacing:.04em}
+.nav-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;font-style:italic;color:var(--gold-lt);text-decoration:none;letter-spacing:.04em}
 .nav-links{display:flex;gap:20px;list-style:none;align-items:center}
 .nav-links a{color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--gold)}
@@ -51,7 +51,7 @@ section{padding:64px 32px}
 
 /* ── PRODUCT GRID ── */
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
-.product-card{background:var(--bg2);border:2.5px solid var(--gold);border-radius:10px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.product-card{background:#2A1A0A;border:2.5px solid var(--gold);border-radius:10px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(0,0,0,.35)}
 .product-card:hover{border-color:var(--gold-lt);transform:translateY(-6px);box-shadow:0 24px 64px rgba(201,146,42,.3)}
 .product-card img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
 .product-info{padding:18px 20px;display:flex;flex-direction:column;flex:1}
