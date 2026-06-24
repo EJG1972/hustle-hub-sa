@@ -50,6 +50,12 @@ section{padding:64px 32px}
 .product-price{font-size:18px;font-weight:800;color:var(--gold);flex-shrink:0}
 .add-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a0e02;background:var(--gold);border:none;padding:9px 14px;border-radius:4px;cursor:pointer;transition:all .2s;white-space:nowrap}
 .add-btn:hover{background:var(--gold-lt)}
+.badge-sold{background:rgba(155,60,60,.1);color:#9b3a3a;border:1px solid rgba(155,60,60,.35)}
+.product-card.sold-out{opacity:.8}
+.product-card.sold-out:hover{transform:none;box-shadow:none;border-color:var(--gold)}
+.product-card.sold-out img{opacity:.4;filter:grayscale(30%)}
+.sold-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9B7050;background:var(--bg3);border:1px solid var(--border);padding:9px 14px;border-radius:4px;cursor:default;white-space:nowrap}
+.no-img{width:100%;aspect-ratio:3/4;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:36px;opacity:.35}
 .divider{border:none;border-top:1px solid var(--border);margin:0}
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32px;text-align:center}
 .footer-logo{height:70px;margin-bottom:16px;border-radius:8px;opacity:.9}
@@ -241,6 +247,26 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="product-card"><img src="fragrance-thierry-mugler-alien.jpeg" alt="Alien by Thierry Mugler" loading="lazy"/><div class="product-info"><div class="badge badge-new">New Arrival</div><div class="product-name">Alien Eau de Parfum</div><div class="product-sub">Thierry Mugler · Eau de Parfum · 90ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Thierry Mugler Alien Eau de Parfum','R450','fragrance-thierry-mugler-alien.jpeg')">+ Add to Order</button></div></div></div>
 
 <div class="product-card"><img src="fragrance-ysl-black-opium.jpeg" alt="YSL Black Opium Eau de Parfum" loading="lazy"/><div class="product-info"><div class="badge badge-new">New Arrival</div><div class="product-name">Black Opium Eau de Parfum</div><div class="product-sub">Yves Saint Laurent · Eau de Parfum · 90ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('YSL Black Opium Eau de Parfum','R450','fragrance-ysl-black-opium.jpeg')">+ Add to Order</button></div></div></div>
+
+</div></div></section>
+
+<hr class="divider"/>
+
+<!-- ── SOLD OUT ── -->
+<section id="sold-out">
+<div class="section-inner">
+<div class="section-eyebrow">Coming Back Soon</div>
+<h2 class="section-title">Temporarily Sold Out</h2>
+<p class="section-count">4 fragrances · Currently sold out — check back soon</p>
+<div class="product-grid">
+
+<div class="product-card sold-out"><div class="no-img">🌸</div><div class="product-info"><div class="badge badge-sold">Sold Out</div><div class="product-name">Nuit Pour Femme</div><div class="product-sub">Hugo Boss · Eau de Parfum · 75ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Sold Out</button></div></div></div>
+
+<div class="product-card sold-out"><div class="no-img">🌸</div><div class="product-info"><div class="badge badge-sold">Sold Out</div><div class="product-name">L'Eau Par Kenzo Pour Femme</div><div class="product-sub">Kenzo · Eau de Toilette · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Sold Out</button></div></div></div>
+
+<div class="product-card sold-out"><div class="no-img">🌸</div><div class="product-info"><div class="badge badge-sold">Sold Out</div><div class="product-name">Cheap &amp; Chic — Chic Petals</div><div class="product-sub">Moschino · Eau de Toilette · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Sold Out</button></div></div></div>
+
+<div class="product-card sold-out"><div class="no-img">🌸</div><div class="product-info"><div class="badge badge-sold">Sold Out</div><div class="product-name">Baccarat Rouge 540 Extrait</div><div class="product-sub">Maison Francis Kurkdjian · Extrait de Parfum · 70ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Sold Out</button></div></div></div>
 
 </div></div></section>
 
