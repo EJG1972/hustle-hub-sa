@@ -53,7 +53,7 @@
     .dropdown-menu a { display: block; padding: 11px 18px; color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; text-decoration: none; border-bottom: 1px solid var(--border); transition: color .2s, background .2s; }
     .dropdown-menu a:last-child { border-bottom: none; }
     .dropdown-menu a:hover { color: var(--gold); background: rgba(201,146,42,.08); }
-    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu.open { display: block; }
 
     /* Mobile top cart button */
     .mobile-top-cart {
@@ -1557,5 +1557,22 @@
   </div>
 </div>
 
+<script>
+(function(){
+  document.querySelectorAll('.nav-dropdown > a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      var m=this.nextElementSibling;
+      var o=m.classList.contains('open');
+      document.querySelectorAll('.dropdown-menu.open').forEach(function(x){x.classList.remove('open')});
+      if(!o) m.classList.add('open');
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.nav-dropdown'))
+      document.querySelectorAll('.dropdown-menu.open').forEach(function(m){m.classList.remove('open')});
+  });
+})();
+</script>
 </body>
 </html>
