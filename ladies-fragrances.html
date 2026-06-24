@@ -14,7 +14,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:2px so
 .nav-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;font-style:italic;color:var(--gold-lt);text-decoration:none;letter-spacing:.04em}
 .nav-links{display:flex;gap:20px;list-style:none;align-items:center}
 .nav-links a{color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:var(--gold)}.nav-dropdown{position:relative}.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer}.dropdown-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--bg2);border:1.5px solid var(--gold);border-radius:6px;min-width:220px;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.5)}.dropdown-menu a{display:block;padding:11px 18px;color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s,background .2s}.dropdown-menu a:last-child{border-bottom:none}.dropdown-menu a:hover{color:var(--gold);background:rgba(201,146,42,.08)}.nav-dropdown:hover .dropdown-menu{display:block}
+.nav-links a:hover{color:var(--gold)}.nav-dropdown{position:relative}.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer}.dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--bg2);border:1.5px solid var(--gold);border-radius:6px;min-width:220px;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.5)}.dropdown-menu a{display:block;padding:11px 18px;color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s,background .2s}.dropdown-menu a:last-child{border-bottom:none}.dropdown-menu a:hover{color:var(--gold);background:rgba(201,146,42,.08)}.nav-dropdown:hover .dropdown-menu{display:block}
 .cart-nav-btn{background:var(--gold);border:none;border-radius:4px;padding:9px 16px;cursor:pointer;position:relative;display:flex;align-items:center;gap:6px;font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1a0e02}
 .cart-badge{position:absolute;top:-8px;right:-8px;background:var(--gold);color:#1a0e02;border-radius:50%;width:20px;height:20px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center}
 .nav-mobile-links{display:none;background:var(--bg2);border-bottom:2px solid var(--gold);padding:0 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:62px;z-index:99}
@@ -172,7 +172,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
   <a href="index.html" class="nav-brand">The Hustle Hub SA</a>
   <ul class="nav-links">
     <li><a href="index.html">← Back to Shop</a></li>
-    <li class="nav-dropdown"><a href="#">Fragrances ▾</a><div class="dropdown-menu"><a href="fragrances.html">🥃 Men's Fragrances</a><a href="designer-ladies-fragrances.html">✨ Designer Ladies'</a><a href="scentifique.html">🌸 Scentifique</a></div></li>
+    <li class="nav-dropdown"><a href="#">Fragrances ▾</a><div class="dropdown-menu"><a href="fragrances.html">🥃 Men's Fragrances</a><a href="designer-ladies-fragrances.html">✨ Designer Ladies'</a></div></li>
+    <li><a href="scentifique.html">🌸 Scentifique</a></li>
     <li><a href="jewellery.html">Jewellery</a></li>
     <li><button class="cart-nav-btn" onclick="openCart()">🛒 Order List<span class="cart-badge" id="cartBadge"></span></button></li>
   </ul>
