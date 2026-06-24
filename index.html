@@ -1526,7 +1526,7 @@
   document.getElementById('collNext').addEventListener('click', () => collScrollTo(1));
   collScroll.addEventListener('scroll', () => {
     const cardW = collScroll.querySelector('.coll-card').offsetWidth + 14;
-    const idx = Math.min(3, Math.round(collScroll.scrollLeft / cardW));
+    const idx = Math.min(4, Math.round(collScroll.scrollLeft / cardW));
     collDots.forEach((d, i) => d.classList.toggle('active', i === idx));
   }, { passive: true });
   collDots.forEach((dot, i) => {
