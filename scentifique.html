@@ -76,6 +76,13 @@ section{padding:64px 32px}
 .scent-list{display:flex;flex-wrap:wrap;gap:6px}
 .scent-pill{font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;background:var(--bg3);color:var(--muted);border:1px solid var(--border)}
 
+/* ── CATALOGUE PAGES ── */
+.catalogue-intro{font-size:14px;color:var(--muted);margin-bottom:28px;max-width:640px;line-height:1.8}
+.catalogue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.catalogue-page-wrap{border:1.5px solid var(--border);border-radius:8px;overflow:hidden;transition:all .3s}
+.catalogue-page-wrap:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 12px 40px rgba(201,146,42,.25)}
+.catalogue-page-wrap img{width:100%;display:block;cursor:zoom-in}
+
 /* ── FOOTER ── */
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32px;text-align:center}
 .footer-logo{height:70px;margin-bottom:16px;border-radius:8px;opacity:.9}
@@ -234,6 +241,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
     <a href="#diffusers">🌸 Flower Diffusers</a>
     <a href="#trays">🏡 Trays &amp; Decor</a>
     <a href="#gifts">🎁 Gift Sets</a>
+    <a href="#catalogue">📖 Catalogue</a>
   </div>
 </div>
 
@@ -493,6 +501,55 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
         <div class="product-sub">Create a peaceful atmosphere as you spend time in the Word and in prayer. This beautiful combo includes: a castle oil burner, a scripture tray (Philippians 4:6), a heart diffuser, a fragrance oil, a prayer notepad and a decorated pencil. Let the gentle aroma fill your space with calm and comfort.</div>
         <div class="product-footer"><span class="product-price">R399.99</span><button class="add-btn" onclick="addToCart('Prayer Combo Gift Set','R399.99','scentifique-prayer-combo.jpeg')">+ Add to Order</button></div>
       </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- SECTION 5 · PRODUCT CATALOGUE -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="catalogue">
+<div class="section-inner">
+  <div class="section-eyebrow">Scentifique · Sacred Scents, Crafted by Hand</div>
+  <h2 class="section-title">Browse the Product Catalogue</h2>
+  <p class="catalogue-intro">Tap or click any page to view it full size. See the full Scentifique range — products, prices, colours and descriptions, all in one place.</p>
+
+  <div class="catalogue-grid">
+
+    <div class="catalogue-page-wrap">
+      <img src="scentifique-catalogue-2.jpg" alt="Castle Oil Burner &amp; Essential Fragrance Oil" loading="lazy" onclick="openLightbox(this.src,this.alt)"/>
+    </div>
+
+    <div class="catalogue-page-wrap">
+      <img src="scentifique-catalogue-3.jpg" alt="Rose, Peony &amp; Lotus Diffusers" loading="lazy" onclick="openLightbox(this.src,this.alt)"/>
+    </div>
+
+    <div class="catalogue-page-wrap">
+      <img src="scentifique-catalogue-4.jpg" alt="Centre Piece Peony Diffuser &amp; Sunflower Diffuser" loading="lazy" onclick="openLightbox(this.src,this.alt)"/>
+    </div>
+
+    <div class="catalogue-page-wrap">
+      <img src="scentifique-catalogue-5.jpg" alt="Cream Vintage Tray &amp; Car Wardrobe Diffuser" loading="lazy" onclick="openLightbox(this.src,this.alt)"/>
+    </div>
+
+    <div class="catalogue-page-wrap">
+      <img src="scentifique-catalogue-6.jpg" alt="White Oval Tray with Figurine &amp; Abstract Face Tray" loading="lazy" onclick="openLightbox(this.src,this.alt)"/>
+    </div>
+
+    <div class="catalogue-page-wrap">
+      <img src="scentifique-catalogue-7.jpg" alt="White Oval Tray with Heart Diffusers &amp; Modern Decor Set" loading="lazy" onclick="openLightbox(this.src,this.alt)"/>
+    </div>
+
+    <div class="catalogue-page-wrap">
+      <img src="scentifique-catalogue-8.jpg" alt="Scripture Tray with Flower Diffuser" loading="lazy" onclick="openLightbox(this.src,this.alt)"/>
+    </div>
+
+    <div class="catalogue-page-wrap">
+      <img src="scentifique-catalogue-9.jpg" alt="Prayer Combo Gift Set" loading="lazy" onclick="openLightbox(this.src,this.alt)"/>
     </div>
 
   </div>
