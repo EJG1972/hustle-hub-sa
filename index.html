@@ -613,11 +613,14 @@
     }
     .coll-card-btn:hover { background: #E8C27A; }
 
-    .coll-slider-wrap { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    .coll-slider-wrap { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 50px; }
+    .coll-viewport { overflow: hidden; border-radius: 10px; }
+    .collections-scroll { display: flex; gap: 14px; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); will-change: transform; overflow: visible; }
+    .coll-card { flex: 0 0 auto; }
     .coll-arrow {
       display: flex;
       position: absolute; top: 50%; transform: translateY(-50%);
-      z-index: 10; background: rgba(30,15,5,0.75); color: var(--gold-lt);
+      z-index: 10; background: rgba(30,15,5,0.82); color: var(--gold-lt);
       border: 1.5px solid var(--gold); border-radius: 50%;
       width: 42px; height: 42px; font-size: 18px; cursor: pointer;
       align-items: center; justify-content: center;
@@ -629,14 +632,10 @@
     .coll-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
     .coll-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: background 0.25s, transform 0.25s; cursor: pointer; border: 1px solid rgba(201,146,42,.4); }
     .coll-dot.active { background: var(--gold); transform: scale(1.3); }
-    @media (min-width: 700px) {
-      .coll-card { flex: 0 0 calc(33.33% - 10px); }
-      .coll-card:hover { transform: translateY(-6px); border-color: var(--gold); }
-      .coll-card:hover img { transform: scale(1.05); }
-    }
+    .coll-card:hover img { transform: scale(1.05); }
     @media (max-width: 699px) {
-      .collections { padding: 40px 0 40px 0; }
-      .coll-slider-wrap { padding: 0 44px; }
+      .collections { padding: 40px 0; }
+      .coll-slider-wrap { padding: 0 48px; }
       .coll-card-title { font-size: 22px; }
       .coll-card-body { padding: 20px 18px; }
       .coll-card-sub { display: none; }
@@ -718,6 +717,7 @@
   </div>
   <div class="coll-slider-wrap">
     <button class="coll-arrow coll-prev" id="collPrev">&#8592;</button>
+    <div class="coll-viewport">
     <div class="collections-scroll" id="collScroll">
 
       <a class="coll-card" href="jewellery.html">
@@ -776,15 +776,10 @@
       </a>
 
     </div>
+    </div>
     <button class="coll-arrow coll-next" id="collNext">&#8594;</button>
   </div>
-  <div class="coll-dots" id="collDots">
-    <span class="coll-dot active"></span>
-    <span class="coll-dot"></span>
-    <span class="coll-dot"></span>
-    <span class="coll-dot"></span>
-    <span class="coll-dot"></span>
-  </div>
+  <div class="coll-dots" id="collDots"></div>
 </section>
 
 
@@ -1522,55 +1517,60 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // ── CATEGORY SLIDER ──
-  const collScroll = document.getElementById('collScroll');
-  const collDots = document.querySelectorAll('.coll-dot');
-  const totalCards = collScroll.querySelectorAll('.coll-card').length;
+  // ── CATEGORY SLIDER (transform-based) ──
+  (function(){
+    const track   = document.getElementById('collScroll');
+    const dotsEl  = document.getElementById('collDots');
+    const cards   = Array.from(track.querySelectorAll('.coll-card'));
+    const GAP     = 14;
+    let idx = 0, autoTimer;
 
-  function getStep() {
-    return window.innerWidth >= 700 ? 3 : 1;
-  }
-  function getCardW() {
-    return collScroll.querySelector('.coll-card').offsetWidth + 14;
-  }
-  function totalSteps() {
-    return Math.ceil(totalCards / getStep());
-  }
-  function currentStep() {
-    return Math.min(totalSteps() - 1, Math.round(collScroll.scrollLeft / (getCardW() * getStep())));
-  }
-  function goToStep(step) {
-    const s = Math.max(0, Math.min(totalSteps() - 1, step));
-    collScroll.scrollTo({ left: s * getCardW() * getStep(), behavior: 'smooth' });
-  }
-  function updateDots() {
-    const s = currentStep();
-    const steps = totalSteps();
-    collDots.forEach((d, i) => {
-      d.style.display = i < steps ? 'block' : 'none';
-      d.classList.toggle('active', i === s);
-    });
-  }
+    function visible(){ return window.innerWidth >= 700 ? 3 : 1; }
+    function maxIdx(){ return Math.max(0, cards.length - visible()); }
 
-  document.getElementById('collPrev').addEventListener('click', () => { goToStep(currentStep() - 1); resetAutoplay(); });
-  document.getElementById('collNext').addEventListener('click', () => { goToStep(currentStep() + 1); resetAutoplay(); });
-  collScroll.addEventListener('scroll', updateDots, { passive: true });
-  collDots.forEach((dot, i) => dot.addEventListener('click', () => { goToStep(i); resetAutoplay(); }));
+    function setCardSizes(){
+      const vp = track.parentElement;
+      const vpW = vp.offsetWidth;
+      const v = visible();
+      const w = Math.floor((vpW - GAP * (v - 1)) / v);
+      cards.forEach(c => { c.style.width = w + 'px'; c.style.minWidth = w + 'px'; });
+    }
 
-  let autoplayTimer = setInterval(() => {
-    const next = currentStep() + 1 >= totalSteps() ? 0 : currentStep() + 1;
-    goToStep(next);
-  }, 4000);
-  function resetAutoplay() {
-    clearInterval(autoplayTimer);
-    autoplayTimer = setInterval(() => {
-      const next = currentStep() + 1 >= totalSteps() ? 0 : currentStep() + 1;
-      goToStep(next);
-    }, 4000);
-  }
-  collScroll.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
-  collScroll.addEventListener('mouseleave', () => resetAutoplay());
-  updateDots();
+    function buildDots(){
+      dotsEl.innerHTML = '';
+      const count = maxIdx() + 1;
+      for(let i = 0; i < count; i++){
+        const d = document.createElement('span');
+        d.className = 'coll-dot' + (i === idx ? ' active' : '');
+        d.addEventListener('click', () => { goTo(i); resetAuto(); });
+        dotsEl.appendChild(d);
+      }
+    }
+
+    function goTo(i){
+      idx = Math.max(0, Math.min(maxIdx(), i));
+      const cardW = cards[0].offsetWidth + GAP;
+      track.style.transform = 'translateX(-' + (idx * cardW) + 'px)';
+      dotsEl.querySelectorAll('.coll-dot').forEach((d,j) => d.classList.toggle('active', j === idx));
+    }
+
+    function next(){ goTo(idx + 1 > maxIdx() ? 0 : idx + 1); }
+    function prev(){ goTo(idx - 1 < 0 ? maxIdx() : idx - 1); }
+
+    function startAuto(){ autoTimer = setInterval(next, 4000); }
+    function resetAuto(){ clearInterval(autoTimer); startAuto(); }
+
+    document.getElementById('collPrev').addEventListener('click', () => { prev(); resetAuto(); });
+    document.getElementById('collNext').addEventListener('click', () => { next(); resetAuto(); });
+    track.parentElement.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    track.parentElement.addEventListener('mouseleave', startAuto);
+
+    window.addEventListener('resize', () => { setCardSizes(); idx = 0; goTo(0); buildDots(); });
+
+    setCardSizes();
+    buildDots();
+    startAuto();
+  })();
 </script>
 
 <!-- ── PRODUCT MODAL ── -->
