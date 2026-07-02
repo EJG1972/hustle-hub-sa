@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dubai Perfumes for Men — The Hustle Hub SA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#3D2410;--bg2:#4A2E16;--bg3:#57381E;--gold:#C9922A;--gold-lt:#E8C27A;--cream:#F0E4C8;--muted:#B89870;--border:#3D2E1A;--white:#F5E8CC;--wa:#25D366}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',sans-serif;background:var(--bg);color:#E8D4B8;font-size:15px;line-height:1.7}
+nav{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:2px solid var(--gold);padding:10px 32px;display:flex;justify-content:space-between;align-items:center}
+.nav-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;font-style:italic;color:var(--gold-lt);text-decoration:none;letter-spacing:.04em}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center}
+.nav-links a{color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer}
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--bg2);border:1.5px solid var(--gold);border-radius:6px;min-width:240px;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.dropdown-menu a{display:block;padding:11px 18px;color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s,background .2s}
+.dropdown-menu a:last-child{border-bottom:none}
+.dropdown-menu a:hover{color:var(--gold);background:rgba(201,146,42,.08)}
+.dropdown-menu.open{display:block}
+.cart-nav-btn{background:var(--gold);border:none;border-radius:4px;padding:9px 16px;cursor:pointer;position:relative;display:flex;align-items:center;gap:6px;font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#1a0e02}
+.cart-badge{position:absolute;top:-8px;right:-8px;background:var(--gold);color:#1a0e02;border-radius:50%;width:20px;height:20px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center}
+.nav-mobile-links{display:none;background:var(--bg2);border-bottom:2px solid var(--gold);padding:0 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;position:sticky;top:62px;z-index:99}
+.nav-mobile-links::-webkit-scrollbar{display:none}
+.nav-mobile-links ul{display:flex;list-style:none;white-space:nowrap;align-items:center}
+.nav-mobile-links a{display:block;padding:13px 14px;color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-decoration:none}
+.nav-mobile-links a:hover{color:var(--gold)}
+.mobile-cart-link{display:inline-flex;align-items:center;gap:6px;margin-left:6px;padding:8px 14px;background:var(--gold);color:#1a0e02;border-radius:3px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;text-decoration:none}
+.mobile-top-cart{display:none;align-items:center;gap:6px;background:var(--gold);color:#1a0e02;border:none;border-radius:4px;padding:9px 14px;cursor:pointer;font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;position:relative}
+.cart-badge-mob{position:absolute;top:-7px;right:-7px;background:#1a0e02;color:var(--gold);border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:none;align-items:center;justify-content:center}
+
+/* HERO BAND */
+.hero-band{background:var(--bg2);border-bottom:1px solid var(--border);padding:56px 32px;text-align:center}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,50px);font-weight:700;color:var(--white);margin-bottom:14px}
+.hero-title span{color:var(--gold)}
+.hero-desc{color:var(--muted);font-size:14px;max-width:620px;margin:0 auto 24px;line-height:1.8}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1.5px solid var(--gold);border-radius:3px;padding:9px 18px;transition:all .2s}
+.back-link:hover{background:var(--gold);color:#1a0e02}
+
+/* BRAND FILTER */
+.filter-bar{background:var(--bg3);border-bottom:1px solid var(--border);padding:18px 32px}
+.filter-inner{max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.filter-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.filter-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:20px;border:1.5px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{background:var(--gold);color:#1a0e02;border-color:var(--gold)}
+
+/* SECTIONS */
+section{padding:56px 32px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--white);margin-bottom:6px}
+.section-count{font-size:13px;color:var(--muted);margin-bottom:32px}
+
+/* PRODUCT GRID */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.product-card{background:#2A1A0A;border:2.5px solid var(--gold);border-radius:10px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(0,0,0,.35)}
+.product-card:hover{border-color:var(--gold-lt);transform:translateY(-6px);box-shadow:0 24px 64px rgba(201,146,42,.3)}
+.product-card img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover}
+.product-info{padding:16px 18px;display:flex;flex-direction:column;flex:1}
+.badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:7px}
+.badge-gold{background:rgba(201,146,42,.15);color:var(--gold);border:1px solid var(--gold)}
+.badge-new{background:rgba(100,160,220,.12);color:#5a9fd4;border:1px solid rgba(100,160,220,.4)}
+.badge-hot{background:rgba(200,80,60,.12);color:#c8503c;border:1px solid rgba(200,80,60,.4)}
+.product-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:3px;line-height:1.35}
+.product-sub{font-size:12px;color:var(--muted);margin-bottom:12px;flex:1;line-height:1.4}
+.product-footer{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.product-price{font-size:18px;font-weight:800;color:var(--gold);flex-shrink:0}
+.add-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a0e02;background:var(--gold);border:none;padding:9px 14px;border-radius:4px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.add-btn:hover{background:var(--gold-lt)}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--border);margin:0}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32px;text-align:center}
+.footer-logo{height:70px;margin-bottom:16px;border-radius:8px;opacity:.9}
+.footer-tagline{font-family:'Playfair Display',serif;font-style:italic;color:var(--muted);font-size:14px;margin-bottom:14px}
+.footer-contact{font-size:13px;color:var(--muted);margin-bottom:16px}
+.footer-contact a{color:var(--gold);text-decoration:none}
+.footer-copy{font-size:11px;color:var(--muted);letter-spacing:.06em}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:99;width:56px;height:56px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.4);transition:all .2s;text-decoration:none}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* BACK TO TOP */
+.back-to-top{position:fixed;bottom:28px;left:28px;z-index:9999;width:46px;height:46px;border-radius:50%;background:var(--gold);border:none;color:#1a0e02;font-size:20px;font-weight:bold;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 3px 14px rgba(0,0,0,.4);text-decoration:none;line-height:1}
+.back-to-top.visible{display:flex}
+
+/* TOAST */
+.added-notif{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--gold);color:#1a0e02;padding:9px 20px;border-radius:3px;font-size:12px;font-weight:700;letter-spacing:.06em;z-index:600;opacity:0;transition:all .3s ease;pointer-events:none;white-space:nowrap}
+.added-notif.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* CART DRAWER */
+.cart-overlay{display:none;position:fixed;inset:0;background:rgba(42,24,8,.5);z-index:200}
+.cart-overlay.open{display:block}
+.cart-drawer{position:fixed;top:0;right:-520px;width:480px;max-width:100vw;height:100vh;height:100dvh;background:var(--bg2);z-index:300;display:flex;flex-direction:column;border-left:1px solid var(--border);box-shadow:-8px 0 48px rgba(0,0,0,.5);transition:right .35s cubic-bezier(.4,0,.2,1)}
+.cart-drawer.open{right:0}
+.cart-header{padding:20px 22px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.cart-header h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--white)}
+.cart-header-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.cart-close{background:var(--bg3);border:1px solid var(--border);width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s}
+.cart-close:hover{border-color:var(--gold);color:var(--gold)}
+.cart-items{flex:1;overflow-y:auto;padding:8px 22px}
+.cart-empty{text-align:center;padding:48px 16px}
+.cart-empty-icon{font-size:40px;margin-bottom:12px;opacity:.3}
+.cart-empty p{font-size:14px;color:var(--muted);line-height:1.8}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.cart-item-img{width:64px;height:64px;border-radius:4px;background:var(--bg3);overflow:hidden;flex-shrink:0;border:1px solid var(--border)}
+.cart-item-img img{width:100%;height:100%;object-fit:cover}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-name{font-family:'Playfair Display',serif;font-size:15px;color:var(--white);margin-bottom:2px}
+.cart-item-price{font-size:13px;color:var(--muted);margin-bottom:8px}
+.cart-item-row{display:flex;align-items:center;gap:8px}
+.qty-btn{background:var(--bg3);border:1px solid var(--border);width:26px;height:26px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--cream);font-weight:700;transition:all .2s;line-height:1}
+.qty-btn:hover{border-color:var(--gold);color:var(--gold)}
+.qty-num{font-size:13px;font-weight:600;color:var(--cream);min-width:16px;text-align:center}
+.cart-item-remove{background:none;border:none;color:var(--muted);font-size:11px;cursor:pointer;margin-left:auto;opacity:.6;transition:opacity .2s;font-family:'Raleway',sans-serif}
+.cart-item-remove:hover{opacity:1;color:#e57373}
+.cart-footer{padding:16px 22px 24px;border-top:1px solid var(--border);background:var(--bg);flex-shrink:0}
+.cart-total-row{display:none;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.cart-total-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.cart-total-amount{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);font-weight:600}
+.cart-step-1{}
+.cart-step-1-total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.cart-step-1-total-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.cart-step-1-total-amt{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold)}
+.cart-place-order-btn{display:block;width:100%;background:var(--gold);color:#1a0e02;border:none;padding:14px;border-radius:3px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-bottom:10px;transition:background .2s}
+.cart-place-order-btn:hover{background:var(--gold-lt)}
+.btn-continue-shopping{display:block;text-align:center;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-decoration:none;padding:10px;border:1px solid var(--border);border-radius:3px;transition:all .2s}
+.btn-continue-shopping:hover{border-color:var(--gold);color:var(--gold)}
+.cart-drawer .cart-step-1{display:block}
+.cart-drawer.order-step .cart-step-1{display:none}
+#cartForm{display:none}
+#cartTotalRow{display:none}
+#cartSendBtn{display:none!important}
+#cartEmailBtn{display:none!important}
+.cart-note{display:none;font-size:11px;color:var(--muted);text-align:center;margin-top:10px;font-style:italic}
+.cart-drawer.order-step #cartForm{display:block}
+.cart-drawer.order-step #cartTotalRow{display:flex}
+.cart-drawer.order-step #cartSendBtn{display:flex!important}
+.cart-drawer.order-step #cartEmailBtn{display:flex!important}
+.cart-drawer.order-step .cart-note{display:block}
+.cart-back-links{display:none;margin-bottom:14px}
+.cart-drawer.order-step .cart-back-links{display:block}
+.cart-form{margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.cart-form-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px;margin-top:10px;display:block}
+.cart-input{width:100%;border:1.5px solid var(--border);border-radius:3px;padding:10px 12px;font-family:'Raleway',sans-serif;font-size:13px;color:var(--cream);background:var(--bg3);margin-bottom:8px;outline:none;transition:border-color .2s}
+.cart-input:focus{border-color:var(--gold)}
+.cart-input::placeholder{color:var(--muted);opacity:.7}
+.cart-radio-group{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.cart-radio{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--cream);cursor:pointer}
+.cart-radio input[type="radio"]{accent-color:var(--gold);width:15px;height:15px}
+.cart-delivery-info{font-size:12px;color:var(--muted);background:rgba(201,146,42,.08);border:1px solid rgba(201,146,42,.2);border-radius:3px;padding:8px 12px;margin-top:6px;line-height:1.6}
+.cart-send-btn{width:100%;justify-content:center;padding:14px;font-size:12px;margin-bottom:8px}
+.btn-email-cart{display:none;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;background:var(--bg3);color:var(--cream);border:1.5px solid var(--border);border-radius:3px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s;cursor:pointer}
+.btn-email-cart:hover{border-color:var(--gold);color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:13px 26px;border-radius:3px;cursor:pointer;border:none;transition:all .2s}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#1da851}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:10px 20px}
+  .nav-links{display:none}
+  .nav-mobile-links{display:block}
+  .mobile-top-cart{display:flex!important}
+  .filter-bar{padding:14px 20px}
+  section{padding:40px 20px}
+  .product-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .product-name{font-size:13px}
+  .product-price{font-size:15px}
+  .product-footer{flex-direction:column;align-items:stretch;gap:6px}
+  .add-btn{text-align:center;width:100%}
+  .cart-drawer{width:100vw;right:-100vw}
+  .hero-band{padding:36px 20px}
+}
+@media(max-width:480px){
+  .product-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">The Hustle Hub SA</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown"><a href="#">Fragrances ▾</a>
+      <div class="dropdown-menu">
+        <a href="designer-ladies-fragrances.html">✨ Designer Ladies'</a>
+        <a href="ladies-fragrances.html">💐 Kayali Ladies'</a>
+        <a href="kayali-unisex.html">💎 Unisex Perfumes</a>
+        <a href="fragrances.html">🥃 Men's Fragrances</a>
+        <a href="dubai-perfumes-men.html">🕌 Dubai Perfumes — Men</a>
+        <a href="gift-sets.html">🎁 Gift Sets</a>
+      </div>
+    </li>
+    <li><a href="scentifique.html">🌸 Scentifique</a></li>
+    <li><a href="gift-sets.html">🎁 Gift Sets</a></li>
+    <li><a href="jewellery.html">💎 Jewellery</a></li>
+    <li>
+      <button class="cart-nav-btn" onclick="openCart()">
+        🛒 Order List
+        <span class="cart-badge" id="cartBadge"></span>
+      </button>
+    </li>
+  </ul>
+  <button class="mobile-top-cart" onclick="openCart()">
+    🛒 Order
+    <span class="cart-badge-mob" id="cartBadgeMob"></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile-links">
+  <ul>
+    <li><a href="fragrances.html">🥃 Men's</a></li>
+    <li><a href="dubai-perfumes-men.html">🕌 Dubai Men</a></li>
+    <li><a href="ladies-fragrances.html">💐 Kayali</a></li>
+    <li><a href="designer-ladies-fragrances.html">✨ Designer</a></li>
+    <li><a href="kayali-unisex.html">💎 Unisex</a></li>
+    <li><a href="scentifique.html">🌸 Scentifique</a></li>
+    <li><a href="gift-sets.html">🎁 Gift Sets</a></li>
+    <li><a href="jewellery.html">💎 Jewellery</a></li>
+    <li><a href="#" class="mobile-cart-link" onclick="openCart(); return false;">🛒 Order</a></li>
+  </ul>
+</div>
+
+<!-- HERO BAND -->
+<div class="hero-band">
+  <div class="hero-eyebrow">Armaf · Rasasi · Lattafa · Afnan · French Avenue</div>
+  <h1 class="hero-title">Dubai Perfumes<br/><span>for Men</span></h1>
+  <p class="hero-desc">30 bold, long-lasting Eau de Parfum fragrances — the best of Arabian perfumery. Rich oud, spicy woods, fresh aquatics and iconic designer-inspired scents. From R430.</p>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</div>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">Filter by brand:</span>
+    <button class="filter-btn active" onclick="filterBrand('all', this)">All 30</button>
+    <button class="filter-btn" onclick="filterBrand('armaf', this)">Armaf</button>
+    <button class="filter-btn" onclick="filterBrand('rasasi', this)">Rasasi</button>
+    <button class="filter-btn" onclick="filterBrand('lattafa', this)">Lattafa</button>
+    <button class="filter-btn" onclick="filterBrand('afnan', this)">Afnan</button>
+    <button class="filter-btn" onclick="filterBrand('french-avenue', this)">French Avenue</button>
+  </div>
+</div>
+
+<!-- ARMAF -->
+<section id="armaf" style="background:var(--bg2)" data-brand="armaf">
+  <div class="section-inner">
+    <div class="section-eyebrow">Armaf · UAE · Eau de Parfum</div>
+    <h2 class="section-title">Armaf</h2>
+    <p class="section-count">8 fragrances — R450 to R480</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="dubai-odyssey-homme.png" alt="Odyssey Homme by Armaf"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Odyssey Homme</div>
+          <div class="product-sub">Armaf · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Odyssey Homme — Armaf 100ml','R450','dubai-odyssey-homme.png')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-odyssey-homme-white.png" alt="Odyssey Homme White Edition by Armaf"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Odyssey Homme White Edition</div>
+          <div class="product-sub">Armaf · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Odyssey Homme White Edition — Armaf 100ml','R450','dubai-odyssey-homme-white.png')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-odyssey-aqua.png" alt="Odyssey Aqua by Armaf"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Odyssey Aqua</div>
+          <div class="product-sub">Armaf · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Odyssey Aqua — Armaf 100ml','R450','dubai-odyssey-aqua.png')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-odyssey-tyrant.png" alt="Odyssey Tyrant by Armaf"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Odyssey Tyrant</div>
+          <div class="product-sub">Armaf · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Odyssey Tyrant — Armaf 100ml','R450','dubai-odyssey-tyrant.png')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-odyssey-mandarin-sky.png" alt="Odyssey Mandarin Sky by Armaf"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Odyssey Mandarin Sky</div>
+          <div class="product-sub">Armaf · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Odyssey Mandarin Sky — Armaf 100ml','R450','dubai-odyssey-mandarin-sky.png')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-odyssey-wild-one.png" alt="Odyssey Wild One Gold Edition by Armaf"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Odyssey Wild One</div>
+          <div class="product-sub">Armaf · Gold Edition · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Odyssey Wild One Gold Edition — Armaf 100ml','R450','dubai-odyssey-wild-one.png')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-club-de-nuit-intense-man.png" alt="Club de Nuit Intense Man by Armaf"/>
+        <div class="product-info">
+          <div class="badge badge-hot">Best Seller</div>
+          <div class="product-name">Club de Nuit Intense Man</div>
+          <div class="product-sub">Armaf · EDP · 105ml</div>
+          <div class="product-footer">
+            <span class="product-price">R480</span>
+            <button class="add-btn" onclick="addToCart('Club de Nuit Intense Man — Armaf 105ml','R480','dubai-club-de-nuit-intense-man.png')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-club-de-nuit-urban-man-elixir.jpg" alt="Club de Nuit Urban Man Elixir by Armaf"/>
+        <div class="product-info">
+          <div class="badge badge-hot">Best Seller</div>
+          <div class="product-name">Club de Nuit Urban Man Elixir</div>
+          <div class="product-sub">Armaf · EDP · 105ml</div>
+          <div class="product-footer">
+            <span class="product-price">R480</span>
+            <button class="add-btn" onclick="addToCart('Club de Nuit Urban Man Elixir — Armaf 105ml','R480','dubai-club-de-nuit-urban-man-elixir.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- RASASI -->
+<section id="rasasi" style="background:var(--bg3)" data-brand="rasasi">
+  <div class="section-inner">
+    <div class="section-eyebrow">Rasasi · UAE · Eau de Parfum</div>
+    <h2 class="section-title">Rasasi</h2>
+    <p class="section-count">5 fragrances — R450 each</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="dubai-hawas-for-him.png" alt="Hawas For Him by Rasasi"/>
+        <div class="product-info">
+          <div class="badge badge-hot">Best Seller</div>
+          <div class="product-name">Hawas For Him</div>
+          <div class="product-sub">Rasasi · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Hawas For Him — Rasasi 100ml','R450','dubai-hawas-for-him.png')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-hawas-ice.jpg" alt="Hawas Ice by Rasasi"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Hawas Ice</div>
+          <div class="product-sub">Rasasi · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Hawas Ice — Rasasi 100ml','R450','dubai-hawas-ice.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-hawas-black.jpg" alt="Hawas Black by Rasasi"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Hawas Black</div>
+          <div class="product-sub">Rasasi · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Hawas Black — Rasasi 100ml','R450','dubai-hawas-black.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-hawas-kobra.jpg" alt="Hawas Kobra by Rasasi"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Hawas Kobra</div>
+          <div class="product-sub">Rasasi · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Hawas Kobra — Rasasi 100ml','R450','dubai-hawas-kobra.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-hawas-verde.jpg" alt="Hawas Verde by Rasasi"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Hawas Verde</div>
+          <div class="product-sub">Rasasi · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Hawas Verde — Rasasi 100ml','R450','dubai-hawas-verde.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-hawas-viper.jpg" alt="Hawas Viper by Rasasi"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Hawas Viper</div>
+          <div class="product-sub">Rasasi · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Hawas Viper — Rasasi 100ml','R450','dubai-hawas-viper.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- LATTAFA -->
+<section id="lattafa" style="background:var(--bg2)" data-brand="lattafa">
+  <div class="section-inner">
+    <div class="section-eyebrow">Lattafa · UAE · Eau de Parfum</div>
+    <h2 class="section-title">Lattafa</h2>
+    <p class="section-count">13 fragrances — R430 to R510</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="dubai-asad.jpg" alt="Asad by Lattafa"/>
+        <div class="product-info">
+          <div class="badge badge-hot">Best Seller</div>
+          <div class="product-name">Asad</div>
+          <div class="product-sub">Lattafa · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R430</span>
+            <button class="add-btn" onclick="addToCart('Asad — Lattafa 100ml','R430','dubai-asad.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-asad-elixir.jpg" alt="Asad Elixir by Lattafa"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Asad Elixir</div>
+          <div class="product-sub">Lattafa · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R430</span>
+            <button class="add-btn" onclick="addToCart('Asad Elixir — Lattafa 100ml','R430','dubai-asad-elixir.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-asad-bourbon.jpg" alt="Asad Bourbon by Lattafa"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Asad Bourbon</div>
+          <div class="product-sub">Lattafa · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R430</span>
+            <button class="add-btn" onclick="addToCart('Asad Bourbon — Lattafa 100ml','R430','dubai-asad-bourbon.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-asad-zanzibar.jpg" alt="Asad Zanzibar by Lattafa"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Asad Zanzibar</div>
+          <div class="product-sub">Lattafa · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R430</span>
+            <button class="add-btn" onclick="addToCart('Asad Zanzibar — Lattafa 100ml','R430','dubai-asad-zanzibar.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-fakhar-homme.jpg" alt="Fakhar Homme by Lattafa"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Fakhar Homme</div>
+          <div class="product-sub">Lattafa · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R480</span>
+            <button class="add-btn" onclick="addToCart('Fakhar Homme — Lattafa 100ml','R480','dubai-fakhar-homme.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-qaed-al-shabaab.jpg" alt="Qaa'ed Al Shabaab by Lattafa"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Qaa'ed Al Shabaab</div>
+          <div class="product-sub">Lattafa · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R470</span>
+            <button class="add-btn" onclick="addToCart("Qaa'ed Al Shabaab — Lattafa 100ml",'R470','dubai-qaed-al-shabaab.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-habik-for-men.jpg" alt="Habik for Men by Lattafa"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Habik for Men</div>
+          <div class="product-sub">Lattafa · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R500</span>
+            <button class="add-btn" onclick="addToCart('Habik for Men — Lattafa 100ml','R500','dubai-habik-for-men.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-his-confession.jpg" alt="His Confession by Lattafa"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">His Confession</div>
+          <div class="product-sub">Lattafa · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R510</span>
+            <button class="add-btn" onclick="addToCart('His Confession — Lattafa 100ml','R510','dubai-his-confession.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-the-kingdom.jpg" alt="The Kingdom by Lattafa"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">The Kingdom</div>
+          <div class="product-sub">Lattafa · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R510</span>
+            <button class="add-btn" onclick="addToCart('The Kingdom — Lattafa 100ml','R510','dubai-the-kingdom.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-art-of-arabia-i.jpg" alt="Art of Arabia I by Lattafa"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Art of Arabia I</div>
+          <div class="product-sub">Lattafa Pride · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Art of Arabia I — Lattafa 100ml','R450','dubai-art-of-arabia-i.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- AFNAN -->
+<section id="afnan" style="background:var(--bg3)" data-brand="afnan">
+  <div class="section-inner">
+    <div class="section-eyebrow">Afnan · UAE · Eau de Parfum</div>
+    <h2 class="section-title">Afnan</h2>
+    <p class="section-count">3 fragrances — R490 to R500</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="dubai-supremacy-collectors-edition.jpg" alt="Supremacy Collector's Edition by Afnan"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Supremacy Collector's Edition</div>
+          <div class="product-sub">Afnan · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R500</span>
+            <button class="add-btn" onclick="addToCart("Supremacy Collector's Edition — Afnan 100ml",'R500','dubai-supremacy-collectors-edition.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-supremacy-not-only-intense.jpg" alt="Supremacy Not Only Intense by Afnan"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Supremacy Not Only Intense</div>
+          <div class="product-sub">Afnan · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R490</span>
+            <button class="add-btn" onclick="addToCart('Supremacy Not Only Intense — Afnan 100ml','R490','dubai-supremacy-not-only-intense.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-supremacy-incense.jpg" alt="Supremacy Incense by Afnan"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Supremacy Incense</div>
+          <div class="product-sub">Afnan · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R490</span>
+            <button class="add-btn" onclick="addToCart('Supremacy Incense — Afnan 100ml','R490','dubai-supremacy-incense.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider"/>
+
+<!-- FRENCH AVENUE -->
+<section id="french-avenue" style="background:var(--bg2)" data-brand="french-avenue">
+  <div class="section-inner">
+    <div class="section-eyebrow">French Avenue · UAE · Eau de Parfum</div>
+    <h2 class="section-title">French Avenue</h2>
+    <p class="section-count">3 fragrances — R480 to R510</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="dubai-vulcan-black-friday.jpg" alt="Vulcan Black Friday by French Avenue"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Vulcan Black Friday</div>
+          <div class="product-sub">French Avenue · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R480</span>
+            <button class="add-btn" onclick="addToCart('Vulcan Black Friday — French Avenue 100ml','R480','dubai-vulcan-black-friday.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-azzure-aoud.jpg" alt="Azzure Aoud by French Avenue"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Azzure Aoud</div>
+          <div class="product-sub">French Avenue · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R490</span>
+            <button class="add-btn" onclick="addToCart('Azzure Aoud — French Avenue 100ml','R490','dubai-azzure-aoud.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-liquid-brun.jpg" alt="Liquid Brun by French Avenue"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Liquid Brun</div>
+          <div class="product-sub">French Avenue · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R510</span>
+            <button class="add-btn" onclick="addToCart('Liquid Brun — French Avenue 100ml','R510','dubai-liquid-brun.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="footer-logo"/>
+  <p class="footer-tagline">"Quality you can feel. Service you can trust."</p>
+  <p class="footer-contact">
+    WhatsApp: <a href="https://wa.me/27798908527" target="_blank">+27 79 890 8527</a> &nbsp;·&nbsp;
+    Email: <a href="mailto:thehustlehubsa@outlook.com">thehustlehubsa@outlook.com</a>
+  </p>
+  <p class="footer-copy">© 2026 THE HUSTLE HUB SA · ALL RIGHTS RESERVED</p>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/27798908527?text=Hi Riette! I'd like to place an order from The Hustle Hub SA." target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <div>
+      <h3>🛒 Your Order List</h3>
+      <div class="cart-header-sub">Review, then send via WhatsApp or email</div>
+    </div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🛍️</div>
+      <p>Your order list is empty.<br/>Browse the products and click<br/><strong>+ Add to Order</strong> on any item.</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div style="display:none;" class="cart-back-links" id="cartBackLinks">
+      <a href="#" onclick="hideOrderForm(event)" style="font-size:12px;color:var(--gold);text-decoration:none;font-weight:700;margin-right:16px;">← Back to list</a>
+      <a href="#" onclick="closeCart(); return false;" style="font-size:12px;color:var(--muted);text-decoration:none;font-weight:700;">+ Add More Products</a>
+    </div>
+    <div class="cart-step-1">
+      <div class="cart-step-1-total">
+        <span class="cart-step-1-total-label">Estimated Total</span>
+        <span class="cart-step-1-total-amt" id="cartTotalStep1">R0</span>
+      </div>
+      <button class="cart-place-order-btn" onclick="showOrderForm()">Proceed to Send Order →</button>
+      <a href="#" class="btn-continue-shopping" onclick="closeCart(); return false;">← Add More Products</a>
+    </div>
+    <div id="cartTotalRow" class="cart-total-row">
+      <span class="cart-total-label">Estimated Total</span>
+      <span class="cart-total-amount" id="cartTotal">R0</span>
+    </div>
+    <div id="cartForm" class="cart-form">
+      <label class="cart-form-label">Your Name *</label>
+      <input type="text" id="custName" placeholder="Full name" class="cart-input"/>
+      <label class="cart-form-label">Your WhatsApp / Phone *</label>
+      <input type="tel" id="custPhone" placeholder="e.g. 082 123 4567" class="cart-input"/>
+      <label class="cart-form-label">Delivery</label>
+      <div class="cart-radio-group">
+        <label class="cart-radio"><input type="radio" name="delivery" value="collect" checked onchange="toggleDelivery()"/> I will collect from Riette</label>
+        <label class="cart-radio"><input type="radio" name="delivery" value="delivery" onchange="toggleDelivery()"/> Please deliver to me</label>
+      </div>
+      <div id="deliverySection" style="display:none;">
+        <input type="text" id="custAddress" placeholder="Your delivery address" class="cart-input"/>
+        <div class="cart-delivery-info">Delivery fee will be confirmed by Riette based on your location.</div>
+      </div>
+    </div>
+    <a id="cartSendBtn" href="#" onclick="sendViaWhatsApp(event)" class="btn btn-wa cart-send-btn">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Send Order via WhatsApp
+    </a>
+    <a id="cartEmailBtn" href="#" onclick="sendViaEmail(event)" class="btn-email-cart">✉️ Send Order via Email</a>
+    <p class="cart-note">Riette will confirm your order and arrange payment.</p>
+  </div>
+</div>
+
+<a href="#" class="back-to-top" id="backToTop" title="Back to top">&#9650;</a>
+<div class="added-notif" id="addedNotif"></div>
+
+<script>
+let cart = [];
+
+function addToCart(name, price, img) {
+  const existing = cart.find(i => i.name === name);
+  if (existing) { existing.qty++; }
+  else { cart.push({ name, price, img: img || '', qty: 1 }); }
+  renderCart();
+  showNotif(name);
+}
+
+function renderCart() {
+  const el = document.getElementById('cartItems');
+  const badge = document.getElementById('cartBadge');
+  const badgeMob = document.getElementById('cartBadgeMob');
+  const total1 = document.getElementById('cartTotalStep1');
+  const total2 = document.getElementById('cartTotal');
+  const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+  const totalAmt = cart.reduce((s, i) => s + i.qty * parseInt(i.price.replace('R','')), 0);
+  if (badge) { badge.style.display = totalQty > 0 ? 'flex' : 'none'; badge.textContent = totalQty; }
+  if (badgeMob) { badgeMob.style.display = totalQty > 0 ? 'flex' : 'none'; badgeMob.textContent = totalQty; }
+  if (total1) total1.textContent = 'R' + totalAmt;
+  if (total2) total2.textContent = 'R' + totalAmt;
+  if (cart.length === 0) {
+    el.innerHTML = '<div class="cart-empty"><div class="cart-empty-icon">🛍️</div><p>Your order list is empty.<br/>Browse the products and click<br/><strong>+ Add to Order</strong> on any item.</p></div>';
+    return;
+  }
+  el.innerHTML = cart.map((item, idx) => `
+    <div class="cart-item">
+      <div class="cart-item-img">${item.img ? `<img src="${item.img}" alt="${item.name}"/>` : ''}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">${item.price} each</div>
+        <div class="cart-item-row">
+          <button class="qty-btn" onclick="changeQty(${idx},-1)">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${idx},1)">+</button>
+          <button class="cart-item-remove" onclick="removeItem(${idx})">Remove</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function changeQty(idx, d) {
+  cart[idx].qty += d;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
+  renderCart();
+}
+function removeItem(idx) { cart.splice(idx, 1); renderCart(); }
+function openCart() { document.getElementById('cartOverlay').classList.add('open'); document.getElementById('cartDrawer').classList.add('open'); }
+function closeCart() { document.getElementById('cartOverlay').classList.remove('open'); document.getElementById('cartDrawer').classList.remove('open'); }
+function showOrderForm() { document.getElementById('cartDrawer').classList.add('order-step'); document.getElementById('cartBackLinks').style.display = 'block'; }
+function hideOrderForm(e) { e.preventDefault(); document.getElementById('cartDrawer').classList.remove('order-step'); document.getElementById('cartBackLinks').style.display = 'none'; }
+function toggleDelivery() { const v = document.querySelector('input[name="delivery"]:checked').value; document.getElementById('deliverySection').style.display = v === 'delivery' ? 'block' : 'none'; }
+
+function sendViaWhatsApp(e) {
+  e.preventDefault();
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+  const delivery = document.querySelector('input[name="delivery"]:checked').value;
+  const address = delivery === 'delivery' ? (document.getElementById('custAddress').value.trim() || 'To be confirmed') : 'Will collect';
+  const total = cart.reduce((s, i) => s + i.qty * parseInt(i.price.replace('R','')), 0);
+  const lines = cart.map(i => `• ${i.name} x${i.qty} @ ${i.price}`).join('%0A');
+  const msg = `Hi Riette! I'd like to place an order from The Hustle Hub SA.%0A%0A*Customer:* ${name}%0A*Phone:* ${phone}%0A*Delivery:* ${address}%0A%0A*Order:*%0A${lines}%0A%0A*Estimated Total: R${total}*%0A%0APlease confirm availability and payment details. Thank you!`;
+  window.open(`https://wa.me/27798908527?text=${msg}`, '_blank');
+}
+
+function sendViaEmail(e) {
+  e.preventDefault();
+  const name = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+  const delivery = document.querySelector('input[name="delivery"]:checked').value;
+  const address = delivery === 'delivery' ? (document.getElementById('custAddress').value.trim() || 'To be confirmed') : 'Will collect';
+  const total = cart.reduce((s, i) => s + i.qty * parseInt(i.price.replace('R','')), 0);
+  const lines = cart.map(i => `• ${i.name} x${i.qty} @ ${i.price}`).join('\n');
+  const body = `Hi Riette!\n\nI'd like to place an order from The Hustle Hub SA.\n\nCustomer: ${name}\nPhone: ${phone}\nDelivery: ${address}\n\nOrder:\n${lines}\n\nEstimated Total: R${total}\n\nPlease confirm availability and payment details. Thank you!`;
+  window.location.href = `mailto:thehustlehubsa@outlook.com?subject=New Order from The Hustle Hub SA&body=${encodeURIComponent(body)}`;
+}
+
+function showNotif(name) {
+  const el = document.getElementById('addedNotif');
+  el.textContent = `✓ ${name.split('—')[0].trim()} added!`;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+// Filter by brand
+function filterBrand(brand, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('section[data-brand]').forEach(sec => {
+    sec.style.display = (brand === 'all' || sec.dataset.brand === brand) ? '' : 'none';
+  });
+  document.querySelectorAll('hr.divider').forEach(hr => { hr.style.display = brand === 'all' ? '' : 'none'; });
+}
+
+// Nav dropdowns
+document.querySelectorAll('.nav-dropdown').forEach(dd => {
+  dd.addEventListener('click', e => {
+    e.stopPropagation();
+    const menu = dd.querySelector('.dropdown-menu');
+    menu.classList.toggle('open');
+  });
+});
+document.addEventListener('click', () => { document.querySelectorAll('.dropdown-menu.open').forEach(m => m.classList.remove('open')); });
+
+// Back to top
+const btt = document.getElementById('backToTop');
+window.addEventListener('scroll', () => { btt && btt.classList.toggle('visible', window.scrollY > 400); });
+</script>
+</body>
+</html>
