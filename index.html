@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Hustle Hub SA — Premium Lifestyle Shop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #3D2410;
-      --bg2:       #4A2E16;
-      --bg3:       #57381E;
-      --gold:      #C9922A;
-      --gold-lt:   #E8C27A;
-      --cream:     #F0E4C8;
-      --muted:     #B89870;
-      --border:    #3D2E1A;
-      --white:     #F5E8CC;
+      --bg:        #FBF6ED;
+      --bg2:       #F5EFE0;
+      --bg3:       #EDE6D3;
+      --gold:      #D97F26;
+      --gold-lt:   #F0A94E;
+      --cream:     #F5EFE0;
+      --muted:     #8B6848;
+      --border:    #D9CCAF;
+      --white:     #201206;
       --wa:        #25D366;
     }
 
@@ -26,7 +26,7 @@
     body {
       font-family: 'Raleway', sans-serif;
       background: var(--bg);
-      color: #E8D4B8;
+      color: #3a2010;
       font-size: 15px;
       line-height: 1.7;
     }
@@ -39,7 +39,8 @@
       padding: 10px 32px;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .nav-brand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; font-style: italic; color: var(--gold-lt); text-decoration: none; letter-spacing: .04em; }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-img { height: 34px; width: auto; display: block; }
     .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
     .nav-links a {
       color: var(--muted); font-size: 11px; font-weight: 700;
@@ -133,19 +134,29 @@
 
     /* ── HERO ── */
     .hero {
-      display: grid; grid-template-columns: 1.1fr 0.9fr;
-      align-items: center; gap: 60px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
       max-width: 1100px; margin: 0 auto;
-      padding: 80px 32px;
+      padding: 64px 32px 90px;
+    }
+    .hero-bg-logo {
+      width: min(320px, 70%);
+      margin-bottom: 28px;
+      user-select: none;
+    }
+    .hero-text {
+      display: flex; flex-direction: column; align-items: center;
+      max-width: 620px;
     }
     .hero-eyebrow {
       font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
       text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
     }
     .hero-title {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(34px, 4.5vw, 52px);
-      font-weight: 700; line-height: 1.15;
+      font-weight: 900; line-height: 1.1;
       color: var(--white); margin-bottom: 20px;
     }
     .hero-title span { color: var(--gold); }
@@ -153,22 +164,6 @@
       font-size: 15px; color: var(--muted); line-height: 1.8;
       margin-bottom: 32px; max-width: 420px;
     }
-    .hero-photo { display: flex; justify-content: center; align-items: center; }
-    .hero-photo-wrap {
-      position: relative; display: inline-block;
-      max-width: 300px; width: 100%;
-    }
-    .hero-photo-wrap img {
-      width: 100%; display: block;
-      border-radius: 14px;
-      box-shadow:
-        0 0 0 2px #C9922A,
-        0 0 14px 2px rgba(201,146,42,0.45),
-        0 0 35px 4px rgba(201,146,42,0.18),
-        0 10px 28px rgba(0,0,0,0.18);
-    }
-    .hero-photo-wrap::before { display: none; }
-    .hero-photo-wrap::after { display: none; }
 
     /* ── BUTTONS ── */
     .btn {
@@ -195,9 +190,9 @@
       text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
     }
     .section-title {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(26px, 4vw, 38px);
-      font-weight: 700; color: var(--white);
+      font-weight: 900; color: var(--white);
       margin-bottom: 12px;
     }
     .section-desc { color: var(--muted); max-width: 600px; margin-bottom: 40px; font-size: 14px; }
@@ -220,7 +215,7 @@
     }
     .cat-card:hover { border-color: var(--gold); transform: translateY(-3px); }
     .cat-label {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Fraunces', serif;
       font-size: 17px;
       font-weight: 700;
       color: var(--white);
@@ -241,15 +236,15 @@
       gap: 24px;
     }
     .product-card {
-      background: #2A1A0A; border: 2.5px solid var(--gold); box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+      background: var(--bg3); border: 2.5px solid var(--gold); box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       border-radius: 10px; overflow: hidden;
       transition: all 0.3s; display: flex; flex-direction: column;
     }
     .product-card:hover { border-color: var(--gold-lt); transform: translateY(-6px); box-shadow: 0 24px 64px rgba(201,146,42,0.3); }
     .product-card img { width: 100%; display: block; flex-shrink: 0; aspect-ratio:1/1; object-fit:cover; }
-    .kayali-grid .product-card img { aspect-ratio:3/4; object-fit:contain; background:#1a0e02; }
+    .kayali-grid .product-card img { aspect-ratio:3/4; object-fit:contain; background:var(--bg3); }
     .product-info { padding: 18px 20px; display: flex; flex-direction: column; flex: 1; }
-    .product-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+    .product-name { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
     .product-sub { font-size: 12px; color: var(--muted); margin-bottom: 14px; flex: 1; }
     .product-footer { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
     .product-price { font-size: 18px; font-weight: 800; color: var(--gold); flex-shrink: 0; }
@@ -281,7 +276,7 @@
     }
     .coming-card:hover { border-color: var(--gold); }
     .coming-icon { font-size: 28px; margin-bottom: 12px; }
-    .coming-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+    .coming-name { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
     .coming-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
     .enquire-btn {
       display: inline-flex; align-items: center; gap: 6px;
@@ -313,7 +308,7 @@
       width: 100%; display: block;
       border-radius: 14px;
       box-shadow:
-        0 0 0 2px #C9922A,
+        0 0 0 2px #D97F26,
         0 0 14px 2px rgba(201,146,42,0.45),
         0 0 35px 4px rgba(201,146,42,0.18),
         0 10px 28px rgba(0,0,0,0.18);
@@ -328,7 +323,7 @@
       padding: 48px 32px; text-align: center;
     }
     .footer-logo { height: 80px; margin-bottom: 18px; border-radius: 8px; opacity: 0.9; }
-    .footer-tagline { font-family: 'Playfair Display', serif; font-style: italic; color: var(--muted); font-size: 15px; margin-bottom: 20px; }
+    .footer-tagline { font-family: 'Fraunces', serif; font-style: italic; color: var(--muted); font-size: 15px; margin-bottom: 20px; }
     .footer-contact { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
     .footer-contact a { color: var(--gold); text-decoration: none; }
     .footer-copy { font-size: 11px; color: var(--muted); margin-top: 20px; letter-spacing: 0.06em; }
@@ -370,7 +365,7 @@
       border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
     }
-    .cart-header h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); }
+    .cart-header h3 { font-family: 'Fraunces', serif; font-size: 20px; color: var(--white); }
     .cart-header-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
     .cart-close {
       background: var(--bg3); border: 1px solid var(--border);
@@ -398,7 +393,7 @@
     }
     .cart-item-img img { width: 100%; height: 100%; object-fit: cover; }
     .cart-item-info { flex: 1; min-width: 0; }
-    .cart-item-name { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--white); margin-bottom: 2px; }
+    .cart-item-name { font-family: 'Fraunces', serif; font-size: 15px; color: var(--white); margin-bottom: 2px; }
     .cart-item-price { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
     .cart-item-row { display: flex; align-items: center; gap: 8px; }
     .qty-btn {
@@ -425,12 +420,12 @@
       display: none; justify-content: space-between; align-items: baseline; margin-bottom: 14px;
     }
     .cart-total-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
-    .cart-total-amount { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--gold); font-weight: 600; }
+    .cart-total-amount { font-family: 'Fraunces', serif; font-size: 22px; color: var(--gold); font-weight: 600; }
 
     .cart-step-1 { }
     .cart-step-1-total { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
     .cart-step-1-total-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
-    .cart-step-1-total-amt { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); }
+    .cart-step-1-total-amt { font-family: 'Fraunces', serif; font-size: 20px; color: var(--gold); }
 
     .cart-place-order-btn {
       display: block; width: 100%;
@@ -542,13 +537,12 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       nav { padding: 10px 20px; justify-content: space-between; }
-      .nav-brand { font-size: 15px; }
+      .nav-logo-img { height: 24px; }
       .nav-links { display: none; }
       .nav-mobile-links { display: block; }
       .mobile-top-cart { display: flex !important; }
-      .hero { grid-template-columns: 1fr; padding: 40px 20px 48px; text-align: center; gap: 28px; }
-      .hero-photo { order: -1; }
-      .hero-photo-wrap { max-width: 220px; }
+      .hero { padding: 40px 20px 56px; }
+      .hero-bg-logo { width: 62%; }
       .about-photo-wrap { max-width: 220px; }
       .hero-desc { margin: 0 auto 24px; max-width: 100%; }
       .hero .btn-group { justify-content: center; }
@@ -609,7 +603,7 @@
       padding: 18px 16px;
     }
     .mag-name {
-      font-family: 'Playfair Display', serif; font-size: 18px;
+      font-family: 'Fraunces', serif; font-size: 18px;
       font-weight: 700; color: #fff; margin-bottom: 4px; line-height: 1.2;
       transition: color 0.25s;
       text-shadow: 0 2px 8px rgba(0,0,0,0.6);
@@ -636,8 +630,8 @@
     .announce-strip{background:#1a0e02;overflow:hidden;height:34px;display:flex;align-items:center}
     .announce-track{display:flex;white-space:nowrap;animation:ticker 42s linear infinite}
     .announce-track:hover{animation-play-state:paused}
-    .announce-item{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#E8C27A;padding:0 28px}
-    .announce-sep{color:#C9922A;font-size:11px;flex-shrink:0}
+    .announce-item{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#F0A94E;padding:0 28px}
+    .announce-sep{color:#D97F26;font-size:11px;flex-shrink:0}
     @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   </style>
 </head>
@@ -647,7 +641,7 @@
 
 <!-- ── NAV ── -->
 <nav>
-  <a href="index.html" class="nav-brand">The Hustle Hub SA</a>
+  <a href="index.html" class="nav-brand"><img class="nav-logo-img" src="logo-text.png" alt="The Hustle Hub SA" /></a>
   <ul class="nav-links">
     <li class="nav-dropdown"><a href="#">Fragrances ▾</a><div class="dropdown-menu"><a href="designer-ladies-fragrances.html">✨ Designer Ladies'</a><a href="ladies-fragrances.html">💐 Kayali Ladies'</a><a href="kayali-unisex.html">💎 Unisex Perfumes</a><a href="fragrances.html">🥃 Men's Fragrances</a><a href="dubai-perfumes-men.html">🕌 Dubai Perfumes — Men</a><a href="gift-sets.html">🎁 Gift Sets</a></div></li>
     <li><a href="scentifique.html">🌸 Scentifique</a></li>
@@ -687,18 +681,13 @@
 
 <!-- ── HERO ── -->
 <div class="hero">
+  <div class="hero-eyebrow">Welcome to</div>
+  <img class="hero-bg-logo" src="logo-hero.png" alt="" aria-hidden="true" />
   <div class="hero-text">
-    <div class="hero-eyebrow">Welcome to</div>
-    <h1 class="hero-title">The Hustle<br/><span>Hub SA</span></h1>
     <p class="hero-desc">Premium fragrances, timeless jewellery, handcrafted treats and more — all curated with love and delivered straight to your door.</p>
-    <div class="btn-group" style="display:flex;gap:14px;flex-wrap:wrap;">
+    <div class="btn-group" style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
       <a href="#fragrances" class="btn btn-gold">Shop Now</a>
       <a href="https://wa.me/27798908527?text=Hi Riette! I'd like to place an order from The Hustle Hub SA." target="_blank" class="btn btn-outline">WhatsApp Riette</a>
-    </div>
-  </div>
-  <div class="hero-photo">
-    <div class="hero-photo-wrap">
-      <img src="logo-bg.jpeg" alt="The Hustle Hub SA" />
     </div>
   </div>
 </div>
@@ -1463,18 +1452,18 @@
 <style>
 .product-modal{display:none;position:fixed;inset:0;z-index:500;align-items:center;justify-content:center;padding:16px}
 .product-modal.open{display:flex}
-.product-modal-overlay{position:absolute;inset:0;background:rgba(42,24,8,.8)}
-.product-modal-box{position:relative;background:var(--bg2);border:1px solid var(--border);border-radius:8px;max-width:440px;width:100%;max-height:92vh;overflow-y:auto;z-index:1;box-shadow:0 24px 64px rgba(0,0,0,.5)}
-.product-modal-close{position:absolute;top:10px;right:10px;background:var(--bg3);border:1px solid var(--border);width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);z-index:2;line-height:1}
-.product-modal-close:hover{border-color:#C9922A;color:#C9922A}
-.product-modal-img{width:100%;display:block;border-radius:8px 8px 0 0;max-height:60vh;object-fit:contain;background:var(--bg3)}
+.product-modal-overlay{position:absolute;inset:0;background:rgba(42,24,8,.6)}
+.product-modal-box{position:relative;background:#F5EFE0;border:1px solid var(--border);border-radius:8px;max-width:440px;width:100%;max-height:92vh;overflow-y:auto;z-index:1;box-shadow:0 24px 64px rgba(0,0,0,.25)}
+.product-modal-close{position:absolute;top:10px;right:10px;background:#EDE6D3;border:1px solid var(--border);width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#8B6848;z-index:2;line-height:1}
+.product-modal-close:hover{border-color:var(--gold);color:var(--gold)}
+.product-modal-img{width:100%;display:block;border-radius:8px 8px 0 0;max-height:60vh;object-fit:contain;background:#EDE6D3}
 .product-modal-info{padding:20px 20px 24px}
-.product-modal-badge{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C9922A;border:1px solid #C9922A;border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:10px;background:rgba(201,146,42,.1)}
-.product-modal-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--cream);margin-bottom:5px;line-height:1.3}
-.product-modal-sub{font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.5}
-.product-modal-price{font-size:28px;font-weight:800;color:#C9922A;margin-bottom:18px}
-.product-modal-add{width:100%;background:#C9922A;color:#1a0e02;border:none;padding:14px;border-radius:4px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
-.product-modal-add:hover{background:#E8C27A}
+.product-modal-badge{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:10px;background:rgba(217,127,38,.1)}
+.product-modal-name{font-family:'Fraunces', serif;font-size:20px;font-weight:700;color:#2A1808;margin-bottom:5px;line-height:1.3}
+.product-modal-sub{font-size:13px;color:#8B6848;margin-bottom:12px;line-height:1.5}
+.product-modal-price{font-size:28px;font-weight:800;color:var(--gold);margin-bottom:18px}
+.product-modal-add{width:100%;background:var(--gold);color:#1a0e02;border:none;padding:14px;border-radius:4px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.product-modal-add:hover{background:var(--gold-lt)}
 </style>
 <div class="product-modal" id="productModal">
   <div class="product-modal-overlay" onclick="closeModal()"></div>
