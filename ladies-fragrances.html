@@ -11,7 +11,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Raleway',sans-serif;background:var(--bg);color:#E4D5B5;font-size:15px;line-height:1.7}
 nav{position:sticky;top:0;z-index:100;background:var(--bg2);border-bottom:2px solid var(--gold);padding:10px 32px;display:flex;justify-content:space-between;align-items:center}
-.nav-brand{font-family:'Fraunces',serif;font-size:20px;font-weight:700;font-style:italic;color:var(--gold-lt);text-decoration:none;letter-spacing:.04em}
+.nav-brand{display:flex;align-items:center;text-decoration:none}.nav-logo-img{height:34px;width:auto;display:block;filter:brightness(0) invert(0.92) sepia(0.35) saturate(1.4)}
 .nav-links{display:flex;gap:20px;list-style:none;align-items:center}
 .nav-links a{line-height:1.2;color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--gold)}.nav-dropdown{position:relative}.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer}.dropdown-menu{display:none;position:absolute;top:100%;left:0;background:var(--bg2);border:1.5px solid var(--gold);border-radius:6px;min-width:220px;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.5)}.dropdown-menu a{display:block;padding:11px 18px;color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;border-bottom:1px solid var(--border);transition:color .2s,background .2s}.dropdown-menu a:last-child{border-bottom:none}.dropdown-menu a:hover{color:var(--gold);background:rgba(200,155,60,.08)}.dropdown-menu.open{display:block}
@@ -169,26 +169,26 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="announce-strip" aria-hidden="true"><div class="announce-track"><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">New Stock Added Weekly</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Men's Fragrances — R450</span><span class="announce-sep">✦</span><span class="announce-item">Kayali Ladies Range — R480</span><span class="announce-sep">✦</span><span class="announce-item">BellaTia Jewellery from R150</span><span class="announce-sep">✦</span><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">New Stock Added Weekly</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Men's Fragrances — R450</span><span class="announce-sep">✦</span><span class="announce-item">Kayali Ladies Range — R480</span><span class="announce-sep">✦</span><span class="announce-item">BellaTia Jewellery from R150</span><span class="announce-sep">✦</span></div></div>
 
 <nav>
-  <a href="index.html" class="nav-brand">The Hustle Hub SA</a>
+  <a href="index.html" class="nav-brand"><img class="nav-logo-img" src="logo-text.png" alt="The Hustle Hub SA"/></a>
   <ul class="nav-links">
     <li><a href="index.html">← Back to Shop</a></li>
-    <li class="nav-dropdown"><a href="#">Fragrances ▾</a><div class="dropdown-menu"><a href="designer-ladies-fragrances.html">✨ Designer Ladies'</a><a href="kayali-unisex.html">💎 Unisex Perfumes</a><a href="fragrances.html">🥃 Men's Fragrances</a></div></li>
-    <li><a href="scentifique.html">🌸 Scentifique</a></li>
+    <li class="nav-dropdown"><a href="#">Fragrances ▾</a><div class="dropdown-menu"><a href="designer-ladies-fragrances.html">Designer Ladies'</a><a href="kayali-unisex.html">Unisex Perfumes</a><a href="fragrances.html">Men's Fragrances</a></div></li>
+    <li><a href="scentifique.html">Scentifique</a></li>
     <li><a href="jewellery.html">Jewellery</a></li>
-    <li><button class="cart-nav-btn" onclick="openCart()">🛒 Order List<span class="cart-badge" id="cartBadge"></span></button></li>
+    <li><button class="cart-nav-btn" onclick="openCart()">Order List<span class="cart-badge" id="cartBadge"></span></button></li>
   </ul>
-  <button class="mobile-top-cart" onclick="openCart()">🛒 Order<span class="cart-badge-mob" id="cartBadgeMob"></span></button>
+  <button class="mobile-top-cart" onclick="openCart()">Order<span class="cart-badge-mob" id="cartBadgeMob"></span></button>
 </nav>
 
 <div class="nav-mobile-links">
   <ul>
     <li><a href="index.html">← Shop</a></li>
-    <li><a href="fragrances.html">🥃 Men's</a></li>
-    <li><a href="designer-ladies-fragrances.html">✨ Designer</a></li>
-    <li><a href="kayali-unisex.html">💎 Unisex</a></li>
-    <li><a href="jewellery.html">💍 Jewellery</a></li>
-    <li><a href="scentifique.html">🌸 Scentifique</a></li>
-    <li><a href="#" class="mobile-cart-link" onclick="openCart();return false;">🛒 Order</a></li>
+    <li><a href="fragrances.html">Men's</a></li>
+    <li><a href="designer-ladies-fragrances.html">Designer</a></li>
+    <li><a href="kayali-unisex.html">Unisex</a></li>
+    <li><a href="jewellery.html">Jewellery</a></li>
+    <li><a href="scentifique.html">Scentifique</a></li>
+    <li><a href="#" class="mobile-cart-link" onclick="openCart();return false;">Order</a></li>
   </ul>
 </div>
 
@@ -246,8 +246,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-drawer" id="cartDrawer">
-<div class="cart-header"><div><h3>🛒 Your Order List</h3><div class="cart-header-sub">Review, then send via WhatsApp or email</div></div><button class="cart-close" onclick="closeCart()">✕</button></div>
-<div class="cart-items" id="cartItems"><div class="cart-empty"><div class="cart-empty-icon">🛍️</div><p>Your order list is empty.<br/>Click <strong>+ Add</strong> on any item.</p></div></div>
+<div class="cart-header"><div><h3>Your Order List</h3><div class="cart-header-sub">Review, then send via WhatsApp or email</div></div><button class="cart-close" onclick="closeCart()">✕</button></div>
+<div class="cart-items" id="cartItems"><div class="cart-empty"><div class="cart-empty-icon">✦</div><p>Your order list is empty.<br/>Click <strong>+ Add</strong> on any item.</p></div></div>
 <div class="cart-footer">
 <div style="display:none" class="cart-back-links"><a href="#" onclick="hideOrderForm(event)" style="font-size:12px;color:var(--gold);text-decoration:none;font-weight:700;margin-right:16px;">← Back to list</a><a href="#" onclick="closeCart();return false;" style="font-size:12px;color:var(--muted);text-decoration:none;font-weight:700;">+ Add More</a></div>
 <div class="cart-step-1"><div class="cart-step-1-total"><span class="cart-step-1-total-label">Estimated Total</span><span class="cart-step-1-total-amt" id="cartTotalStep1">R0</span></div><button class="cart-place-order-btn" onclick="showOrderForm()">Proceed to Send Order →</button><a href="#" class="btn-continue-shopping" onclick="closeCart();return false;">← Add More Products</a></div>
@@ -260,7 +260,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div id="deliverySection" style="display:none"><input type="text" id="custAddress" placeholder="Your delivery address" class="cart-input"/><div class="cart-delivery-info">Delivery fee will be confirmed by Riette based on your location.</div></div>
 </div>
 <a id="cartSendBtn" href="#" onclick="sendViaWhatsApp(event)" class="cart-send-btn"><svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:white;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Send Order via WhatsApp</a>
-<a id="cartEmailBtn" href="#" onclick="sendViaEmail(event)" class="btn-email-cart">✉️ Send Order via Email</a>
+<a id="cartEmailBtn" href="#" onclick="sendViaEmail(event)" class="btn-email-cart">Send Order via Email</a>
 <p class="cart-note">Riette will confirm your order and arrange payment.</p>
 </div>
 </div>
@@ -280,9 +280,9 @@ function renderCart(){
   const t=document.getElementById('cartTotal');
   const s=document.getElementById('cartTotalStep1');
   const total=calcTotal();
-  if(cart.length===0){c.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">🛍️</div><p>Your order list is empty.<br/>Click <strong>+ Add</strong> on any item.</p></div>';document.getElementById('cartDrawer').classList.remove('order-step');if(t)t.textContent='R0';if(s)s.textContent='R0';return}
+  if(cart.length===0){c.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">✦</div><p>Your order list is empty.<br/>Click <strong>+ Add</strong> on any item.</p></div>';document.getElementById('cartDrawer').classList.remove('order-step');if(t)t.textContent='R0';if(s)s.textContent='R0';return}
   let h='';
-  cart.forEach((item,i)=>{h+=`<div class="cart-item"><div class="cart-item-img">${item.img?`<img src="${item.img}" alt="${item.name}"/>`:'<div style="display:flex;align-items:center;justify-content:height:100%;font-size:1.4rem;">🛍️</div>'}</div><div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">${item.price} each</div><div class="cart-item-row"><button class="qty-btn" onclick="changeQty(${i},-1)">−</button><span class="qty-num">${item.qty}</span><button class="qty-btn" onclick="changeQty(${i},1)">+</button><button class="cart-item-remove" onclick="removeFromCart(${i})">Remove</button></div></div></div>`});
+  cart.forEach((item,i)=>{h+=`<div class="cart-item"><div class="cart-item-img">${item.img?`<img src="${item.img}" alt="${item.name}"/>`:'<div style="display:flex;align-items:center;justify-content:height:100%;font-size:1.4rem;">✦</div>'}</div><div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">${item.price} each</div><div class="cart-item-row"><button class="qty-btn" onclick="changeQty(${i},-1)">−</button><span class="qty-num">${item.qty}</span><button class="qty-btn" onclick="changeQty(${i},1)">+</button><button class="cart-item-remove" onclick="removeFromCart(${i})">Remove</button></div></div></div>`});
   c.innerHTML=h;
   if(t)t.textContent=`R${total}`;
   if(s)s.textContent=`R${total}`;
