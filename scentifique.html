@@ -739,7 +739,7 @@ window.addEventListener('scroll',()=>{
 updateBadge();renderCart();
 function openLightbox(src,alt){document.getElementById('lightboxImg').src=src;document.getElementById('lightboxImg').alt=alt||'';document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden'}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow=''}
-document.querySelectorAll('.product-card img').forEach(function(img){img.style.cursor='zoom-in';img.onclick=function(){openLightbox(this.src,this.alt)}});
+document.querySelectorAll('.product-card img').forEach(function(img){img.style.cursor='pointer';img.onclick=function(){var c=img.closest('.product-card');if(c.querySelector('.sold-btn'))return;var n=(c.querySelector('.product-name')||{}).textContent||'';var p=(c.querySelector('.product-price')||{}).textContent||'';var s=(c.querySelector('.product-sub')||{}).textContent||'';openProductModal(n,p,img.src,s);}});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLightbox();}});
 </script>
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -762,6 +762,29 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLightb
       document.querySelectorAll(".dropdown-menu.open").forEach(function(m){m.classList.remove("open")});
   });
 })();
+</script>
+<style>
+.pm-modal{display:none;position:fixed;inset:0;z-index:600;align-items:center;justify-content:center;padding:16px}
+.pm-modal.open{display:flex}
+.pm-overlay{position:absolute;inset:0;background:rgba(0,0,0,.75)}
+.pm-box{position:relative;background:#1C1610;border:1px solid rgba(200,155,60,.5);border-radius:10px;max-width:440px;width:100%;max-height:92vh;overflow-y:auto;z-index:1;box-shadow:0 24px 64px rgba(0,0,0,.6)}
+.pm-close{position:absolute;top:10px;right:10px;background:#272019;border:1px solid #3A3020;width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#A8946F;z-index:2;line-height:1}
+.pm-close:hover{border-color:#C89B3C;color:#C89B3C}
+.pm-img{width:100%;display:block;border-radius:10px 10px 0 0;max-height:60vh;object-fit:contain;background:#272019}
+.pm-info{padding:20px 20px 24px}
+.pm-badge{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C89B3C;border:1px solid #C89B3C;border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:10px;background:rgba(200,155,60,.1)}
+.pm-name{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#F2E7D0;margin-bottom:5px;line-height:1.3}
+.pm-sub{font-size:13px;color:#A8946F;margin-bottom:12px;line-height:1.5}
+.pm-price{font-size:28px;font-weight:800;color:#C89B3C;margin-bottom:18px}
+.pm-add{width:100%;background:#C89B3C;color:#1a0e02;border:none;padding:14px;border-radius:4px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.pm-add:hover{background:#E8C87A}
+</style>
+<div class="pm-modal" id="pmModal"><div class="pm-overlay" onclick="closeProductModal()"></div><div class="pm-box"><button class="pm-close" onclick="closeProductModal()">✕</button><img class="pm-img" id="pmImg" src="" alt=""/><div class="pm-info"><div class="pm-badge">Available</div><div class="pm-name" id="pmName"></div><div class="pm-sub" id="pmSub"></div><div class="pm-price" id="pmPrice"></div><button class="pm-add" onclick="pmAdd()">+ Add to Order</button></div></div></div>
+<script>
+var _pm={};
+function openProductModal(name,price,img,sub){document.getElementById('pmImg').src=img;document.getElementById('pmImg').alt=name;document.getElementById('pmName').textContent=name;document.getElementById('pmSub').textContent=sub;document.getElementById('pmPrice').textContent=price;_pm={name:name,price:price,img:img};document.getElementById('pmModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeProductModal(){document.getElementById('pmModal').classList.remove('open');document.body.style.overflow='';}
+function pmAdd(){addToCart(_pm.name,_pm.price,_pm.img);closeProductModal();}
 </script>
 </body>
 </html>
