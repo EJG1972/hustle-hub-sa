@@ -184,6 +184,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 @media(max-width:480px){
   .product-grid{grid-template-columns:1fr}
 }
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:500;align-items:center;justify-content:center;cursor:pointer;padding:16px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:4px;cursor:default;display:block}
+.lightbox-close{position:absolute;top:14px;right:18px;color:#fff;font-size:36px;font-weight:300;cursor:pointer;line-height:1;background:none;border:none;opacity:.8}
+.lightbox-close:hover{opacity:1}
 </style>
 </head>
 <body>
@@ -1034,6 +1041,15 @@ document.addEventListener('click', () => { document.querySelectorAll('.dropdown-
 // Back to top
 const btt = document.getElementById('backToTop');
 window.addEventListener('scroll', () => { btt && btt.classList.toggle('visible', window.scrollY > 400); });
+</script>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="event.stopPropagation();closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()"/>
+</div>
+<script>
+function openLightbox(src,alt){document.getElementById('lightboxImg').src=src;document.getElementById('lightboxImg').alt=alt||'';document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden'}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('.product-card img').forEach(function(img){img.style.cursor='zoom-in';img.onclick=function(){openLightbox(this.src,this.alt)}});
 </script>
 </body>
 </html>
