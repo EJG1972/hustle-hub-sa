@@ -643,7 +643,12 @@
     .announce-item{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#F0A94E;padding:0 28px}
     .announce-sep{color:#D97F26;font-size:11px;flex-shrink:0}
     @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  </style>
+  
+.mnav-panel{position:fixed;display:none;z-index:300;background:var(--bg2);border:1px solid var(--gold);border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.5);min-width:190px;padding:6px 0}
+.mnav-panel.open{display:block}
+.mnav-panel a{display:block;padding:11px 18px;color:var(--cream);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-family:'Raleway',sans-serif}
+.mnav-panel a:active,.mnav-panel a:hover{color:var(--gold)}
+</style>
 </head>
 <body>
 
@@ -676,15 +681,9 @@
 <!-- ── MOBILE NAV LINKS (second row, phones only) ── -->
 <div class="nav-mobile-links">
   <ul>
-    <li><a href="designer-ladies-fragrances.html">Designer Ladies'</a></li>
-    <li><a href="fragrances.html">Designer Men's</a></li>
-    <li><a href="kayali-unisex.html">Designer Unisex</a></li>
-    <li><a href="dubai-perfumes-ladies.html">Dubai Ladies</a></li>
-    <li><a href="dubai-perfumes-men.html">Dubai Men</a></li>
-    <li><a href="dubai-perfumes-unisex.html">Dubai Unisex</a></li>
-    <li><a href="ladies-fragrances.html">Kayali For Her</a></li>
-    <li><a href="kayali-for-him.html">Kayali For Him</a></li>
-    <li><a href="kayali-unisex-perfumes.html">Kayali Unisex</a></li>
+    <li class="mnav-group"><a href="#" onclick="toggleMobGroup(event,this,'designer')">Designer Perfumes ▾</a></li>
+    <li class="mnav-group"><a href="#" onclick="toggleMobGroup(event,this,'dubai')">Dubai Perfumes ▾</a></li>
+    <li class="mnav-group"><a href="#" onclick="toggleMobGroup(event,this,'kayali')">Kayali ▾</a></li>
     <li><a href="scentifique.html">Scentifique</a></li>
     <li><a href="gift-sets.html">Gift Sets</a></li>
     <li><a href="jewellery.html">Jewellery</a></li>
@@ -692,6 +691,7 @@
     <li><a href="#" class="mobile-cart-link" onclick="openCart(); return false;">Order List</a></li>
   </ul>
 </div>
+<div class="mnav-panel" id="mnavPanel"></div>
 
 <!-- ── HERO ── -->
 <div class="hero">
@@ -1095,7 +1095,7 @@
 <section id="gift-sets" style="background:var(--bg3)">
   <div class="section-inner">
     <div class="section-eyebrow">Perfect for Birthdays & Special Occasions</div>
-    <h2 class="section-title">Miniature Perfume Gift Sets</h2>
+    <h2 class="section-title">Perfume Gift Sets</h2>
     <p class="section-desc">Beautiful gift-ready sets — luxurious mini fragrances packaged to impress. 8 sets available from R400.</p>
     <div class="product-grid" style="grid-template-columns:repeat(2,1fr);">
 
@@ -1549,6 +1549,30 @@
       document.querySelectorAll('.dropdown-menu.open').forEach(function(m){m.classList.remove('open')});
   });
 })();
+</script>
+
+<script>
+var MNAV_GROUPS={
+ designer:[["For Her","designer-ladies-fragrances.html"],["For Him","fragrances.html"],["Unisex","kayali-unisex.html"]],
+ dubai:[["Dubai Ladies","dubai-perfumes-ladies.html"],["Dubai Men","dubai-perfumes-men.html"],["Dubai Unisex","dubai-perfumes-unisex.html"]],
+ kayali:[["For Her","ladies-fragrances.html"],["For Him","kayali-for-him.html"],["Unisex","kayali-unisex-perfumes.html"]]
+};
+function toggleMobGroup(e,el,key){
+  e.preventDefault();
+  var p=document.getElementById('mnavPanel');
+  if(p.classList.contains('open')&&p.dataset.key===key){p.classList.remove('open');return;}
+  p.innerHTML=MNAV_GROUPS[key].map(function(it){return '<a href="'+it[1]+'">'+it[0]+'</a>';}).join('');
+  p.dataset.key=key;
+  var r=el.getBoundingClientRect();
+  p.style.top=(r.bottom+4)+'px';
+  p.style.left=Math.max(8,Math.min(r.left,window.innerWidth-206))+'px';
+  p.classList.add('open');
+}
+document.addEventListener('click',function(e){
+  var p=document.getElementById('mnavPanel');
+  if(p&&!e.target.closest('.mnav-group')&&!e.target.closest('.mnav-panel'))p.classList.remove('open');
+});
+window.addEventListener('scroll',function(){var p=document.getElementById('mnavPanel');p&&p.classList.remove('open');},{passive:true});
 </script>
 </body>
 </html>
