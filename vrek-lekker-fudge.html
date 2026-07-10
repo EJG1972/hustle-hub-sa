@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kayali For Him — The Hustle Hub SA</title>
+<title>Vrek Lekker Fudge — The Hustle Hub SA</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -185,6 +185,13 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
   .product-grid{grid-template-columns:1fr}
 }
 
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:500;align-items:center;justify-content:center;cursor:pointer;padding:16px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:4px;cursor:default;display:block}
+.lightbox-close{position:absolute;top:14px;right:18px;color:#fff;font-size:36px;font-weight:300;cursor:pointer;line-height:1;background:none;border:none;opacity:.8}
+.lightbox-close:hover{opacity:1}
+
 .mnav-panel{position:fixed;display:none;z-index:300;background:var(--bg2);border:1px solid var(--gold);border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.5);min-width:190px;padding:6px 0}
 .mnav-panel.open{display:block}
 .mnav-panel a{display:block;padding:11px 18px;color:var(--cream);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-family:'Raleway',sans-serif}
@@ -235,21 +242,581 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
 <!-- HERO BAND -->
 <div class="hero-band">
-  <div class="hero-eyebrow">Kayali · Huda Kattan · Dubai</div>
-  <h1 class="hero-title">Kayali<br/><span>For Him</span></h1>
-  <p class="hero-desc">Kayali’s richer, deeper side — warm ouds, smoky vanillas and bold gourmands made for him.</p>
+  <div class="hero-eyebrow">Vrek Lekker! · Handmade in South Africa</div>
+  <h1 class="hero-title">Vrek Lekker<br/><span>Fudge</span></h1>
+  <p class="hero-desc">37 handcrafted fudge treats — spoonable fudge jars, wrapped fudge blocks, soetkoekies and gift boxes for every occasion. Homemade taste, no shortcuts. Available on order with nationwide delivery.</p>
   <a href="index.html" class="back-link">← Back to Home</a>
 </div>
 
-<!-- COMING SOON -->
-<section id="coming" style="background:var(--bg2)">
-  <div class="section-inner" style="text-align:center;padding:40px 0 60px">
-    <div class="section-eyebrow">New Arrivals Landing Soon</div>
-    <h2 class="section-title">Kayali For Him</h2>
-    <p style="color:var(--muted);max-width:520px;margin:0 auto 28px;font-size:14px;line-height:1.8">Riette is curating this range right now. Want first pick when it lands — or after something specific? Send her a message and she'll source it for you.</p>
-    <a href="https://wa.me/27798908527?text=Hi Riette! I'm interested in the Kayali For Him range." target="_blank" class="back-link" style="background:var(--wa);border-color:var(--wa);color:#fff">WhatsApp Riette</a>
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label">Filter by range:</span>
+    <button class="filter-btn active" onclick="filterBrand('all', this)">All 37</button>
+    <button class="filter-btn" onclick="filterBrand('jars', this)">Fudge Jars</button>
+    <button class="filter-btn" onclick="filterBrand('happies', this)">Happies &amp; Munch</button>
+    <button class="filter-btn" onclick="filterBrand('sweets', this)">Sweets &amp; Koekies</button>
+    <button class="filter-btn" onclick="filterBrand('boxes', this)">Gift Boxes</button>
+    <button class="filter-btn" onclick="filterBrand('bulk', this)">Bulk &amp; Events</button>
+  </div>
+</div>
+
+
+<!-- FUDGE JARS -->
+<section id="jars" style="background:var(--bg2)" data-brand="jars">
+  <div class="section-inner">
+    <div class="section-eyebrow">Vrek Lekker · Spoonable fudge in a jar</div>
+    <h2 class="section-title">Fudge Jars</h2>
+    <p class="section-count">8 jars — R30 to R85</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="vrek-jar-traditional-28.jpg" alt="Traditional Fudge Jar"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Traditional Fudge Jar</div>
+          <div class="product-sub">Vrek Lekker · 28ml jar</div>
+          <div class="product-footer">
+            <span class="product-price">R30</span>
+            <button class="add-btn" onclick="addToCart('Traditional Fudge Jar (28ml)','R30','vrek-jar-traditional-28.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-jar-chocolate-28.jpg" alt="Chocolate Fudge Jar"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Chocolate Fudge Jar</div>
+          <div class="product-sub">Vrek Lekker · 28ml jar</div>
+          <div class="product-footer">
+            <span class="product-price">R30</span>
+            <button class="add-btn" onclick="addToCart('Chocolate Fudge Jar (28ml)','R30','vrek-jar-chocolate-28.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-jar-chocolate-125.jpg" alt="Chocolate Fudge Jar"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Chocolate Fudge Jar</div>
+          <div class="product-sub">Vrek Lekker · 125ml jar</div>
+          <div class="product-footer">
+            <span class="product-price">R55</span>
+            <button class="add-btn" onclick="addToCart('Chocolate Fudge Jar (125ml)','R55','vrek-jar-chocolate-125.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-jar-chocolate-250.jpg" alt="Chocolate Fudge Jar"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Chocolate Fudge Jar</div>
+          <div class="product-sub">Vrek Lekker · 250ml jar</div>
+          <div class="product-footer">
+            <span class="product-price">R75</span>
+            <button class="add-btn" onclick="addToCart('Chocolate Fudge Jar (250ml)','R75','vrek-jar-chocolate-250.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-jar-caramel-biscuit-125.jpg" alt="Caramel Biscuit Fudge Jar"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Caramel Biscuit Fudge Jar</div>
+          <div class="product-sub">Vrek Lekker · 125ml jar</div>
+          <div class="product-footer">
+            <span class="product-price">R60</span>
+            <button class="add-btn" onclick="addToCart('Caramel Biscuit Fudge Jar (125ml)','R60','vrek-jar-caramel-biscuit-125.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-jar-caramel-biscuit-250.jpg" alt="Caramel Biscuit Fudge Jar"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Caramel Biscuit Fudge Jar</div>
+          <div class="product-sub">Vrek Lekker · 250ml jar</div>
+          <div class="product-footer">
+            <span class="product-price">R80</span>
+            <button class="add-btn" onclick="addToCart('Caramel Biscuit Fudge Jar (250ml)','R80','vrek-jar-caramel-biscuit-250.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-jar-hazelnut-125.jpg" alt="Hazelnut Chocolate Fudge Jar"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Hazelnut Chocolate Fudge Jar</div>
+          <div class="product-sub">Vrek Lekker · 125ml jar</div>
+          <div class="product-footer">
+            <span class="product-price">R65</span>
+            <button class="add-btn" onclick="addToCart('Hazelnut Chocolate Fudge Jar (125ml)','R65','vrek-jar-hazelnut-125.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-jar-hazelnut-250.jpg" alt="Hazelnut Chocolate Fudge Jar"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Hazelnut Chocolate Fudge Jar</div>
+          <div class="product-sub">Vrek Lekker · 250ml jar</div>
+          <div class="product-footer">
+            <span class="product-price">R85</span>
+            <button class="add-btn" onclick="addToCart('Hazelnut Chocolate Fudge Jar (250ml)','R85','vrek-jar-hazelnut-250.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
+
+<!-- FUDGE HAPPIES &AMP; MUNCH -->
+<section id="happies" style="background:var(--bg3)" data-brand="happies">
+  <div class="section-inner">
+    <div class="section-eyebrow">Vrek Lekker · Individually wrapped blocks</div>
+    <h2 class="section-title">Fudge Happies &amp; Munch</h2>
+    <p class="section-count">5 treats — R10 to R20</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="vrek-happie-traditional.jpg" alt="Traditional Fudge Happie"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Traditional Fudge Happie</div>
+          <div class="product-sub">Vrek Lekker · ±60–70g wrapped block</div>
+          <div class="product-footer">
+            <span class="product-price">R16</span>
+            <button class="add-btn" onclick="addToCart('Traditional Fudge Happie','R16','vrek-happie-traditional.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-happie-chocolate.jpg" alt="Chocolate Fudge Happie"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Chocolate Fudge Happie</div>
+          <div class="product-sub">Vrek Lekker · ±58–68g wrapped block</div>
+          <div class="product-footer">
+            <span class="product-price">R16</span>
+            <button class="add-btn" onclick="addToCart('Chocolate Fudge Happie','R16','vrek-happie-chocolate.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-happie-caramel-biscuit.jpg" alt="Caramel Biscuit Fudge Happie"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Caramel Biscuit Fudge Happie</div>
+          <div class="product-sub">Vrek Lekker · wrapped block</div>
+          <div class="product-footer">
+            <span class="product-price">R18</span>
+            <button class="add-btn" onclick="addToCart('Caramel Biscuit Fudge Happie','R18','vrek-happie-caramel-biscuit.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-happie-hazelnut.jpg" alt="Hazelnut Chocolate Fudge Happie"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Hazelnut Chocolate Fudge Happie</div>
+          <div class="product-sub">Vrek Lekker · wrapped block</div>
+          <div class="product-footer">
+            <span class="product-price">R20</span>
+            <button class="add-btn" onclick="addToCart('Hazelnut Chocolate Fudge Happie','R20','vrek-happie-hazelnut.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-fudge-munch.jpg" alt="Vrek Lekker Fudge Munch"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Fudge Munch</div>
+          <div class="product-sub">Vrek Lekker · bite-size · four flavours</div>
+          <div class="product-footer" style="margin-top:8px;">
+            <span class="product-price" style="font-size:13px;">Traditional · R10</span>
+            <button class="add-btn" onclick="addToCart('Fudge Munch (Traditional)','R10','vrek-fudge-munch.jpg')">+ Add</button>
+          </div>
+          <div class="product-footer" style="margin-top:8px;">
+            <span class="product-price" style="font-size:13px;">Chocolate · R10</span>
+            <button class="add-btn" onclick="addToCart('Fudge Munch (Chocolate)','R10','vrek-fudge-munch.jpg')">+ Add</button>
+          </div>
+          <div class="product-footer" style="margin-top:8px;">
+            <span class="product-price" style="font-size:13px;">Caramel Biscuit · R12</span>
+            <button class="add-btn" onclick="addToCart('Fudge Munch (Caramel Biscuit)','R12','vrek-fudge-munch.jpg')">+ Add</button>
+          </div>
+          <div class="product-footer" style="margin-top:8px;">
+            <span class="product-price" style="font-size:13px;">Hazelnut Chocolate · R14</span>
+            <button class="add-btn" onclick="addToCart('Fudge Munch (Hazelnut Chocolate)','R14','vrek-fudge-munch.jpg')">+ Add</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SWEETS &AMP; KOEKIES -->
+<section id="sweets" style="background:var(--bg2)" data-brand="sweets">
+  <div class="section-inner">
+    <div class="section-eyebrow">Vrek Lekker · Koekies &amp; sweet treats</div>
+    <h2 class="section-title">Sweets &amp; Koekies</h2>
+    <p class="section-count">5 treats — R18 to R105</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="vrek-soetkoekies-500.jpg" alt="Soetkoekies"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Soetkoekies</div>
+          <div class="product-sub">Vrek Lekker · 500g</div>
+          <div class="product-footer">
+            <span class="product-price">R105</span>
+            <button class="add-btn" onclick="addToCart('Soetkoekies (500g)','R105','vrek-soetkoekies-500.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-soetkoekies-250.jpg" alt="Soetkoekies"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Soetkoekies</div>
+          <div class="product-sub">Vrek Lekker · 250g</div>
+          <div class="product-footer">
+            <span class="product-price">R55</span>
+            <button class="add-btn" onclick="addToCart('Soetkoekies (250g)','R55','vrek-soetkoekies-250.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-koffie-tyd.jpg" alt="Koffie Tyd Happie Pakkie"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Koffie Tyd Happie Pakkie</div>
+          <div class="product-sub">Vrek Lekker · 5-pak Soetkoekies</div>
+          <div class="product-footer">
+            <span class="product-price">R18</span>
+            <button class="add-btn" onclick="addToCart('Koffie Tyd Happie Pakkie','R18','vrek-koffie-tyd.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-milky-splash.jpg" alt="Milky Splash"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Milky Splash</div>
+          <div class="product-sub">Vrek Lekker · 100g</div>
+          <div class="product-footer">
+            <span class="product-price">R32</span>
+            <button class="add-btn" onclick="addToCart('Milky Splash (100g)','R32','vrek-milky-splash.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-nougat.jpg" alt="Nougat"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Nougat</div>
+          <div class="product-sub">Vrek Lekker · 100g</div>
+          <div class="product-footer">
+            <span class="product-price">R32</span>
+            <button class="add-btn" onclick="addToCart('Nougat (100g)','R32','vrek-nougat.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GIFT BOXES &AMP; COMBOS -->
+<section id="boxes" style="background:var(--bg3)" data-brand="boxes">
+  <div class="section-inner">
+    <div class="section-eyebrow">Vrek Lekker · Ready-to-gift boxes</div>
+    <h2 class="section-title">Gift Boxes &amp; Combos</h2>
+    <p class="section-count">10 boxes — R130 to R550</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="vrek-triple-treat-box.jpg" alt="Triple Treat Box"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Triple Treat Box</div>
+          <div class="product-sub">3 × 125ml jars · Traditional, Chocolate &amp; Caramel Biscuit</div>
+          <div class="product-footer">
+            <span class="product-price">R170</span>
+            <button class="add-btn" onclick="addToCart('Triple Treat Box (125ml)','R170','vrek-triple-treat-box.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-ultimate-fudge-box.jpg" alt="The Ultimate Fudge Box"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">The Ultimate Fudge Box</div>
+          <div class="product-sub">Birthday gift box · fudge celebration</div>
+          <div class="product-footer">
+            <span class="product-price">R420</span>
+            <button class="add-btn" onclick="addToCart('The Ultimate Fudge Box','R420','vrek-ultimate-fudge-box.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-lekker-box.jpg" alt="The Lekker Box"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">The Lekker Box</div>
+          <div class="product-sub">Mixed fudge treat box</div>
+          <div class="product-footer">
+            <span class="product-price">R130</span>
+            <button class="add-btn" onclick="addToCart('The Lekker Box','R130','vrek-lekker-box.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-sweet-tooth-sampler.jpg" alt="Sweet Tooth Sampler Box"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Sweet Tooth Sampler Box</div>
+          <div class="product-sub">A taste of the whole range</div>
+          <div class="product-footer">
+            <span class="product-price">R240</span>
+            <button class="add-btn" onclick="addToCart('Sweet Tooth Sampler Box','R240','vrek-sweet-tooth-sampler.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-chocoholics-trio.jpg" alt="Chocoholic's Delight Trio"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Chocoholic's Delight Trio</div>
+          <div class="product-sub">Chocolate jars · 250ml + 125ml + 28ml</div>
+          <div class="product-footer">
+            <span class="product-price">R160</span>
+            <button class="add-btn" onclick="addToCart('Chocoholic\'s Delight Trio','R160','vrek-chocoholics-trio.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-mini-moments-box.jpg" alt="Mini Moments Box"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Mini Moments Box</div>
+          <div class="product-sub">10 × 28ml mini jars</div>
+          <div class="product-footer">
+            <span class="product-price">R298</span>
+            <button class="add-btn" onclick="addToCart('Mini Moments Box','R298','vrek-mini-moments-box.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-threes-a-treat.jpg" alt="Three's a Treat"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Three's a Treat</div>
+          <div class="product-sub">3 × 250ml jars</div>
+          <div class="product-footer">
+            <span class="product-price">R225</span>
+            <button class="add-btn" onclick="addToCart('Three\'s a Treat (250ml)','R225','vrek-threes-a-treat.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-mixed-box.jpg" alt="Fudge Lovers' Mixed Box"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Fudge Lovers' Mixed Box</div>
+          <div class="product-sub">10 × 250ml jars · 5 Traditional + 5 Chocolate</div>
+          <div class="product-footer">
+            <span class="product-price">R550</span>
+            <button class="add-btn" onclick="addToCart('Fudge Lovers\' Mixed Box (250ml)','R550','vrek-mixed-box.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-duo-box.jpg" alt="Choc &amp; Trad Duo Box"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Choc &amp; Trad Duo Box</div>
+          <div class="product-sub">4 × 250ml jars · 2 + 2</div>
+          <div class="product-footer">
+            <span class="product-price">R292</span>
+            <button class="add-btn" onclick="addToCart('Choc & Trad Duo Box (250ml)','R292','vrek-duo-box.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-family-bundle.jpg" alt="Family Bundle"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Family Bundle</div>
+          <div class="product-sub">4 × 250ml jars · Traditional</div>
+          <div class="product-footer">
+            <span class="product-price">R292</span>
+            <button class="add-btn" onclick="addToCart('Family Bundle (250ml)','R292','vrek-family-bundle.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BULK &AMP; EVENTS -->
+<section id="bulk" style="background:var(--bg2)" data-brand="bulk">
+  <div class="section-inner">
+    <div class="section-eyebrow">Vrek Lekker · Events, weddings &amp; corporate</div>
+    <h2 class="section-title">Bulk &amp; Events</h2>
+    <p class="section-count">9 options — R530 to R2,870</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="vrek-caramel-bliss-10pack.jpg" alt="Caramel Biscuit Bliss 10-Pack"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Caramel Biscuit Bliss 10-Pack</div>
+          <div class="product-sub">10 × 125ml jars</div>
+          <div class="product-footer">
+            <span class="product-price">R580</span>
+            <button class="add-btn" onclick="addToCart('Caramel Biscuit Bliss 10-Pack (125ml)','R580','vrek-caramel-bliss-10pack.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-chocoholics-fix-10pack.jpg" alt="Chocoholic's Fix 10-Pack"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Chocoholic's Fix 10-Pack</div>
+          <div class="product-sub">10 × 125ml jars · Chocolate</div>
+          <div class="product-footer">
+            <span class="product-price">R530</span>
+            <button class="add-btn" onclick="addToCart('Chocoholic\'s Fix 10-Pack (125ml)','R530','vrek-chocoholics-fix-10pack.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-jarful-joy-10pack.jpg" alt="Jarful Joy 10-Pack"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Jarful Joy 10-Pack</div>
+          <div class="product-sub">10 × 125ml jars · Traditional</div>
+          <div class="product-footer">
+            <span class="product-price">R530</span>
+            <button class="add-btn" onclick="addToCart('Jarful Joy 10-Pack (125ml)','R530','vrek-jarful-joy-10pack.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-cocoa-bliss-10pack.jpg" alt="Cocoa Bliss 10-Pack"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Cocoa Bliss 10-Pack</div>
+          <div class="product-sub">10 × 250ml jars · Chocolate</div>
+          <div class="product-footer">
+            <span class="product-price">R570</span>
+            <button class="add-btn" onclick="addToCart('Cocoa Bliss 10-Pack (250ml)','R570','vrek-cocoa-bliss-10pack.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-signature-trad-10pack.jpg" alt="Signature Traditional 10-Pack"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Signature Traditional 10-Pack</div>
+          <div class="product-sub">10 × 250ml jars</div>
+          <div class="product-footer">
+            <span class="product-price">R570</span>
+            <button class="add-btn" onclick="addToCart('Signature Traditional 10-Pack (250ml)','R570','vrek-signature-trad-10pack.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-fudge-blocks-50.jpg" alt="Fudge Blocks 50 Pack"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Fudge Blocks 50 Pack</div>
+          <div class="product-sub">50 wrapped fudge blocks</div>
+          <div class="product-footer">
+            <span class="product-price">R750</span>
+            <button class="add-btn" onclick="addToCart('Fudge Blocks 50 Pack','R750','vrek-fudge-blocks-50.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-fifty-ways.jpg" alt="Fifty Ways To Say Thank You"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Fifty Ways To Say Thank You</div>
+          <div class="product-sub">50 × 125ml jars · events &amp; corporate</div>
+          <div class="product-footer">
+            <span class="product-price">R2500</span>
+            <button class="add-btn" onclick="addToCart('Fifty Ways To Say Thank You (125ml)','R2500','vrek-fifty-ways.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-fifty-minis.jpg" alt="Fifty Fudge Minis"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Fifty Fudge Minis</div>
+          <div class="product-sub">50 × 28ml mini jars</div>
+          <div class="product-footer">
+            <span class="product-price">R1435</span>
+            <button class="add-btn" onclick="addToCart('Fifty Fudge Minis','R1435','vrek-fifty-minis.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="vrek-custom-favors.jpg" alt="Custom Fudge Favors"/>
+        <div class="product-info">
+          <div class="badge badge-gold">Available</div>
+          <div class="product-name">Custom Fudge Favors</div>
+          <div class="product-sub">100 × 28ml mini jars · weddings &amp; events</div>
+          <div class="product-footer">
+            <span class="product-price">R2870</span>
+            <button class="add-btn" onclick="addToCart('Custom Fudge Favors','R2870','vrek-custom-favors.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
 
 <hr class="divider"/>
 
@@ -440,6 +1007,38 @@ document.addEventListener('click', () => { document.querySelectorAll('.dropdown-
 // Back to top
 const btt = document.getElementById('backToTop');
 window.addEventListener('scroll', () => { btt && btt.classList.toggle('visible', window.scrollY > 400); });
+</script>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="event.stopPropagation();closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()"/>
+</div>
+<script>
+function openLightbox(src,alt){document.getElementById('lightboxImg').src=src;document.getElementById('lightboxImg').alt=alt||'';document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden'}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('.product-card img').forEach(function(img){img.style.cursor='pointer';img.onclick=function(){var c=img.closest('.product-card');if(c.querySelector('.sold-btn'))return;var n=(c.querySelector('.product-name')||{}).textContent||'';var p=(c.querySelector('.product-price')||{}).textContent||'';var s=(c.querySelector('.product-sub')||{}).textContent||'';openProductModal(n,p,img.src,s);}});
+</script>
+<style>
+.pm-modal{display:none;position:fixed;inset:0;z-index:600;align-items:center;justify-content:center;padding:16px}
+.pm-modal.open{display:flex}
+.pm-overlay{position:absolute;inset:0;background:rgba(0,0,0,.75)}
+.pm-box{position:relative;background:#1C1610;border:1px solid rgba(200,155,60,.5);border-radius:10px;max-width:440px;width:100%;max-height:92vh;overflow-y:auto;z-index:1;box-shadow:0 24px 64px rgba(0,0,0,.6)}
+.pm-close{position:absolute;top:10px;right:10px;background:#272019;border:1px solid #3A3020;width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#A8946F;z-index:2;line-height:1}
+.pm-close:hover{border-color:#C89B3C;color:#C89B3C}
+.pm-img{width:100%;display:block;border-radius:10px 10px 0 0;max-height:60vh;object-fit:contain;background:#272019}
+.pm-info{padding:20px 20px 24px}
+.pm-badge{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C89B3C;border:1px solid #C89B3C;border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:10px;background:rgba(200,155,60,.1)}
+.pm-name{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#F2E7D0;margin-bottom:5px;line-height:1.3}
+.pm-sub{font-size:13px;color:#A8946F;margin-bottom:12px;line-height:1.5}
+.pm-price{font-size:28px;font-weight:800;color:#C89B3C;margin-bottom:18px}
+.pm-add{width:100%;background:#C89B3C;color:#1a0e02;border:none;padding:14px;border-radius:4px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.pm-add:hover{background:#E8C87A}
+</style>
+<div class="pm-modal" id="pmModal"><div class="pm-overlay" onclick="closeProductModal()"></div><div class="pm-box"><button class="pm-close" onclick="closeProductModal()">✕</button><img class="pm-img" id="pmImg" src="" alt=""/><div class="pm-info"><div class="pm-badge">Available</div><div class="pm-name" id="pmName"></div><div class="pm-sub" id="pmSub"></div><div class="pm-price" id="pmPrice"></div><button class="pm-add" onclick="pmAdd()">+ Add to Order</button></div></div></div>
+<script>
+var _pm={};
+function openProductModal(name,price,img,sub){document.getElementById('pmImg').src=img;document.getElementById('pmImg').alt=name;document.getElementById('pmName').textContent=name;document.getElementById('pmSub').textContent=sub;document.getElementById('pmPrice').textContent=price;_pm={name:name,price:price,img:img};document.getElementById('pmModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeProductModal(){document.getElementById('pmModal').classList.remove('open');document.body.style.overflow='';}
+function pmAdd(){addToCart(_pm.name,_pm.price,_pm.img);closeProductModal();}
 </script>
 
 <script>
