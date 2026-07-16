@@ -242,7 +242,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="hero-band">
   <div class="hero-eyebrow">Armaf · Rasasi · Lattafa · Afnan · French Avenue</div>
   <h1 class="hero-title">Dubai Perfumes<br/><span>for Men</span></h1>
-  <p class="hero-desc">30 bold, long-lasting Eau de Parfum fragrances — the best of Arabian perfumery. Rich oud, spicy woods, fresh aquatics and iconic designer-inspired scents. From R430.</p>
+  <p class="hero-desc">32 bold, long-lasting Eau de Parfum fragrances — the best of Arabian perfumery. Rich oud, spicy woods, fresh aquatics, iconic designer-inspired scents and new travel-size minis. From R200.</p>
   <a href="index.html" class="back-link">← Back to Home</a>
 </div>
 
@@ -250,7 +250,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="filter-bar">
   <div class="filter-inner">
     <span class="filter-label">Filter by brand:</span>
-    <button class="filter-btn active" onclick="filterBrand('all', this)">All 30</button>
+    <button class="filter-btn active" onclick="filterBrand('all', this)">All 32</button>
+    <button class="filter-btn" onclick="filterBrand('minis', this)">Minis</button>
     <button class="filter-btn" onclick="filterBrand('armaf', this)">Armaf</button>
     <button class="filter-btn" onclick="filterBrand('rasasi', this)">Rasasi</button>
     <button class="filter-btn" onclick="filterBrand('lattafa', this)">Lattafa</button>
@@ -258,6 +259,44 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
     <button class="filter-btn" onclick="filterBrand('french-avenue', this)">French Avenue</button>
   </div>
 </div>
+
+<!-- DUBAI MINIS -->
+<section id="minis" style="background:var(--bg3)" data-brand="minis">
+  <div class="section-inner">
+    <div class="section-eyebrow">New Arrivals · Travel-Size Minis</div>
+    <h2 class="section-title">Dubai Minis</h2>
+    <p class="section-count">2 fragrances — R200 each</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="dubai-men-mini-9pm.jpg" alt="9PM Mini"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">9PM</div>
+          <div class="product-sub">Afnan · EDP · 50ml Mini</div>
+          <div class="product-footer">
+            <span class="product-price">R200</span>
+            <button class="add-btn" onclick="addToCart('9PM Mini — Afnan 50ml','R200','dubai-men-mini-9pm.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-men-mini-khamrah-dukhan.jpg" alt="Khamrah Dukhan Mini"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Khamrah Dukhan</div>
+          <div class="product-sub">Lattafa · EDP · 50ml Mini</div>
+          <div class="product-footer">
+            <span class="product-price">R200</span>
+            <button class="add-btn" onclick="addToCart('Khamrah Dukhan Mini — Lattafa 50ml','R200','dubai-men-mini-khamrah-dukhan.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ARMAF -->
 <section id="armaf" style="background:var(--bg2)" data-brand="armaf">
