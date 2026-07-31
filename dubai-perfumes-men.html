@@ -199,7 +199,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
 .dd-head{display:block;padding:10px 18px 4px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;border-top:1px solid rgba(200,155,60,.3);margin-top:6px}
 .mnav-panel{max-height:70vh;overflow-y:auto}
-</style>
+.badge-sold{background:rgba(155,60,60,.1);color:#9b3a3a;border:1px solid rgba(155,60,60,.35)}.product-card.sold-out{opacity:.8}.product-card.sold-out:hover{transform:none;box-shadow:none;border-color:var(--gold)}.product-card.sold-out img{opacity:.4;filter:grayscale(30%)}.sold-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9B7050;background:var(--bg3);border:1px solid var(--border);padding:7px 12px;border-radius:3px;cursor:default;white-space:nowrap}</style>
 </head>
 <body>
 
@@ -272,28 +272,26 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
     <p class="section-count">8 fragrances — R450 to R480</p>
     <div class="product-grid">
 
-      <div class="product-card">
+      <div class="product-card sold-out">
         <img src="dubai-odyssey-homme.png" alt="Odyssey Homme by Armaf"/>
         <div class="product-info">
-          <div class="badge badge-gold">Available</div>
-          <div class="product-name">Odyssey Homme</div>
+          <div class="badge badge-sold">Sold Out</div><div class="product-name">Odyssey Homme</div>
           <div class="product-sub">Armaf · EDP · 100ml</div>
           <div class="product-footer">
             <span class="product-price">R450</span>
-            <button class="add-btn" onclick="addToCart('Odyssey Homme — Armaf 100ml','R450','dubai-odyssey-homme.png')">+ Add to Order</button>
+            <button class="sold-btn" disabled>Sold Out</button>
           </div>
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card sold-out">
         <img src="dubai-odyssey-homme-white.png" alt="Odyssey Homme White Edition by Armaf"/>
         <div class="product-info">
-          <div class="badge badge-gold">Available</div>
-          <div class="product-name">Odyssey Homme White Edition</div>
+          <div class="badge badge-sold">Sold Out</div><div class="product-name">Odyssey Homme White Edition</div>
           <div class="product-sub">Armaf · EDP · 100ml</div>
           <div class="product-footer">
             <span class="product-price">R450</span>
-            <button class="add-btn" onclick="addToCart('Odyssey Homme White Edition — Armaf 100ml','R450','dubai-odyssey-homme-white.png')">+ Add to Order</button>
+            <button class="sold-btn" disabled>Sold Out</button>
           </div>
         </div>
       </div>
@@ -311,15 +309,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card sold-out">
         <img src="dubai-odyssey-tyrant.png" alt="Odyssey Tyrant by Armaf"/>
         <div class="product-info">
-          <div class="badge badge-gold">Available</div>
-          <div class="product-name">Odyssey Tyrant</div>
+          <div class="badge badge-sold">Sold Out</div><div class="product-name">Odyssey Tyrant</div>
           <div class="product-sub">Armaf · EDP · 100ml</div>
           <div class="product-footer">
             <span class="product-price">R450</span>
-            <button class="add-btn" onclick="addToCart('Odyssey Tyrant — Armaf 100ml','R450','dubai-odyssey-tyrant.png')">+ Add to Order</button>
+            <button class="sold-btn" disabled>Sold Out</button>
           </div>
         </div>
       </div>
@@ -337,15 +334,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card sold-out">
         <img src="dubai-odyssey-wild-one.png" alt="Odyssey Wild One Gold Edition by Armaf"/>
         <div class="product-info">
-          <div class="badge badge-gold">Available</div>
-          <div class="product-name">Odyssey Wild One</div>
+          <div class="badge badge-sold">Sold Out</div><div class="product-name">Odyssey Wild One</div>
           <div class="product-sub">Armaf · Gold Edition · EDP · 100ml</div>
           <div class="product-footer">
             <span class="product-price">R450</span>
-            <button class="add-btn" onclick="addToCart('Odyssey Wild One Gold Edition — Armaf 100ml','R450','dubai-odyssey-wild-one.png')">+ Add to Order</button>
+            <button class="sold-btn" disabled>Sold Out</button>
           </div>
         </div>
       </div>
@@ -442,15 +438,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card sold-out">
         <img src="dubai-hawas-verde.jpg" alt="Hawas Verde by Rasasi"/>
         <div class="product-info">
-          <div class="badge badge-gold">Available</div>
-          <div class="product-name">Hawas Verde</div>
+          <div class="badge badge-sold">Sold Out</div><div class="product-name">Hawas Verde</div>
           <div class="product-sub">Rasasi · EDP · 100ml</div>
           <div class="product-footer">
             <span class="product-price">R450</span>
-            <button class="add-btn" onclick="addToCart('Hawas Verde — Rasasi 100ml','R450','dubai-hawas-verde.jpg')">+ Add to Order</button>
+            <button class="sold-btn" disabled>Sold Out</button>
           </div>
         </div>
       </div>
@@ -534,15 +529,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card sold-out">
         <img src="dubai-fakhar-homme.jpg" alt="Fakhar Homme by Lattafa"/>
         <div class="product-info">
-          <div class="badge badge-gold">Available</div>
-          <div class="product-name">Fakhar Homme</div>
+          <div class="badge badge-sold">Sold Out</div><div class="product-name">Fakhar Homme</div>
           <div class="product-sub">Lattafa · EDP · 100ml</div>
           <div class="product-footer">
             <span class="product-price">R480</span>
-            <button class="add-btn" onclick="addToCart('Fakhar Homme — Lattafa 100ml','R480','dubai-fakhar-homme.jpg')">+ Add to Order</button>
+            <button class="sold-btn" disabled>Sold Out</button>
           </div>
         </div>
       </div>
