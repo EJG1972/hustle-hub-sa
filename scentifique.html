@@ -68,9 +68,13 @@ section{padding:64px 32px;scroll-margin-top:140px}
 .product-price{font-size:18px;font-weight:800;color:var(--gold);flex-shrink:0}
 .add-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a0e02;background:var(--gold);border:none;padding:7px 12px;border-radius:3px;cursor:pointer;transition:all .2s;white-space:nowrap}
 .add-btn:hover{background:var(--gold-lt)}
-.scent-select-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block}
-.scent-select{width:100%;font-family:'Raleway',sans-serif;font-size:12px;color:var(--white);background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:8px 10px;margin-bottom:10px;cursor:pointer;outline:none;transition:border-color .2s}
-.scent-select:focus,.scent-select:hover{border-color:var(--gold)}
+.scent-select-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.oil-scent-options{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.oil-scent-pill{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;background:var(--bg3);color:var(--muted);border:1px solid var(--border);cursor:pointer;transition:all .2s}
+.oil-scent-pill:hover{border-color:var(--gold);color:var(--cream)}
+.oil-scent-pill.active{background:var(--gold);color:#1a0e02;border-color:var(--gold);font-weight:700}
+.product-card.wide{grid-column:span 2}
+@media(max-width:480px){.product-card.wide{grid-column:span 1}}
 .divider{border:none;border-top:1px solid var(--border);margin:0}
 
 /* ── SCENT LIST CALLOUT ── */
@@ -312,27 +316,27 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
   <div class="product-grid">
 
-    <div class="product-card">
+    <div class="product-card wide">
       <img src="scentifique-fragrance-oil-card.jpg" alt="Scentifique Fragrance Oil 10ml" loading="lazy"/>
       <div class="product-info">
         <div class="badge badge-gold">Available</div>
         <div class="product-name">Fragrance Oil 10ml</div>
         <div class="product-sub">Handcrafted fragrance oil — choose your scent below.</div>
-        <label class="scent-select-label" for="oilScentSelect">Choose your scent</label>
-        <select class="scent-select" id="oilScentSelect">
-          <option value="Lotus &amp; Dragonfruit">Lotus &amp; Dragonfruit</option>
-          <option value="Frankincense">Frankincense</option>
-          <option value="Lavender">Lavender</option>
-          <option value="Champagne Rose">Champagne Rose</option>
-          <option value="Rose">Rose</option>
-          <option value="Rose Amber Musk">Rose Amber Musk</option>
-          <option value="Sandalwood">Sandalwood</option>
-          <option value="White Musk">White Musk</option>
-          <option value="Peony Suede Musk">Peony Suede Musk</option>
-          <option value="Cashmere Musk">Cashmere Musk</option>
-          <option value="Vanilla">Vanilla</option>
-          <option value="Fresh Linen">Fresh Linen</option>
-        </select>
+        <label class="scent-select-label">Choose your scent</label>
+        <div class="oil-scent-options" id="oilScentOptions" onclick="event.stopPropagation()">
+          <button type="button" class="oil-scent-pill active" onclick="selectOilScent(this,'Lotus &amp; Dragonfruit',event)">Lotus &amp; Dragonfruit</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'Frankincense',event)">Frankincense</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'Lavender',event)">Lavender</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'Champagne Rose',event)">Champagne Rose</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'Rose',event)">Rose</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'Rose Amber Musk',event)">Rose Amber Musk</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'Sandalwood',event)">Sandalwood</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'White Musk',event)">White Musk</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'Peony Suede Musk',event)">Peony Suede Musk</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'Cashmere Musk',event)">Cashmere Musk</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'Vanilla',event)">Vanilla</button>
+          <button type="button" class="oil-scent-pill" onclick="selectOilScent(this,'Fresh Linen',event)">Fresh Linen</button>
+        </div>
         <div class="product-footer"><span class="product-price">R75</span><button class="add-btn" onclick="addOilToCart()">+ Add to Order</button></div>
       </div>
     </div>
@@ -648,9 +652,15 @@ function addToCart(name,price,img){
   n.classList.add('show');setTimeout(()=>n.classList.remove('show'),2000);
 }
 
+let oilScent='Lotus & Dragonfruit';
+function selectOilScent(btn,scent,evt){
+  if(evt)evt.stopPropagation();
+  oilScent=scent;
+  document.querySelectorAll('.oil-scent-pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+}
 function addOilToCart(){
-  const scent=document.getElementById('oilScentSelect').value;
-  addToCart('Fragrance Oil 10ml — Scentifique ('+scent+')','R75','scentifique-fragrance-oil-card.jpg');
+  addToCart('Fragrance Oil 10ml — Scentifique ('+oilScent+')','R75','scentifique-fragrance-oil-card.jpg');
 }
 
 function renderCart(){
