@@ -68,6 +68,9 @@ section{padding:64px 32px;scroll-margin-top:140px}
 .product-price{font-size:18px;font-weight:800;color:var(--gold);flex-shrink:0}
 .add-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a0e02;background:var(--gold);border:none;padding:7px 12px;border-radius:3px;cursor:pointer;transition:all .2s;white-space:nowrap}
 .add-btn:hover{background:var(--gold-lt)}
+.scent-select-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block}
+.scent-select{width:100%;font-family:'Raleway',sans-serif;font-size:12px;color:var(--white);background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:8px 10px;margin-bottom:10px;cursor:pointer;outline:none;transition:border-color .2s}
+.scent-select:focus,.scent-select:hover{border-color:var(--gold)}
 .divider{border:none;border-top:1px solid var(--border);margin:0}
 
 /* ── SCENT LIST CALLOUT ── */
@@ -314,8 +317,23 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
       <div class="product-info">
         <div class="badge badge-gold">Available</div>
         <div class="product-name">Fragrance Oil 10ml</div>
-        <div class="product-sub">Handcrafted fragrance oil in 12 scents — see the scent list above and specify when ordering.</div>
-        <div class="product-footer"><span class="product-price">R75</span><button class="add-btn" onclick="addToCart('Fragrance Oil 10ml — Scentifique (specify scent)','R75','scentifique-fragrance-oil-card.jpg')">+ Add to Order</button></div>
+        <div class="product-sub">Handcrafted fragrance oil — choose your scent below.</div>
+        <label class="scent-select-label" for="oilScentSelect">Choose your scent</label>
+        <select class="scent-select" id="oilScentSelect">
+          <option value="Lotus &amp; Dragonfruit">Lotus &amp; Dragonfruit</option>
+          <option value="Frankincense">Frankincense</option>
+          <option value="Lavender">Lavender</option>
+          <option value="Champagne Rose">Champagne Rose</option>
+          <option value="Rose">Rose</option>
+          <option value="Rose Amber Musk">Rose Amber Musk</option>
+          <option value="Sandalwood">Sandalwood</option>
+          <option value="White Musk">White Musk</option>
+          <option value="Peony Suede Musk">Peony Suede Musk</option>
+          <option value="Cashmere Musk">Cashmere Musk</option>
+          <option value="Vanilla">Vanilla</option>
+          <option value="Fresh Linen">Fresh Linen</option>
+        </select>
+        <div class="product-footer"><span class="product-price">R75</span><button class="add-btn" onclick="addOilToCart()">+ Add to Order</button></div>
       </div>
     </div>
 
@@ -628,6 +646,11 @@ function addToCart(name,price,img){
   saveCart();updateBadge();renderCart();
   const n=document.getElementById('addedNotif');
   n.classList.add('show');setTimeout(()=>n.classList.remove('show'),2000);
+}
+
+function addOilToCart(){
+  const scent=document.getElementById('oilScentSelect').value;
+  addToCart('Fragrance Oil 10ml — Scentifique ('+scent+')','R75','scentifique-fragrance-oil-card.jpg');
 }
 
 function renderCart(){
