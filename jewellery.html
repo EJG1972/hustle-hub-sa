@@ -164,6 +164,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 .mnav-panel{max-height:70vh;overflow-y:auto}
 .sub-title{font-family:'Fraunces',serif;font-size:clamp(18px,2.5vw,26px);font-weight:700;color:var(--gold-lt);margin:52px 0 20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
 </style>
+  <link rel="stylesheet" href="search-widget.css" />
 </head>
 <body>
 <div class="announce-strip" aria-hidden="true"><div class="announce-track"><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">New Stock Added Weekly</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Men's Fragrances — R450</span><span class="announce-sep">✦</span><span class="announce-item">Kayali Ladies Range — R480</span><span class="announce-sep">✦</span><span class="announce-item">BellaTia Jewellery from R150</span><span class="announce-sep">✦</span><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">New Stock Added Weekly</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Men's Fragrances — R450</span><span class="announce-sep">✦</span><span class="announce-item">Kayali Ladies Range — R480</span><span class="announce-sep">✦</span><span class="announce-item">BellaTia Jewellery from R150</span><span class="announce-sep">✦</span></div></div>
@@ -929,7 +930,6 @@ function buildOrderMessage(){
   return msg;
 }
 function sendViaWhatsApp(e){e.preventDefault();const msg=buildOrderMessage();if(!msg)return;window.open(`https://wa.me/27712305401?text=${encodeURIComponent(msg)}`,'_blank')}
-&body=${encodeURIComponent(msg)}`}
 function toggleDelivery(){const t=document.querySelector('input[name="delivery"]:checked').value;document.getElementById('deliverySection').style.display=t==='delivery'?'block':'none'}
 function updateCartBadge(){const count=cart.reduce((s,i)=>s+i.qty,0);['cartBadge','cartBadgeMob'].forEach(id=>{const b=document.getElementById(id);if(b){b.textContent=count;b.style.display=count>0?'flex':'none'}})}
 function openCart(){document.getElementById('cartOverlay').classList.add('open');document.getElementById('cartDrawer').classList.add('open');document.body.style.overflow='hidden'}
@@ -987,5 +987,7 @@ document.addEventListener('click',function(e){
 });
 window.addEventListener('scroll',function(){var p=document.getElementById('mnavPanel');p&&p.classList.remove('open');},{passive:true});
 </script>
+<script src="search-data.js"></script>
+<script src="search-widget.js"></script>
 </body>
 </html>
