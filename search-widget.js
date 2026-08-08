@@ -22,7 +22,7 @@
           '<button class="hh-search-close" id="hhSearchClose" aria-label="Close search">&#10005;</button>' +
         '</div>' +
         '<div class="hh-search-results" id="hhSearchResults">' +
-          '<div class="hh-search-hint">Type a name — like <strong>"Sauvage"</strong>, <strong>"gold bangle"</strong> or <strong>"fudge"</strong> — to find it instantly, wherever it lives on the site.</div>' +
+          '<div class="hh-search-hint">Type a name — like <strong>"Gucci"</strong>, <strong>"gold bangle"</strong> or <strong>"fudge"</strong> — to find it instantly, wherever it lives on the site.</div>' +
         '</div>' +
       '</div>';
     document.body.appendChild(overlay);
@@ -73,7 +73,7 @@
     var q = query.trim().toLowerCase();
     activeIndex = -1;
     if (!q){
-      resultsEl.innerHTML = '<div class="hh-search-hint">Type a name — like <strong>"Sauvage"</strong>, <strong>"gold bangle"</strong> or <strong>"fudge"</strong> — to find it instantly, wherever it lives on the site.</div>';
+      resultsEl.innerHTML = '<div class="hh-search-hint">Type a name — like <strong>"Gucci"</strong>, <strong>"gold bangle"</strong> or <strong>"fudge"</strong> — to find it instantly, wherever it lives on the site.</div>';
       currentResults = [];
       return;
     }
