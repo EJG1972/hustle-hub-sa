@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Unisex Designer Perfumes — The Hustle Hub SA</title>
+<title>Original Branded — Men — The Hustle Hub SA</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;0,900;1,600&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -40,19 +40,22 @@ section{padding:64px 32px}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
 .product-card{background:#1F1912;border:1px solid rgba(200,155,60,.5);border-radius:10px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(0,0,0,.35)}
 .product-card:hover{border-color:var(--gold-lt);transform:translateY(-6px);box-shadow:0 24px 64px rgba(200,155,60,.3)}
-.product-card img{width:100%;display:block;aspect-ratio:3/4;object-fit:contain;background:#1F1912}
+.product-card img{width:100%;display:block;aspect-ratio:4/5;object-fit:contain;background:#1F1912}
 .product-info{padding:18px 20px;display:flex;flex-direction:column;flex:1}
 .badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:7px;background:rgba(200,155,60,.15);color:var(--gold);border:1px solid var(--gold)}
-.badge-new{background:rgba(180,80,120,.12);color:#b04878;border:1px solid rgba(180,80,120,.5)}
-.badge-unisex{background:rgba(80,130,180,.12);color:#5080B0;border:1px solid rgba(80,130,180,.4)}
-.badge-branded{background:rgba(46,125,79,.12);color:#2e7d4f;border:1px solid rgba(46,125,79,.45)}
+.badge-gold{background:rgba(200,155,60,.15);color:var(--gold);border:1px solid var(--gold)}
 .product-name{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;flex:1;line-height:1.4}
-.product-sub{font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.4}
+.product-sub{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.4}
 .product-footer{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.product-price{font-size:18px;font-weight:800;color:var(--gold);flex-shrink:0}
-.add-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a0e02;background:var(--gold);border:none;padding:9px 14px;border-radius:4px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.product-price{font-size:17px;font-weight:800;color:var(--gold);flex-shrink:0}
+.add-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#1a0e02;background:var(--gold);border:none;padding:7px 12px;border-radius:3px;cursor:pointer;transition:all .2s;white-space:nowrap}
 .add-btn:hover{background:var(--gold-lt)}
-.divider{border:none;border-top:1px solid var(--border);margin:0}
+.badge-sold{background:rgba(155,60,60,.1);color:#9b3a3a;border:1px solid rgba(155,60,60,.35)}
+.product-card.sold-out{opacity:.8}
+.product-card.sold-out:hover{transform:none;box-shadow:none;border-color:var(--gold)}
+.product-card.sold-out img{opacity:.4;filter:grayscale(30%)}
+.sold-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9B7050;background:var(--bg3);border:1px solid var(--border);padding:7px 12px;border-radius:3px;cursor:default;white-space:nowrap}
+.divider{border:none;border-top:1px solid var(--border)}
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32px;text-align:center}
 .footer-logo{height:70px;margin-bottom:16px;border-radius:8px;opacity:.9}
 .footer-tagline{font-family:'Fraunces',serif;font-style:italic;color:var(--muted);font-size:14px;margin-bottom:14px}
@@ -128,17 +131,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 .cart-send-btn{width:100%;justify-content:center;padding:14px;font-size:12px;margin-bottom:8px;display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;border:none;border-radius:3px;font-family:'Raleway',sans-serif;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-decoration:none}
 .btn-email-cart{display:none;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;background:var(--bg3);color:#3a2010;border:1.5px solid var(--border);border-radius:3px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:all .2s;cursor:pointer}
 .btn-email-cart:hover{border-color:var(--gold);color:var(--gold)}
-.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:500;align-items:center;justify-content:center;cursor:pointer;padding:16px}
-.lightbox.open{display:flex}
-.lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:4px;cursor:default;display:block}
-.lightbox-close{position:absolute;top:14px;right:18px;color:#fff;font-size:36px;font-weight:300;cursor:pointer;line-height:1;background:none;border:none;opacity:.8}
-.lightbox-close:hover{opacity:1}
-.announce-strip{background:#1a0e02;overflow:hidden;height:34px;display:flex;align-items:center}
-.announce-track{display:flex;white-space:nowrap;animation:ticker 42s linear infinite}
-.announce-track:hover{animation-play-state:paused}
-.announce-item{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#E8C87A;padding:0 28px}
-.announce-sep{color:#C89B3C;font-size:11px;flex-shrink:0}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:768px){
   nav{padding:10px 20px}
   .nav-links{display:none}
@@ -157,6 +149,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 @media(max-width:480px){
   .product-grid{grid-template-columns:1fr 1fr;gap:10px}
 }
+.announce-strip{background:#1a0e02;overflow:hidden;height:34px;display:flex;align-items:center}
+.announce-track{display:flex;white-space:nowrap;animation:ticker 42s linear infinite}
+.announce-track:hover{animation-play-state:paused}
+.announce-item{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#E8C87A;padding:0 28px}
+.announce-sep{color:#C89B3C;font-size:11px;flex-shrink:0}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 .mnav-panel{position:fixed;display:none;z-index:300;background:var(--bg2);border:1px solid var(--gold);border-radius:6px;box-shadow:0 10px 30px rgba(0,0,0,.5);min-width:190px;padding:6px 0}
 .mnav-panel.open{display:block}
@@ -165,12 +163,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
 .dd-head{display:block;padding:10px 18px 4px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;border-top:1px solid rgba(200,155,60,.3);margin-top:6px}
 .mnav-panel{max-height:70vh;overflow-y:auto}
-.badge-sold{background:rgba(155,60,60,.1);color:#9b3a3a;border:1px solid rgba(155,60,60,.35)}.product-card.sold-out{opacity:.8}.product-card.sold-out:hover{transform:none;box-shadow:none;border-color:var(--gold)}.product-card.sold-out img{opacity:.4;filter:grayscale(30%)}.sold-btn{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9B7050;background:var(--bg3);border:1px solid var(--border);padding:7px 12px;border-radius:3px;cursor:default;white-space:nowrap}</style>
-  <link rel="stylesheet" href="search-widget.css" />
+</style>
 </head>
 <body>
-
-<div class="announce-strip" aria-hidden="true"><div class="announce-track"><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">New Stock Added Weekly</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Unisex Designer Perfumes — R480 each</span><span class="announce-sep">✦</span><span class="announce-item">Kayali Ladies Range — R480</span><span class="announce-sep">✦</span><span class="announce-item">BellaTia Jewellery from R150</span><span class="announce-sep">✦</span><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">New Stock Added Weekly</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Unisex Designer Perfumes — R480 each</span><span class="announce-sep">✦</span><span class="announce-item">Kayali Ladies Range — R480</span><span class="announce-sep">✦</span><span class="announce-item">BellaTia Jewellery from R150</span><span class="announce-sep">✦</span></div></div>
+<div class="announce-strip" aria-hidden="true"><div class="announce-track"><span class="announce-item">100% Genuine Fragrances</span><span class="announce-sep">✦</span><span class="announce-item">Original Branded — Men</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span><span class="announce-item">100% Genuine Fragrances</span><span class="announce-sep">✦</span><span class="announce-item">Original Branded — Men</span><span class="announce-sep">✦</span><span class="announce-item">Order via WhatsApp</span><span class="announce-sep">✦</span><span class="announce-item">Free Delivery Available</span><span class="announce-sep">✦</span></div></div>
 
 <nav>
   <a href="index.html" class="nav-brand"><img class="nav-logo-img" src="logo-text.png" alt="The Hustle Hub SA"/></a>
@@ -205,91 +201,21 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="mnav-panel" id="mnavPanel"></div>
 
 <div class="hero-band">
-  <div class="hero-eyebrow">AAA Grade Designer Replicas · Unisex Perfumes</div>
-  <h1 class="hero-title"><span>Unisex</span> Designer Perfumes</h1>
-  <p class="hero-desc">Designer perfumes for him and her — Tom Ford, Louis Vuitton, Le Labo, Byredo, Kayali and more. AAA grade replicas, carefully sourced. From R450.</p>
+  <div class="hero-eyebrow">Original Branded · 100% Genuine · Nationwide Delivery</div>
+  <h1 class="hero-title">Original Branded <span>— Men</span></h1>
+  <p class="hero-desc">100% genuine, authentic designer fragrances for him — the real deal, not replicas. Add to your order list and send via WhatsApp.</p>
   <a href="index.html" class="back-link">← Back to Main Shop</a>
 </div>
 
-<!-- ── DESIGNER UNISEX RANGE ── -->
-<section id="designer-unisex">
+<!-- ── ORIGINAL BRANDED — MEN ── -->
+<section id="original-branded-men">
 <div class="section-inner">
-<div class="section-eyebrow">Tom Ford · Louis Vuitton · Le Labo · Byredo · and more</div>
-<h2 class="section-title">Unisex Designer Perfumes</h2>
-<p class="section-count">24 perfumes · From R450 · AAA Grade</p>
+<div class="section-eyebrow">Original Branded · 100% Genuine</div>
+<h2 class="section-title">Original Branded — Men</h2>
+<p class="section-count">1 fragrance · Genuine, authentic stock</p>
 <div class="product-grid">
 
-<div class="product-card"><img src="fragrance-tom-ford-fucking-fabulous.jpeg" alt="Tom Ford Fucking Fabulous" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Fucking Fabulous</div><div class="product-sub">Tom Ford · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Tom Ford Fucking Fabulous','R480','fragrance-tom-ford-fucking-fabulous.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card sold-out"><img src="fragrance-lv-california-dream.jpeg" alt="California Dream" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">California Dream</div><div class="product-sub">Louis Vuitton · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-lv-on-the-beach.jpeg" alt="Louis Vuitton On the Beach" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">On the Beach</div><div class="product-sub">Louis Vuitton · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Louis Vuitton On the Beach','R480','fragrance-lv-on-the-beach.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card sold-out"><img src="fragrance-lv-city-of-stars.jpeg" alt="City of Stars" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">City of Stars</div><div class="product-sub">Louis Vuitton · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-tom-ford-myrrhe-mystere.jpeg" alt="Tom Ford Myrrhe Mystère" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Myrrhe Mystère</div><div class="product-sub">Tom Ford · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Tom Ford Myrrhe Mystère','R480','fragrance-tom-ford-myrrhe-mystere.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-tom-ford-cherry-smoke.jpeg" alt="Tom Ford Cherry Smoke" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Cherry Smoke</div><div class="product-sub">Tom Ford · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Tom Ford Cherry Smoke','R480','fragrance-tom-ford-cherry-smoke.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-tom-ford-electric-cherry.jpeg" alt="Tom Ford Electric Cherry" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Electric Cherry</div><div class="product-sub">Tom Ford · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Tom Ford Electric Cherry','R480','fragrance-tom-ford-electric-cherry.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card sold-out"><img src="fragrance-ex-nihilo-fleur-narcotique.jpeg" alt="Fleur Narcotique" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Fleur Narcotique</div><div class="product-sub">Ex Nihilo · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-escentric-molecules-02.jpeg" alt="Escentric Molecules 02" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">02</div><div class="product-sub">Escentric Molecules · Eau de Toilette · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Escentric Molecules 02','R480','fragrance-escentric-molecules-02.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card sold-out"><img src="fragrance-attar-persian-gold.jpeg" alt="The Persian Gold" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">The Persian Gold</div><div class="product-sub">Attar Collection · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-serge-lutens-chergui.jpeg" alt="Serge Lutens Chergui" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Chergui</div><div class="product-sub">Serge Lutens · Eau de Parfum · 50ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Serge Lutens Chergui','R480','fragrance-serge-lutens-chergui.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card sold-out"><img src="fragrance-le-labo-bergamote-22.jpeg" alt="Bergamote 22" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Bergamote 22</div><div class="product-sub">Le Labo · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-le-labo-santal-33.jpeg" alt="Le Labo Santal 33" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Santal 33</div><div class="product-sub">Le Labo · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Le Labo Santal 33','R480','fragrance-le-labo-santal-33.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card sold-out"><img src="fragrance-byredo-bal-dafrique.jpeg" alt="Bal d'Afrique" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Bal d'Afrique</div><div class="product-sub">Byredo · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-gissah-imperial-valley.jpeg" alt="Gissah Imperial Valley" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Imperial Valley</div><div class="product-sub">Gissah · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Gissah Imperial Valley','R480','fragrance-gissah-imperial-valley.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-tom-ford-bitter-peach.jpeg" alt="Tom Ford Bitter Peach" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Bitter Peach</div><div class="product-sub">Tom Ford · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Tom Ford Bitter Peach','R480','fragrance-tom-ford-bitter-peach.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-tom-ford-rose-prick.jpeg" alt="Tom Ford Rose Prick" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Rose Prick</div><div class="product-sub">Tom Ford · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Tom Ford Rose Prick','R480','fragrance-tom-ford-rose-prick.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-tom-ford-rose-de-russie.jpeg" alt="Tom Ford Rose de Russie" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Rose de Russie</div><div class="product-sub">Tom Ford · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Tom Ford Rose de Russie','R480','fragrance-tom-ford-rose-de-russie.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-tom-ford-noir-de-noir.jpeg" alt="Tom Ford Noir de Noir" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Noir de Noir</div><div class="product-sub">Tom Ford · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Tom Ford Noir de Noir','R480','fragrance-tom-ford-noir-de-noir.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-tom-ford-lost-cherry.jpeg" alt="Tom Ford Lost Cherry" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Lost Cherry</div><div class="product-sub">Tom Ford · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Tom Ford Lost Cherry','R480','fragrance-tom-ford-lost-cherry.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card sold-out"><img src="fragrance-tom-ford-black-orchid.jpeg" alt="Black Orchid" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Black Orchid</div><div class="product-sub">Tom Ford · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
-
-<div class="product-card sold-out"><img src="fragrance-mfk-aqua-universalis.jpeg" alt="Aqua Universalis Cologne Forte" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Aqua Universalis Cologne Forte</div><div class="product-sub">Maison Francis Kurkdjian · Eau de Parfum · 70ml</div><div class="product-footer"><span class="product-price">R480</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-mfk-baccarat-rouge-540.jpeg" alt="Baccarat Rouge 540" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Baccarat Rouge 540</div><div class="product-sub">Maison Francis Kurkdjian · Extrait de Parfum · 70ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Baccarat Rouge 540 — Maison Francis Kurkdjian','R450','fragrance-mfk-baccarat-rouge-540.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-tiziana-terenzi-kirke.jpeg" alt="Kirkè by Tiziana Terenzi" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Kirkè</div><div class="product-sub">Tiziana Terenzi · Extrait de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Kirkè — Tiziana Terenzi','R450','fragrance-tiziana-terenzi-kirke.jpeg')">+ Add to Order</button></div></div></div>
-
-</div></div></section>
-
-<hr class="divider"/>
-
-<!-- ── KAYALI UNISEX RANGE ── -->
-<section id="kayali-unisex">
-<div class="section-inner">
-<div class="section-eyebrow">Kayali · Eau de Parfum · Unisex</div>
-<h2 class="section-title">Kayali Unisex</h2>
-<p class="section-count">6 fragrances · All R480 each · AAA Grade</p>
-<div class="product-grid">
-
-<div class="product-card"><img src="fragrance-kayali-vanilla-coco-21.jpeg" alt="Kayali Utopia Vanilla Coco 21" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Utopia Vanilla Coco | 21</div><div class="product-sub">Kayali · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Kayali Utopia Vanilla Coco | 21','R480','fragrance-kayali-vanilla-coco-21.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-kayali-vanilla-28.jpeg" alt="Kayali Vanilla 28" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Vanilla | 28</div><div class="product-sub">Kayali · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Kayali Vanilla | 28','R480','fragrance-kayali-vanilla-28.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-kayali-elixir-11.jpeg" alt="Kayali Elixir 11" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Elixir | 11</div><div class="product-sub">Kayali · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Kayali Elixir | 11','R480','fragrance-kayali-elixir-11.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-kayali-burning-cherry-48.jpeg" alt="Kayali Lovefest Burning Cherry 48" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Lovefest Burning Cherry | 48</div><div class="product-sub">Kayali · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Kayali Lovefest Burning Cherry | 48','R480','fragrance-kayali-burning-cherry-48.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-kayali-pistachio-gelato-33.jpeg" alt="Kayali Yum Pistachio Gelato 33" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Yum Pistachio Gelato | 33</div><div class="product-sub">Kayali · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Kayali Yum Pistachio Gelato | 33','R480','fragrance-kayali-pistachio-gelato-33.jpeg')">+ Add to Order</button></div></div></div>
-
-<div class="product-card"><img src="fragrance-kayali-deja-vu-white-flower-57.jpeg" alt="Kayali Deja Vu White Flower 57" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Déjà Vu White Flower | 57</div><div class="product-sub">Kayali · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R480</span><button class="add-btn" onclick="addToCart('Kayali Déjà Vu White Flower | 57','R480','fragrance-kayali-deja-vu-white-flower-57.jpeg')">+ Add to Order</button></div></div></div>
+<div class="product-card"><img src="fragrance-azzaro-forever-wanted-absolu.jpeg" alt="Azzaro Forever Wanted Absolu" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Forever Wanted Absolu</div><div class="product-sub">Azzaro · Eau de Parfum · 100ml · Original Branded</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Forever Wanted Absolu — Azzaro (Original Branded)','R450','fragrance-azzaro-forever-wanted-absolu.jpeg')">+ Add to Order</button></div></div></div>
 
 </div></div></section>
 
@@ -302,7 +228,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
   <p class="footer-copy">© 2026 THE HUSTLE HUB SA · ALL RIGHTS RESERVED</p>
 </footer>
 
-<a href="https://wa.me/27712305401?text=Hi Riette! I'd like to order some Kayali unisex fragrances from The Hustle Hub SA." target="_blank" class="wa-float">
+<a href="https://wa.me/27712305401?text=Hi Riette! I'd like to order some original branded men's fragrances from The Hustle Hub SA." target="_blank" class="wa-float">
 <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -344,7 +270,7 @@ function renderCart(){
   const total=calcTotal();
   if(cart.length===0){c.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">✦</div><p>Your order list is empty.<br/>Click <strong>+ Add</strong> on any item.</p></div>';document.getElementById('cartDrawer').classList.remove('order-step');if(t)t.textContent='R0';if(s)s.textContent='R0';return}
   let h='';
-  cart.forEach((item,i)=>{h+=`<div class="cart-item"><div class="cart-item-img">${item.img?`<img src="${item.img}" alt="${item.name}"/>`:'<div style="display:flex;align-items:center;justify-content:height:100%;font-size:1.4rem;">✦</div>'}</div><div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">${item.price} each</div><div class="cart-item-row"><button class="qty-btn" onclick="changeQty(${i},-1)">−</button><span class="qty-num">${item.qty}</span><button class="qty-btn" onclick="changeQty(${i},1)">+</button><button class="cart-item-remove" onclick="removeFromCart(${i})">Remove</button></div></div></div>`});
+  cart.forEach((item,i)=>{h+=`<div class="cart-item"><div class="cart-item-img">${item.img?`<img src="${item.img}" alt="${item.name}"/>`:'<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:1.4rem;">✦</div>'}</div><div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">${item.price} each</div><div class="cart-item-row"><button class="qty-btn" onclick="changeQty(${i},-1)">−</button><span class="qty-num">${item.qty}</span><button class="qty-btn" onclick="changeQty(${i},1)">+</button><button class="cart-item-remove" onclick="removeFromCart(${i})">Remove</button></div></div></div>`});
   c.innerHTML=h;
   if(t)t.textContent=`R${total}`;
   if(s)s.textContent=`R${total}`;
@@ -359,7 +285,7 @@ function buildOrderMessage(){
   if(!name||!phone){alert('Please fill in your name and phone number.');return null}
   if(dtype==='delivery'&&!addr){alert('Please fill in your delivery address.');return null}
   const total=calcTotal();
-  let msg=`Hi Riette!\n\nI'd like to order the following unisex fragrances:\n\nMY DETAILS\nName: ${name}\nPhone: ${phone}\n`;
+  let msg=`Hi Riette!\n\nI'd like to order the following original branded men's fragrances:\n\nMY DETAILS\nName: ${name}\nPhone: ${phone}\n`;
   if(dtype==='delivery'){msg+=`Delivery address: ${addr}\nDelivery: Yes please\n`}else{msg+=`Delivery: I will collect\n`}
   msg+=`\nMY ORDER\n`;
   cart.forEach(item=>{msg+=`• ${item.qty}x ${item.name} — ${item.price} each`;if(item.qty>1)msg+=` (subtotal: R${parsePrice(item.price)*item.qty})`;msg+=`\n`});
@@ -374,18 +300,11 @@ function updateCartBadge(){const count=cart.reduce((s,i)=>s+i.qty,0);['cartBadge
 function openCart(){document.getElementById('cartOverlay').classList.add('open');document.getElementById('cartDrawer').classList.add('open');document.body.style.overflow='hidden'}
 function closeCart(){document.getElementById('cartOverlay').classList.remove('open');const d=document.getElementById('cartDrawer');d.classList.remove('open');d.classList.remove('order-step');document.body.style.overflow=''}
 function showAddedNotif(name){const n=document.getElementById('addedNotif');n.textContent=`✓  ${name} added`;n.classList.add('show');setTimeout(()=>n.classList.remove('show'),2500)}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCart();closeLightbox();}});
-function openLightbox(src,alt){document.getElementById('lightboxImg').src=src;document.getElementById('lightboxImg').alt=alt||'';document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden'}
-function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow=''}
-document.querySelectorAll('.product-card img').forEach(function(img){img.style.cursor='pointer';img.onclick=function(){var c=img.closest('.product-card');if(c.querySelector('.sold-btn'))return;var n=(c.querySelector('.product-name')||{}).textContent||'';var p=(c.querySelector('.product-price')||{}).textContent||'';var s=(c.querySelector('.product-sub')||{}).textContent||'';openProductModal(n,p,img.src,s);}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCart();}});
 const btt=document.getElementById('backToTop');
 window.addEventListener('scroll',()=>{btt.classList.toggle('visible',window.scrollY>300)},{passive:true});
 btt.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})});
 </script>
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="event.stopPropagation();closeLightbox()">✕</button>
-  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()"/>
-</div>
 <script>
 (function(){
   document.querySelectorAll(".nav-dropdown > a").forEach(function(a){
@@ -403,30 +322,6 @@ btt.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behav
   });
 })();
 </script>
-<style>
-.pm-modal{display:none;position:fixed;inset:0;z-index:600;align-items:center;justify-content:center;padding:16px}
-.pm-modal.open{display:flex}
-.pm-overlay{position:absolute;inset:0;background:rgba(0,0,0,.75)}
-.pm-box{position:relative;background:#1C1610;border:1px solid rgba(200,155,60,.5);border-radius:10px;max-width:440px;width:100%;max-height:92vh;overflow-y:auto;z-index:1;box-shadow:0 24px 64px rgba(0,0,0,.6)}
-.pm-close{position:absolute;top:10px;right:10px;background:#272019;border:1px solid #3A3020;width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#A8946F;z-index:2;line-height:1}
-.pm-close:hover{border-color:#C89B3C;color:#C89B3C}
-.pm-img{width:100%;display:block;border-radius:10px 10px 0 0;max-height:60vh;object-fit:contain;background:#272019}
-.pm-info{padding:20px 20px 24px}
-.pm-badge{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C89B3C;border:1px solid #C89B3C;border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:10px;background:rgba(200,155,60,.1)}
-.pm-name{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#F2E7D0;margin-bottom:5px;line-height:1.3}
-.pm-sub{font-size:13px;color:#A8946F;margin-bottom:12px;line-height:1.5}
-.pm-price{font-size:28px;font-weight:800;color:#C89B3C;margin-bottom:18px}
-.pm-add{width:100%;background:#C89B3C;color:#1a0e02;border:none;padding:14px;border-radius:4px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}
-.pm-add:hover{background:#E8C87A}
-</style>
-<div class="pm-modal" id="pmModal"><div class="pm-overlay" onclick="closeProductModal()"></div><div class="pm-box"><button class="pm-close" onclick="closeProductModal()">✕</button><img class="pm-img" id="pmImg" src="" alt=""/><div class="pm-info"><div class="pm-badge">Available</div><div class="pm-name" id="pmName"></div><div class="pm-sub" id="pmSub"></div><div class="pm-price" id="pmPrice"></div><button class="pm-add" onclick="pmAdd()">+ Add to Order</button></div></div></div>
-<script>
-var _pm={};
-function openProductModal(name,price,img,sub){document.getElementById('pmImg').src=img;document.getElementById('pmImg').alt=name;document.getElementById('pmName').textContent=name;document.getElementById('pmSub').textContent=sub;document.getElementById('pmPrice').textContent=price;_pm={name:name,price:price,img:img};document.getElementById('pmModal').classList.add('open');document.body.style.overflow='hidden';}
-function closeProductModal(){document.getElementById('pmModal').classList.remove('open');document.body.style.overflow='';}
-function pmAdd(){addToCart(_pm.name,_pm.price,_pm.img);closeProductModal();}
-</script>
-
 <script>
 var MNAV_GROUPS={
  perfumes:[["Designer Perfumes",null],["For Her","designer-ladies-fragrances.html"],["For Him","fragrances.html"],["Unisex","kayali-unisex.html"],["Original Branded",null],["Men","original-branded-men.html"],["Dubai",null],["Dubai Ladies","dubai-perfumes-ladies.html"],["Dubai Men","dubai-perfumes-men.html"],["Dubai Unisex","dubai-perfumes-unisex.html"],["Dubai Minis — Ladies","dubai-perfumes-ladies.html#minis"],["Dubai Minis — Men","dubai-perfumes-men.html#minis"],["Dubai Minis — Unisex","dubai-perfumes-unisex.html#minis"],["Pocket Sprays — Ladies","dubai-perfumes-ladies.html#pocket-sprays"],["Pocket Sprays — Men","dubai-perfumes-men.html#pocket-sprays"],["Designer-Inspired",null],["Inspired Perfumes","designer-inspired.html"],["Only You Collection","onlyyou-collection.html"],["Only You Dubai — Her","onlyyou-collection.html#dubai-for-her"],["Only You Dubai — Him","onlyyou-collection.html#dubai-for-him"],["Body Mists","body-mists.html"],["Scented Serenity — Ladies","scented-serenity.html#ss-ladies"],["Scented Serenity — Unisex","scented-serenity.html#ss-unisex"],["Scented Serenity — Men","scented-serenity.html#ss-men"],["Kayali",null],["Kayali For Her","ladies-fragrances.html"],["Kayali Unisex","kayali-unisex-perfumes.html"],["Kayali Minis","ladies-fragrances.html#kayali-minis"],["Kayali 50ml","ladies-fragrances.html#kayali-50ml"],["Perfume Gift Sets",null],["For Her","gift-sets.html#for-her"],["For Him","gift-sets.html#for-him"],["His & Hers","gift-sets.html#his-hers"],["Miniature Gift Sets","gift-sets.html#miniature-unisex"]],
@@ -451,17 +346,5 @@ document.addEventListener('click',function(e){
 });
 window.addEventListener('scroll',function(){var p=document.getElementById('mnavPanel');p&&p.classList.remove('open');},{passive:true});
 </script>
-<style>.product-modal{display:none;position:fixed;inset:0;z-index:500;align-items:center;justify-content:center;padding:16px}.product-modal.open{display:flex}.product-modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.75)}.product-modal-box{position:relative;background:#1C1610;border:1px solid #3A3020;border-radius:8px;max-width:440px;width:100%;max-height:92vh;overflow-y:auto;z-index:1;box-shadow:0 24px 64px rgba(0,0,0,.5)}.product-modal-close{position:absolute;top:10px;right:10px;background:#272019;border:1px solid #3A3020;width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#A8946F;z-index:2;line-height:1}.product-modal-close:hover{border-color:#C89B3C;color:#C89B3C}.product-modal-img-wrap{position:relative;overflow:hidden;border-radius:8px 8px 0 0;max-height:60vh;background:#272019;cursor:zoom-in}.product-modal-img{width:100%;display:block;max-height:60vh;object-fit:contain;background:#272019;transition:transform .15s ease-out;transform-origin:center center}.product-modal-img-wrap.zoomed{cursor:zoom-out}.product-modal-img-wrap.zoomed .product-modal-img{transform:scale(2.5)}.product-modal-zoom-hint{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.6);color:#F2E7D0;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:20px;pointer-events:none;z-index:2}.product-modal-info{padding:20px 20px 24px}.product-modal-badge{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#C89B3C;border:1px solid #C89B3C;border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:10px;background:rgba(200,155,60,.1)}.product-modal-name{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#F2E7D0;margin-bottom:5px;line-height:1.3}.product-modal-sub{font-size:13px;color:#A8946F;margin-bottom:12px;line-height:1.5}.product-modal-price{font-size:28px;font-weight:800;color:#C89B3C;margin-bottom:18px}.product-modal-add{width:100%;background:#C89B3C;color:#1a0e02;border:none;padding:14px;border-radius:4px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s}.product-modal-add:hover{background:#E8C87A}</style>
-<div class="product-modal" id="productModal"><div class="product-modal-overlay" onclick="closeModal()"></div><div class="product-modal-box"><button class="product-modal-close" onclick="closeModal()">✕</button><div class="product-modal-img-wrap" id="modalImgWrap"><img class="product-modal-img" id="modalImg" src="" alt=""/><span class="product-modal-zoom-hint">Click to zoom</span></div><div class="product-modal-info"><div class="product-modal-badge">Available</div><div class="product-modal-name" id="modalName"></div><div class="product-modal-sub" id="modalSub"></div><div class="product-modal-price" id="modalPrice"></div><button class="product-modal-add" onclick="addFromModal()">+ Add to Order</button></div></div></div>
-<script>
-let _mp={};
-function openModal(name,price,imgSrc,sub){document.getElementById('modalImg').src=imgSrc;document.getElementById('modalImg').alt=name;document.getElementById('modalName').textContent=name;document.getElementById('modalSub').textContent=sub||'';document.getElementById('modalPrice').textContent=price;_mp={name,price,img:imgSrc};document.getElementById('productModal').classList.add('open');document.body.style.overflow='hidden';}
-function closeModal(){document.getElementById('productModal').classList.remove('open');document.body.style.overflow='';}
-function addFromModal(){addToCart(_mp.name,_mp.price,_mp.img);closeModal();}
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});(function(){var wrap=document.getElementById('modalImgWrap');if(!wrap)return;var img=document.getElementById('modalImg');var hint=wrap.querySelector('.product-modal-zoom-hint');var zoomed=false;wrap.addEventListener('click',function(){zoomed=!zoomed;wrap.classList.toggle('zoomed',zoomed);if(hint)hint.style.display=zoomed?'none':'block';if(!zoomed)img.style.transformOrigin='center center';});wrap.addEventListener('mousemove',function(e){if(!zoomed)return;var r=wrap.getBoundingClientRect();var x=((e.clientX-r.left)/r.width)*100;var y=((e.clientY-r.top)/r.height)*100;img.style.transformOrigin=x+'% '+y+'%';});var origClose=closeModal;closeModal=function(){zoomed=false;wrap.classList.remove('zoomed');if(hint)hint.style.display='block';img.style.transformOrigin='center center';origClose();};})();
-document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
-</script>
-<script src="search-data.js"></script>
-<script src="search-widget.js"></script>
 </body>
 </html>
