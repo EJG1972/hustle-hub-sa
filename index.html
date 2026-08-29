@@ -1501,27 +1501,6 @@
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-
-  // ── CATEGORY SLIDER ARROWS & DOTS ──
-  const collScroll = document.getElementById('collScroll');
-  const collDots = document.querySelectorAll('.coll-dot');
-  function collScrollTo(dir) {
-    const cardW = collScroll.querySelector('.coll-card').offsetWidth + 14;
-    collScroll.scrollBy({ left: dir * cardW, behavior: 'smooth' });
-  }
-  document.getElementById('collPrev').addEventListener('click', () => collScrollTo(-1));
-  document.getElementById('collNext').addEventListener('click', () => collScrollTo(1));
-  collScroll.addEventListener('scroll', () => {
-    const cardW = collScroll.querySelector('.coll-card').offsetWidth + 14;
-    const idx = Math.min(4, Math.round(collScroll.scrollLeft / cardW));
-    collDots.forEach((d, i) => d.classList.toggle('active', i === idx));
-  }, { passive: true });
-  collDots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      const cardW = collScroll.querySelector('.coll-card').offsetWidth + 14;
-      collScroll.scrollTo({ left: i * cardW, behavior: 'smooth' });
-    });
-  });
 </script>
 
 <!-- ── PRODUCT MODAL ── -->
