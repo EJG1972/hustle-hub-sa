@@ -854,7 +854,7 @@ function addFromModal(){addToCart(_mp.name,_mp.price,_mp.img);closeModal();}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});(function(){var wrap=document.getElementById('modalImgWrap');if(!wrap)return;var img=document.getElementById('modalImg');var hint=wrap.querySelector('.product-modal-zoom-hint');var zoomed=false;wrap.addEventListener('click',function(){zoomed=!zoomed;wrap.classList.toggle('zoomed',zoomed);if(hint)hint.style.display=zoomed?'none':'block';if(!zoomed)img.style.transformOrigin='center center';});wrap.addEventListener('mousemove',function(e){if(!zoomed)return;var r=wrap.getBoundingClientRect();var x=((e.clientX-r.left)/r.width)*100;var y=((e.clientY-r.top)/r.height)*100;img.style.transformOrigin=x+'% '+y+'%';});var origClose=closeModal;closeModal=function(){zoomed=false;wrap.classList.remove('zoomed');if(hint)hint.style.display='block';img.style.transformOrigin='center center';origClose();};})();
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
-<script src="search-data.js"></script>
+<script src="search-data.js?v=2"></script>
 <script src="search-widget.js"></script>
 </body>
 </html>
