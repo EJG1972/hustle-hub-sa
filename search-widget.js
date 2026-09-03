@@ -193,11 +193,14 @@
       if (target){
         jumpTo(target);
         target.classList.add('hh-highlight');
-        setTimeout(function(){ target.classList.remove('hh-highlight'); }, 2400);
-        // Some pages here are extremely long and still have images loading in below
-        // the target, which shifts the layout after our first jump — correct once
-        // more once things have settled so we don't end up short of the mark.
-        setTimeout(function(){ jumpTo(target); }, 500);
+        // Some pages here are extremely long with hundreds of images still
+        // loading in below the target, which keeps shifting the layout after
+        // our first jump — correct a few more times as things settle in,
+        // rather than assuming one follow-up pass is enough.
+        setTimeout(function(){ jumpTo(target); }, 400);
+        setTimeout(function(){ jumpTo(target); }, 1000);
+        setTimeout(function(){ jumpTo(target); }, 2000);
+        setTimeout(function(){ target.classList.remove('hh-highlight'); }, 3200);
         history.replaceState(null, '', window.location.pathname + window.location.search);
       } else if (triesLeft > 0){
         setTimeout(function(){ attempt(triesLeft-1); }, 200);
