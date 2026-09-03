@@ -1116,9 +1116,23 @@ function sendViaWhatsApp(e) {
   const delivery = document.querySelector('input[name="delivery"]:checked').value;
   const address = delivery === 'delivery' ? (document.getElementById('custAddress').value.trim() || 'To be confirmed') : 'Will collect';
   const total = cart.reduce((s, i) => s + i.qty * parseInt(i.price.replace('R','')), 0);
-  const lines = cart.map(i => `• ${i.name} x${i.qty} @ ${i.price}`).join('%0A');
-  const msg = `Hi Riette! I'd like to place an order from The Hustle Hub SA.%0A%0A*Customer:* ${name}%0A*Phone:* ${phone}%0A*Delivery:* ${address}%0A%0A*Order:*%0A${lines}%0A%0A*Estimated Total: R${total}*%0A%0APlease confirm availability and payment details. Thank you!`;
-  window.open(`https://wa.me/27712305401?text=${msg}`, '_blank');
+  const lines = cart.map(i => `• ${i.name} x${i.qty} @ ${i.price}`).join('\n');
+  const msg = `Hi Riette! I'd like to place an order from The Hustle Hub SA.\n\n*Customer:* ${name}\n*Phone:* ${phone}\n*Delivery:* ${address}\n\n*Order:*\n${lines}\n\n*Estimated Total: R${total}*\n\nPlease confirm availability and payment details. Thank you!`;
+  sendOrderSafely(msg, '27712305401');
+}
+function sendOrderSafely(msg, waNumber) {
+  const limit = 600;
+  if (msg.length > limit && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(msg).then(() => {
+      alert("Your order is a bit long, so we've copied the full details for you! WhatsApp will now open with a short message \u2014 please long-press inside the message box and choose Paste before you hit send, so Riette gets every item.");
+      const short = `Hi Riette! I'd like to place a bigger order from The Hustle Hub SA. I've copied my full order to my clipboard \u2014 one moment while I paste it in. Thank you!`;
+      window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(short)}`, '_blank');
+    }).catch(() => {
+      window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+  } else {
+    window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+  }
 }
 
 
