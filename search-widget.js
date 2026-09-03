@@ -224,4 +224,10 @@
     injectButtons();
   }
   window.addEventListener('load', locateFromHash);
+  // Some pages (Scented Serenity especially) list hundreds of products on
+  // one page, so clicking a second search result while already on that
+  // page is just a same-page hash change, not a full reload — 'load'
+  // never fires again for it. Listen for that too, so a search result
+  // always jumps to its product even when you're already on that page.
+  window.addEventListener('hashchange', locateFromHash);
 })();
