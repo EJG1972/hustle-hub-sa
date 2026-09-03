@@ -191,15 +191,31 @@
         }
       }
       if (target){
-        target.scrollIntoView({behavior:'smooth', block:'center'});
+        jumpTo(target);
         target.classList.add('hh-highlight');
         setTimeout(function(){ target.classList.remove('hh-highlight'); }, 2400);
+        // Some pages here are extremely long and still have images loading in below
+        // the target, which shifts the layout after our first jump — correct once
+        // more once things have settled so we don't end up short of the mark.
+        setTimeout(function(){ jumpTo(target); }, 500);
         history.replaceState(null, '', window.location.pathname + window.location.search);
       } else if (triesLeft > 0){
         setTimeout(function(){ attempt(triesLeft-1); }, 200);
       }
     }
     setTimeout(function(){ attempt(6); }, 250);
+  }
+
+  // Jump straight to an element, centred in the viewport. Used instead of
+  // scrollIntoView({behavior:'smooth'}) because on this site's very long
+  // product pages a smooth/animated scroll across tens of thousands of
+  // pixels is unreliable on mobile browsers — it can silently never move
+  // the screen at all, leaving the highlight flashing off-screen. An
+  // instant jump always lands correctly.
+  function jumpTo(el){
+    var rect = el.getBoundingClientRect();
+    var targetY = rect.top + window.pageYOffset - (window.innerHeight/2) + (rect.height/2);
+    window.scrollTo(0, Math.max(0, targetY));
   }
 
   if (document.readyState === 'loading'){
