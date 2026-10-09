@@ -210,6 +210,43 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
 .dd-head{display:block;padding:10px 18px 4px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;border-top:1px solid rgba(200,155,60,.3);margin-top:6px}
 .mnav-panel{max-height:70vh;overflow-y:auto}
+
+/* ── BECOME AN AGENT ── */
+#become-an-agent{background:var(--bg2);border-top:1px solid var(--border)}
+.agent-wrap{max-width:820px;margin:0 auto}
+.agent-intro{color:#E4D5B5;margin:0 0 22px}
+.agent-points{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:0 0 26px}
+.agent-points li{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:14px 16px;font-size:13.5px;line-height:1.55}
+.agent-points strong{display:block;color:var(--gold);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.agent-contract{background:var(--bg3);border:1px solid var(--border);border-radius:6px;margin:0 0 28px}
+.agent-contract summary{cursor:pointer;padding:14px 18px;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);list-style:none}
+.agent-contract summary::-webkit-details-marker{display:none}
+.agent-contract summary::after{content:" +";float:right}
+.agent-contract[open] summary::after{content:" −"}
+.agent-contract-body{padding:4px 18px 18px;font-size:13.5px;line-height:1.65;max-height:60vh;overflow-y:auto}
+.agent-contract-body h4{font-family:'Fraunces',serif;color:var(--white);font-size:16px;margin:16px 0 6px}
+.agent-contract-body ul{padding-left:18px}
+.agent-contract-body li{margin-bottom:6px}
+.agent-form{background:var(--bg3);border:1.5px solid var(--gold);border-radius:8px;padding:24px}
+.agent-form h3{font-family:'Fraunces',serif;color:var(--white);font-size:20px;margin-bottom:4px}
+.agent-form .af-note{color:var(--muted);font-size:13px;margin-bottom:18px}
+.af-group{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:20px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.af-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+.af-full{grid-column:1/-1}
+.agent-form label{display:block;font-size:12px;font-weight:700;color:var(--cream);margin-bottom:5px}
+.agent-form input[type=text],.agent-form input[type=email],.agent-form input[type=tel],.agent-form textarea,.agent-form select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--cream);font-family:'Raleway',sans-serif;font-size:15px;padding:11px 12px}
+.agent-form textarea{min-height:70px;resize:vertical}
+.agent-form input:focus,.agent-form textarea:focus,.agent-form select:focus{outline:none;border-color:var(--gold)}
+.af-yesno{display:flex;gap:18px;font-size:14px}
+.af-yesno label{display:flex;align-items:center;gap:6px;font-weight:500;margin:0;cursor:pointer}
+.af-agree{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;margin-top:20px;line-height:1.5}
+.af-agree input{margin-top:4px;width:18px;height:18px;accent-color:var(--gold);flex-shrink:0}
+.af-agree label{font-weight:500;margin:0}
+.af-error{color:#E8836B;font-size:13px;margin-top:12px;display:none}
+.af-submit{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:18px;background:var(--wa);color:#fff;border:none;border-radius:4px;padding:15px;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.af-submit:hover{filter:brightness(1.08)}
+.af-after{font-size:13px;color:var(--muted);margin-top:12px;text-align:center}
+@media(max-width:600px){.af-grid{grid-template-columns:1fr}.agent-form{padding:18px 16px}}
 </style>
   <link rel="stylesheet" href="search-widget.css" />
 </head>
@@ -255,7 +292,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
   <h1 class="hero-title"><span>Scentifique</span></h1>
   <p class="hero-tagline">Sacred Scents, Crafted by Hand</p>
   <p class="hero-desc">From fragrance oils and flower diffusers to scripture trays and gift combos — every Scentifique piece is made with love and intention, for your home and your heart.</p>
-  <a href="index.html" class="back-link">← Back to Main Shop</a>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="index.html" class="back-link">← Back to Main Shop</a>
+    <a href="#become-an-agent" class="back-link">Become an Agent →</a>
+  </div>
 </div>
 
 <!-- ── WHITE PEONY CHRISTMAS SPECIAL ── -->
@@ -333,6 +373,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
     <a href="#oils">Oils &amp; Burners</a>
     <a href="#diffusers">Flower Diffusers</a>
     <a href="#trays">Trays &amp; Decor</a>
+    <a href="#become-an-agent">Become an Agent</a>
       </div>
 </div>
 
@@ -608,6 +649,99 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
 
 
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- BECOME A SCENTIFIQUE AGENT -->
+<!-- ══════════════════════════════════════════════════════ -->
+<section id="become-an-agent">
+<div class="agent-wrap">
+  <div class="section-eyebrow">Join the Team · Be Your Own Boss</div>
+  <h2 class="section-title">Become a Scentifique Agent</h2>
+  <p class="agent-intro">Love Scentifique? Sell it! As an agent you're not restricted to an area — you grow your own business with a trusted, handmade product. Agents are appointed on an exclusive basis, so every application is reviewed and approval isn't guaranteed.</p>
+
+  <ul class="agent-points">
+    <li><strong>Minimum order</strong>Place an order of at least R500 every month.</li>
+    <li><strong>Stay active</strong>Agents who don't reach the minimum or are inactive for 2 months are removed and must re-apply.</li>
+    <li><strong>Marketing supplied</strong>All adverts and marketing material are supplied — just add your name and contact details.</li>
+    <li><strong>Exclusive</strong>You may not sell products that compete with Scentifique while you're an agent, or for 12 months after.</li>
+  </ul>
+
+  <details class="agent-contract">
+    <summary>Read the full Agent Agreement</summary>
+    <div class="agent-contract-body">
+      <h4>Integrity</h4>
+      <p>As an agent of Scentifique, I will always hold Scentifique in high regard and will conduct business in an honest and ethical manner.</p>
+      <h4>Accountability &amp; Target</h4>
+      <p>I accept responsibility for my work, actions and information provided in all business conducted under Scentifique. I accept that I am personally responsible for promoting Scentifique and selling its products. A minimum order of R500 must be placed monthly. If the minimum order is not reached, or if you are inactive for more than two (2) months or make no sales, you will be removed as an agent and will have to re-apply should you wish to join again in future. We cannot guarantee that your application will be approved, due to the exclusivity of the agents we appoint.</p>
+      <h4>Image</h4>
+      <ul>
+        <li>I will maintain a professional appearance in communication and social media content.</li>
+        <li>I will communicate with Scentifique members and clients in a professional and friendly manner regardless of the circumstances. I will not provide false or misleading information to clients.</li>
+        <li>I will escalate any problems, concerns or questions outside of my expertise to the owner.</li>
+      </ul>
+      <h4>Advertising &amp; Marketing</h4>
+      <ul>
+        <li>All advertising and marketing material will be supplied.</li>
+        <li>No unauthorised advertising material is allowed on any social media platform.</li>
+        <li>Advertising material posted on Scentifique's WhatsApp group can be used on your own advertising platforms.</li>
+        <li>Make sure you add your name and contact details to the advertising material.</li>
+      </ul>
+      <h4>Disclaimer — Make Sure Your Customer Is Informed</h4>
+      <p>Send the customer our Terms and Conditions of Sale so that they are aware of them before purchasing. These will be supplied to you via WhatsApp so they are easy to send on. Scentifique takes no responsibility if a customer was not informed of the Terms and Conditions of Sale — the agent takes full responsibility.</p>
+      <h4>Rules &amp; Responsibilities</h4>
+      <ul>
+        <li>Orders cannot be placed before money reflects in the stockist account. Payment confirms the order.</li>
+        <li>Orders can take 7–14 working days to be prepared when an item is out of stock (it may be sooner). Couriers may take a further 3–4 working days to deliver. As an agent it is your responsibility to communicate this to your customer.</li>
+        <li>A tracking number will be sent to you, which must be sent immediately to your customer with clear instructions on how to track their order.</li>
+        <li>If there are any courier problems, inform the owner immediately so the matter can be investigated.</li>
+        <li><em>Courier disclaimer:</em> once a package leaves our facility it is in the care of the courier company. Although we package and secure items with great care, we cannot be held liable for damage or loss in transit. Such issues must be taken up directly with the courier company.</li>
+        <li><em>Incorrect orders:</em> please confirm your purchase before finalising your order. If Scentifique's packaging or manufacturing facility made a mistake with a product (courier damage and loss excluded), send a photo to the owner within 48 hours so it can be rectified. Head Office will investigate and decide whether a store credit will be granted for the customer's next purchase.</li>
+        <li>Respond on Scentifique's conversation group — information shared there must be read and acknowledged.</li>
+        <li>Respond promptly to customer messages, and follow up with your customers monthly to make sure they are satisfied with our products.</li>
+        <li>All training, ideas and sensitive information shared in meetings, WhatsApp groups etc. is exclusively for the benefit of Scentifique and its members. You may not divulge any sensitive, marketing or pricing information to anyone else.</li>
+        <li>You will not sell or promote products in direct competition with Scentifique. The agent agrees not to compete with Naturally You / Scentifique products while an agent and for 12 months after termination.</li>
+        <li>Any advertising group names (Facebook, WhatsApp, Telegram etc.) must be approved by your Team Leader before the group is created. The name may not suggest it is an official Scentifique or Head Office group, and should clearly show it belongs to an agent, e.g. "Scentifique with (your name / business name)".</li>
+        <li>If you decide to stop being an agent, or are removed for not meeting target in 2 consecutive months, you must hand over your client database to the owner with immediate effect.</li>
+      </ul>
+      <p style="margin-top:14px;">If you'd like to clarify anything before applying, please contact the owner directly. We wish you a successful journey and look forward to working with you!</p>
+    </div>
+  </details>
+
+  <form class="agent-form" id="agentForm" onsubmit="submitAgentForm(event)" novalidate>
+    <h3>Agent Application Form</h3>
+    <p class="af-note">Fill in your details below. When you tap Send, WhatsApp opens with your application ready to send to Riette.</p>
+
+    <div class="af-group">Personal Information</div>
+    <div class="af-grid">
+      <div><label for="af-name">Full Name(s) *</label><input type="text" id="af-name" autocomplete="given-name" required/></div>
+      <div><label for="af-surname">Surname *</label><input type="text" id="af-surname" autocomplete="family-name" required/></div>
+      <div><label for="af-id">ID Number *</label><input type="text" id="af-id" inputmode="numeric" required/></div>
+      <div><label for="af-tel">Telephone Number *</label><input type="tel" id="af-tel" autocomplete="tel" required/></div>
+      <div class="af-full"><label for="af-email">Email Address</label><input type="email" id="af-email" autocomplete="email"/></div>
+      <div class="af-full"><label for="af-address">Address *</label><textarea id="af-address" autocomplete="street-address" required></textarea></div>
+      <div><label for="af-postal">Postal Code</label><input type="text" id="af-postal" inputmode="numeric" autocomplete="postal-code"/></div>
+      <div><label for="af-province">Province *</label><select id="af-province" required><option value="">Choose…</option><option>Eastern Cape</option><option>Free State</option><option>Gauteng</option><option>KwaZulu-Natal</option><option>Limpopo</option><option>Mpumalanga</option><option>North West</option><option>Northern Cape</option><option>Western Cape</option><option>Outside South Africa</option></select></div>
+      <div class="af-full"><label for="af-country">Country</label><input type="text" id="af-country" value="South Africa" autocomplete="country-name"/></div>
+    </div>
+
+    <div class="af-group">About You</div>
+    <div class="af-grid">
+      <div><label>Do you have a business?</label><div class="af-yesno"><label><input type="radio" name="af-biz" value="Yes"/> Yes</label><label><input type="radio" name="af-biz" value="No"/> No</label></div></div>
+      <div><label for="af-biztype">If yes, type of business</label><input type="text" id="af-biztype"/></div>
+      <div><label>Do you have sales experience?</label><div class="af-yesno"><label><input type="radio" name="af-sales" value="Yes"/> Yes</label><label><input type="radio" name="af-sales" value="No"/> No</label></div></div>
+      <div><label>Are you self-driven &amp; committed?</label><div class="af-yesno"><label><input type="radio" name="af-driven" value="Yes"/> Yes</label><label><input type="radio" name="af-driven" value="No"/> No</label></div></div>
+      <div class="af-full"><label for="af-products">What other products do you sell?</label><textarea id="af-products"></textarea></div>
+    </div>
+
+    <div class="af-agree"><input type="checkbox" id="af-agree"/><label for="af-agree">I have read the Agent Agreement above, acknowledge it, and undertake to be bound by it if my application is approved.</label></div>
+    <div class="af-error" id="af-error"></div>
+    <button type="submit" class="af-submit">Send Application on WhatsApp</button>
+    <p class="af-after">📎 After sending, please also send Riette a photo of your ID in the same WhatsApp chat.</p>
+  </form>
+</div>
+</section>
+
+<hr class="divider"/>
+
 <!-- ── FOOTER ── -->
 <footer>
   <img src="logo-bg.jpeg" alt="The Hustle Hub SA" class="footer-logo"/>
@@ -882,5 +1016,39 @@ document.querySelectorAll('.product-card').forEach(function(card){var img=card.q
 <script src="search-data.js?v=9"></script>
 <script src="search-widget.js?v=4"></script>
 <script src="cart-persist.js?v=2"></script>
+<script>
+function submitAgentForm(e){
+  e.preventDefault();
+  function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
+  function r(n){var el=document.querySelector('input[name="'+n+'"]:checked');return el?el.value:'—';}
+  var err=document.getElementById('af-error');
+  var need=[['af-name','Full Name'],['af-surname','Surname'],['af-id','ID Number'],['af-tel','Telephone Number'],['af-address','Address'],['af-province','Province']];
+  var missing=need.filter(function(f){return !v(f[0]);}).map(function(f){return f[1];});
+  if(missing.length){err.textContent='Please fill in: '+missing.join(', ')+'.';err.style.display='block';return;}
+  if(!document.getElementById('af-agree').checked){err.textContent='Please tick the box to confirm you have read the Agent Agreement.';err.style.display='block';return;}
+  err.style.display='none';
+  var msg='*SCENTIFIQUE AGENT APPLICATION*\n\n'+
+    '*PERSONAL INFORMATION*\n'+
+    'Full Name: '+v('af-name')+'\n'+
+    'Surname: '+v('af-surname')+'\n'+
+    'ID Number: '+v('af-id')+'\n'+
+    'Telephone: '+v('af-tel')+'\n'+
+    'Email: '+(v('af-email')||'—')+'\n'+
+    'Address: '+v('af-address').replace(/\n+/g,', ')+'\n'+
+    'Postal Code: '+(v('af-postal')||'—')+'\n'+
+    'Province: '+v('af-province')+'\n'+
+    'Country: '+(v('af-country')||'—')+'\n\n'+
+    '*ABOUT ME*\n'+
+    'Do you have a business? '+r('af-biz')+'\n'+
+    'Type of business: '+(v('af-biztype')||'—')+'\n'+
+    'Sales experience? '+r('af-sales')+'\n'+
+    'Self-driven & committed? '+r('af-driven')+'\n'+
+    'Other products I sell: '+(v('af-products')||'—')+'\n\n'+
+    '✅ I have read the Scentifique Agent Agreement, acknowledge it, and undertake to be bound by it.\n'+
+    'Date: '+new Date().toLocaleDateString('en-ZA',{day:'numeric',month:'long',year:'numeric'})+'\n\n'+
+    'I will send a copy of my ID in this chat.';
+  window.open('https://wa.me/27712305401?text='+encodeURIComponent(msg),'_blank');
+}
+</script>
 </body>
 </html>
