@@ -18,7 +18,7 @@
     overlay.innerHTML =
       '<div class="hh-search-panel">' +
         '<div class="hh-search-input-row">' + SEARCH_ICON +
-          '<input id="hhSearchInput" type="text" placeholder="Search perfumes, jewellery, fudge…" autocomplete="off" />' +
+          '<input id="hhSearchInput" type="text" placeholder="Search perfumes, scents, fudge…" autocomplete="off" />' +
           '<button class="hh-search-close" id="hhSearchClose" aria-label="Close search">&#10005;</button>' +
         '</div>' +
         '<div class="hh-search-results" id="hhSearchResults">' +
