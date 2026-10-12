@@ -651,6 +651,7 @@
 
 .dd-head{display:block;padding:10px 18px 4px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;border-top:1px solid rgba(200,155,60,.3);margin-top:6px}
 .mnav-panel{max-height:70vh;overflow-y:auto}
+@media(min-width:769px) and (max-width:1180px){nav{padding-left:16px;padding-right:16px}.nav-links{gap:11px}.nav-links a{font-size:10px;letter-spacing:.04em}.cart-nav-btn{padding:8px 10px;font-size:10px;letter-spacing:.04em}}
 </style>
   <link rel="stylesheet" href="search-widget.css" />
 </head>
@@ -668,6 +669,7 @@
     <li class="nav-dropdown"><a href="jewellery.html">BellaTia Jewellery ▾</a><div class="dropdown-menu"><a href="jewellery.html#gold-bangles">Gold Bangles &amp; Bracelets</a><a href="jewellery.html#gold-earrings">Gold Earrings</a><a href="jewellery.html#gold-rings">Gold Rings</a><a href="jewellery.html#gold-necklaces">Gold Necklaces</a><a href="jewellery.html#gold-pendants">Gold Pendants &amp; Charms</a><a href="jewellery.html#silver-pendants">Silver Pendants &amp; Charms</a><a href="jewellery.html#silver-bangles">Silver Bangles</a><a href="jewellery.html#silver-bracelets">Silver Bracelets</a><a href="jewellery.html#silver-earrings">Silver Earrings</a><a href="jewellery.html#silver-necklaces">Silver Necklaces</a><a href="jewellery.html#silver-rings">Silver Rings</a><a href="jewellery.html#silver-mens-rings">Silver Men's Rings</a></div></li>
     <li class="nav-dropdown"><a href="vrek-lekker-fudge.html">Vrek Lekker Fudge ▾</a><div class="dropdown-menu"><a href="vrek-lekker-fudge.html#jars">Fudge Jars</a><a href="vrek-lekker-fudge.html#happies">Happies &amp; Munch</a><a href="vrek-lekker-fudge.html#sweets">Sweets &amp; Koekies</a><a href="vrek-lekker-fudge.html#boxes">Fudge Gift Sets</a><a href="vrek-lekker-fudge.html#bulk">Bulk &amp; Events</a></div></li>
     <li><a href="#about">About</a></li>
+    <li class="nav-dropdown"><a href="#">Join Us ▾</a><div class="dropdown-menu"><a href="index.html#become-a-reseller">Become a Perfume Reseller</a><a href="scentifique.html#become-an-agent">Become a Scentifique Agent</a></div></li>
     <li>
       <button class="cart-nav-btn" onclick="openCart()">
         Order List
@@ -690,6 +692,7 @@
     <li class="mnav-group"><a href="#" onclick="toggleMobGroup(event,this,'jewellery')">BellaTia Jewellery ▾</a></li>
     <li class="mnav-group"><a href="#" onclick="toggleMobGroup(event,this,'fudge')">Vrek Lekker Fudge ▾</a></li>
     <li><a href="#about">About</a></li>
+    <li class="mnav-group"><a href="#" onclick="toggleMobGroup(event,this,'join')">Join Us ▾</a></li>
     <li><a href="#" class="mobile-cart-link" onclick="openCart(); return false;">Order List</a></li>
   </ul>
 </div>
@@ -1487,7 +1490,8 @@ var MNAV_GROUPS={
  perfumes:[["Designer Perfumes",null],["For Her","designer-ladies-fragrances.html"],["For Him","fragrances.html"],["Unisex","kayali-unisex.html"],["Original Branded",null],["Men","original-branded-men.html"],["Dubai",null],["Dubai Ladies","dubai-perfumes-ladies.html"],["Dubai Men","dubai-perfumes-men.html"],["Dubai Unisex","dubai-perfumes-unisex.html"],["Dubai Minis — Ladies","dubai-perfumes-ladies.html#minis"],["Dubai Minis — Men","dubai-perfumes-men.html#minis"],["Dubai Minis — Unisex","dubai-perfumes-unisex.html#minis"],["Pocket Sprays — Ladies","dubai-perfumes-ladies.html#pocket-sprays"],["Pocket Sprays — Men","dubai-perfumes-men.html#pocket-sprays"],["Designer-Inspired",null],["Inspired Perfumes","designer-inspired.html"],["Only You Collection","onlyyou-collection.html"],["Only You Dubai — Her","onlyyou-collection.html#dubai-for-her"],["Only You Dubai — Him","onlyyou-collection.html#dubai-for-him"],["Scented Serenity — Ladies","scented-serenity.html#ss-ladies"],["Scented Serenity — Unisex","scented-serenity.html#ss-unisex"],["Scented Serenity — Men","scented-serenity.html#ss-men"],["Kayali",null],["Kayali For Her","ladies-fragrances.html"],["Kayali Unisex","kayali-unisex-perfumes.html"],["Kayali Minis","ladies-fragrances.html#kayali-minis"],["Kayali 50ml","ladies-fragrances.html#kayali-50ml"],["Perfume Gift Sets",null],["For Her","gift-sets.html#for-her"],["For Him","gift-sets.html#for-him"],["His & Hers","gift-sets.html#his-hers"],["Miniature Gift Sets","gift-sets.html#miniature-unisex"]],
  specials:[["October Perfume Special","index.html#october-special"],["Scentifique — Christmas Diffuser Special","scentifique.html#christmas-peony-special"],["Scentifique — Sleeping Beauty Diffuser","scentifique.html#sleeping-beauty-special"],["Scentifique — Christmas Decor Collection","scentifique.html#christmas-decor-special"]],
  jewellery:[["All Jewellery","jewellery.html"],["Gold Bangles & Bracelets","jewellery.html#gold-bangles"],["Gold Earrings","jewellery.html#gold-earrings"],["Gold Rings","jewellery.html#gold-rings"],["Gold Necklaces","jewellery.html#gold-necklaces"],["Gold Pendants & Charms","jewellery.html#gold-pendants"],["Silver Pendants & Charms","jewellery.html#silver-pendants"],["Silver Bangles","jewellery.html#silver-bangles"],["Silver Bracelets","jewellery.html#silver-bracelets"],["Silver Earrings","jewellery.html#silver-earrings"],["Silver Necklaces","jewellery.html#silver-necklaces"],["Silver Rings","jewellery.html#silver-rings"],["Silver Men's Rings","jewellery.html#silver-mens-rings"]],
- fudge:[["All Fudge","vrek-lekker-fudge.html"],["Fudge Jars","vrek-lekker-fudge.html#jars"],["Happies & Munch","vrek-lekker-fudge.html#happies"],["Sweets & Koekies","vrek-lekker-fudge.html#sweets"],["Fudge Gift Sets","vrek-lekker-fudge.html#boxes"],["Bulk & Events","vrek-lekker-fudge.html#bulk"]]
+ fudge:[["All Fudge","vrek-lekker-fudge.html"],["Fudge Jars","vrek-lekker-fudge.html#jars"],["Happies & Munch","vrek-lekker-fudge.html#happies"],["Sweets & Koekies","vrek-lekker-fudge.html#sweets"],["Fudge Gift Sets","vrek-lekker-fudge.html#boxes"],["Bulk & Events","vrek-lekker-fudge.html#bulk"]],
+ join:[["Become a Perfume Reseller","index.html#become-a-reseller"],["Become a Scentifique Agent","scentifique.html#become-an-agent"]]
 };
 function toggleMobGroup(e,el,key){
   e.preventDefault();
