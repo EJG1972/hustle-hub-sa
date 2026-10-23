@@ -215,7 +215,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="hero-band">
   <div class="hero-eyebrow">AAA Grade Designer Replicas · Premium Quality · Nationwide Delivery</div>
   <h1 class="hero-title">Men's <span>Fragrances</span></h1>
-  <p class="hero-desc">53 premium designer fragrances — carefully sourced, AAA grade replicas. R450 each. Add to your order list and send via WhatsApp.</p>
+  <p class="hero-desc">55 premium designer fragrances — carefully sourced, AAA grade replicas. From R440. Add to your order list and send via WhatsApp.</p>
   <a href="index.html" class="back-link">← Back to Main Shop</a>
 </div>
 
@@ -224,7 +224,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="section-inner">
 <div class="section-eyebrow">AAA Grade Designer Replicas · Premium Quality</div>
 <h2 class="section-title">Men's Designer Fragrances</h2>
-<p class="section-count">53 fragrances · All R450 each · AAA Grade</p>
+<p class="section-count">55 fragrances · From R440 · AAA Grade</p>
 <div class="product-grid">
 
 <div class="product-card sold-out"><img src="fragrance-creed-aventus.jpeg" alt="Creed Aventus" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Creed Aventus</div><div class="product-sub">Creed · Eau de Parfum · 120ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
@@ -332,6 +332,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="product-card"><img src="fragrance-jpgaultier-le-beau.jpeg" alt="Jean Paul Gaultier Le Beau" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">"Le Beau" Le Parfum</div><div class="product-sub">Jean Paul Gaultier · Eau de Parfum · 125ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('"Le Beau" Le Parfum — Jean Paul Gaultier','R450','fragrance-jpgaultier-le-beau.jpeg')">+ Add to Order</button></div></div></div>
 
 <div class="product-card"><img src="fragrance-pacorabanne-invictus-victory-extreme.jpeg" alt="Paco Rabanne Invictus Victory Extreme" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Invictus Victory Extreme</div><div class="product-sub">Paco Rabanne · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Invictus Victory Extreme — Paco Rabanne','R450','fragrance-pacorabanne-invictus-victory-extreme.jpeg')">+ Add to Order</button></div></div></div>
+
+<div class="product-card"><img src="fragrance-proud-of-you-oud.jpg" alt="Proud of You Oud by Fragrance World — Eau de Parfum 100ml, R440" loading="lazy"/><div class="product-info"><div class="badge badge-gold">New Arrival</div><div class="product-name">Proud of You Oud</div><div class="product-sub">Fragrance World · Eau de Parfum · 100ml<br/>Top: saffron, nutmeg, cinnamon · Heart: oud, patchouli, vetiver · Base: amber, musk, tonka bean</div><div class="product-footer"><span class="product-price">R440</span><button class="add-btn" onclick="addToCart('Proud of You Oud — Fragrance World 100ml','R440','fragrance-proud-of-you-oud.jpg')">+ Add to Order</button></div></div></div>
+
+<div class="product-card"><img src="fragrance-rayhaan-obsidian.jpg" alt="Rayhaan Obsidian by Kalsekar — Eau de Parfum 100ml, R460" loading="lazy"/><div class="product-info"><div class="badge badge-gold">New Arrival</div><div class="product-name">Rayhaan Obsidian</div><div class="product-sub">Kalsekar · Eau de Parfum · 100ml<br/>Top: bergamot, pink pepper, saffron · Heart: rose, geranium, jasmine · Base: oud, amber, patchouli</div><div class="product-footer"><span class="product-price">R460</span><button class="add-btn" onclick="addToCart('Rayhaan Obsidian — Kalsekar 100ml','R460','fragrance-rayhaan-obsidian.jpg')">+ Add to Order</button></div></div></div>
 
 </div></div></section>
 
@@ -525,7 +529,7 @@ function addFromModal(){addToCart(_mp.name,_mp.price,_mp.img);closeModal();}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});(function(){var wrap=document.getElementById('modalImgWrap');if(!wrap)return;var img=document.getElementById('modalImg');var hint=wrap.querySelector('.product-modal-zoom-hint');var zoomed=false;wrap.addEventListener('click',function(){zoomed=!zoomed;wrap.classList.toggle('zoomed',zoomed);if(hint)hint.style.display=zoomed?'none':'block';if(!zoomed)img.style.transformOrigin='center center';});wrap.addEventListener('mousemove',function(e){if(!zoomed)return;var r=wrap.getBoundingClientRect();var x=((e.clientX-r.left)/r.width)*100;var y=((e.clientY-r.top)/r.height)*100;img.style.transformOrigin=x+'% '+y+'%';});var origClose=closeModal;closeModal=function(){zoomed=false;wrap.classList.remove('zoomed');if(hint)hint.style.display='block';img.style.transformOrigin='center center';origClose();};})();
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
-<script src="search-data.js?v=16"></script>
+<script src="search-data.js?v=17"></script>
 <script src="search-widget.js?v=6"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
