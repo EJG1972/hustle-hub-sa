@@ -244,7 +244,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="hero-band">
   <div class="hero-eyebrow">Armaf · Rasasi · Lattafa · Afnan · French Avenue</div>
   <h1 class="hero-title">Dubai Perfumes<br/><span>for Men</span></h1>
-  <p class="hero-desc">81 bold, long-lasting Eau de Parfum fragrances — the best of Arabian perfumery. Rich oud, spicy woods, fresh aquatics, iconic scents, travel-size minis and R100 pocket sprays. From R100.</p>
+  <p class="hero-desc">83 bold, long-lasting Eau de Parfum fragrances — the best of Arabian perfumery. Rich oud, spicy woods, fresh aquatics, iconic scents, travel-size minis and R100 pocket sprays. From R100.</p>
   <a href="index.html" class="back-link">← Back to Home</a>
 </div>
 
@@ -252,7 +252,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="filter-bar">
   <div class="filter-inner">
     <span class="filter-label">Filter by brand:</span>
-    <button class="filter-btn active" onclick="filterBrand('all', this)">All 81</button>
+    <button class="filter-btn active" onclick="filterBrand('all', this)">All 83</button>
     <button class="filter-btn" onclick="filterBrand('armaf', this)">Armaf</button>
     <button class="filter-btn" onclick="filterBrand('rasasi', this)">Rasasi</button>
     <button class="filter-btn" onclick="filterBrand('lattafa', this)">Lattafa</button>
@@ -260,6 +260,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
     <button class="filter-btn" onclick="filterBrand('french-avenue', this)">French Avenue</button>
     <button class="filter-btn" onclick="filterBrand('al-haramain', this)">Al Haramain</button>
     <button class="filter-btn" onclick="filterBrand('fragrance-world', this)">Fragrance World</button>
+    <button class="filter-btn" onclick="filterBrand('kalsekar', this)">Kalsekar</button>
     <button class="filter-btn" onclick="filterBrand('minis', this)">Minis</button>
     <button class="filter-btn" onclick="filterBrand('pocket-sprays', this)">Pocket Sprays</button>
     <button class="filter-btn" onclick="filterBrand('hawas-50ml', this)">Hawas 50ml</button>
@@ -1019,7 +1020,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
   <div class="section-inner">
     <div class="section-eyebrow">Fragrance World · UAE · Eau de Parfum</div>
     <h2 class="section-title">Fragrance World</h2>
-    <p class="section-count">2 fragrances — R430 to R440</p>
+    <p class="section-count">3 fragrances — R430 to R440</p>
     <div class="product-grid">
 
       <div class="product-card">
@@ -1044,6 +1045,44 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
           <div class="product-footer">
             <span class="product-price">R440</span>
             <button class="add-btn" onclick="addToCart('Proud of You Leather — Fragrance World 100ml','R440','dubai-men-proud-of-you-leather.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="dubai-men-proud-of-you-oud.jpg" alt="Proud of You Oud by Fragrance World — EDP 100ml, R440"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Proud of You Oud</div>
+          <div class="product-sub">Fragrance World · EDP · 100ml<br/>Top: saffron, nutmeg, cinnamon · Heart: oud, patchouli, vetiver · Base: amber, musk, tonka bean</div>
+          <div class="product-footer">
+            <span class="product-price">R440</span>
+            <button class="add-btn" onclick="addToCart('Proud of You Oud — Fragrance World 100ml','R440','dubai-men-proud-of-you-oud.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- KALSEKAR -->
+<section id="kalsekar" style="background:var(--bg3)" data-brand="kalsekar">
+  <div class="section-inner">
+    <div class="section-eyebrow">Kalsekar · UAE · Eau de Parfum</div>
+    <h2 class="section-title">Kalsekar</h2>
+    <p class="section-count">1 fragrance — R460</p>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="dubai-men-rayhaan-obsidian.jpg" alt="Rayhaan Obsidian by Kalsekar — EDP 100ml, R460"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Rayhaan Obsidian</div>
+          <div class="product-sub">Kalsekar · EDP · 100ml<br/>Top: bergamot, pink pepper, saffron · Heart: rose, geranium, jasmine · Base: oud, amber, patchouli</div>
+          <div class="product-footer">
+            <span class="product-price">R460</span>
+            <button class="add-btn" onclick="addToCart('Rayhaan Obsidian — Kalsekar 100ml','R460','dubai-men-rayhaan-obsidian.jpg')">+ Add to Order</button>
           </div>
         </div>
       </div>
@@ -1727,7 +1766,7 @@ function addFromModal(){addToCart(_mp.name,_mp.price,_mp.img);closeModal();}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});(function(){var wrap=document.getElementById('modalImgWrap');if(!wrap)return;var img=document.getElementById('modalImg');var hint=wrap.querySelector('.product-modal-zoom-hint');var zoomed=false;wrap.addEventListener('click',function(){zoomed=!zoomed;wrap.classList.toggle('zoomed',zoomed);if(hint)hint.style.display=zoomed?'none':'block';if(!zoomed)img.style.transformOrigin='center center';});wrap.addEventListener('mousemove',function(e){if(!zoomed)return;var r=wrap.getBoundingClientRect();var x=((e.clientX-r.left)/r.width)*100;var y=((e.clientY-r.top)/r.height)*100;img.style.transformOrigin=x+'% '+y+'%';});var origClose=closeModal;closeModal=function(){zoomed=false;wrap.classList.remove('zoomed');if(hint)hint.style.display='block';img.style.transformOrigin='center center';origClose();};})();
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
-<script src="search-data.js?v=17"></script>
+<script src="search-data.js?v=18"></script>
 <script src="search-widget.js?v=6"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
