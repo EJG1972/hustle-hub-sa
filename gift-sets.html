@@ -374,28 +374,28 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
       </div>
     </div>
 
-    <div class="product-card">
+    <div class="product-card sold-out">
       <img src="gift-valentino-donna-4x30.jpg" alt="Valentino Donna Ladies Gift Set 4x30ml" />
       <div class="product-info">
-        <div class="badge badge-gold">Available</div>
+        <div class="badge badge-sold">Out of Stock</div>
         <div class="product-name">Valentino Donna Gift Set — 4 x 30ml</div>
         <div class="product-sub">Valentino · 4 x 30ml · Born In Roma Intense · Yellow Dream · Coral Fantasy · Born In Roma</div>
         <div class="product-footer">
           <span class="product-price">R590</span>
-          <button class="add-btn" onclick="addToCart('Valentino Donna Gift Set 4x30ml','R590','gift-valentino-donna-4x30.jpg')">+ Add to Order</button>
+          <button class="sold-btn" disabled>Out of Stock</button>
         </div>
       </div>
     </div>
 
-    <div class="product-card">
+    <div class="product-card sold-out">
       <img src="gift-ariana-grande-cloud-3x30.jpg" alt="Ariana Grande Cloud Ladies Gift Set 3x30ml" />
       <div class="product-info">
-        <div class="badge badge-gold">Available</div>
+        <div class="badge badge-sold">Out of Stock</div>
         <div class="product-name">Ariana Grande Cloud Gift Set</div>
         <div class="product-sub">Ariana Grande · 3 x 30ml · Cloud · Thank U Next · Thank U Next 2.0</div>
         <div class="product-footer">
           <span class="product-price">R570</span>
-          <button class="add-btn" onclick="addToCart('Ariana Grande Cloud Gift Set (3x30ml)','R570','gift-ariana-grande-cloud-3x30.jpg')">+ Add to Order</button>
+          <button class="sold-btn" disabled>Out of Stock</button>
         </div>
       </div>
     </div>
@@ -851,15 +851,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
       </div>
     </div>
 
-    <div class="product-card">
+    <div class="product-card sold-out">
       <img src="gift-boss-bottled-4x30-night-unlimited-classic-elixir.jpg" alt="Hugo Boss Bottled Night Unlimited Classic Elixir Set 4x30ml" />
       <div class="product-info">
-        <div class="badge badge-gold">Available</div>
+        <div class="badge badge-sold">Out of Stock</div>
         <div class="product-name">Boss Bottled — Classic / Unlimited / Night / Elixir</div>
         <div class="product-sub">Hugo Boss · 4 x 30ml · Bottled Night · Bottled Unlimited · Bottled (Classic) · Bottled Elixir</div>
         <div class="product-footer">
           <span class="product-price">R560</span>
-          <button class="add-btn" onclick="addToCart('Boss Bottled Classic/Unlimited/Night/Elixir Set (4x30ml)','R560','gift-boss-bottled-4x30-night-unlimited-classic-elixir.jpg')">+ Add to Order</button>
+          <button class="sold-btn" disabled>Out of Stock</button>
         </div>
       </div>
     </div>
@@ -920,15 +920,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
   <h3 class="sub-title" id="miniature-unisex">Miniature Perfume Gift Sets — Unisex — 5 Sets</h3>
   <div class="product-grid">
 
-    <div class="product-card">
+    <div class="product-card sold-out">
       <img src="gift-odyssey-armaf-4x30.jpg" alt="Odyssey by Armaf Gift Set — Green/Yellow Box" />
       <div class="product-info">
-        <div class="badge badge-gold">Available</div>
+        <div class="badge badge-sold">Out of Stock</div>
         <div class="product-name">Odyssey by Armaf Gift Set — Green/Yellow Box</div>
         <div class="product-sub">Armaf · 4 x 30ml</div>
         <div class="product-footer">
           <span class="product-price">R460</span>
-          <button class="add-btn" onclick="addToCart('Odyssey by Armaf Gift Set — Green/Yellow Box (4x30ml)','R460','gift-odyssey-armaf-4x30.jpg')">+ Add to Order</button>
+          <button class="sold-btn" disabled>Out of Stock</button>
         </div>
       </div>
     </div>
@@ -1178,7 +1178,7 @@ function addFromModal(){addToCart(_mp.name,_mp.price,_mp.img);closeModal();}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});(function(){var wrap=document.getElementById('modalImgWrap');if(!wrap)return;var img=document.getElementById('modalImg');var hint=wrap.querySelector('.product-modal-zoom-hint');var zoomed=false;wrap.addEventListener('click',function(){zoomed=!zoomed;wrap.classList.toggle('zoomed',zoomed);if(hint)hint.style.display=zoomed?'none':'block';if(!zoomed)img.style.transformOrigin='center center';});wrap.addEventListener('mousemove',function(e){if(!zoomed)return;var r=wrap.getBoundingClientRect();var x=((e.clientX-r.left)/r.width)*100;var y=((e.clientY-r.top)/r.height)*100;img.style.transformOrigin=x+'% '+y+'%';});var origClose=closeModal;closeModal=function(){zoomed=false;wrap.classList.remove('zoomed');if(hint)hint.style.display='block';img.style.transformOrigin='center center';origClose();};})();
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
-<script src="search-data.js?v=20"></script>
+<script src="search-data.js?v=21"></script>
 <script src="search-widget.js?v=6"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
