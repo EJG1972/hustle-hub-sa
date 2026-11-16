@@ -215,7 +215,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="hero-band">
   <div class="hero-eyebrow">AAA Grade Designer Replicas · Premium Quality · Nationwide Delivery</div>
   <h1 class="hero-title">Men's <span>Fragrances</span></h1>
-  <p class="hero-desc">71 premium designer fragrances — carefully sourced, AAA grade replicas. R450 each. Add to your order list and send via WhatsApp.</p>
+  <p class="hero-desc">72 premium designer fragrances — carefully sourced, AAA grade replicas. From R450. Add to your order list and send via WhatsApp.</p>
   <a href="index.html" class="back-link">← Back to Main Shop</a>
 </div>
 
@@ -224,8 +224,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="section-inner">
 <div class="section-eyebrow">AAA Grade Designer Replicas · Premium Quality</div>
 <h2 class="section-title">Men's Designer Fragrances</h2>
-<p class="section-count">71 fragrances · All R450 each · AAA Grade</p>
+<p class="section-count">72 fragrances · From R450 · AAA Grade</p>
 <div class="product-grid">
+
+<div class="product-card"><img src="fragrance-versace-eros-najim.jpg" alt="Eros Najim by Versace" loading="lazy"/><div class="product-info"><div class="badge badge-gold">New Arrival</div><div class="product-name">Eros Najim</div><div class="product-sub">Versace · Pour Homme Parfum · 100ml</div><div class="product-footer"><span class="product-price">R475</span><button class="add-btn" onclick="addToCart('Eros Najim — Versace','R475','fragrance-versace-eros-najim.jpg')">+ Add to Order</button></div></div></div>
 
 <div class="product-card"><img src="fragrance-montblanc-legend-red.jpg" alt="Legend Red by Montblanc" loading="lazy"/><div class="product-info"><div class="badge badge-gold">New Arrival</div><div class="product-name">Legend Red</div><div class="product-sub">Montblanc · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Legend Red — Montblanc','R450','fragrance-montblanc-legend-red.jpg')">+ Add to Order</button></div></div></div>
 <div class="product-card"><img src="fragrance-valentino-born-in-roma-rockstud-noir.jpg" alt="Born in Roma Rockstud Noir by Valentino" loading="lazy"/><div class="product-info"><div class="badge badge-gold">New Arrival</div><div class="product-name">Born in Roma Rockstud Noir</div><div class="product-sub">Valentino · Eau de Toilette · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Born in Roma Rockstud Noir — Valentino','R450','fragrance-valentino-born-in-roma-rockstud-noir.jpg')">+ Add to Order</button></div></div></div>
@@ -553,7 +555,7 @@ function addFromModal(){addToCart(_mp.name,_mp.price,_mp.img);closeModal();}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});(function(){var wrap=document.getElementById('modalImgWrap');if(!wrap)return;var img=document.getElementById('modalImg');var hint=wrap.querySelector('.product-modal-zoom-hint');var zoomed=false;wrap.addEventListener('click',function(){zoomed=!zoomed;wrap.classList.toggle('zoomed',zoomed);if(hint)hint.style.display=zoomed?'none':'block';if(!zoomed)img.style.transformOrigin='center center';});wrap.addEventListener('mousemove',function(e){if(!zoomed)return;var r=wrap.getBoundingClientRect();var x=((e.clientX-r.left)/r.width)*100;var y=((e.clientY-r.top)/r.height)*100;img.style.transformOrigin=x+'% '+y+'%';});var origClose=closeModal;closeModal=function(){zoomed=false;wrap.classList.remove('zoomed');if(hint)hint.style.display='block';img.style.transformOrigin='center center';origClose();};})();
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
-<script src="search-data.js?v=33"></script>
+<script src="search-data.js?v=34"></script>
 <script src="search-widget.js?v=6"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
