@@ -5,7 +5,7 @@
    only what customers can order. */
 (function () {
   var css = document.createElement('style');
-  css.textContent = '.product-card.sold-out{display:none!important}.xm-grid .product-card.sold-out{display:flex!important}';
+  css.textContent = '.product-card.sold-out{display:none!important}.xm-grid .product-card.sold-out{display:flex!important}section[data-empty]{display:none!important}';
   document.head.appendChild(css);
 
   function run() {
@@ -28,8 +28,27 @@
       var m = el.textContent.match(/^\s*(\d+)/);
       var t = el.textContent.replace(/\s*·\s*\d+\s+sold out/i, '');
       if (m && +m[1] === cards.length) t = fixWord(t.replace(/^\s*\d+/, vis), vis);
+      // Rebuild a price range like "— R430 to R510" from the cards still showing
+      if (hid && vis) {
+        var prices = [];
+        box.querySelectorAll('.product-card:not(.sold-out) .product-price').forEach(function (p) {
+          var v = p.textContent.match(/R\s?(\d+)/); if (v) prices.push(+v[1]);
+        });
+        if (prices.length) {
+          var lo = Math.min.apply(null, prices), hi = Math.max.apply(null, prices);
+          var range = lo === hi ? (vis === 1 ? 'R' + lo : 'R' + lo + ' each') : 'R' + lo + ' to R' + hi;
+          t = t.replace(/— R\d+( to R\d+| each)?/, '— ' + range);
+        }
+      }
       el.textContent = t;
-      if (vis === 0 && box.tagName === 'SECTION') box.style.display = 'none';
+      if (vis === 0 && box.tagName === 'SECTION') {
+        box.style.display = 'none';
+        box.setAttribute('data-empty', '1');
+        var brand = box.getAttribute('data-brand');
+        if (brand) document.querySelectorAll('.filter-btn').forEach(function (b) {
+          if ((b.getAttribute('onclick') || '').indexOf("'" + brand + "'") > -1) b.style.display = 'none';
+        });
+      }
     });
 
     // Page-wide totals in hero text, filter buttons and the announce strip
