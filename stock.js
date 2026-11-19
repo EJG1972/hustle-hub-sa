@@ -27,7 +27,7 @@
       var vis = cards.length - hid;
       var m = el.textContent.match(/^\s*(\d+)/);
       var t = el.textContent.replace(/\s*·\s*\d+\s+sold out/i, '');
-      if (m && +m[1] === cards.length) t = fixWord(t.replace(/^\s*\d+/, vis), vis);
+      if (m) t = fixWord(t.replace(/^\s*\d+/, vis), vis);
       // Rebuild a price range like "— R430 to R510" from the cards still showing
       if (hid && vis) {
         var prices = [];
