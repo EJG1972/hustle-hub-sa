@@ -892,15 +892,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
         </div>
       </div>
 
-      <div class="product-card">
+      <div class="product-card sold-out">
         <img src="dubai-unisex-odyssey-ba-ha-mas.jpg" alt="Odyssey Ba Ha Mas"/>
         <div class="product-info">
-          <div class="badge badge-gold">Available</div>
-          <div class="product-name">Odyssey Ba Ha Mas</div>
+          <div class="badge badge-sold">Out of Stock</div><div class="product-name">Odyssey Ba Ha Mas</div>
           <div class="product-sub">Armaf · Tropical Collection · EDP · 100ml</div>
           <div class="product-footer">
             <span class="product-price">R450</span>
-            <button class="add-btn" onclick="addToCart('Odyssey Ba Ha Mas — Armaf 100ml','R450','dubai-unisex-odyssey-ba-ha-mas.jpg')">+ Add to Order</button>
+            <button class="sold-btn" disabled>Out of Stock</button>
           </div>
         </div>
       </div>
@@ -2166,7 +2165,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=5"></script>
-<script src="search-data.js?v=46"></script>
+<script src="search-data.js?v=47"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
