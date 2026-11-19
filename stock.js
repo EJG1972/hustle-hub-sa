@@ -54,7 +54,7 @@
     // Page-wide totals in hero text, filter buttons and the announce strip
     if (hidden) {
       var re = new RegExp('\\b' + total + '\\b');
-      document.querySelectorAll('.hero-desc, .hero-title, .filter-btn, .announce-item, .ticker-item').forEach(function (el) {
+      document.querySelectorAll('.hero-desc, .hero-title, .section-desc, .filter-btn, .announce-item, .ticker-item').forEach(function (el) {
         if (el.children.length) return;
         if (re.test(el.textContent)) el.textContent = el.textContent.replace(re, visible);
       });
