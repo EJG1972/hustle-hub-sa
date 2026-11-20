@@ -51,6 +51,16 @@
       }
     });
 
+    // Gift Sets sub-headings, e.g. "For Her — 20 Sets": count the grid that follows
+    document.querySelectorAll('h3.sub-title').forEach(function (h) {
+      var g = h.nextElementSibling;
+      while (g && !g.classList.contains('product-grid')) g = g.nextElementSibling;
+      if (!g) return;
+      var vis = g.querySelectorAll('.product-card:not(.sold-out)').length;
+      h.textContent = h.textContent.replace(/\d+ Sets?\b/, vis + (vis === 1 ? ' Set' : ' Sets'));
+      if (!vis) { h.style.display = 'none'; g.style.display = 'none'; }
+    });
+
     // Page-wide totals in hero text, filter buttons and the announce strip
     if (hidden) {
       var re = new RegExp('\\b' + total + '\\b');
