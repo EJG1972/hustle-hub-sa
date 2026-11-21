@@ -220,10 +220,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="section-inner">
 <div class="section-eyebrow">Bharara Beauty · Eau de Parfum</div>
 <h2 class="section-title">Bharara — Ladies</h2>
-<p class="section-count">1 fragrance · 100ml · R475</p>
+<p class="section-count">2 fragrances · 100ml · R475 each</p>
 <div class="product-grid">
 
 <div class="product-card"><img src="bharara-queen.jpg" alt="Bharara Queen by Bharara Beauty — Eau de Parfum 100ml, R475" loading="lazy"/><div class="product-info"><div class="badge badge-gold">New Arrival</div><div class="product-name">Bharara Queen</div><div class="product-sub">Bharara Beauty · Eau de Parfum · 100ml<br/>Top: saffron, black currant, bergamot · Heart: rose, jasmine, patchouli · Base: vanilla, amber, musk</div><div class="product-footer"><span class="product-price">R475</span><button class="add-btn" onclick="addToCart('Bharara Queen Eau de Parfum — Bharara Beauty','R475','bharara-queen.jpg')">+ Add to Order</button></div></div></div>
+
+<div class="product-card"><img src="bharara-rose.jpg" alt="Bharara Rose by Bharara Beauty — Eau de Parfum 100ml, R475" loading="lazy"/><div class="product-info"><div class="badge badge-gold">New Arrival</div><div class="product-name">Bharara Rose</div><div class="product-sub">Bharara Beauty · Eau de Parfum · 100ml<br/>Top: bergamot, pear, pink pepper · Heart: rose, peony, jasmine · Base: musk, amber, vanilla</div><div class="product-footer"><span class="product-price">R475</span><button class="add-btn" onclick="addToCart('Bharara Rose Eau de Parfum — Bharara Beauty','R475','bharara-rose.jpg')">+ Add to Order</button></div></div></div>
 
 </div></div></section>
 
@@ -433,7 +435,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=6"></script>
-<script src="search-data.js?v=57"></script>
+<script src="search-data.js?v=58"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
