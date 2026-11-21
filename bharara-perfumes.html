@@ -231,12 +231,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="section-inner">
 <div class="section-eyebrow">Bharara Beauty · Eau de Parfum</div>
 <h2 class="section-title">Bharara — Men</h2>
-<p class="section-count">2 fragrances · 100ml · R475 each</p>
+<p class="section-count">3 fragrances · 100ml · R475 each</p>
 <div class="product-grid">
 
 <div class="product-card"><img src="bharara-king.jpg" alt="Bharara King by Bharara Beauty — Eau de Parfum 100ml, R475" loading="lazy"/><div class="product-info"><div class="badge badge-gold">New Arrival</div><div class="product-name">Bharara King</div><div class="product-sub">Bharara Beauty · Eau de Parfum · 100ml<br/>Top: bergamot, lavender, mint · Heart: spicy notes, cedarwood, leather · Base: amber, musk, vanilla</div><div class="product-footer"><span class="product-price">R475</span><button class="add-btn" onclick="addToCart('Bharara King Eau de Parfum — Bharara Beauty','R475','bharara-king.jpg')">+ Add to Order</button></div></div></div>
 
 <div class="product-card"><img src="bharara-king-gold-edition.jpg" alt="Bharara King Gold Edition by Bharara Beauty — Eau de Parfum 100ml, R475" loading="lazy"/><div class="product-info"><div class="badge badge-gold">New Arrival</div><div class="product-name">Bharara King Gold Edition</div><div class="product-sub">Bharara Beauty · Eau de Parfum · 100ml<br/>Top: bergamot, lavender, spicy notes · Heart: cedarwood, patchouli, geranium · Base: amber, musk, vanilla</div><div class="product-footer"><span class="product-price">R475</span><button class="add-btn" onclick="addToCart('Bharara King Gold Edition Eau de Parfum — Bharara Beauty','R475','bharara-king-gold-edition.jpg')">+ Add to Order</button></div></div></div>
+
+<div class="product-card"><img src="bharara-bleu.jpg" alt="Bharara Bleu by Bharara Beauty — Eau de Parfum 100ml, R475" loading="lazy"/><div class="product-info"><div class="badge badge-gold">New Arrival</div><div class="product-name">Bharara Bleu</div><div class="product-sub">Bharara Beauty · Eau de Parfum · 100ml<br/>Top: bergamot, lemon, mint · Heart: lavender, jasmine, geranium · Base: sandalwood, amber, musk</div><div class="product-footer"><span class="product-price">R475</span><button class="add-btn" onclick="addToCart('Bharara Bleu Eau de Parfum — Bharara Beauty','R475','bharara-bleu.jpg')">+ Add to Order</button></div></div></div>
 
 </div></div></section>
 
@@ -431,7 +433,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=6"></script>
-<script src="search-data.js?v=56"></script>
+<script src="search-data.js?v=57"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
