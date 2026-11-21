@@ -214,7 +214,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="section-inner">
   <div class="section-eyebrow">Gift-Ready Packaging · Nationwide Delivery</div>
   <h2 class="section-title">Gift Sets</h2>
-  <p class="section-desc">58 sets · Ladies, His &amp; Hers, Men's and Unisex Miniatures · Perfect for treating yourself or gifting someone special.</p>
+  <p class="section-desc">59 sets · Ladies, His &amp; Hers, Men's and Unisex Miniatures · Perfect for treating yourself or gifting someone special.</p>
 
   <!-- FOR HER -->
   <h3 class="sub-title" id="for-her">For Her — 20 Sets</h3>
@@ -917,18 +917,31 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
   </div>
 
-  <h3 class="sub-title" id="miniature-unisex">Miniature Perfume Gift Sets — Unisex — 5 Sets</h3>
+  <h3 class="sub-title" id="miniature-unisex">Miniature Perfume Gift Sets — Unisex — 6 Sets</h3>
   <div class="product-grid">
 
     <div class="product-card">
-      <img src="gift-odyssey-armaf-4x30.jpg" alt="Odyssey by Armaf Gift Set — Green/Yellow Box" />
+      <img src="giftset-musamam-lattafa.jpg" alt="Musamam by Lattafa Gift Set" />
+      <div class="product-info">
+        <div class="badge badge-gold">New Arrival</div>
+        <div class="product-name">Musamam by Lattafa Gift Set</div>
+        <div class="product-sub">Lattafa · 4 x 30ml · Golden / Rose / Noir / Silver</div>
+        <div class="product-footer">
+          <span class="product-price">R460</span>
+          <button class="add-btn" onclick="addToCart('Musamam by Lattafa Gift Set (4x30ml)','R460','giftset-musamam-lattafa.jpg')">+ Add to Order</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="giftset-odyssey-yellow-green.jpg" alt="Odyssey by Armaf Gift Set — Green/Yellow Box" />
       <div class="product-info">
         <div class="badge badge-gold">Back in Stock</div>
         <div class="product-name">Odyssey by Armaf Gift Set — Green/Yellow Box</div>
-        <div class="product-sub">Armaf · 4 x 30ml</div>
+        <div class="product-sub">Armaf · 4 x 30ml · Limoni / Spectra / Aqua / Egypt</div>
         <div class="product-footer">
           <span class="product-price">R460</span>
-          <button class="add-btn" onclick="addToCart('Odyssey by Armaf Gift Set — Green/Yellow Box (4x30ml)','R460','gift-odyssey-armaf-4x30.jpg')">+ Add to Order</button>
+          <button class="add-btn" onclick="addToCart('Odyssey by Armaf Gift Set — Green/Yellow Box (4x30ml)','R460','giftset-odyssey-yellow-green.jpg')">+ Add to Order</button>
         </div>
       </div>
     </div>
@@ -1179,7 +1192,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=6"></script>
-<script src="search-data.js?v=59"></script>
+<script src="search-data.js?v=60"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
