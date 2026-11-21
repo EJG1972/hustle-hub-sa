@@ -214,11 +214,37 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="section-inner">
   <div class="section-eyebrow">Gift-Ready Packaging · Nationwide Delivery</div>
   <h2 class="section-title">Gift Sets</h2>
-  <p class="section-desc">59 sets · Ladies, His &amp; Hers, Men's and Unisex Miniatures · Perfect for treating yourself or gifting someone special.</p>
+  <p class="section-desc">61 sets · Ladies, His &amp; Hers, Men's and Unisex Miniatures · Perfect for treating yourself or gifting someone special.</p>
 
   <!-- FOR HER -->
-  <h3 class="sub-title" id="for-her">For Her — 20 Sets</h3>
+  <h3 class="sub-title" id="for-her">For Her — 22 Sets</h3>
   <div class="product-grid">
+
+    <div class="product-card">
+      <img src="giftset-ch-la-bomba-pink.jpg" alt="CH La Bomba Gift Set — Pink Box by Carolina Herrera" />
+      <div class="product-info">
+        <div class="badge badge-gold">New Arrival</div>
+        <div class="product-name">CH La Bomba Gift Set — Pink Box</div>
+        <div class="product-sub">Carolina Herrera · 3 x 30ml · EDP · La Bomba Pink / Red / Blue</div>
+        <div class="product-footer">
+          <span class="product-price">R490</span>
+          <button class="add-btn" onclick="addToCart('CH La Bomba Gift Set — Pink Box (3x30ml)','R490','giftset-ch-la-bomba-pink.jpg')">+ Add to Order</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="giftset-ch-la-bomba-blue.jpg" alt="CH La Bomba Gift Set — Blue Box by Carolina Herrera" />
+      <div class="product-info">
+        <div class="badge badge-gold">New Arrival</div>
+        <div class="product-name">CH La Bomba Gift Set — Blue Box</div>
+        <div class="product-sub">Carolina Herrera · 3 x 30ml · EDP · My Contradictions</div>
+        <div class="product-footer">
+          <span class="product-price">R490</span>
+          <button class="add-btn" onclick="addToCart('CH La Bomba Gift Set — Blue Box (3x30ml)','R490','giftset-ch-la-bomba-blue.jpg')">+ Add to Order</button>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -1192,7 +1218,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=6"></script>
-<script src="search-data.js?v=60"></script>
+<script src="search-data.js?v=61"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
