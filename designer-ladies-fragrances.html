@@ -295,7 +295,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
 <div class="product-card sold-out"><img src="fragrance-dg-light-blue.jpeg" alt="Light Blue Eau de Toilette" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Light Blue Eau de Toilette</div><div class="product-sub">Dolce &amp; Gabbana · Eau de Toilette · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
 
-<div class="product-card sold-out"><img src="fragrance-lancome-la-vie-belle.jpeg" alt="Lancôme La Vie Est Belle" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">La Vie Est Belle</div><div class="product-sub">Lancôme · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
+<div class="product-card sold-out"><img src="fragrance-lancome-la-vie-belle.jpeg" alt="Lancôme La Vie Est Belle" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">La Vie Est Belle</div><div class="product-sub">Lancôme · Eau de Parfum · 75ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
 
 <div class="product-card sold-out"><img src="fragrance-thierry-mugler-alien.jpeg" alt="Alien Eau de Parfum" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Alien Eau de Parfum</div><div class="product-sub">Thierry Mugler · Eau de Parfum · 90ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
 
@@ -537,7 +537,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=6"></script>
-<script src="search-data.js?v=61"></script>
+<script src="search-data.js?v=62"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>

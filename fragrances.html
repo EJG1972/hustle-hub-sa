@@ -332,7 +332,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 
 <div class="product-card"><img src="fragrance-acqua-di-gio-edt.jpg" alt="Acqua di Giò by Giorgio Armani" loading="lazy"/><div class="product-info"><div class="badge badge-gold">Available</div><div class="product-name">Acqua di Giò</div><div class="product-sub">Giorgio Armani · Eau de Toilette · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="add-btn" onclick="addToCart('Acqua di Giò — Giorgio Armani','R450','fragrance-acqua-di-gio-edt.jpg')">+ Add to Order</button></div></div></div>
 
-<div class="product-card sold-out"><img src="fragrance-givenchy-pi.jpeg" alt="Givenchy Pi EDP" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Pi</div><div class="product-sub">Givenchy · Eau de Parfum · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
+<div class="product-card sold-out"><img src="fragrance-givenchy-pi.jpeg" alt="Givenchy Pi EDP" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Pi</div><div class="product-sub">Givenchy · Eau de Toilette · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
 
 <div class="product-card sold-out"><img src="fragrance-givenchy-pour-homme.jpeg" alt="Givenchy Pour Homme Maroon" loading="lazy"/><div class="product-info"><div class="badge badge-sold">Out of Stock</div><div class="product-name">Pour Homme Maroon</div><div class="product-sub">Givenchy · Eau de Toilette · 100ml</div><div class="product-footer"><span class="product-price">R450</span><button class="sold-btn" disabled>Out of Stock</button></div></div></div>
 
@@ -571,7 +571,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=6"></script>
-<script src="search-data.js?v=61"></script>
+<script src="search-data.js?v=62"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
