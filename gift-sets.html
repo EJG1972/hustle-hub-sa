@@ -683,15 +683,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
       </div>
     </div>
 
-    <div class="product-card">
+    <div class="product-card sold-out">
       <img src="gift-212-men-carolina-herrera-3x30.jpg" alt="212 Men by Carolina Herrera Discovery Set 3x30ml" />
       <div class="product-info">
-        <div class="badge badge-gold">Available</div>
+        <div class="badge badge-sold">Out of Stock</div>
         <div class="product-name">212 Men Discovery Set</div>
         <div class="product-sub">Carolina Herrera · 3 x 30ml · 212 Men NYC · 212 Men Sexy · 212 Men Aqua</div>
         <div class="product-footer">
           <span class="product-price">R540</span>
-          <button class="add-btn" onclick="addToCart('212 Men Discovery Set by Carolina Herrera (3x30ml)','R540','gift-212-men-carolina-herrera-3x30.jpg')">+ Add to Order</button>
+          <button class="sold-btn" disabled>Out of Stock</button>
         </div>
       </div>
     </div>
@@ -721,28 +721,28 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
       </div>
     </div>
 
-    <div class="product-card">
+    <div class="product-card sold-out">
       <img src="gift-bvlgari-pour-homme-3x30.jpg" alt="Bvlgari Pour Homme Discovery Set 3x30ml" />
       <div class="product-info">
-        <div class="badge badge-gold">Available</div>
+        <div class="badge badge-sold">Out of Stock</div>
         <div class="product-name">Bvlgari Pour Homme Discovery Set</div>
         <div class="product-sub">Bvlgari · 3 x 30ml · Pour Homme Marine · Pour Homme Extrême · Pour Homme</div>
         <div class="product-footer">
           <span class="product-price">R540</span>
-          <button class="add-btn" onclick="addToCart('Bvlgari Pour Homme Discovery Set (3x30ml)','R540','gift-bvlgari-pour-homme-3x30.jpg')">+ Add to Order</button>
+          <button class="sold-btn" disabled>Out of Stock</button>
         </div>
       </div>
     </div>
 
-    <div class="product-card">
+    <div class="product-card sold-out">
       <img src="gift-armani-code-3x30.jpg" alt="Giorgio Armani Code Discovery Set 3x30ml" />
       <div class="product-info">
-        <div class="badge badge-gold">Available</div>
+        <div class="badge badge-sold">Out of Stock</div>
         <div class="product-name">Giorgio Armani Code Discovery Set</div>
         <div class="product-sub">Giorgio Armani · 3 x 30ml · Armani Code Colonia · Code Profumo · Code Parfum</div>
         <div class="product-footer">
           <span class="product-price">R540</span>
-          <button class="add-btn" onclick="addToCart('Giorgio Armani Code Discovery Set (3x30ml)','R540','gift-armani-code-3x30.jpg')">+ Add to Order</button>
+          <button class="sold-btn" disabled>Out of Stock</button>
         </div>
       </div>
     </div>
@@ -1218,7 +1218,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=6"></script>
-<script src="search-data.js?v=62"></script>
+<script src="search-data.js?v=63"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
