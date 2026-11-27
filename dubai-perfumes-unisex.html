@@ -244,7 +244,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="hero-band">
   <div class="hero-eyebrow">Lattafa · Armaf · French Avenue · Rasasi · Afnan</div>
   <h1 class="hero-title">Dubai Perfumes<br/><span>Unisex</span></h1>
-  <p class="hero-desc">92 bold, long-lasting Arabian & Italian fragrances made to be shared — rich ouds, warm spices and smooth woods that wear beautifully on anyone. New unisex arrivals added regularly.</p>
+  <p class="hero-desc">93 bold, long-lasting Arabian & Italian fragrances made to be shared — rich ouds, warm spices and smooth woods that wear beautifully on anyone. New unisex arrivals added regularly.</p>
   <a href="index.html" class="back-link">← Back to Home</a>
 </div>
 
@@ -252,7 +252,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="filter-bar">
   <div class="filter-inner">
     <span class="filter-label">Filter by brand:</span>
-    <button class="filter-btn active" onclick="filterBrand('all', this)">All 92</button>
+    <button class="filter-btn active" onclick="filterBrand('all', this)">All 93</button>
     <button class="filter-btn" onclick="filterBrand('lattafa', this)">Lattafa</button>
     <button class="filter-btn" onclick="filterBrand('french-avenue', this)">French Avenue</button>
     <button class="filter-btn" onclick="filterBrand('armaf', this)">Armaf</button>
@@ -883,8 +883,21 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
   <div class="section-inner">
     <div class="section-eyebrow">Armaf · Club de Nuit · Odyssey · Eau de Parfum</div>
     <h2 class="section-title">Armaf</h2>
-    <p class="section-count">10 fragrances — R450 to R580</p>
+    <p class="section-count">11 fragrances — R450 to R580</p>
     <div class="product-grid">
+
+      <div class="product-card">
+        <img src="dubai-unisex-odyssey-limoni.jpg" alt="Odyssey Limoni by Armaf — EDP 100ml, R450"/>
+        <div class="product-info">
+          <div class="badge badge-gold">New Arrival</div>
+          <div class="product-name">Odyssey Limoni</div>
+          <div class="product-sub">Armaf · EDP · 100ml</div>
+          <div class="product-footer">
+            <span class="product-price">R450</span>
+            <button class="add-btn" onclick="addToCart('Odyssey Limoni — Armaf 100ml','R450','dubai-unisex-odyssey-limoni.jpg')">+ Add to Order</button>
+          </div>
+        </div>
+      </div>
 
       <div class="product-card">
         <img src="dubai-unisex-kunafa-chocolate.jpg" alt="Kunafa Chocolate (Dubai Delicacy) by Armaf"/>
@@ -1935,7 +1948,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=6"></script>
-<script src="search-data.js?v=63"></script>
+<script src="search-data.js?v=64"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
