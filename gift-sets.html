@@ -561,15 +561,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
       </div>
     </div>
 
-    <div class="product-card sold-out">
+    <div class="product-card">
       <img src="gift-versace-his-hers.png" alt="Versace His & Hers Combo Set" />
       <div class="product-info">
-        <div class="badge badge-sold">Out of Stock</div>
+        <div class="badge badge-gold">Back in Stock</div>
         <div class="product-name">Versace — His &amp; Hers Combo</div>
         <div class="product-sub">Versace · 4 x 30ml · Eros · Pour Homme · Man Eau Fraîche · Bright Crystal</div>
         <div class="product-footer">
           <span class="product-price">R560</span>
-          <button class="sold-btn" disabled>Out of Stock</button>
+          <button class="add-btn" onclick="addToCart('Versace His & Hers Combo (4x30ml)','R560','gift-versace-his-hers.png')">+ Add to Order</button>
         </div>
       </div>
     </div>
@@ -747,15 +747,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
       </div>
     </div>
 
-    <div class="product-card sold-out">
+    <div class="product-card">
       <img src="gift-bleu-de-chanel-3x30.jpg" alt="Bleu de Chanel Discovery Set 3x30ml" />
       <div class="product-info">
-        <div class="badge badge-sold">Out of Stock</div>
+        <div class="badge badge-gold">Back in Stock</div>
         <div class="product-name">Bleu de Chanel Discovery Set</div>
         <div class="product-sub">Chanel · 3 x 30ml · Eau de Toilette · Eau de Parfum · Parfum</div>
         <div class="product-footer">
           <span class="product-price">R540</span>
-          <button class="sold-btn" disabled>Out of Stock</button>
+          <button class="add-btn" onclick="addToCart('Bleu de Chanel Discovery Set (3x30ml)','R540','gift-bleu-de-chanel-3x30.jpg')">+ Add to Order</button>
         </div>
       </div>
     </div>
@@ -773,15 +773,15 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
       </div>
     </div>
 
-    <div class="product-card sold-out">
+    <div class="product-card">
       <img src="gift-valentino-uomo-born-in-roma-3x30.jpg" alt="Valentino Uomo Born in Roma Set 3x30ml" />
       <div class="product-info">
-        <div class="badge badge-sold">Out of Stock</div>
+        <div class="badge badge-gold">Back in Stock</div>
         <div class="product-name">Valentino Uomo Born in Roma Set</div>
         <div class="product-sub">Valentino · 3 x 30ml · Born in Roma · Born in Roma Intense · Born in Roma Yellow Dream</div>
         <div class="product-footer">
           <span class="product-price">R540</span>
-          <button class="sold-btn" disabled>Out of Stock</button>
+          <button class="add-btn" onclick="addToCart('Valentino Uomo Born in Roma Set (3x30ml)','R540','gift-valentino-uomo-born-in-roma-3x30.jpg')">+ Add to Order</button>
         </div>
       </div>
     </div>
@@ -1218,7 +1218,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=6"></script>
-<script src="search-data.js?v=64"></script>
+<script src="search-data.js?v=65"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
