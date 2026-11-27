@@ -214,11 +214,76 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32p
 <div class="section-inner">
   <div class="section-eyebrow">Gift-Ready Packaging · Nationwide Delivery</div>
   <h2 class="section-title">Gift Sets</h2>
-  <p class="section-desc">66 sets · Ladies, His &amp; Hers, Men's and Unisex Miniatures · Perfect for treating yourself or gifting someone special.</p>
+  <p class="section-desc">71 sets · Ladies, His &amp; Hers, Men's and Unisex Miniatures · Perfect for treating yourself or gifting someone special.</p>
 
   <!-- FOR HER -->
-  <h3 class="sub-title" id="for-her">For Her — 22 Sets</h3>
+  <h3 class="sub-title" id="for-her">For Her — 27 Sets</h3>
   <div class="product-grid">
+
+    <div class="product-card">
+      <img src="giftset-chanel-chance-4x30.jpg" alt="Chanel Chance Set" />
+      <div class="product-info">
+        <div class="badge badge-gold">New Arrival</div>
+        <div class="product-name">Chanel Chance Set</div>
+        <div class="product-sub">Chanel · 4 x 30ml · Eau Tendre / Eau Fraîche / Eau Vive / Chance EDP</div>
+        <div class="product-footer">
+          <span class="product-price">R620</span>
+          <button class="add-btn" onclick="addToCart('Chanel Chance Set (4x30ml)','R620','giftset-chanel-chance-4x30.jpg')">+ Add to Order</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="giftset-chanel-collection-4x30.jpg" alt="Chanel Fragrance Collection Set" />
+      <div class="product-info">
+        <div class="badge badge-gold">New Arrival</div>
+        <div class="product-name">Chanel Fragrance Collection Set</div>
+        <div class="product-sub">Chanel · 4 x 30ml · Coco Mademoiselle / No. 5 / Chance / Gabrielle</div>
+        <div class="product-footer">
+          <span class="product-price">R620</span>
+          <button class="add-btn" onclick="addToCart('Chanel Fragrance Collection Set (4x30ml)','R620','giftset-chanel-collection-4x30.jpg')">+ Add to Order</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="giftset-louis-vuitton-4x30.jpg" alt="Louis Vuitton Set" />
+      <div class="product-info">
+        <div class="badge badge-gold">New Arrival</div>
+        <div class="product-name">Louis Vuitton Set</div>
+        <div class="product-sub">Louis Vuitton · 4 x 30ml · EDP · Rose des Vents / Le Jour se Lève / Contre Moi / Apogée</div>
+        <div class="product-footer">
+          <span class="product-price">R640</span>
+          <button class="add-btn" onclick="addToCart('Louis Vuitton Set (4x30ml)','R640','giftset-louis-vuitton-4x30.jpg')">+ Add to Order</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="giftset-prada-paradoxe-4x30.jpg" alt="Prada Paradoxe Set" />
+      <div class="product-info">
+        <div class="badge badge-gold">New Arrival</div>
+        <div class="product-name">Prada Paradoxe Set</div>
+        <div class="product-sub">Prada · 4 x 30ml · Paradoxe</div>
+        <div class="product-footer">
+          <span class="product-price">R620</span>
+          <button class="add-btn" onclick="addToCart('Prada Paradoxe Set (4x30ml)','R620','giftset-prada-paradoxe-4x30.jpg')">+ Add to Order</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="giftset-ysl-ladies-4x30.jpg" alt="Yves Saint Laurent Ladies Set" />
+      <div class="product-info">
+        <div class="badge badge-gold">New Arrival</div>
+        <div class="product-name">Yves Saint Laurent Ladies Set</div>
+        <div class="product-sub">Yves Saint Laurent · 4 x 30ml · Libre / Libre (Le Vestiaire) / Mon Paris / Black Opium</div>
+        <div class="product-footer">
+          <span class="product-price">R620</span>
+          <button class="add-btn" onclick="addToCart('Yves Saint Laurent Ladies Set (4x30ml)','R620','giftset-ysl-ladies-4x30.jpg')">+ Add to Order</button>
+        </div>
+      </div>
+    </div>
 
     <div class="product-card">
       <img src="giftset-ch-la-bomba-pink.jpg" alt="CH La Bomba Gift Set — Pink Box by Carolina Herrera" />
@@ -1283,7 +1348,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()
 document.querySelectorAll('.product-card').forEach(function(card){var img=card.querySelector('img');if(!img)return;card.style.cursor='pointer';card.addEventListener('click',function(e){if(e.target.closest('.add-btn'))return;var name=(card.querySelector('.product-name')||{}).textContent||'';var price=(card.querySelector('.product-price')||{}).textContent||'';var sub=(card.querySelector('.product-sub')||{}).textContent||'';openModal(name,price,img.src,sub);});});
 </script>
 <script src="stock.js?v=6"></script>
-<script src="search-data.js?v=67"></script>
+<script src="search-data.js?v=68"></script>
 <script src="search-widget.js?v=7"></script>
 <script src="cart-persist.js?v=2"></script>
 </body>
